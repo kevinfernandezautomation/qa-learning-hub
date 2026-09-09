@@ -49,3 +49,20 @@
 @media(max-width:760px){.autocomplete-course-selector,.job-search-controls{grid-template-columns:1fr}.job-search-controls .btn{width:100%}}
 .cart-filter-grid.compact-filters{grid-template-columns:1fr 1fr}
 @media(max-width:640px){.cart-filter-grid.compact-filters{grid-template-columns:1fr}}
+
+/* v12 — responsive header, empleo, CTFL, recursos y seguridad de contraseña */
+.jobs-sources-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:34px}.jobs-sources-grid .jobs-card{padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.utest-job-card{grid-column:1/-1}.reference-links{display:flex;flex-direction:column;gap:5px;margin-top:10px}.personal-brand-tip{grid-column:span 2}.library-intro{color:var(--muted);max-width:900px;margin-top:-6px;margin-bottom:16px}.prompt-resources{padding-top:22px;padding-bottom:22px}.prompt-repo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.qa-agent-card{border-color:color-mix(in srgb,var(--primary) 38%,var(--line))}.password-help{margin:-4px 0 10px;padding:10px 12px;border-radius:10px;background:var(--surface2);color:var(--muted);font-size:.86rem}.back-to-top{position:fixed;right:20px;bottom:86px;width:48px;height:48px;border:0;border-radius:50%;background:var(--text);color:var(--surface);font-size:1.35rem;box-shadow:var(--shadow);cursor:pointer;z-index:68;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s}.back-to-top.show{opacity:1;pointer-events:auto;transform:none}.learning-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:26px}.learn-stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);text-align:center}.learn-stat b{display:block;font-size:1.45rem}.learn-stat span{color:var(--muted);font-size:.86rem}.ctfl-modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-bottom:28px}.ctfl-modules .learn-path-card{padding:24px}.module-number{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border-radius:12px;background:var(--surface2);color:var(--primary);font-weight:900}.companion-foundation{margin-bottom:58px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),var(--surface2));display:flex;align-items:center;justify-content:space-between;gap:22px}.companion-foundation p{color:var(--muted);max-width:760px}
+@media(max-width:900px){.jobs-sources-grid,.prompt-repo-grid,.ctfl-modules{grid-template-columns:1fr}.utest-job-card,.personal-brand-tip{grid-column:auto}.learning-overview{grid-template-columns:repeat(2,1fr)}.companion-foundation{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){
+  .topbar{height:auto;min-height:76px;flex-wrap:wrap;padding:10px 14px;gap:8px}
+  .brand{flex:1 1 auto;min-width:0}.brand strong{font-size:.92rem}.brand-mark{width:36px;height:36px}
+  .menu-toggle{order:2;margin-left:0;flex:0 0 auto}
+  .header-actions{order:3;width:100%;display:grid;grid-template-columns:64px 42px 42px minmax(0,1fr);gap:8px;align-items:center}
+  .header-actions .btn{display:inline-flex!important;width:100%;white-space:nowrap}
+  .header-actions select{max-width:none;width:100%}
+  .header-actions .icon-btn,.voice-btn{display:grid!important;place-items:center!important;width:42px;height:42px;padding:0;font-size:1.05rem}
+  .main-nav{top:100%;left:10px;right:10px}
+  .voice-status{top:126px}
+  .learning-overview{grid-template-columns:1fr 1fr}
+  .back-to-top{right:16px;bottom:84px}
+}

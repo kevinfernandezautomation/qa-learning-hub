@@ -18,3 +18,14 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - JavaScript validado con `node --check`.
 - 10 páginas HTML y 0 enlaces internos rotos.
 - 28 certificaciones/opciones con bancos de 120 preguntas únicas.
+
+
+## v12
+- uTest integrado en Academia y Empleo.
+- Ruta CTFL v4.0 estilo Learning Path.
+- AICS ASTFC visible al filtrar Foundation.
+- Repositorios GitHub y QA Agent movidos a Prompts IA.
+- Revista CPIC y repositorios universitarios añadidos.
+- Mejoras responsive para voz/encabezado móvil.
+- Registro con reglas de contraseña y generador.
+- Botón volver al inicio.
