@@ -35,7 +35,7 @@ function renderLearningPaths(){
      const href='competencia.html?id='+encodeURIComponent(x.id);
      return `<article class="learn-path-card"><div class="learn-card-head"><span class="module-type">Competencia QA</span><span class="status">${escapeHtml(x.level)}</span></div><h2>${escapeHtml(x.name)}</h2><p>${escapeHtml(x.desc)}</p><div class="course-meta"><span>${escapeHtml(x.duration)}</span><span>${escapeHtml(x.level)}</span><span>${x.modules.length} módulos</span></div><ol class="module-list">${x.modules.map(m=>`<li>${escapeHtml(m)}</li>`).join('')}</ol><div class="card-actions"><a class="btn primary small" href="${href}">Aprender más →</a></div></article>`;
    }
-   const game=x.id==='game-qa',virtuoso=x.id==='virtuoso-qa',utest=x.id==='utest-academy',academybugs=x.id==='academybugs-practice',visual=x.id==='visual-ai',english=x.id==='english-qa';
+   const game=x.id==='game-qa',virtuoso=x.id==='virtuoso-qa',utest=x.id==='utest-academy',academybugs=x.id==='academybugs-practice',visual=x.id==='visual-ai',english=x.id==='english-qa',robotics=x.id==='robotics-qa',aviation=x.id==='aviation-qa',auditor=x.id==='software-auditor',contentqa=x.id==='content-marketing-qa',paymentqa=x.id==='payment-gateway-qa',processqa=x.id==='qa-process-improvement';
    let cta,status='US$5 + IVA';
    if(game){cta=`<a class="btn primary small" href="https://frecuenciagamer.com/nuestros-cursos/qa-testing-para-videojuegos/" target="_blank" rel="noopener">Ir a Frecuencia Gamer ↗</a>`;status='Recurso externo';}
    else if(virtuoso){cta=`<a class="btn primary small" href="https://training.virtuosoqa.com/library/" target="_blank" rel="noopener">Abrir Virtuoso Training ↗</a>`;status='Training oficial';}
@@ -43,6 +43,12 @@ function renderLearningPaths(){
    else if(academybugs){cta=`<a class="btn primary small" href="https://academybugs.com/" target="_blank" rel="noopener">Abrir AcademyBugs ↗</a>`;status='Gratis · práctica externa';}
    else if(visual){cta=`<a class="btn primary small" href="qa-imagenes-ia.html">Aprender más →</a>`;status='Ruta interna';}
    else if(english){cta=`<a class="btn primary small" href="ingles-qa.html">Aprender más →</a>`;status='Gratis';}
+   else if(robotics){cta=`<a class="btn primary small" href="qa-robotica.html">Aprender más →</a>`;status='Gratis';}
+   else if(aviation){cta=`<a class="btn primary small" href="qa-aviacion.html">Aprender más →</a>`;status='Gratis';}
+   else if(auditor){cta=`<a class="btn primary small" href="qa-auditor-software.html">Aprender más →</a>`;status='Gratis';}
+   else if(contentqa){cta=`<a class="btn primary small" href="qa-contenido-marketing.html">Aprender más →</a>`;status='Gratis';}
+   else if(paymentqa){cta=`<a class="btn primary small" href="qa-pasarelas-pago.html">Aprender más →</a>`;status='Gratis';}
+   else if(processqa){cta=`<a class="btn primary small" href="qa-mejora-procesos.html">Aprender más →</a>`;status='Gratis';}
    else cta=`<button class="btn primary small add-academy-cart" type="button" data-course="${escapeHtml(x.name)}">Agregar al carrito</button>`;
    return `<article class="learn-path-card"><div class="learn-card-head"><span class="module-type">Learning Path</span><span class="status">${status}</span></div><h2>${escapeHtml(x.name)}</h2><p>${escapeHtml(x.desc)}</p><div class="course-meta"><span>${escapeHtml(x.duration)}</span><span>${escapeHtml(x.level)}</span><span>${x.modules.length} módulos</span></div><ol class="module-list">${x.modules.map(m=>`<li>${escapeHtml(m)}</li>`).join('')}</ol><div class="card-actions">${cta}</div></article>`;
  }).join('');

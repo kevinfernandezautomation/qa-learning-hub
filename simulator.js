@@ -306,7 +306,7 @@ function finish(timeout){
  let advice=timeout?'El tiempo finalizó. Revise sus áreas de mejora y vuelva a practicar.':passed?'Buen resultado de práctica. Continúe contrastando con fuentes oficiales o requisitos reales del puesto.':'Revise los temas con más errores antes del siguiente intento.';
  if(mode.value==='cert'&&dif.value==='Difícil'){const key=`readiness:${currentCert.id}`;let hist=[];try{hist=JSON.parse(localStorage.getItem(key)||'[]')}catch{}hist.push({score:pct,date:new Date().toISOString()});hist=hist.slice(-50);localStorage.setItem(key,JSON.stringify(hist));const strong=hist.filter(x=>x.score>=90).length;advice+=` Meta interna antes de pagar: ${Math.min(strong,11)}/11 intentos Difícil con 90% o más.`;}
  if(mode.value==='stack')advice=`Resultado del stack ${currentCert.name} · nivel ${dif.value}. Use las áreas con errores como guía de estudio.`;
- el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
+ el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;showEl(el('certificateEmailPanel'),passed);el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function retry(){examLocked=false;clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();}
 function certificate(){
@@ -318,3 +318,30 @@ function certificate(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
+
+
+function initCertificateEmail(){
+ const opt=el('emailCertificateOptIn'),fields=el('certificateEmailFields'),email=el('certificateEmail'),btn=el('requestCertificateEmail'),status=el('certificateEmailStatus');
+ if(!opt||!fields||!email||!btn)return;
+ try{const u=JSON.parse(localStorage.getItem('academyUser')||'null');if(u?.email)email.value=u.email}catch{}
+ opt.addEventListener('change',()=>{fields.hidden=!opt.checked});
+ btn.addEventListener('click',async()=>{
+   const address=email.value.trim();
+   if(!/^\S+@\S+\.\S+$/.test(address)){status.textContent='Digite un correo válido.';return}
+   const name=el('candidateName').value.trim(),score=responses.filter((a,i)=>a===qs[i].c).length,pct=Math.round(score/40*100);
+   const activity=mode.value==='interview'?role.value:mode.value==='stack'?(window.STACK_QA_BANKS?.[simStack.value]?.name||simStack.value):(currentCert?.name||simCert.value);
+   const request={email:address,name,activity,score,pct,requestedAt:new Date().toISOString()};
+   status.textContent='Preparando solicitud…';
+   try{
+     const r=await fetch('/api/certificates/email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});
+     if(!r.ok)throw new Error('backend unavailable');
+     status.textContent='Solicitud enviada. Revise su correo.';
+   }catch{
+     let q=[];try{q=JSON.parse(localStorage.getItem('certificateEmailQueue')||'[]')}catch{}
+     q.push(request);localStorage.setItem('certificateEmailQueue',JSON.stringify(q));
+     status.textContent='Solicitud guardada en este navegador. Para envío real debe conectarse el backend de correo.';
+   }
+ });
+}
+
+initCertificateEmail();

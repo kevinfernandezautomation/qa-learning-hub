@@ -165,3 +165,53 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - `Fundamentos de QA y preparación CTFL` y `Preparación AICS ASTFC` fueron retirados de Academia para evitar duplicidad con la página de Certificaciones.
 - Pago restaura también preparaciones de certificaciones externas agregadas desde Certificaciones.
 - JMeter + k6 amplía su ruta con introducción, comparación, requisitos, instalación, configuración y primeros flujos prácticos de cada herramienta.
+
+## v28
+- Empleo incorpora explicación de pruebas psicométricas, objetivo de RR. HH., interpretación y advertencia de uso responsable.
+- Nueva práctica psicométrica educativa de QA con selección previa de sector: software, eléctrico, médico y bancario.
+- Nueva prueba orientativa de inglés MCER/CEFR A1–C2 con 30 preguntas; no sustituye una certificación oficial.
+- Nuevos Learning Paths: QA para Robótica y QA para Software de Aviación.
+- QA Robótica incluye ROS 2, Gazebo, sensores, simulación, SIL/HIL, safety, CI y observabilidad.
+- QA Aviación incluye software assurance, FAA AC 20-115D/DO-178C en contexto, trazabilidad, verificación, cobertura, configuración e integración/HIL.
+- Carpeta `microlearning-plans/` contiene un TXT por cada ruta, competencia y stack mostrado en Academia con cantidad y subtemas de videos de máximo 2 minutos.
+
+## v29
+- Empleo explica presencial, híbrido y remoto.
+- Nueva prueba psicométrica general y se mantiene la práctica psicométrica contextualizada a QA.
+- Se separan examen general MCER/CEFR y examen técnico de inglés para QA.
+- Nuevos Learning Paths: QA Auditor de Software, QA para Software de Contenido/Marketing Digital y QA para Pasarelas de Pago.
+- `GUIA_INTEGRACION_PAGO_BANCO.txt` ampliada paso a paso con responsables, requisitos y glosario.
+- Nueva `GUIA_FACTURACION_ELECTRONICA_CR.txt` basada en comprobantes electrónicos 4.4.
+- El checkout demo genera una factura demostrativa imprimible únicamente después del pago visual; no se presenta como comprobante tributario oficial.
+- En producción, la factura oficial debe generarse server-side como XML, firmarse y procesarse con Hacienda.
+- Al iniciar sesión, el header muestra el nombre del usuario y `Cerrar sesión`.
+
+## v30
+- Integrado el documento DISC suministrado como contenido educativo para empleabilidad; se parafrasean estilos/perfiles sin convertirlos en diagnóstico.
+- La sesión autenticada expira tras 30 minutos de inactividad; actividad de teclado/pointer/touch renueva el timestamp.
+- Simuladores aprobados permiten solicitar certificado por correo. El frontend intenta `POST /api/certificates/email` y mantiene fallback local hasta conectar backend.
+- Prompts IA amplía QA-AI-Agente con pasos, herramientas, tiempos estimados, seguridad y Human-in-the-Loop.
+- Nueva `GUIA_IMPUESTOS_AMERICA_EUROPA_2026.txt` con países soberanos de América y Europa, tasas indirectas orientativas y checklist legal/financiero.
+- Empleo incorpora un curso de preguntas frecuentes de entrevista laboral en inglés.
+
+## v31
+- Nueva sección de Academia `Medical Device / SaMD QA Lab`.
+- Laboratorio interactivo basado en un producto médico ficticio sin uso clínico real.
+- 8 misiones de defectos: autorización, timestamps, estado, audit log, input validation, traceability, configuration y problem resolution.
+- Módulo V&V con 6 artefactos simulados.
+- Matriz de trazabilidad Requirement → Risk → Control → Test → Evidence.
+- Release readiness checklist + decisión GO/NO-GO.
+- Exportación de Evidence Pack JSON, resumen TXT y Traceability Matrix CSV.
+- Se mantiene la ruta teórica existente de Medical Device/SaMD y se enlaza al laboratorio.
+- Nueva `GUIA_PORTAFOLIO_MEDICAL_DEVICE_SAMD_QA.txt` para describir correctamente la práctica sin presentarla como experiencia profesional regulada.
+
+## v32
+- Bug Lab convertido a formulario de una pregunta por pantalla con Atrás/Siguiente.
+- Al responder Bug Lab, se marca en verde la correcta y en rojo la opción seleccionada si fue incorrecta.
+- Nueva página `medreview-trainer.html`: producto médico ficticio con errores intencionales para explorar antes del Bug Lab.
+- V&V convertido a práctica guiada de objetivo → fuente → setup → procedimiento → evidencia → conclusión.
+- Prueba general de inglés reescrita para eliminar referencias a QA; la prueba QA mantiene contenido técnico.
+- Resultado escrito muestra preguntas falladas, explicación en español y consejos por área.
+- Nueva `ingles-listening.html` con 30 audios originales A1–C2 usando Speech Synthesis del navegador.
+- Nuevo Learning Path `QA + Mejora de Procesos` con DMAIC, PDCA, RCA, Pareto, métricas y control.
+- Nueva carpeta `microlearning-scripts/` con un TXT de guion + recomendaciones visuales por cada Learning Path, competencia y stack.

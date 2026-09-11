@@ -83,6 +83,35 @@
 </div>
 </details>
 
+
+<details class="agent-details" open>
+<summary>Cómo poner en marcha el agente: pasos, herramientas y tiempo estimado</summary>
+<div class="agent-launch-grid">
+<article><b>1.</b><h4>Revisar el repositorio</h4><p>Lea README, estructura de carpetas, archivo de configuración, dependencias y ejemplos. Confirme que la licencia permita el uso previsto y que trabajará sobre un entorno autorizado.</p><p><strong>Tiempo estimado:</strong> 15–30 min.</p></article>
+<article><b>2.</b><h4>Preparar el entorno</h4><p>Instale Git, un JDK compatible con el proyecto, Maven y un IDE. El contenido del proyecto integra Java, Playwright para Java, TestNG, Maven, Docker/JAR y una API de IA. Docker es opcional si ejecutará directamente con Java.</p><p><strong>Tiempo:</strong> 20–60 min si Java/Maven ya están disponibles; más si parte desde cero.</p></article>
+<article><b>3.</b><h4>Configurar IA y secretos</h4><p>Obtenga la API key del proveedor configurado por el proyecto —el contenido compartido menciona integración por API/OpenRouter— y guárdela en variables de ambiente o archivo local excluido de Git. Nunca publique llaves en GitHub.</p><p><strong>Tiempo:</strong> 10–20 min.</p></article>
+<article><b>4.</b><h4>Instalar y compilar</h4><p>Ejecute la instalación/compilación Maven indicada por el repositorio y deje que Playwright prepare los componentes necesarios del navegador. Si usa Docker, construya la imagen y pruebe primero localmente.</p><p><strong>Tiempo:</strong> 10–30 min, según descarga y equipo.</p></article>
+<article><b>5.</b><h4>Elegir aplicación de prueba</h4><p>Use una web propia, sandbox o ambiente de QA. Evite producción y no apunte el agente a sitios sin autorización. Prepare cuentas y datos de prueba con el mínimo privilegio.</p><p><strong>Tiempo:</strong> 10–30 min.</p></article>
+<article><b>6.</b><h4>Primera exploración controlada</h4><p>Empiece con pocas páginas. Revise elementos detectados, escenarios propuestos, secuencias, locators y casos negativos/límite. No ejecute código generado sin revisarlo.</p><p><strong>Tiempo:</strong> 20–45 min.</p></article>
+<article><b>7.</b><h4>Ejecutar y validar evidencia</h4><p>Compare PASS/FAIL con screenshots, logs y comportamiento real. Un LLM puede interpretar mal una pantalla o proponer un selector frágil; el resultado debe confirmarse antes de reportar un bug.</p><p><strong>Tiempo:</strong> 20–60 min para un flujo pequeño.</p></article>
+<article><b>8.</b><h4>Endurecer antes de CI/CD</h4><p>Separe secretos, limite dominios, ejecute en contenedor/VM, agregue retries controlados, reporting, versionado de prompts, revisión humana, límites de costo/tokens y políticas sobre datos.</p><p><strong>Tiempo:</strong> desde varias horas a varios días según el nivel de producción.</p></article>
+</div>
+<div class="notice"><strong>Estimación práctica:</strong> una persona con Java/Maven/Playwright puede llegar a una primera ejecución controlada en aproximadamente 1–3 horas. Llevar un agente a uso estable de equipo requiere más tiempo de hardening, pruebas, seguridad y CI/CD. Es una estimación, no una garantía.</div>
+</details>
+<details class="agent-details">
+<summary>Herramientas y conocimientos recomendados</summary>
+<ul>
+<li><b>Java + Maven:</b> compilar, dependencias y estructura del proyecto.</li>
+<li><b>Playwright + TestNG:</b> automatización, assertions, locators y ejecución.</li>
+<li><b>Git/GitHub:</b> versionado y revisión del código generado.</li>
+<li><b>Proveedor LLM/OpenRouter:</b> razonamiento conversacional; controlar claves, modelo, tokens y costo.</li>
+<li><b>Docker:</b> aislamiento y reproducibilidad.</li>
+<li><b>HTML/DOM/HTTP:</b> entender formularios, navegación, red y errores.</li>
+<li><b>Seguridad básica:</b> usar únicamente objetivos autorizados; la comprobación XSS inicial no sustituye una auditoría de seguridad.</li>
+<li><b>Human-in-the-Loop:</b> aprobar código y hallazgos antes de convertirlos en evidencia de calidad.</li>
+</ul>
+</details>
+
 <details class="agent-details">
 <summary>Roadmap del proyecto</summary>
 <div class="roadmap-chips">

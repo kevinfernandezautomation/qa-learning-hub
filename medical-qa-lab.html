@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Laboratorio educativo de QA para Medical Device y SaMD: IEC 62304, ISO 13485, V&V, trazabilidad, defectos y release readiness.">
+<title>Medical Device / SaMD QA Lab | QA Learning Hub</title>
+<link rel="canonical" href="https://kevinfernandezautomation.github.io/qa-learning-hub/medical-qa-lab.html">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="academy">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="topbar">
+<a class="brand" href="index.html"><span class="brand-mark">✓</span><span><strong>QA Learning Hub</strong><small>Medical Software · V&amp;V</small></span></a>
+<button id="menuToggle" class="icon-btn menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+<nav id="mainNav" class="main-nav">
+<a href="index.html">Inicio</a><a href="academia.html">Academia</a><a href="certificaciones.html">Certificaciones</a><a href="simuladores.html">Simuladores</a><a href="empleos.html">Empleo</a>
+</nav>
+<div class="header-actions">
+<select id="language" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="zh">中文</option><option value="hi">हिन्दी</option></select>
+<button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">◐</button>
+<a class="btn small" href="login.html">Iniciar sesión</a>
+</div>
+</header>
+
+<main id="main">
+<section class="page-hero shell medical-hero">
+  <span class="eyebrow">Laboratorio práctico · Portafolio</span>
+  <h1>Medical Device / SaMD QA Lab</h1>
+  <p>Simule actividades de Software Quality Engineering sobre un producto médico ficticio: ciclo de vida, requisitos, riesgos, V&amp;V, trazabilidad, defectos y release readiness.</p>
+  <div class="hero-actions"><a class="btn ghost" href="academia.html">← Volver a Academia</a><a class="btn primary" href="#lab-start">Comenzar laboratorio</a><a class="btn secondary" href="medreview-trainer.html">Abrir producto ficticio ↗</a></div>
+</section>
+
+<section class="shell notice">
+<strong>Alcance:</strong> todo el contenido, datos y producto son ficticios. No es un dispositivo médico real, no realiza diagnóstico ni tratamiento y no sustituye experiencia profesional en una empresa regulada. La meta es practicar artefactos y razonamiento de QA de forma demostrable.
+</section>
+
+<section class="shell lab-foundations">
+  <div class="section-heading"><div><span class="eyebrow">Fundamentos</span><h2>Qué está practicando</h2><p>El laboratorio usa conceptos públicos y parafraseados; no reproduce el texto protegido de IEC 62304 o ISO 13485.</p></div></div>
+  <div class="learn-path-grid">
+    <article class="learn-path-card"><h3>IEC 62304</h3><p>Marco de procesos de ciclo de vida para software de medical devices. La página oficial de IEC indica que aplica cuando el software es el propio dispositivo o una parte integrada de uno, y cubre desarrollo y mantenimiento.</p><ul><li>Planificación y requisitos</li><li>Arquitectura e implementación</li><li>Integración y system testing</li><li>Maintenance</li><li>Risk management</li><li>Configuration/problem resolution</li></ul><a class="btn ghost small" href="https://webstore.iec.ch/en/publication/6792" target="_blank" rel="noopener">IEC 62304 oficial ↗</a></article>
+    <article class="learn-path-card"><h3>ISO 13485</h3><p>Sistema de gestión de calidad específico para organizaciones relacionadas con medical devices. ISO destaca requisitos regulatorios, riesgo, procesos controlados y consistencia del diseño/desarrollo y producción.</p><ul><li>QMS y control documental</li><li>Responsabilidades y registros</li><li>Design &amp; development</li><li>Control de cambios</li><li>No conformidades / CAPA</li><li>Evidencia auditable</li></ul><a class="btn ghost small" href="https://www.iso.org/standard/59752.html" target="_blank" rel="noopener">ISO 13485 oficial ↗</a></article>
+    <article class="learn-path-card"><h3>SaMD</h3><p>FDA describe SaMD como software destinado a realizar una función de dispositivo médico sin formar parte de un dispositivo médico de hardware. El intended use es clave para determinar el carácter médico del software.</p><ul><li>Intended use</li><li>User needs</li><li>Device software function</li><li>Riesgo y evidencia</li><li>Actualizaciones controladas</li></ul><a class="btn ghost small" href="https://www.fda.gov/medical-devices/classify-your-medical-device/how-determine-if-your-product-medical-device" target="_blank" rel="noopener">FDA · Device determination ↗</a></article>
+  </div>
+</section>
+
+<section id="lab-start" class="shell fictional-device">
+  <div class="section-heading"><div><span class="eyebrow">Caso de estudio ficticio</span><h2>MedReview Trainer — SaMD Sandbox</h2><p>Aplicación ficticia para que personal clínico autorizado revise registros sintéticos y marque si requieren revisión adicional. No emite diagnóstico ni recomendaciones clínicas.</p></div></div>
+  <div class="device-spec-grid">
+    <article><strong>Intended use de entrenamiento</strong><p>Demostrar cómo documentar y probar un flujo de revisión de información médica sintética con trazabilidad y controles de calidad.</p></article>
+    <article><strong>Usuarios</strong><p>Revisor clínico simulado, Quality Engineer y administrador del laboratorio.</p></article>
+    <article><strong>Arquitectura ficticia</strong><p>Web UI → API → SQL database → audit log → report export.</p></article>
+    <article><strong>Safety focus</strong><p>Estado correcto del registro, control de acceso, datos completos, timestamps, auditabilidad y release configuration.</p></article>
+  </div>
+</section>
+
+<section class="shell lab-nav" aria-label="Módulos del laboratorio">
+<button class="btn primary lab-tab active" data-target="mission-panel" type="button">1. Bug Lab</button>
+<button class="btn ghost lab-tab" data-target="vv-panel" type="button">2. V&amp;V</button>
+<button class="btn ghost lab-tab" data-target="trace-panel" type="button">3. Trazabilidad</button>
+<button class="btn ghost lab-tab" data-target="release-panel" type="button">4. Release Gate</button>
+<button class="btn ghost lab-tab" data-target="portfolio-panel" type="button">5. Portafolio</button>
+</section>
+
+<section id="mission-panel" class="shell lab-panel">
+  <div class="section-heading"><div><span class="eyebrow">Bug Academy médico</span><h2>Encuentre 8 problemas en el producto ficticio</h2><p>Use el producto <strong>MedReview Trainer</strong> como referencia y responda una misión a la vez. Al contestar, el sistema marca en verde la opción correcta y, si falla, también marca en rojo la opción elegida.</p></div></div>
+  <div class="card-actions"><a class="btn secondary" href="medreview-trainer.html" target="_blank" rel="noopener">Ver producto ficticio</a></div>
+  <div class="lab-progress"><span id="missionProgress">0 / 8 completadas</span><div class="progress-track"><i id="missionProgressBar"></i></div></div>
+  <div id="missionForm" class="mission-form"><div class="quiz-meta"><span id="missionNumber"></span><span id="missionArea" class="badge"></span></div><article class="mission-card mission-card-single"><h3 id="missionTitle"></h3><p id="missionScenario"></p><div id="missionOptions" class="mission-options"></div><div id="missionFeedback" class="mission-feedback" aria-live="polite"></div></article><div class="quiz-actions"><button id="missionPrev" class="btn ghost" type="button">← Atrás</button><button id="missionNext" class="btn primary" type="button">Siguiente →</button></div></div>
+</section>
+
+<section id="vv-panel" class="shell lab-panel" hidden>
+  <div class="section-heading"><div><span class="eyebrow">Verification &amp; Validation</span><h2>Construya evidencia V&amp;V — práctica guiada</h2><p>Complete cada artefacto siguiendo una secuencia: objetivo → fuente/requisito → procedimiento → evidencia → conclusión.</p></div></div>
+  <div class="guided-steps"><article><b>1</b><h3>Defina qué quiere demostrar</h3><p>Escriba el objetivo y qué requisito, riesgo o necesidad cubre.</p></article><article><b>2</b><h3>Prepare condiciones y datos</h3><p>Identifique build, ambiente, datos sintéticos, roles y prerequisitos.</p></article><article><b>3</b><h3>Ejecute y capture evidencia</h3><p>Registre pasos, esperado, observado y archivos/logs relevantes.</p></article><article><b>4</b><h3>Concluya</h3><p>Declare pass/fail, desviación, riesgo pendiente y acción recomendada.</p></article></div>
+  <div id="vvArtifacts" class="vv-grid"></div><div class="notice"><strong>Práctica de portafolio:</strong> no marque un artefacto como completado hasta haber llenado objetivo, evidencia y conclusión.</div>
+</section>
+
+<section id="trace-panel" class="shell lab-panel" hidden>
+  <div class="section-heading"><div><span class="eyebrow">Traceability Matrix</span><h2>Requisito → Riesgo → Control → Prueba → Evidencia</h2><p>Una matriz útil permite seguir relaciones en ambas direcciones y detectar rápidamente huecos.</p></div></div>
+  <div class="table-wrap"><table class="trace-table"><thead><tr><th>ID</th><th>Requirement</th><th>Risk / control</th><th>Test</th><th>Evidence</th><th>Estado</th></tr></thead><tbody id="traceBody"></tbody></table></div>
+  <div class="card-actions"><button id="downloadTraceCsv" class="btn secondary" type="button">Descargar matriz CSV</button></div>
+</section>
+
+<section id="release-panel" class="shell lab-panel" hidden>
+  <div class="section-heading"><div><span class="eyebrow">Release Readiness</span><h2>Decida si el build está listo</h2><p>Complete el checklist y justifique la decisión usando evidencia, no solo porcentaje de pruebas aprobadas.</p></div></div>
+  <div id="releaseChecklist" class="release-checklist"></div>
+  <label>Decisión técnica
+    <select id="releaseDecision"><option value="">Seleccione…</option><option value="NO-GO">NO-GO · falta evidencia o existen riesgos abiertos</option><option value="CONDITIONAL">GO condicionado · requiere acciones documentadas</option><option value="GO">GO · evidencia suficiente para el ejercicio</option></select>
+  </label>
+  <label>Justificación
+    <textarea id="releaseJustification" rows="5" placeholder="Explique qué evidencia revisó, riesgos pendientes y por qué recomienda GO/NO-GO…"></textarea>
+  </label>
+</section>
+
+<section id="portfolio-panel" class="shell lab-panel" hidden>
+  <div class="section-heading"><div><span class="eyebrow">Portfolio Evidence Pack</span><h2>Convierta la práctica en evidencia demostrable</h2><p>Exporte un resumen de actividades realizadas. El archivo identifica claramente que es un laboratorio simulado.</p></div></div>
+  <div class="portfolio-summary">
+    <article><strong id="portfolioMissions">0/8</strong><span>misiones</span></article>
+    <article><strong id="portfolioVV">0/6</strong><span>artefactos V&amp;V</span></article>
+    <article><strong id="portfolioTrace">0/6</strong><span>filas trazables</span></article>
+    <article><strong id="portfolioRelease">Pendiente</strong><span>release decision</span></article>
+  </div>
+  <div class="card-actions">
+    <button id="downloadEvidenceJson" class="btn primary" type="button">Descargar Evidence Pack JSON</button>
+    <button id="downloadEvidenceTxt" class="btn secondary" type="button">Descargar resumen TXT</button>
+  </div>
+  <div class="notice"><strong>Cómo describirlo en CV/LinkedIn:</strong> “Proyecto práctico simulado de QA para Medical Device/SaMD: requisitos, V&amp;V, defect management, traceability matrix y release readiness basado en conceptos de IEC 62304 e ISO 13485.” No afirme certificación ni experiencia profesional regulada si no la tiene.</div>
+</section>
+
+<section class="shell source-note">
+<strong>Fuentes oficiales:</strong>
+<a href="https://webstore.iec.ch/en/publication/6792" target="_blank" rel="noopener">IEC 62304 ↗</a> ·
+<a href="https://www.iso.org/standard/59752.html" target="_blank" rel="noopener">ISO 13485 ↗</a> ·
+<a href="https://www.fda.gov/medical-devices/classify-your-medical-device/how-determine-if-your-product-medical-device" target="_blank" rel="noopener">FDA · Device/SaMD ↗</a>
+</section>
+</main>
+
+<footer class="footer"><strong>QA Learning Hub</strong></footer>
+<script src="translations-extra.js"></script>
+<script src="common.js"></script>
+<script src="medical-qa-lab.js"></script>
+</body>
+</html>

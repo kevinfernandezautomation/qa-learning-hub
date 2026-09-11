@@ -133,3 +133,53 @@ function updateGlobalCart(){
  updateGlobalCart();
 })();
 window.addEventListener('storage',updateGlobalCart);
+
+
+function currentAcademyUser(){try{return JSON.parse(localStorage.getItem('academyUser')||'null')}catch{return null}}
+function renderUserSession(){
+ const actions=document.querySelector('.header-actions');if(!actions)return;
+ document.getElementById('userSessionBox')?.remove();
+ const login=[...actions.querySelectorAll('a')].find(x=>/login\.html/.test(x.getAttribute('href')||''));
+ const user=currentAcademyUser();
+ if(login)login.hidden=!!user;
+ if(!user)return;
+ const box=document.createElement('div');box.id='userSessionBox';box.className='user-session';
+ const first=(user.name||user.email||'Usuario').split(/\s+/)[0];
+ box.innerHTML=`<span class="user-session-name" title="${escapeHtml(user.email||'')}">👤 ${escapeHtml(first)}</span><button id="logoutUser" class="btn ghost small" type="button">Cerrar sesión</button>`;
+ actions.appendChild(box);
+ box.querySelector('#logoutUser').addEventListener('click',()=>{localStorage.removeItem('academyUser');localStorage.removeItem('academySessionLastActivity');renderUserSession();location.href='index.html';});
+}
+window.renderUserSession=renderUserSession;
+renderUserSession();
+window.addEventListener('storage',renderUserSession);
+
+
+const SESSION_IDLE_MS=30*60*1000;
+const SESSION_TOUCH_THROTTLE_MS=30000;
+let __lastSessionTouch=0,__sessionTimer=null;
+function sessionLastActivity(){return Number(localStorage.getItem('academySessionLastActivity')||0)}
+function touchAcademySession(force=false){
+ const user=currentAcademyUser?.();if(!user)return;
+ const now=Date.now();if(!force && now-__lastSessionTouch<SESSION_TOUCH_THROTTLE_MS)return;
+ __lastSessionTouch=now;localStorage.setItem('academySessionLastActivity',String(now));
+}
+function expireAcademySession(reason='inactive'){
+ if(!currentAcademyUser?.())return;
+ localStorage.removeItem('academyUser');localStorage.removeItem('academySessionLastActivity');
+ renderUserSession?.();
+ let box=document.getElementById('sessionExpiredNotice');
+ if(!box){box=document.createElement('div');box.id='sessionExpiredNotice';box.className='session-expired-notice';document.body.appendChild(box)}
+ box.innerHTML=`<strong>Sesión finalizada</strong><span>${reason==='inactive'?'Se cerró después de 30 minutos de inactividad.':'La sesión ya no está disponible.'}</span><a class="btn small" href="login.html?expired=1">Iniciar sesión</a>`;
+ box.hidden=false;
+}
+function checkAcademySession(){
+ const user=currentAcademyUser?.();if(!user)return;
+ const last=sessionLastActivity();
+ if(!last){touchAcademySession(true);return}
+ if(Date.now()-last>=SESSION_IDLE_MS)expireAcademySession('inactive');
+}
+['pointerdown','keydown','touchstart'].forEach(evt=>document.addEventListener(evt,()=>touchAcademySession(),{passive:true}));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){checkAcademySession();touchAcademySession()}});
+window.addEventListener('storage',e=>{if(e.key==='academyUser'||e.key==='academySessionLastActivity'){checkAcademySession();renderUserSession?.()}});
+checkAcademySession();__sessionTimer=setInterval(checkAcademySession,60000);
+window.touchAcademySession=touchAcademySession;

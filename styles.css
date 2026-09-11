@@ -324,3 +324,60 @@
 #englishModules .learn-path-card{display:flex;flex-direction:column}
 #englishModules .card-actions{margin-top:auto;padding-top:14px}
 body[data-page="academy"] main{padding-bottom:28px}
+
+/* v28 */
+.assessment-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.assessment-card,.result-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.assessment-card h4{margin-bottom:6px}.assessment-card p{color:var(--muted)}
+.assessment-config{display:grid;gap:14px;padding-bottom:40px}.assessment-config label{max-width:520px}
+.assessment-quiz{padding-bottom:48px}.quiz-meta,.quiz-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:14px 0}
+.quiz-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.answers{display:grid;gap:10px;margin-top:18px}.answer-btn{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:12px;padding:14px;cursor:pointer}.answer-btn:hover,.answer-btn.selected{border-color:var(--primary);background:var(--surface2)}
+.assessment-result{padding-bottom:48px}.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.score-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--surface2);display:grid;gap:8px}.score-card span{font-size:1.25rem;font-weight:900}.mini-bar{height:7px;background:var(--line);border-radius:999px;overflow:hidden}.mini-bar i{display:block;height:100%;background:var(--primary)}
+.source-note{margin-top:24px;margin-bottom:40px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}
+.source-note a{color:var(--primary);text-decoration:underline}
+@media(max-width:760px){.assessment-grid{grid-template-columns:1fr}.score-grid{grid-template-columns:1fr 1fr}.quiz-actions{align-items:stretch}.quiz-actions .btn{flex:1}}
+
+/* v29 */
+.work-modes{padding-top:10px}
+.user-session{display:flex;align-items:center;gap:8px}.user-session-name{font-weight:800;white-space:nowrap;font-size:.88rem}
+.billing-fields{border:1px solid var(--line);border-radius:14px;margin:14px 0;padding:14px}.billing-fields legend{font-weight:850;padding:0 6px}
+.invoice-action{margin-top:16px;padding:16px;border:1px solid var(--line);background:var(--surface2);border-radius:14px}
+.invoice-sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;margin-bottom:54px}
+.invoice-head{display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:18px}.invoice-customer{padding:18px 0}.invoice-line,.invoice-totals>div{display:flex;justify-content:space-between;gap:18px;padding:10px 0;border-bottom:1px solid var(--line)}.invoice-totals{margin-left:auto;max-width:420px;margin-top:18px}.invoice-totals .total{font-size:1.15rem}
+@media(max-width:820px){.user-session-name{max-width:110px;overflow:hidden;text-overflow:ellipsis}.invoice-head{flex-direction:column}}
+@media print{.topbar,.footer,.invoice-sheet .card-actions,.back-to-top{display:none!important}.invoice-sheet{border:0;box-shadow:none}.page-hero{padding:10px 0}}
+
+/* v30 */
+.session-expired-notice{position:fixed;right:20px;bottom:22px;z-index:9999;max-width:380px;display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.session-expired-notice strong,.session-expired-notice span{grid-column:1}
+.certificate-email-panel{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}
+.check-row{display:flex!important;align-items:center;gap:10px}.check-row input{width:auto!important}
+.muted-note{display:block;color:var(--muted);margin-top:8px}
+.agent-launch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.agent-launch-grid article{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}
+.disc-employment,.english-interview-prep{padding-top:10px}
+@media(max-width:760px){.agent-launch-grid{grid-template-columns:1fr}.session-expired-notice{left:12px;right:12px;bottom:12px}}
+
+/* v31 — Medical Device / SaMD QA Lab */
+.medical-lab-feature{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:24px;align-items:center;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,var(--surface),var(--surface2));box-shadow:var(--shadow);margin-bottom:32px}
+.medical-lab-feature-copy p{color:var(--muted);line-height:1.6}.medical-lab-feature-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.medical-lab-feature-stats div{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;gap:4px}.medical-lab-feature-stats strong{font-size:1.65rem}.medical-lab-feature-stats span{color:var(--muted);font-size:.82rem}
+.device-spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.device-spec-grid article{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.device-spec-grid p{color:var(--muted)}
+.lab-nav{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:76px;z-index:20;background:var(--bg);padding-top:14px;padding-bottom:14px}
+.lab-panel{scroll-margin-top:150px;padding-bottom:42px}.lab-progress{display:grid;gap:8px;margin:16px 0}.progress-track{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-track i{display:block;height:100%;width:0;background:var(--primary);transition:width .25s}
+.mission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.mission-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px}.mission-card.done{outline:2px solid color-mix(in srgb,var(--primary) 55%,transparent)}.mission-head,.vv-card-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.mission-card p,.vv-card p{color:var(--muted)}.mission-options{display:grid;gap:8px;margin-top:14px}.mission-feedback{min-height:48px;margin-top:12px;font-size:.9rem;line-height:1.5}
+.vv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.vv-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px}.vv-card textarea{width:100%;margin-top:10px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}.trace-table{width:100%;border-collapse:collapse;min-width:900px}.trace-table th,.trace-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}.trace-table th{background:var(--surface2)}.trace-ok{font-weight:850;color:var(--primary)}
+.release-checklist{display:grid;gap:10px;margin:16px 0}.release-item{display:flex!important;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}.release-item input{width:auto!important;margin-top:3px}
+.portfolio-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.portfolio-summary article{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;gap:4px}.portfolio-summary strong{font-size:1.4rem}.portfolio-summary span{color:var(--muted)}
+@media(max-width:900px){.medical-lab-feature,.device-spec-grid{grid-template-columns:1fr 1fr}.mission-grid,.vv-grid{grid-template-columns:1fr}.portfolio-summary{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.medical-lab-feature,.device-spec-grid,.medical-lab-feature-stats,.portfolio-summary{grid-template-columns:1fr}.lab-nav{position:static}.lab-nav .btn{flex:1 1 46%}}
+
+/* v32 */
+.answer-btn.answer-correct{border-color:#2e8b57!important;background:color-mix(in srgb,#2e8b57 14%,var(--surface))!important}
+.answer-btn.answer-wrong{border-color:#b33a3a!important;background:color-mix(in srgb,#b33a3a 13%,var(--surface))!important}
+.answer-btn:disabled{opacity:1;cursor:default}.mission-card-single{max-width:900px;margin:0 auto}.mission-form{max-width:980px;margin:auto}
+.guided-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.guided-steps article{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}.guided-steps b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff}.guided-vv-form{display:grid;gap:12px}.guided-vv-form label{display:grid;gap:6px}.guided-vv-form span{font-weight:750}.guided-vv-form input,.guided-vv-form textarea{width:100%}
+.medreview-app{display:grid;grid-template-columns:220px 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface);margin-bottom:44px}.med-sidebar{background:var(--surface2);padding:20px;display:flex;flex-direction:column;gap:8px}.med-nav{border:0;background:transparent;color:var(--text);padding:10px;text-align:left;border-radius:10px}.med-nav.active{background:var(--surface);font-weight:800}.med-user{margin-top:auto;display:grid;gap:2px;color:var(--muted)}.med-workspace{padding:22px;display:grid;gap:18px}.med-toolbar,.med-record-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.med-alert,.med-note{padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface2)}.med-table-wrap{overflow:auto}.med-table{width:100%;border-collapse:collapse}.med-table th,.med-table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}.med-record,.med-create-record,.med-audit,.med-report-preview,.med-defect{padding:18px;border:1px solid var(--line);border-radius:14px}.med-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.med-grid article{padding:12px;background:var(--surface2);border-radius:10px;display:grid;gap:4px}
+.mistake-review,.reading-advice{display:grid;gap:12px;margin:18px 0}.review-mistake,.reading-advice article{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}.review-mistake p{margin:.45rem 0}.listening-player{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+@media(max-width:900px){.guided-steps{grid-template-columns:1fr 1fr}.medreview-app{grid-template-columns:1fr}.med-sidebar{display:none}.med-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.guided-steps,.med-grid{grid-template-columns:1fr}}

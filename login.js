@@ -85,13 +85,13 @@ $('#registerForm').onsubmit=async e=>{
  if(!strongPassword(pw)){showStatus('La contraseña debe tener mínimo 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');return}
  if(pw!==cf){showStatus('Las contraseñas no coinciden.');updateRegisterButton();return}
  if(!registrationReady()){showStatus('Complete nombre, correo y contraseñas coincidentes antes de registrarse.');return}
- const list=accounts();const a={name,email,passwordHash:await hash(pw)};list.push(a);localStorage.setItem('academyAccounts',JSON.stringify(list));localStorage.setItem('academyUser',JSON.stringify({name,email}));
- showStatus('Cuenta creada. Bienvenido a la Academia.');updateRegisterButton();
+ const list=accounts();const a={name,email,passwordHash:await hash(pw)};list.push(a);localStorage.setItem('academyAccounts',JSON.stringify(list));localStorage.setItem('academyUser',JSON.stringify({name,email}));localStorage.setItem('academySessionLastActivity',String(Date.now()));
+ showStatus('Cuenta creada. Bienvenido a la Academia.');window.renderUserSession?.();updateRegisterButton();
 };
 $('#loginForm').onsubmit=async e=>{
  e.preventDefault();const email=$('#loginEmail').value.trim().toLowerCase(),pw=$('#loginPassword').value,a=findAccount(email);
  if(!a||a.passwordHash!==await hash(pw)){showStatus('Correo o contraseña incorrectos.');return}
- localStorage.setItem('academyUser',JSON.stringify({name:a.name,email:a.email}));showStatus(`Bienvenido, ${a.name}.`);$('#loginPassword').value='';
+ localStorage.setItem('academyUser',JSON.stringify({name:a.name,email:a.email}));localStorage.setItem('academySessionLastActivity',String(Date.now()));window.renderUserSession?.();showStatus(`Bienvenido, ${a.name}.`);$('#loginPassword').value='';
 };
 $('#recoverForm').onsubmit=async e=>{
  e.preventDefault();const email=$('#recoverEmail').value.trim().toLowerCase(),pw=$('#recoverPassword').value,a=findAccount(email);
