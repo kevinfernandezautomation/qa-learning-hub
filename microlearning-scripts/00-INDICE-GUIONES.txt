@@ -1,0 +1,30 @@
+QA LEARNING HUB — GUIONES DE MICROVIDEOS
+Duración máxima por video: 2:00 minutos
+Cada TXT contiene guion narrado y recomendaciones visuales.
+
+- AcademyBugs – laboratorio de detección y reporte de defectos: 14 videos · academybugs-practice-academybugs-laboratorio-de-deteccion-y-reporte-de-defectos-GUIONES.txt
+- uTest Academy – práctica de testing y comunidad: 14 videos · utest-academy-utest-academy-practica-de-testing-y-comunidad-GUIONES.txt
+- Virtuoso QA – Training Library y certificaciones: 18 videos · virtuoso-qa-virtuoso-qa-training-library-y-certificaciones-GUIONES.txt
+- QA con imágenes e IA: 12 videos · visual-ai-qa-con-imagenes-e-ia-GUIONES.txt
+- QA de videojuegos: 12 videos · game-qa-qa-de-videojuegos-GUIONES.txt
+- English for QA: 12 videos · english-qa-english-for-qa-GUIONES.txt
+- QA para Robótica: 16 videos · robotics-qa-qa-para-robotica-GUIONES.txt
+- QA para Software de Aviación: 16 videos · aviation-qa-qa-para-software-de-aviacion-GUIONES.txt
+- QA Auditor de Software: 16 videos · software-auditor-qa-auditor-de-software-GUIONES.txt
+- QA para Software de Contenido y Marketing Digital: 16 videos · content-marketing-qa-qa-para-software-de-contenido-y-marketing-digital-GUIONES.txt
+- QA para Pasarelas de Pago: 16 videos · payment-gateway-qa-qa-para-pasarelas-de-pago-GUIONES.txt
+- QA + Mejora de Procesos: 20 videos · qa-process-improvement-qa-mejora-de-procesos-GUIONES.txt
+- Programación aplicada a QA: 8 videos · programming-qa-programacion-aplicada-a-qa-GUIONES.txt
+- Software Quality Engineering para dispositivos médicos y SaMD: 16 videos · medical-device-samd-software-quality-engineering-para-dispositivos-medicos-y-samd-GUIONES.txt
+- QA Manual Web & Mobile: 8 videos · manual-qa-manual-web-mobile-GUIONES.txt
+- Playwright / Cypress / Selenium: 8 videos · webauto-playwright-cypress-selenium-GUIONES.txt
+- API Quality Engineering: 8 videos · api-api-quality-engineering-GUIONES.txt
+- JMeter + k6 · Performance QA: 12 videos · performance-jmeter-k6-performance-qa-GUIONES.txt
+- SQL Server + PL/SQL: 8 videos · data-sql-server-pl-sql-GUIONES.txt
+- Azure DevOps / TFS + Git + CI/CD: 8 videos · devops-azure-devops-tfs-git-ci-cd-GUIONES.txt
+- Appium + BrowserStack: 8 videos · mobile-appium-browserstack-GUIONES.txt
+- WCAG + Accessibility Testing: 8 videos · accessibility-wcag-accessibility-testing-GUIONES.txt
+- Salesforce QA: 16 videos · salesforce-salesforce-qa-GUIONES.txt
+- AI-assisted QA & Agents: 8 videos · aiqa-ai-assisted-qa-agents-GUIONES.txt
+- Jira + Confluence para QA: 8 videos · jira-confluence-jira-confluence-para-qa-GUIONES.txt
+- Oracle APEX QA: 16 videos · oracle-apex-oracle-apex-qa-GUIONES.txt

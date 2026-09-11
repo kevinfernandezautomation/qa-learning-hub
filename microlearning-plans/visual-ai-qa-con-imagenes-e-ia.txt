@@ -1,0 +1,67 @@
+LEARNING PATH: QA con imágenes e IA
+Tipo: Learning Path
+Nivel: Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Evidencia visual de QA
+  Video 1. Concepto esencial: Evidencia visual de QA
+  Subtema: Definición, propósito y vocabulario mínimo de Evidencia visual de QA.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Evidencia visual de QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Capturas y baselines
+  Video 3. Concepto esencial: Capturas y baselines
+  Subtema: Definición, propósito y vocabulario mínimo de Capturas y baselines.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Capturas y baselines
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Detección de regresiones visuales
+  Video 5. Concepto esencial: Detección de regresiones visuales
+  Subtema: Definición, propósito y vocabulario mínimo de Detección de regresiones visuales.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Detección de regresiones visuales
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Análisis de imágenes con IA
+  Video 7. Concepto esencial: Análisis de imágenes con IA
+  Subtema: Definición, propósito y vocabulario mínimo de Análisis de imágenes con IA.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Análisis de imágenes con IA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Accesibilidad visual
+  Video 9. Concepto esencial: Accesibilidad visual
+  Subtema: Definición, propósito y vocabulario mínimo de Accesibilidad visual.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Accesibilidad visual
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Human-in-the-Loop
+  Video 11. Concepto esencial: Human-in-the-Loop
+  Subtema: Definición, propósito y vocabulario mínimo de Human-in-the-Loop.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Human-in-the-Loop
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

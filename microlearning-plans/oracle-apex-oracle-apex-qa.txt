@@ -1,0 +1,83 @@
+LEARNING PATH: Oracle APEX QA
+Tipo: Stack QA
+Nivel: Inicial–Intermedio
+Módulos: 8
+Videos recomendados: 16
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 28 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Qué es Oracle APEX
+  Video 1. Concepto esencial: Qué es Oracle APEX
+  Subtema: Definición, propósito y vocabulario mínimo de Qué es Oracle APEX.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Qué es Oracle APEX
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: App Builder y Page Designer
+  Video 3. Concepto esencial: App Builder y Page Designer
+  Subtema: Definición, propósito y vocabulario mínimo de App Builder y Page Designer.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: App Builder y Page Designer
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: SQL Workshop y datos
+  Video 5. Concepto esencial: SQL Workshop y datos
+  Subtema: Definición, propósito y vocabulario mínimo de SQL Workshop y datos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: SQL Workshop y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Autenticación y autorización
+  Video 7. Concepto esencial: Autenticación y autorización
+  Subtema: Definición, propósito y vocabulario mínimo de Autenticación y autorización.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Autenticación y autorización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Validaciones y procesos
+  Video 9. Concepto esencial: Validaciones y procesos
+  Subtema: Definición, propósito y vocabulario mínimo de Validaciones y procesos.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Validaciones y procesos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: UI, accesibilidad y responsive
+  Video 11. Concepto esencial: UI, accesibilidad y responsive
+  Subtema: Definición, propósito y vocabulario mínimo de UI, accesibilidad y responsive.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: UI, accesibilidad y responsive
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: APIs e integraciones
+  Video 13. Concepto esencial: APIs e integraciones
+  Subtema: Definición, propósito y vocabulario mínimo de APIs e integraciones.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: APIs e integraciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Regresión y despliegues
+  Video 15. Concepto esencial: Regresión y despliegues
+  Subtema: Definición, propósito y vocabulario mínimo de Regresión y despliegues.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: Regresión y despliegues
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

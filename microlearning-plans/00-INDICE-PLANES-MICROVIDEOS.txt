@@ -1,0 +1,25 @@
+QA LEARNING HUB — PLANES DE MICROVIDEOS
+Duración máxima recomendada por video: 2:00 minutos
+
+- AcademyBugs – laboratorio de detección y reporte de defectos: 14 videos · archivo academybugs-practice-academybugs-laboratorio-de-deteccion-y-reporte-de-defectos.txt
+- uTest Academy – práctica de testing y comunidad: 14 videos · archivo utest-academy-utest-academy-practica-de-testing-y-comunidad.txt
+- Virtuoso QA – Training Library y certificaciones: 18 videos · archivo virtuoso-qa-virtuoso-qa-training-library-y-certificaciones.txt
+- QA con imágenes e IA: 12 videos · archivo visual-ai-qa-con-imagenes-e-ia.txt
+- QA de videojuegos: 12 videos · archivo game-qa-qa-de-videojuegos.txt
+- English for QA: 12 videos · archivo english-qa-english-for-qa.txt
+- QA para Robótica: 24 videos · archivo robotics-qa-qa-para-robotica.txt
+- QA para Software de Aviación: 24 videos · archivo aviation-qa-qa-para-software-de-aviacion.txt
+- Programación aplicada a QA: 8 videos · archivo programming-qa-programacion-aplicada-a-qa.txt
+- Software Quality Engineering para dispositivos médicos y SaMD: 24 videos · archivo medical-device-samd-software-quality-engineering-para-dispositivos-medicos-y-samd.txt
+- QA Manual Web & Mobile: 8 videos · archivo manual-qa-manual-web-mobile.txt
+- Playwright / Cypress / Selenium: 8 videos · archivo webauto-playwright-cypress-selenium.txt
+- API Quality Engineering: 8 videos · archivo api-api-quality-engineering.txt
+- JMeter + k6 · Performance QA: 12 videos · archivo performance-jmeter-k6-performance-qa.txt
+- SQL Server + PL/SQL: 8 videos · archivo data-sql-server-pl-sql.txt
+- Azure DevOps / TFS + Git + CI/CD: 8 videos · archivo devops-azure-devops-tfs-git-ci-cd.txt
+- Appium + BrowserStack: 8 videos · archivo mobile-appium-browserstack.txt
+- WCAG + Accessibility Testing: 8 videos · archivo accessibility-wcag-accessibility-testing.txt
+- Salesforce QA: 16 videos · archivo salesforce-salesforce-qa.txt
+- AI-assisted QA & Agents: 8 videos · archivo aiqa-ai-assisted-qa-agents.txt
+- Jira + Confluence para QA: 8 videos · archivo jira-confluence-jira-confluence-para-qa.txt
+- Oracle APEX QA: 16 videos · archivo oracle-apex-oracle-apex-qa.txt

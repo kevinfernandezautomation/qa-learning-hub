@@ -1,0 +1,68 @@
+LEARNING PATH: QA Auditor de Software
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Principios de auditoría
+  Video 1. Concepto esencial: Principios de auditoría
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: Principios de auditoría
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Programa y alcance
+  Video 3. Concepto esencial: Programa y alcance
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Programa y alcance
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: Criterios y evidencia
+  Video 5. Concepto esencial: Criterios y evidencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: Criterios y evidencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: Muestreo y entrevistas
+  Video 7. Concepto esencial: Muestreo y entrevistas
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: Muestreo y entrevistas
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Auditoría de SDLC y QA
+  Video 9. Concepto esencial: Auditoría de SDLC y QA
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Auditoría de SDLC y QA
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Hallazgos y no conformidades
+  Video 11. Concepto esencial: Hallazgos y no conformidades
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Hallazgos y no conformidades
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: Riesgo e independencia
+  Video 13. Concepto esencial: Riesgo e independencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: Riesgo e independencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: Informe, seguimiento y mejora
+  Video 15. Concepto esencial: Informe, seguimiento y mejora
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: Informe, seguimiento y mejora
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50

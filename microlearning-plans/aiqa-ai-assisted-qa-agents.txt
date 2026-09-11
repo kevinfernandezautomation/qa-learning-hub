@@ -1,0 +1,51 @@
+LEARNING PATH: AI-assisted QA & Agents
+Tipo: Stack QA
+Nivel: Intermedio–Avanzado
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Prompts
+  Video 1. Concepto esencial: Prompts
+  Subtema: Definición, propósito y vocabulario mínimo de Prompts.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Prompts
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Generación de pruebas
+  Video 3. Concepto esencial: Generación de pruebas
+  Subtema: Definición, propósito y vocabulario mínimo de Generación de pruebas.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Generación de pruebas
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Evidencia visual
+  Video 5. Concepto esencial: Evidencia visual
+  Subtema: Definición, propósito y vocabulario mínimo de Evidencia visual.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Evidencia visual
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Agentes y Human-in-the-Loop
+  Video 7. Concepto esencial: Agentes y Human-in-the-Loop
+  Subtema: Definición, propósito y vocabulario mínimo de Agentes y Human-in-the-Loop.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Agentes y Human-in-the-Loop
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

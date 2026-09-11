@@ -1,0 +1,64 @@
+LEARNING PATH: QA + Mejora de Procesos
+Módulos: 10
+Videos recomendados: 20
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Calidad de producto vs calidad de proceso
+  Video 1. Concepto esencial — Calidad de producto vs calidad de proceso
+  Duración: 1:30
+  Video 2. Aplicación QA — Calidad de producto vs calidad de proceso
+  Duración: 1:50
+
+MÓDULO 2: Mapeo del flujo de QA
+  Video 3. Concepto esencial — Mapeo del flujo de QA
+  Duración: 1:30
+  Video 4. Aplicación QA — Mapeo del flujo de QA
+  Duración: 1:50
+
+MÓDULO 3: Definir métricas y baseline
+  Video 5. Concepto esencial — Definir métricas y baseline
+  Duración: 1:30
+  Video 6. Aplicación QA — Definir métricas y baseline
+  Duración: 1:50
+
+MÓDULO 4: DMAIC aplicado a defectos
+  Video 7. Concepto esencial — DMAIC aplicado a defectos
+  Duración: 1:30
+  Video 8. Aplicación QA — DMAIC aplicado a defectos
+  Duración: 1:50
+
+MÓDULO 5: Root Cause Analysis
+  Video 9. Concepto esencial — Root Cause Analysis
+  Duración: 1:30
+  Video 10. Aplicación QA — Root Cause Analysis
+  Duración: 1:50
+
+MÓDULO 6: Pareto, Ishikawa y 5 Why
+  Video 11. Concepto esencial — Pareto, Ishikawa y 5 Why
+  Duración: 1:30
+  Video 12. Aplicación QA — Pareto, Ishikawa y 5 Why
+  Duración: 1:50
+
+MÓDULO 7: PDCA y experimentos pequeños
+  Video 13. Concepto esencial — PDCA y experimentos pequeños
+  Duración: 1:30
+  Video 14. Aplicación QA — PDCA y experimentos pequeños
+  Duración: 1:50
+
+MÓDULO 8: Defect prevention y quality gates
+  Video 15. Concepto esencial — Defect prevention y quality gates
+  Duración: 1:30
+  Video 16. Aplicación QA — Defect prevention y quality gates
+  Duración: 1:50
+
+MÓDULO 9: Control plan y seguimiento
+  Video 17. Concepto esencial — Control plan y seguimiento
+  Duración: 1:30
+  Video 18. Aplicación QA — Control plan y seguimiento
+  Duración: 1:50
+
+MÓDULO 10: Caso práctico end-to-end
+  Video 19. Concepto esencial — Caso práctico end-to-end
+  Duración: 1:30
+  Video 20. Aplicación QA — Caso práctico end-to-end
+  Duración: 1:50

@@ -1,0 +1,68 @@
+LEARNING PATH: QA para Pasarelas de Pago
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Ecosistema de pagos
+  Video 1. Concepto esencial: Ecosistema de pagos
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: Ecosistema de pagos
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Checkout y tokenización
+  Video 3. Concepto esencial: Checkout y tokenización
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Checkout y tokenización
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: Autorización y captura
+  Video 5. Concepto esencial: Autorización y captura
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: Autorización y captura
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: 3-D Secure
+  Video 7. Concepto esencial: 3-D Secure
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: 3-D Secure
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Webhooks e idempotencia
+  Video 9. Concepto esencial: Webhooks e idempotencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Webhooks e idempotencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Refunds y disputes
+  Video 11. Concepto esencial: Refunds y disputes
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Refunds y disputes
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: PCI DSS y seguridad
+  Video 13. Concepto esencial: PCI DSS y seguridad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: PCI DSS y seguridad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: Conciliación y factura electrónica
+  Video 15. Concepto esencial: Conciliación y factura electrónica
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: Conciliación y factura electrónica
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50

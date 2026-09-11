@@ -1,0 +1,91 @@
+LEARNING PATH: Virtuoso QA – Training Library y certificaciones
+Tipo: Learning Path
+Nivel: Inicial–Avanzado
+Módulos: 9
+Videos recomendados: 18
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 32 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Virtuoso Platform Introduction
+  Video 1. Concepto esencial: Virtuoso Platform Introduction
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Platform Introduction.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Virtuoso Platform Introduction
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Getting Started with Virtuoso
+  Video 3. Concepto esencial: Getting Started with Virtuoso
+  Subtema: Definición, propósito y vocabulario mínimo de Getting Started with Virtuoso.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Getting Started with Virtuoso
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Virtuoso Certified Associate Level 1
+  Video 5. Concepto esencial: Virtuoso Certified Associate Level 1
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate Level 1.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Virtuoso Certified Associate Level 1
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Virtuoso Certified Associate Level 2
+  Video 7. Concepto esencial: Virtuoso Certified Associate Level 2
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate Level 2.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Virtuoso Certified Associate Level 2
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Virtuoso Platform Specialist
+  Video 9. Concepto esencial: Virtuoso Platform Specialist
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Platform Specialist.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Virtuoso Platform Specialist
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Virtuoso Extensions Specialist
+  Video 11. Concepto esencial: Virtuoso Extensions Specialist
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Extensions Specialist.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Virtuoso Extensions Specialist
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Virtuoso Certified Associate for D365
+  Video 13. Concepto esencial: Virtuoso Certified Associate for D365
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate for D365.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Virtuoso Certified Associate for D365
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Virtuoso Certified Associate for SFDC
+  Video 15. Concepto esencial: Virtuoso Certified Associate for SFDC
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate for SFDC.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: Virtuoso Certified Associate for SFDC
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 9: Virtuoso Best Practices
+  Video 17. Concepto esencial: Virtuoso Best Practices
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Best Practices.
+  Duración objetivo: 1:30
+  Video 18. Aplicación QA: Virtuoso Best Practices
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

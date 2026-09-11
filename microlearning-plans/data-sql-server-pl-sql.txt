@@ -1,0 +1,51 @@
+LEARNING PATH: SQL Server + PL/SQL
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: SQL
+  Video 1. Concepto esencial: SQL
+  Subtema: Definición, propósito y vocabulario mínimo de SQL.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: SQL
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Integridad
+  Video 3. Concepto esencial: Integridad
+  Subtema: Definición, propósito y vocabulario mínimo de Integridad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Integridad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Transacciones
+  Video 5. Concepto esencial: Transacciones
+  Subtema: Definición, propósito y vocabulario mínimo de Transacciones.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Transacciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Procedimientos
+  Video 7. Concepto esencial: Procedimientos
+  Subtema: Definición, propósito y vocabulario mínimo de Procedimientos.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Procedimientos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

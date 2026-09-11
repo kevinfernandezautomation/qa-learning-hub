@@ -1,0 +1,67 @@
+LEARNING PATH: JMeter + k6 · Performance QA
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Modelo de carga
+  Video 1. Concepto esencial: Modelo de carga
+  Subtema: Definición, propósito y vocabulario mínimo de Modelo de carga.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Modelo de carga
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: JMeter Test Plans
+  Video 3. Concepto esencial: JMeter Test Plans
+  Subtema: Definición, propósito y vocabulario mínimo de JMeter Test Plans.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: JMeter Test Plans
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: k6 tests-as-code
+  Video 5. Concepto esencial: k6 tests-as-code
+  Subtema: Definición, propósito y vocabulario mínimo de k6 tests-as-code.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: k6 tests-as-code
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Percentiles y throughput
+  Video 7. Concepto esencial: Percentiles y throughput
+  Subtema: Definición, propósito y vocabulario mínimo de Percentiles y throughput.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Percentiles y throughput
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Thresholds
+  Video 9. Concepto esencial: Thresholds
+  Subtema: Definición, propósito y vocabulario mínimo de Thresholds.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Thresholds
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: CI/CD y observabilidad
+  Video 11. Concepto esencial: CI/CD y observabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de CI/CD y observabilidad.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: CI/CD y observabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

@@ -1,0 +1,51 @@
+LEARNING PATH: Playwright / Cypress / Selenium
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Locators
+  Video 1. Concepto esencial: Locators
+  Subtema: Definición, propósito y vocabulario mínimo de Locators.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Locators
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Assertions
+  Video 3. Concepto esencial: Assertions
+  Subtema: Definición, propósito y vocabulario mínimo de Assertions.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Assertions
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Page Objects
+  Video 5. Concepto esencial: Page Objects
+  Subtema: Definición, propósito y vocabulario mínimo de Page Objects.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Page Objects
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Cross-browser y CI/CD
+  Video 7. Concepto esencial: Cross-browser y CI/CD
+  Subtema: Definición, propósito y vocabulario mínimo de Cross-browser y CI/CD.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Cross-browser y CI/CD
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

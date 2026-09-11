@@ -1,0 +1,68 @@
+LEARNING PATH: QA para Software de Contenido y Marketing Digital
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: CMS y flujos editoriales
+  Video 1. Concepto esencial: CMS y flujos editoriales
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: CMS y flujos editoriales
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Contenido, enlaces y metadatos
+  Video 3. Concepto esencial: Contenido, enlaces y metadatos
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Contenido, enlaces y metadatos
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: SEO técnico y accesibilidad
+  Video 5. Concepto esencial: SEO técnico y accesibilidad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: SEO técnico y accesibilidad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: UTM y analítica
+  Video 7. Concepto esencial: UTM y analítica
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: UTM y analítica
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Formularios y conversiones
+  Video 9. Concepto esencial: Formularios y conversiones
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Formularios y conversiones
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Email y responsive
+  Video 11. Concepto esencial: Email y responsive
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Email y responsive
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: Consentimiento y privacidad
+  Video 13. Concepto esencial: Consentimiento y privacidad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: Consentimiento y privacidad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: A/B testing y releases
+  Video 15. Concepto esencial: A/B testing y releases
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: A/B testing y releases
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50

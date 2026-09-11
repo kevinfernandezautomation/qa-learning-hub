@@ -1,0 +1,51 @@
+LEARNING PATH: Appium + BrowserStack
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Dispositivos
+  Video 1. Concepto esencial: Dispositivos
+  Subtema: Definición, propósito y vocabulario mínimo de Dispositivos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Dispositivos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Permisos
+  Video 3. Concepto esencial: Permisos
+  Subtema: Definición, propósito y vocabulario mínimo de Permisos.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Permisos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Gestos
+  Video 5. Concepto esencial: Gestos
+  Subtema: Definición, propósito y vocabulario mínimo de Gestos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Gestos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Cloud testing
+  Video 7. Concepto esencial: Cloud testing
+  Subtema: Definición, propósito y vocabulario mínimo de Cloud testing.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Cloud testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

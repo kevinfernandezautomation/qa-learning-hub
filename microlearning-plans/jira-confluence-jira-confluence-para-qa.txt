@@ -1,0 +1,51 @@
+LEARNING PATH: Jira + Confluence para QA
+Tipo: Stack QA
+Nivel: Inicial–Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Jira: work items, boards y workflows
+  Video 1. Concepto esencial: Jira: work items, boards y workflows
+  Subtema: Definición, propósito y vocabulario mínimo de Jira: work items, boards y workflows.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Jira: work items, boards y workflows
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bugs y trazabilidad
+  Video 3. Concepto esencial: Bugs y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Bugs y trazabilidad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bugs y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Confluence: documentación y evidencias
+  Video 5. Concepto esencial: Confluence: documentación y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Confluence: documentación y evidencias.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Confluence: documentación y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Filtros, reportes y colaboración
+  Video 7. Concepto esencial: Filtros, reportes y colaboración
+  Subtema: Definición, propósito y vocabulario mínimo de Filtros, reportes y colaboración.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Filtros, reportes y colaboración
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

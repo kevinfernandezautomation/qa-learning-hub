@@ -1,0 +1,51 @@
+LEARNING PATH: Programación aplicada a QA
+Tipo: Competencia QA
+Nivel: Inicial–Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: C# para utilidades y automatización
+  Video 1. Concepto esencial: C# para utilidades y automatización
+  Subtema: Definición, propósito y vocabulario mínimo de C# para utilidades y automatización.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: C# para utilidades y automatización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: JavaScript para testing web
+  Video 3. Concepto esencial: JavaScript para testing web
+  Subtema: Definición, propósito y vocabulario mínimo de JavaScript para testing web.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: JavaScript para testing web
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Java para Selenium y frameworks
+  Video 5. Concepto esencial: Java para Selenium y frameworks
+  Subtema: Definición, propósito y vocabulario mínimo de Java para Selenium y frameworks.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Java para Selenium y frameworks
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Python para Pytest, API y automatización
+  Video 7. Concepto esencial: Python para Pytest, API y automatización
+  Subtema: Definición, propósito y vocabulario mínimo de Python para Pytest, API y automatización.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Python para Pytest, API y automatización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

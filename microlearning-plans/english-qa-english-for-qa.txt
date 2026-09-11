@@ -1,0 +1,67 @@
+LEARNING PATH: English for QA
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: QA vocabulary
+  Video 1. Concepto esencial: QA vocabulary
+  Subtema: Definición, propósito y vocabulario mínimo de QA vocabulary.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: QA vocabulary
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bug reports
+  Video 3. Concepto esencial: Bug reports
+  Subtema: Definición, propósito y vocabulario mínimo de Bug reports.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bug reports
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Agile meetings
+  Video 5. Concepto esencial: Agile meetings
+  Subtema: Definición, propósito y vocabulario mínimo de Agile meetings.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Agile meetings
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Interviews
+  Video 7. Concepto esencial: Interviews
+  Subtema: Definición, propósito y vocabulario mínimo de Interviews.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Interviews
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Technical reading
+  Video 9. Concepto esencial: Technical reading
+  Subtema: Definición, propósito y vocabulario mínimo de Technical reading.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Technical reading
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Professional writing
+  Video 11. Concepto esencial: Professional writing
+  Subtema: Definición, propósito y vocabulario mínimo de Professional writing.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Professional writing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

@@ -1,0 +1,107 @@
+LEARNING PATH: QA para Software de Aviación
+Tipo: Learning Path
+Nivel: Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Software aeronáutico y safety assurance
+  Video 1. Concepto esencial: Software aeronáutico y safety assurance
+  Subtema: Definición, propósito y vocabulario mínimo de Software aeronáutico y safety assurance.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Software aeronáutico y safety assurance
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: Software aeronáutico y safety assurance
+  Subtema: Mini escenario y checklist para aplicar Software aeronáutico y safety assurance en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: DO-178C: propósito y contexto
+  Video 4. Concepto esencial: DO-178C: propósito y contexto
+  Subtema: Definición, propósito y vocabulario mínimo de DO-178C: propósito y contexto.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: DO-178C: propósito y contexto
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: DO-178C: propósito y contexto
+  Subtema: Mini escenario y checklist para aplicar DO-178C: propósito y contexto en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Requisitos y trazabilidad
+  Video 7. Concepto esencial: Requisitos y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos y trazabilidad.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Requisitos y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: Requisitos y trazabilidad
+  Subtema: Mini escenario y checklist para aplicar Requisitos y trazabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Verificación y revisiones
+  Video 10. Concepto esencial: Verificación y revisiones
+  Subtema: Definición, propósito y vocabulario mínimo de Verificación y revisiones.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Verificación y revisiones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Verificación y revisiones
+  Subtema: Mini escenario y checklist para aplicar Verificación y revisiones en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Pruebas basadas en requisitos
+  Video 13. Concepto esencial: Pruebas basadas en requisitos
+  Subtema: Definición, propósito y vocabulario mínimo de Pruebas basadas en requisitos.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Pruebas basadas en requisitos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Pruebas basadas en requisitos
+  Subtema: Mini escenario y checklist para aplicar Pruebas basadas en requisitos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Cobertura estructural y MC/DC
+  Video 16. Concepto esencial: Cobertura estructural y MC/DC
+  Subtema: Definición, propósito y vocabulario mínimo de Cobertura estructural y MC/DC.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: Cobertura estructural y MC/DC
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: Cobertura estructural y MC/DC
+  Subtema: Mini escenario y checklist para aplicar Cobertura estructural y MC/DC en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Configuración, evidencia y cambios
+  Video 19. Concepto esencial: Configuración, evidencia y cambios
+  Subtema: Definición, propósito y vocabulario mínimo de Configuración, evidencia y cambios.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: Configuración, evidencia y cambios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: Configuración, evidencia y cambios
+  Subtema: Mini escenario y checklist para aplicar Configuración, evidencia y cambios en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Integración, HIL y regresión
+  Video 22. Concepto esencial: Integración, HIL y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de Integración, HIL y regresión.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Integración, HIL y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Integración, HIL y regresión
+  Subtema: Mini escenario y checklist para aplicar Integración, HIL y regresión en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

@@ -1,0 +1,107 @@
+LEARNING PATH: QA para Robótica
+Tipo: Learning Path
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Fundamentos de sistemas robóticos
+  Video 1. Concepto esencial: Fundamentos de sistemas robóticos
+  Subtema: Definición, propósito y vocabulario mínimo de Fundamentos de sistemas robóticos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Fundamentos de sistemas robóticos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: Fundamentos de sistemas robóticos
+  Subtema: Mini escenario y checklist para aplicar Fundamentos de sistemas robóticos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: ROS 2 y arquitectura distribuida
+  Video 4. Concepto esencial: ROS 2 y arquitectura distribuida
+  Subtema: Definición, propósito y vocabulario mínimo de ROS 2 y arquitectura distribuida.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: ROS 2 y arquitectura distribuida
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: ROS 2 y arquitectura distribuida
+  Subtema: Mini escenario y checklist para aplicar ROS 2 y arquitectura distribuida en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Unit, integration y system testing
+  Video 7. Concepto esencial: Unit, integration y system testing
+  Subtema: Definición, propósito y vocabulario mínimo de Unit, integration y system testing.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Unit, integration y system testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: Unit, integration y system testing
+  Subtema: Mini escenario y checklist para aplicar Unit, integration y system testing en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Simulación con Gazebo
+  Video 10. Concepto esencial: Simulación con Gazebo
+  Subtema: Definición, propósito y vocabulario mínimo de Simulación con Gazebo.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Simulación con Gazebo
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Simulación con Gazebo
+  Subtema: Mini escenario y checklist para aplicar Simulación con Gazebo en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Sensores, ruido y datos
+  Video 13. Concepto esencial: Sensores, ruido y datos
+  Subtema: Definición, propósito y vocabulario mínimo de Sensores, ruido y datos.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Sensores, ruido y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Sensores, ruido y datos
+  Subtema: Mini escenario y checklist para aplicar Sensores, ruido y datos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: SIL/HIL y hardware real
+  Video 16. Concepto esencial: SIL/HIL y hardware real
+  Subtema: Definición, propósito y vocabulario mínimo de SIL/HIL y hardware real.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: SIL/HIL y hardware real
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: SIL/HIL y hardware real
+  Subtema: Mini escenario y checklist para aplicar SIL/HIL y hardware real en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Safety, fallos y recuperación
+  Video 19. Concepto esencial: Safety, fallos y recuperación
+  Subtema: Definición, propósito y vocabulario mínimo de Safety, fallos y recuperación.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: Safety, fallos y recuperación
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: Safety, fallos y recuperación
+  Subtema: Mini escenario y checklist para aplicar Safety, fallos y recuperación en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Regresión, CI y observabilidad
+  Video 22. Concepto esencial: Regresión, CI y observabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Regresión, CI y observabilidad.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Regresión, CI y observabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Regresión, CI y observabilidad
+  Subtema: Mini escenario y checklist para aplicar Regresión, CI y observabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

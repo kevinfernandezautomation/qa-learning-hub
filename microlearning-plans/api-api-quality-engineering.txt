@@ -1,0 +1,51 @@
+LEARNING PATH: API Quality Engineering
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: HTTP y contratos
+  Video 1. Concepto esencial: HTTP y contratos
+  Subtema: Definición, propósito y vocabulario mínimo de HTTP y contratos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: HTTP y contratos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Auth
+  Video 3. Concepto esencial: Auth
+  Subtema: Definición, propósito y vocabulario mínimo de Auth.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Auth
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Negativos
+  Video 5. Concepto esencial: Negativos
+  Subtema: Definición, propósito y vocabulario mínimo de Negativos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Negativos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Automatización y CI
+  Video 7. Concepto esencial: Automatización y CI
+  Subtema: Definición, propósito y vocabulario mínimo de Automatización y CI.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Automatización y CI
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

@@ -1,0 +1,107 @@
+LEARNING PATH: Software Quality Engineering para dispositivos médicos y SaMD
+Tipo: Competencia QA
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: C#/.NET para backend regulado
+  Video 1. Concepto esencial: C#/.NET para backend regulado
+  Subtema: Definición, propósito y vocabulario mínimo de C#/.NET para backend regulado.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: C#/.NET para backend regulado
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: C#/.NET para backend regulado
+  Subtema: Mini escenario y checklist para aplicar C#/.NET para backend regulado en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Angular y usabilidad bajo restricciones
+  Video 4. Concepto esencial: Angular y usabilidad bajo restricciones
+  Subtema: Definición, propósito y vocabulario mínimo de Angular y usabilidad bajo restricciones.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: Angular y usabilidad bajo restricciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: Angular y usabilidad bajo restricciones
+  Subtema: Mini escenario y checklist para aplicar Angular y usabilidad bajo restricciones en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: SQL Server, tablas, vistas y stored procedures
+  Video 7. Concepto esencial: SQL Server, tablas, vistas y stored procedures
+  Subtema: Definición, propósito y vocabulario mínimo de SQL Server, tablas, vistas y stored procedures.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: SQL Server, tablas, vistas y stored procedures
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: SQL Server, tablas, vistas y stored procedures
+  Subtema: Mini escenario y checklist para aplicar SQL Server, tablas, vistas y stored procedures en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Requisitos, diseño, risk controls y trazabilidad
+  Video 10. Concepto esencial: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos, diseño, risk controls y trazabilidad.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Mini escenario y checklist para aplicar Requisitos, diseño, risk controls y trazabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Verificación y validación (V&V)
+  Video 13. Concepto esencial: Verificación y validación (V&V)
+  Subtema: Definición, propósito y vocabulario mínimo de Verificación y validación (V&V).
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Verificación y validación (V&V)
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Verificación y validación (V&V)
+  Subtema: Mini escenario y checklist para aplicar Verificación y validación (V&V) en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: IEC 62304: ciclo de vida de software médico
+  Video 16. Concepto esencial: IEC 62304: ciclo de vida de software médico
+  Subtema: Definición, propósito y vocabulario mínimo de IEC 62304: ciclo de vida de software médico.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: IEC 62304: ciclo de vida de software médico
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: IEC 62304: ciclo de vida de software médico
+  Subtema: Mini escenario y checklist para aplicar IEC 62304: ciclo de vida de software médico en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: ISO 13485: sistema de gestión de calidad
+  Video 19. Concepto esencial: ISO 13485: sistema de gestión de calidad
+  Subtema: Definición, propósito y vocabulario mínimo de ISO 13485: sistema de gestión de calidad.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: ISO 13485: sistema de gestión de calidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: ISO 13485: sistema de gestión de calidad
+  Subtema: Mini escenario y checklist para aplicar ISO 13485: sistema de gestión de calidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Defectos, code review y evidencia regulatoria
+  Video 22. Concepto esencial: Defectos, code review y evidencia regulatoria
+  Subtema: Definición, propósito y vocabulario mínimo de Defectos, code review y evidencia regulatoria.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Defectos, code review y evidencia regulatoria
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Defectos, code review y evidencia regulatoria
+  Subtema: Mini escenario y checklist para aplicar Defectos, code review y evidencia regulatoria en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

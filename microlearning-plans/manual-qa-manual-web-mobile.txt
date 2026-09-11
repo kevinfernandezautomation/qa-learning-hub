@@ -1,0 +1,51 @@
+LEARNING PATH: QA Manual Web & Mobile
+Tipo: Stack QA
+Nivel: Inicial
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Requisitos y criterios
+  Video 1. Concepto esencial: Requisitos y criterios
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos y criterios.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Requisitos y criterios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Caja negra
+  Video 3. Concepto esencial: Caja negra
+  Subtema: Definición, propósito y vocabulario mínimo de Caja negra.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Caja negra
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Exploración
+  Video 5. Concepto esencial: Exploración
+  Subtema: Definición, propósito y vocabulario mínimo de Exploración.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Exploración
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Web responsive y mobile
+  Video 7. Concepto esencial: Web responsive y mobile
+  Subtema: Definición, propósito y vocabulario mínimo de Web responsive y mobile.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Web responsive y mobile
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

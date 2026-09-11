@@ -1,0 +1,51 @@
+LEARNING PATH: Azure DevOps / TFS + Git + CI/CD
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Work items
+  Video 1. Concepto esencial: Work items
+  Subtema: Definición, propósito y vocabulario mínimo de Work items.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Work items
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Repositorios
+  Video 3. Concepto esencial: Repositorios
+  Subtema: Definición, propósito y vocabulario mínimo de Repositorios.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Repositorios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Pipelines
+  Video 5. Concepto esencial: Pipelines
+  Subtema: Definición, propósito y vocabulario mínimo de Pipelines.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Pipelines
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Quality gates
+  Video 7. Concepto esencial: Quality gates
+  Subtema: Definición, propósito y vocabulario mínimo de Quality gates.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Quality gates
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

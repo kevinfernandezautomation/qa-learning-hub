@@ -1,0 +1,83 @@
+LEARNING PATH: Salesforce QA
+Tipo: Stack QA
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 16
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 28 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: CRM, objetos y metadata
+  Video 1. Concepto esencial: CRM, objetos y metadata
+  Subtema: Definición, propósito y vocabulario mínimo de CRM, objetos y metadata.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: CRM, objetos y metadata
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Sandboxes y datos
+  Video 3. Concepto esencial: Sandboxes y datos
+  Subtema: Definición, propósito y vocabulario mínimo de Sandboxes y datos.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Sandboxes y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Roles, perfiles y permission sets
+  Video 5. Concepto esencial: Roles, perfiles y permission sets
+  Subtema: Definición, propósito y vocabulario mínimo de Roles, perfiles y permission sets.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Roles, perfiles y permission sets
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Flows y automatizaciones
+  Video 7. Concepto esencial: Flows y automatizaciones
+  Subtema: Definición, propósito y vocabulario mínimo de Flows y automatizaciones.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Flows y automatizaciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Apex tests
+  Video 9. Concepto esencial: Apex tests
+  Subtema: Definición, propósito y vocabulario mínimo de Apex tests.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Apex tests
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: LWC + Jest
+  Video 11. Concepto esencial: LWC + Jest
+  Subtema: Definición, propósito y vocabulario mínimo de LWC + Jest.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: LWC + Jest
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: APIs e integraciones
+  Video 13. Concepto esencial: APIs e integraciones
+  Subtema: Definición, propósito y vocabulario mínimo de APIs e integraciones.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: APIs e integraciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: UAT, releases y regresión
+  Video 15. Concepto esencial: UAT, releases y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de UAT, releases y regresión.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: UAT, releases y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

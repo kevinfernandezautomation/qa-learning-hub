@@ -1,0 +1,285 @@
+RUTA: Software Quality Engineering para dispositivos médicos y SaMD
+TIPO: Competencia QA
+NIVEL: Intermedio–Avanzado
+MÓDULOS: 8
+VIDEOS: 16
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: C#/.NET para backend regulado ===
+
+VIDEO 1: Concepto esencial — C#/.NET para backend regulado
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos C#/.NET para backend regulado. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte C#/.NET para backend regulado con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría C#/.NET para backend regulado cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘C#/.NET para backend regulado’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — C#/.NET para backend regulado
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos C#/.NET para backend regulado a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con C#/.NET para backend regulado, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘C#/.NET para backend regulado’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Angular y usabilidad bajo restricciones ===
+
+VIDEO 3: Concepto esencial — Angular y usabilidad bajo restricciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos Angular y usabilidad bajo restricciones. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Angular y usabilidad bajo restricciones con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Angular y usabilidad bajo restricciones cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Angular y usabilidad bajo restricciones’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Angular y usabilidad bajo restricciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Angular y usabilidad bajo restricciones a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Angular y usabilidad bajo restricciones, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Angular y usabilidad bajo restricciones’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: SQL Server, tablas, vistas y stored procedures ===
+
+VIDEO 5: Concepto esencial — SQL Server, tablas, vistas y stored procedures
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos SQL Server, tablas, vistas y stored procedures. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte SQL Server, tablas, vistas y stored procedures con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría SQL Server, tablas, vistas y stored procedures cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘SQL Server, tablas, vistas y stored procedures’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — SQL Server, tablas, vistas y stored procedures
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos SQL Server, tablas, vistas y stored procedures a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con SQL Server, tablas, vistas y stored procedures, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘SQL Server, tablas, vistas y stored procedures’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: Requisitos, diseño, risk controls y trazabilidad ===
+
+VIDEO 7: Concepto esencial — Requisitos, diseño, risk controls y trazabilidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos Requisitos, diseño, risk controls y trazabilidad. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Requisitos, diseño, risk controls y trazabilidad con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Requisitos, diseño, risk controls y trazabilidad cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Requisitos, diseño, risk controls y trazabilidad’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — Requisitos, diseño, risk controls y trazabilidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Requisitos, diseño, risk controls y trazabilidad a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Requisitos, diseño, risk controls y trazabilidad, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Requisitos, diseño, risk controls y trazabilidad’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Verificación y validación (V&V) ===
+
+VIDEO 9: Concepto esencial — Verificación y validación (V&V)
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos Verificación y validación (V&V). El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Verificación y validación (V&V) con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Verificación y validación (V&V) cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Verificación y validación (V&V)’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Verificación y validación (V&V)
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Verificación y validación (V&V) a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Verificación y validación (V&V), registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Verificación y validación (V&V)’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: IEC 62304: ciclo de vida de software médico ===
+
+VIDEO 11: Concepto esencial — IEC 62304: ciclo de vida de software médico
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos IEC 62304: ciclo de vida de software médico. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte IEC 62304: ciclo de vida de software médico con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría IEC 62304: ciclo de vida de software médico cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘IEC 62304: ciclo de vida de software médico’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — IEC 62304: ciclo de vida de software médico
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos IEC 62304: ciclo de vida de software médico a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con IEC 62304: ciclo de vida de software médico, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘IEC 62304: ciclo de vida de software médico’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 7: ISO 13485: sistema de gestión de calidad ===
+
+VIDEO 13: Concepto esencial — ISO 13485: sistema de gestión de calidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos ISO 13485: sistema de gestión de calidad. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte ISO 13485: sistema de gestión de calidad con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría ISO 13485: sistema de gestión de calidad cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘ISO 13485: sistema de gestión de calidad’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 14: Aplicación QA — ISO 13485: sistema de gestión de calidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos ISO 13485: sistema de gestión de calidad a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con ISO 13485: sistema de gestión de calidad, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘ISO 13485: sistema de gestión de calidad’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 8: Defectos, code review y evidencia regulatoria ===
+
+VIDEO 15: Concepto esencial — Defectos, code review y evidencia regulatoria
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Software Quality Engineering para dispositivos médicos y SaMD veremos Defectos, code review y evidencia regulatoria. El objetivo es entender qué significa este tema y por qué importa en competencia qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Defectos, code review y evidencia regulatoria con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Defectos, code review y evidencia regulatoria cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Defectos, code review y evidencia regulatoria’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 16: Aplicación QA — Defectos, code review y evidencia regulatoria
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Defectos, code review y evidencia regulatoria a una situación práctica dentro de Software Quality Engineering para dispositivos médicos y SaMD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Defectos, code review y evidencia regulatoria, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Defectos, code review y evidencia regulatoria’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

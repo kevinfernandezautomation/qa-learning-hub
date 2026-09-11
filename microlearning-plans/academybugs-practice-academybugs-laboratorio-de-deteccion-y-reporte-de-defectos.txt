@@ -1,0 +1,75 @@
+LEARNING PATH: AcademyBugs – laboratorio de detección y reporte de defectos
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 7
+Videos recomendados: 14
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 24 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Tutorial y ejemplos de defectos
+  Video 1. Concepto esencial: Tutorial y ejemplos de defectos
+  Subtema: Definición, propósito y vocabulario mínimo de Tutorial y ejemplos de defectos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Tutorial y ejemplos de defectos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Tipos de bugs
+  Video 3. Concepto esencial: Tipos de bugs
+  Subtema: Definición, propósito y vocabulario mínimo de Tipos de bugs.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Tipos de bugs
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Exploración del sitio de práctica
+  Video 5. Concepto esencial: Exploración del sitio de práctica
+  Subtema: Definición, propósito y vocabulario mínimo de Exploración del sitio de práctica.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Exploración del sitio de práctica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Detección de 25 bugs plantados
+  Video 7. Concepto esencial: Detección de 25 bugs plantados
+  Subtema: Definición, propósito y vocabulario mínimo de Detección de 25 bugs plantados.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Detección de 25 bugs plantados
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Clasificación funcional, visual, contenido, rendimiento y crash
+  Video 9. Concepto esencial: Clasificación funcional, visual, contenido, rendimiento y crash
+  Subtema: Definición, propósito y vocabulario mínimo de Clasificación funcional, visual, contenido, rendimiento y crash.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Clasificación funcional, visual, contenido, rendimiento y crash
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Redacción de reportes profesionales
+  Video 11. Concepto esencial: Redacción de reportes profesionales
+  Subtema: Definición, propósito y vocabulario mínimo de Redacción de reportes profesionales.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Redacción de reportes profesionales
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Práctica guiada de cinco escenarios de reporte
+  Video 13. Concepto esencial: Práctica guiada de cinco escenarios de reporte
+  Subtema: Definición, propósito y vocabulario mínimo de Práctica guiada de cinco escenarios de reporte.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Práctica guiada de cinco escenarios de reporte
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

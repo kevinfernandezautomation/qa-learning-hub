@@ -1,0 +1,75 @@
+LEARNING PATH: uTest Academy – práctica de testing y comunidad
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 7
+Videos recomendados: 14
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 24 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Introducción a uTest y perfil del tester
+  Video 1. Concepto esencial: Introducción a uTest y perfil del tester
+  Subtema: Definición, propósito y vocabulario mínimo de Introducción a uTest y perfil del tester.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Introducción a uTest y perfil del tester
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Fundamentos de testing
+  Video 3. Concepto esencial: Fundamentos de testing
+  Subtema: Definición, propósito y vocabulario mínimo de Fundamentos de testing.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Fundamentos de testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Reporte de defectos y evidencias
+  Video 5. Concepto esencial: Reporte de defectos y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Reporte de defectos y evidencias.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Reporte de defectos y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Ciclos de prueba de práctica
+  Video 7. Concepto esencial: Ciclos de prueba de práctica
+  Subtema: Definición, propósito y vocabulario mínimo de Ciclos de prueba de práctica.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Ciclos de prueba de práctica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Logs y depuración básica
+  Video 9. Concepto esencial: Logs y depuración básica
+  Subtema: Definición, propósito y vocabulario mínimo de Logs y depuración básica.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Logs y depuración básica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: API y HTTP básicos
+  Video 11. Concepto esencial: API y HTTP básicos
+  Subtema: Definición, propósito y vocabulario mínimo de API y HTTP básicos.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: API y HTTP básicos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Preparación para proyectos de testing
+  Video 13. Concepto esencial: Preparación para proyectos de testing
+  Subtema: Definición, propósito y vocabulario mínimo de Preparación para proyectos de testing.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Preparación para proyectos de testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

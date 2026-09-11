@@ -1,0 +1,67 @@
+LEARNING PATH: QA de videojuegos
+Tipo: Learning Path
+Nivel: Inicial
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Testing de videojuegos
+  Video 1. Concepto esencial: Testing de videojuegos
+  Subtema: Definición, propósito y vocabulario mínimo de Testing de videojuegos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Testing de videojuegos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bugs y severidad
+  Video 3. Concepto esencial: Bugs y severidad
+  Subtema: Definición, propósito y vocabulario mínimo de Bugs y severidad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bugs y severidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Playtesting y regresión
+  Video 5. Concepto esencial: Playtesting y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de Playtesting y regresión.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Playtesting y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Unity y Unreal para QA
+  Video 7. Concepto esencial: Unity y Unreal para QA
+  Subtema: Definición, propósito y vocabulario mínimo de Unity y Unreal para QA.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Unity y Unreal para QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Jira y evidencias
+  Video 9. Concepto esencial: Jira y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Jira y evidencias.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Jira y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Portafolio gamer QA
+  Video 11. Concepto esencial: Portafolio gamer QA
+  Subtema: Definición, propósito y vocabulario mínimo de Portafolio gamer QA.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Portafolio gamer QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.

@@ -1,0 +1,51 @@
+LEARNING PATH: WCAG + Accessibility Testing
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Teclado
+  Video 1. Concepto esencial: Teclado
+  Subtema: Definición, propósito y vocabulario mínimo de Teclado.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Teclado
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Semántica
+  Video 3. Concepto esencial: Semántica
+  Subtema: Definición, propósito y vocabulario mínimo de Semántica.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Semántica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Contraste
+  Video 5. Concepto esencial: Contraste
+  Subtema: Definición, propósito y vocabulario mínimo de Contraste.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Contraste
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Automatización asistida
+  Video 7. Concepto esencial: Automatización asistida
+  Subtema: Definición, propósito y vocabulario mínimo de Automatización asistida.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Automatización asistida
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
