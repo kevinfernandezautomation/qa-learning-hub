@@ -59,37 +59,153 @@ const AUTO_Q=[
 const SCENARIOS=[
  'durante la revisión de una historia de usuario','antes de una liberación de alto impacto','después de corregir un defecto crítico','al preparar una regresión para el siguiente sprint','cuando existe poco tiempo para probar','al recibir una nueva versión del sistema','durante una sesión de refinamiento','al analizar un cambio con dependencias','cuando un resultado no coincide con lo esperado','al preparar evidencia para una decisión de release','cuando cambia una regla de negocio','al validar una funcionalidad en un ambiente nuevo'
 ];
-let simCert,provider,dif,mode,role,examLang,qs=[],idx=0,tick=null,left=0,currentCert=null,currentBankSize=0,responses=[];
-const el=id=>document.getElementById(id);const showEl=(node,show=true)=>{if(!node)return;node.hidden=!show;node.style.display=show?'':'';};
+
+let simCert,provider,dif,mode,role,examLang,simStack,qs=[],idx=0,tick=null,left=0,currentCert=null,currentBankSize=0,responses=[];
+const el=id=>document.getElementById(id);
+const showEl=(node,show=true)=>{if(!node)return;node.hidden=!show;node.style.display=show?'':'';};
+
+function validFullName(value){
+ const cleaned=(value||'').trim().replace(/\s+/g,' ');
+ if(cleaned.length<5)return false;
+ const parts=cleaned.split(' ').filter(Boolean);
+ return parts.length>=2 && parts.every(p=>/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ'’-]{2,}$/.test(p));
+}
+function updateStartState(){
+ const btn=el('startExam'),input=el('candidateName');
+ if(!btn||!input)return;
+ const ok=validFullName(input.value);
+ btn.disabled=!ok;
+ btn.setAttribute('aria-disabled',String(!ok));
+ btn.title=ok?'':'Ingrese nombre y apellidos para comenzar.';
+}
+function stackModeConfig(){
+ const raw=(dif?.value||'Básico|0').split('|');
+ return {level:raw[0]||'Básico',minutes:Number(raw[1]||0)};
+}
+
 function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}
+function certDifficultyOptions(){return `<option value="Principiante">Principiante · sin cronómetro</option><option value="Fácil">Fácil · 60 minutos</option><option value="Medio">Medio · 45 minutos</option><option value="Difícil">Difícil · 30 minutos</option>`}
+function stackDifficultyOptions(){return `
+<option value="Básico|0">Básico · sin cronómetro</option>
+<option value="Básico|60">Básico · 60 minutos</option>
+<option value="Intermedio|45">Intermedio · 45 minutos</option>
+<option value="Avanzado|30">Avanzado · 30 minutos</option>`}
+
 function boot(){
- simCert=el('simCert');provider=el('simProvider');dif=el('simDifficulty');mode=el('simMode');role=el('simRole');examLang=el('simExamLanguage');
- if(!simCert||!provider||!dif||!mode||!role||!examLang||!el('startExam'))return;
+ simCert=el('simCert');provider=el('simProvider');dif=el('simDifficulty');mode=el('simMode');role=el('simRole');examLang=el('simExamLanguage');simStack=el('simStack');
+ if(!simCert||!provider||!dif||!mode||!role||!examLang||!simStack||!el('startExam'))return;
  if(!Array.isArray(window.CERTIFICATIONS)||typeof window.buildExamQuestionBank!=='function'){el('simConfig').innerHTML='<h2>No fue posible cargar el banco de preguntas</h2>';return;}
- const requested=new URLSearchParams(location.search).get('cert');if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
- fillCerts(requested);let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{};el('candidateName').value=localStorage.getItem('candidateName')||user?.name||'';
- mode.addEventListener('change',changeMode);provider.addEventListener('change',()=>fillCerts());simCert.addEventListener('change',updateCert);role.addEventListener('change',updateCert);dif.addEventListener('change',updatePracticeMeta);examLang.addEventListener('change',updatePracticeMeta);
- el('startExam').addEventListener('click',start);el('nextQ').addEventListener('click',nextQuestion);el('prevQ').addEventListener('click',prevQuestion);el('retryExam').addEventListener('click',retry);el('downloadCertificate').addEventListener('click',certificate);
- changeMode();window.applyTranslations?.();
+ const params=new URLSearchParams(location.search);
+ const requested=params.get('cert');
+ if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
+ fillCerts(requested);
+ let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
+ const savedName=localStorage.getItem('candidateName');el('candidateName').value=(savedName&&savedName!=='Participante'?savedName:(user?.name&&user.name!=='Participante'?user.name:''));
+ mode.addEventListener('change',changeMode);
+ provider.addEventListener('change',()=>fillCerts());
+ simCert.addEventListener('change',updateCert);
+ role.addEventListener('change',updateCert);
+ simStack.addEventListener('change',updateCert);
+ dif.addEventListener('change',updatePracticeMeta);
+ examLang.addEventListener('change',updatePracticeMeta);
+ el('startExam').addEventListener('click',start);el('candidateName').addEventListener('input',updateStartState);
+ el('nextQ').addEventListener('click',nextQuestion);
+ el('prevQ').addEventListener('click',prevQuestion);
+ el('retryExam').addEventListener('click',retry);
+ el('downloadCertificate').addEventListener('click',certificate);
+ if(params.get('mode')==='stack'){
+   mode.value='stack';
+   if(params.get('stack')&&window.QA_STACKS?.[params.get('stack')])simStack.value=params.get('stack');
+ }else if(params.get('mode')==='interview'){
+   mode.value='interview';
+ }
+ changeMode();updateStartState();window.applyTranslations?.();
 }
+
 function changeMode(){
- const interview=mode.value==='interview';
- simCert.disabled=interview;provider.disabled=interview;
- el('certWrap')?.classList.toggle('field-disabled',interview);el('providerWrap')?.classList.toggle('field-disabled',interview);
- showEl(el('roleWrap'),interview);updateCert();
+ const interview=mode.value==='interview', stackMode=mode.value==='stack';
+ showEl(el('providerWrap'),!interview&&!stackMode);
+ showEl(el('certWrap'),!interview&&!stackMode);
+ showEl(el('roleWrap'),interview);
+ showEl(el('stackWrap'),stackMode);
+ showEl(el('officialExamReadiness'),mode.value==='cert');
+ showEl(el('examProvidersLink'),mode.value==='cert');
+ const difficultyLabel=el('difficultyLabel');if(difficultyLabel)difficultyLabel.textContent=stackMode?'Dificultad y tiempo':'Dificultad';
+ simCert.disabled=interview||stackMode;provider.disabled=interview||stackMode;
+ el('certWrap')?.classList.toggle('field-disabled',interview||stackMode);
+ el('providerWrap')?.classList.toggle('field-disabled',interview||stackMode);
+ if(stackMode){
+   if(!dif.value.includes('|'))dif.innerHTML=stackDifficultyOptions();
+ }else{
+   if(dif.value.includes('|'))dif.innerHTML=certDifficultyOptions();
+ }
+ updateCert();updateStartState();
 }
-function fillCerts(preselect){const kind=provider.value;let list=[];if(kind==='MIX'){simCert.innerHTML='';simCert.add(new Option(MIXED.name,MIXED.id));currentCert=MIXED;updateCert();return;}list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(`${c.id} — ${c.name}`,c.id)));if(preselect&&list.some(c=>c.id===preselect))simCert.value=preselect;updateCert();}
+
+function fillCerts(preselect){
+ const kind=provider.value;let list=[];
+ if(kind==='MIX'){simCert.innerHTML='';simCert.add(new Option(MIXED.name,MIXED.id));currentCert=MIXED;updateCert();return;}
+ list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));
+ simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(`${c.id} — ${c.name}`,c.id)));
+ if(preselect&&list.some(c=>c.id===preselect))simCert.value=preselect;updateCert();
+}
+
+
+function updateSimulationHeading(){
+ const h=document.querySelector('.page-hero h1');
+ const p=document.querySelector('.page-hero p');
+ if(!h||!currentCert)return;
+ if(mode.value==='stack')h.textContent=`Simulación para ${currentCert.name}`;
+ else if(mode.value==='interview')h.textContent=`Entrevista práctica · ${currentCert.name}`;
+ else h.textContent=`Simulación para ${currentCert.name}`;
+ if(p)p.textContent='Responda 40 preguntas del banco seleccionado y revise su resultado al finalizar.';
+}
+
 function updateCert(){
  if(mode.value==='interview'){
    currentCert={id:`JOB-${slug(role.value)}`,name:role.value,level:'Entrevista laboral',difficulty:'Por seniority',k:'Competencias del puesto',focus:(ROLE_TOPICS[role.value]||[]).join(', '),url:'empleos.html'};
-   el('certMeta').innerHTML=`<b>${escapeHtml(role.value)}</b><span>Simulación de entrevista laboral</span><p>${escapeHtml(currentCert.focus)}</p>`;
-   const link=el('officialExamLink');link.href='empleos.html';link.target='';link.textContent='Preparación de empleo';updatePracticeMeta();return;
+   el('certMeta').innerHTML=`<b>${escapeHtml(role.value)}</b><span>Simulación de entrevista laboral</span><p>${escapeHtml(currentCert.focus)}</p>`;showEl(el('certMeta'),true);
+   const link=el('officialExamLink');if(link){showEl(link,true);link.href='empleos.html';link.target='';link.textContent='Preparación de empleo';}updateSimulationHeading();updatePracticeMeta();return;
+ }
+ if(mode.value==='stack'){
+   const st=window.QA_STACKS?.[simStack.value];currentCert={id:`STACK-${simStack.value}`,name:st?.name||'Stack QA',url:'academia.html#stacks'};
+   el('certMeta').innerHTML=`<b>${escapeHtml(st?.name||'Stack QA')}</b><span>Evaluación de conocimientos del stack</span><p>${escapeHtml((st?.topics||[]).join(', '))}</p>`;showEl(el('certMeta'),true);
+   const link=el('officialExamLink');if(link)showEl(link,false);updateSimulationHeading();updatePracticeMeta();return;
  }
  const baseCert=provider.value==='MIX'?MIXED:window.CERTIFICATIONS.find(c=>c.id===simCert.value);if(!baseCert)return;currentCert=baseCert;
- el('certMeta').innerHTML=`<b>${escapeHtml(currentCert.level)} · ${escapeHtml(currentCert.difficulty)}</b><span>${escapeHtml(currentCert.k||'')}</span><p>${escapeHtml(currentCert.focus)}</p>`;
- const link=el('officialExamLink');link.href=currentCert.url||'proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='AICS'?'Información AICS ↗':provider.value==='MIX'?'Fuentes de certificación':'Material oficial ↗';updatePracticeMeta();
+ el('certMeta').innerHTML=`<b>${escapeHtml(currentCert.level)} · ${escapeHtml(currentCert.difficulty)}</b><span>${escapeHtml(currentCert.k||'')}</span><p>${escapeHtml(currentCert.focus)}</p>`;showEl(el('certMeta'),true);
+ const link=el('officialExamLink');if(link){showEl(link,true);link.href=currentCert.url||'proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='AICS'?'Información AICS ↗':provider.value==='MIX'?'Fuentes de certificación':'Material oficial ↗';}updateSimulationHeading();updatePracticeMeta();
+}
+
+function ctflSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTFL';}
+function ctalAtSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTAL-AT';}
+function buildCtflBank(){
+ const full=window.buildCtflSyllabusBank?.()||[];
+ const weight={Principiante:{Básico:.65,Intermedio:.30,Avanzado:.05},Fácil:{Básico:.50,Intermedio:.40,Avanzado:.10},Medio:{Básico:.25,Intermedio:.50,Avanzado:.25},Difícil:{Básico:.10,Intermedio:.35,Avanzado:.55}}[dif.value]||{Básico:.34,Intermedio:.33,Avanzado:.33};
+ const grouped={Básico:shuffle(full.filter(q=>q.d==='Básico')),Intermedio:shuffle(full.filter(q=>q.d==='Intermedio')),Avanzado:shuffle(full.filter(q=>q.d==='Avanzado'))};
+ const out=[],used=new Set();
+ for(const level of ['Básico','Intermedio','Avanzado']){
+   const count=Math.round(120*weight[level]);
+   for(let i=0;i<count&&i<grouped[level].length;i++){out.push(grouped[level][i]);used.add(grouped[level][i].uid);}
+ }
+ for(const q of shuffle(full)){if(out.length>=120)break;if(!used.has(q.uid)){used.add(q.uid);out.push(q)}}
+ return out;
+}
+function buildCtalAtBank(){
+ const full=window.buildCtalAtSyllabusBank?.()||[];
+ const weight={Principiante:{Básico:.55,Intermedio:.35,Avanzado:.10},Fácil:{Básico:.40,Intermedio:.45,Avanzado:.15},Medio:{Básico:.20,Intermedio:.50,Avanzado:.30},Difícil:{Básico:.10,Intermedio:.35,Avanzado:.55}}[dif.value]||{Básico:.34,Intermedio:.33,Avanzado:.33};
+ const grouped={Básico:shuffle(full.filter(q=>q.d==='Básico')),Intermedio:shuffle(full.filter(q=>q.d==='Intermedio')),Avanzado:shuffle(full.filter(q=>q.d==='Avanzado'))};
+ const out=[],used=new Set();
+ for(const level of ['Básico','Intermedio','Avanzado']){
+   const count=Math.round(120*weight[level]);
+   for(let i=0;i<count&&i<grouped[level].length;i++){out.push(grouped[level][i]);used.add(grouped[level][i].uid);}
+ }
+ for(const q of shuffle(full)){if(out.length>=120)break;if(!used.has(q.uid)){used.add(q.uid);out.push(q)}}
+ return out;
 }
 function buildCertificationBank(){
+ if(ctflSelected())return buildCtflBank();
+ if(ctalAtSelected())return buildCtalAtBank();
  if(provider.value==='MIX'){const a=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='CTFL'),dif.value)||[];const b=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='AICS-ASTFC'),dif.value)||[];return localizeBank(shuffle(a).slice(0,60).concat(shuffle(b).slice(0,60)),examLang.value,currentCert);}
  const bank=window.buildExamQuestionBank(currentCert,dif.value)||[];return localizeBank(bank,examLang.value,currentCert);
 }
@@ -105,24 +221,81 @@ function buildInterviewBank(){
  }
  return localizeBank(out,examLang.value,currentCert);
 }
+function buildStackBank(){const cfg=stackModeConfig();return window.buildStackQuestions?.(simStack.value,cfg.level)||[];}
+
 function localizeBank(bank,lang,cert){
- if(lang==='es')return bank;
- const en=lang==='en';const contexts=en?['during requirement review','before a high-risk release','after a critical defect fix','while planning regression','when evidence is incomplete','during sprint refinement','when a result is unexpected','when prioritizing limited test time','while assessing release readiness','when a business rule changes','while reviewing test coverage','when a dependency changes']:['durante a revisão de requisitos','antes de uma liberação de alto risco','após corrigir um defeito crítico','ao planejar regressão','quando a evidência está incompleta','durante o refinamento do sprint','quando um resultado é inesperado','ao priorizar tempo limitado de teste','ao avaliar prontidão para release','quando uma regra de negócio muda','ao revisar a cobertura de testes','quando uma dependência muda'];
+ if(lang==='es'||ctflSelected()||mode.value==='stack')return bank;
+ const en=lang==='en';
+ const contexts=en?['during requirement review','before a high-risk release','after a critical defect fix','while planning regression','when evidence is incomplete','during sprint refinement','when a result is unexpected','when prioritizing limited test time','while assessing release readiness','when a business rule changes','while reviewing test coverage','when a dependency changes']:['durante a revisão de requisitos','antes de uma liberação de alto risco','após corrigir um defeito crítico','ao planejar regressão','quando a evidência está incompleta','durante o refinamento do sprint','quando um resultado é inesperado','ao priorizar tempo limitado de teste','ao avaliar prontidão para release','quando uma regra de negócio muda','ao revisar a cobertura de testes','quando uma dependência muda'];
  const stems=en?['Which action best supports reliable testing','What should QA prioritize','Which option provides the strongest evidence','Which response best reduces product risk','What is the most appropriate testing decision','Which practice best improves traceability','What should be verified first','Which approach best supports a defensible quality decision','Which option is most consistent with sound QA practice','What would be the best next step']:['Qual ação melhor apoia testes confiáveis','O que QA deve priorizar','Qual opção fornece a evidência mais forte','Qual resposta reduz melhor o risco do produto','Qual é a decisão de teste mais adequada','Qual prática melhora melhor a rastreabilidade','O que deve ser verificado primeiro','Qual abordagem apoia melhor uma decisão de qualidade defensável','Qual opção é mais consistente com boas práticas de QA','Qual seria o melhor próximo passo'];
  const answers=en?['Use objectives, risk, evidence and a verifiable expected result','Make assumptions without validation','Ignore context and traceability','Treat every unexpected result as a confirmed product defect']:['Usar objetivos, risco, evidência e resultado esperado verificável','Fazer suposições sem validação','Ignorar contexto e rastreabilidade','Tratar todo resultado inesperado como defeito confirmado do produto'];
  return bank.map((q,i)=>({q:`${stems[i%stems.length]} ${contexts[Math.floor(i/stems.length)%contexts.length]} for ${q.topic||cert.name}?`,a:[...answers],c:0,d:q.d,n:q.n,topic:q.topic,uid:q.uid||`${cert.id}-${i}`}));
 }
-function buildBank(){return mode.value==='interview'?buildInterviewBank():buildCertificationBank();}
-function updatePracticeMeta(){if(!currentCert)return;let bank=[];try{bank=buildBank()}catch{}currentBankSize=bank.length;const mins=DIFFICULTY_TIME[dif.value];const timing=mins?`${mins} min`:'sin cronómetro · práctica guiada';el('practiceMeta').innerHTML=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: 40 aleatorias · ${timing}</span>`;}
-function start(){clearInterval(tick);updateCert();const name=el('candidateName').value.trim()||'Participante';localStorage.setItem('candidateName',name);let bank=[];try{bank=buildBank()}catch(err){console.error(err);}const unique=[...new Map((bank||[]).map(q=>[q.q,q])).values()];if(unique.length<100){el('practiceMeta').textContent='No fue posible cargar un banco mínimo de 100 preguntas diferentes.';return;}let pick=shuffle(unique).slice(0,40);const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`;const last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');if(last===sig){pick=shuffle(unique).slice(0,40);sig=pick.map(q=>q.q).join('|');}sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);const minutes=DIFFICULTY_TIME[dif.value];if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{left--;renderTimer();if(left<=0)finish(true)},1000);}else el('timer').textContent='Sin cronómetro';show();}
+
+function buildBank(){
+ if(mode.value==='interview')return buildInterviewBank();
+ if(mode.value==='stack')return buildStackBank();
+ return buildCertificationBank();
+}
+
+function updatePracticeMeta(){
+ if(!currentCert)return;let bank=[];try{bank=buildBank()}catch{}
+ currentBankSize=bank.length;
+ if(mode.value==='stack'){
+   const cfg=stackModeConfig(),stackTiming=cfg.minutes?`${cfg.minutes} min`:'sin cronómetro';
+   el('practiceMeta').innerHTML=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize} preguntas · intento: 40 aleatorias · ${escapeHtml(cfg.level)} · ${stackTiming}</span>`;showEl(el('practiceMeta'),true);
+   return;
+ }
+ const mins=DIFFICULTY_TIME[dif.value],timing=mins?`${mins} min`:'sin cronómetro';
+ el('practiceMeta').innerHTML=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: 40 aleatorias · ${timing}</span>`;showEl(el('practiceMeta'),true);
+}
+
+function start(){
+ clearInterval(tick);updateCert();
+ const name=el('candidateName').value.trim();if(!validFullName(name)){updateStartState();return;}localStorage.setItem('candidateName',name);
+ let bank=[];try{bank=buildBank()}catch(err){console.error(err);}
+ const unique=[...new Map((bank||[]).map(q=>[q.q,q])).values()];
+ const minRequired=mode.value==='stack'?40:100;
+ if(unique.length<minRequired){el('practiceMeta').textContent=`No fue posible cargar un banco mínimo de ${minRequired} preguntas diferentes.`;return;}
+ let pick=shuffle(unique).slice(0,40);
+ const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`,last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');
+ if(last===sig){pick=shuffle(unique).slice(0,40);sig=pick.map(q=>q.q).join('|');}
+ sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;
+ showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);
+ const minutes=mode.value==='stack'?stackModeConfig().minutes:DIFFICULTY_TIME[dif.value];
+ if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{left--;renderTimer();if(left<=0)finish(true)},1000);}
+ else el('timer').textContent='Sin cronómetro';
+ show();
+}
 function renderTimer(){const m=Math.floor(left/60),s=left%60;el('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
 function scoreNow(){return responses.reduce((sum,r,i)=>sum+(r===qs[i]?.c?1:0),0);}
-function show(){const q=qs[idx];if(!q){finish(false);return;}const response=responses[idx];el('qCounter').textContent=`Pregunta ${idx+1} / 40`;el('liveScore').textContent=`${scoreNow()} correctas`;el('qDifficulty').textContent=q.d||dif.value;el('qText').textContent=q.q;el('quizProgress').style.width=`${((idx+1)/40)*100}%`;el('answers').innerHTML=q.a.map((a,i)=>`<button type="button" class="answer-btn" data-i="${i}">${String.fromCharCode(65+i)}. ${escapeHtml(a)}</button>`).join('');const buttons=[...document.querySelectorAll('.answer-btn')];buttons.forEach(b=>b.addEventListener('click',()=>answer(Number(b.dataset.i))));if(response!==null){buttons.forEach(b=>b.disabled=true);buttons[q.c]?.classList.add('correct');if(response!==q.c)buttons[response]?.classList.add('wrong');el('feedback').textContent=response===q.c?'Correcto.':`Respuesta correcta: ${String.fromCharCode(65+q.c)}.`;}else el('feedback').textContent='';el('prevQ').disabled=idx===0;el('nextQ').disabled=response===null;el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';if(DIFFICULTY_TIME[dif.value])renderTimer();}
+function show(){
+ const q=qs[idx];if(!q){finish(false);return;}const response=responses[idx];
+ el('qCounter').textContent=`Pregunta ${idx+1} / 40`;el('liveScore').textContent=`${scoreNow()} correctas`;el('qDifficulty').textContent=q.d||dif.value;el('qText').textContent=q.q;el('quizProgress').style.width=`${((idx+1)/40)*100}%`;
+ el('answers').innerHTML=q.a.map((a,i)=>`<button type="button" class="answer-btn" data-i="${i}">${String.fromCharCode(65+i)}. ${escapeHtml(a)}</button>`).join('');
+ const buttons=[...document.querySelectorAll('.answer-btn')];buttons.forEach(b=>b.addEventListener('click',()=>answer(Number(b.dataset.i))));
+ if(response!==null){buttons.forEach(b=>b.disabled=true);buttons[q.c]?.classList.add('correct');if(response!==q.c)buttons[response]?.classList.add('wrong');el('feedback').textContent=response===q.c?'Correcto.':`Respuesta correcta: ${String.fromCharCode(65+q.c)}.`;}else el('feedback').textContent='';
+ el('prevQ').disabled=idx===0;el('nextQ').disabled=response===null;el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';
+ if(mode.value!=='stack'&&DIFFICULTY_TIME[dif.value])renderTimer();
+}
 function answer(i){if(responses[idx]!==null)return;responses[idx]=i;show();}
 function nextQuestion(){if(responses[idx]===null)return;if(idx>=39)finish(false);else{idx++;show();}}
 function prevQuestion(){if(idx>0){idx--;show();}}
-function finish(timeout){clearInterval(tick);showEl(el('simQuiz'),false);showEl(el('simResult'),true);const score=scoreNow(),passed=score>=26,pct=Math.round(score/40*100);el('resultScore').textContent=`${score}/40 · ${pct}%`;let advice=timeout?'El tiempo finalizó. Revise sus áreas de mejora y vuelva a practicar.':passed?'Buen resultado de práctica. Continúe contrastando con fuentes oficiales o requisitos reales del puesto.':'Revise los temas con más errores antes del siguiente intento.';if(mode.value==='cert'&&dif.value==='Difícil'){const key=`readiness:${currentCert.id}`;let hist=[];try{hist=JSON.parse(localStorage.getItem(key)||'[]')}catch{}hist.push({score:pct,date:new Date().toISOString()});hist=hist.slice(-50);localStorage.setItem(key,JSON.stringify(hist));const strong=hist.filter(x=>x.score>=90).length;advice+=` Meta interna antes de pagar: ${Math.min(strong,11)}/11 intentos Difícil con 90% o más.`;}el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;}
-function retry(){clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();}
-function certificate(){const name=el('candidateName').value.trim()||'Participante',score=scoreNow();const title=mode.value==='interview'?`Certificado de aprovechamiento ${role.value}`:`Certificado de aprovechamiento ${currentCert.id}`;if(typeof window.downloadStyledCertificatePdf==='function')window.downloadStyledCertificatePdf(`certificado-${slug(name)}.pdf`,{title,name,activity:mode.value==='interview'?`Simulación de entrevista laboral ${role.value}`:`Simulación de examen ${currentCert.name}`,result:`Resultado obtenido: ${score}/40 · ${Math.round(score/40*100)}%`,date:new Date()});else downloadSimplePdf(`certificado-${slug(name)}.pdf`,[title,name,mode.value==='interview'?`Simulación de entrevista laboral ${role.value}`:`Simulación de examen ${currentCert.name}`,`Resultado: ${score}/40`,new Date().toLocaleDateString()]);}
+function finish(timeout){
+ clearInterval(tick);showEl(el('simQuiz'),false);showEl(el('simResult'),true);
+ const score=scoreNow(),pct=Math.round(score/40*100),passed=pct>=70;el('resultScore').textContent=`${score}/40 · ${pct}%`;
+ let advice=timeout?'El tiempo finalizó. Revise sus áreas de mejora y vuelva a practicar.':passed?'Buen resultado de práctica. Continúe contrastando con fuentes oficiales o requisitos reales del puesto.':'Revise los temas con más errores antes del siguiente intento.';
+ if(mode.value==='cert'&&dif.value==='Difícil'){const key=`readiness:${currentCert.id}`;let hist=[];try{hist=JSON.parse(localStorage.getItem(key)||'[]')}catch{}hist.push({score:pct,date:new Date().toISOString()});hist=hist.slice(-50);localStorage.setItem(key,JSON.stringify(hist));const strong=hist.filter(x=>x.score>=90).length;advice+=` Meta interna antes de pagar: ${Math.min(strong,11)}/11 intentos Difícil con 90% o más.`;}
+ if(mode.value==='stack')advice=`Resultado del stack ${currentCert.name} · nivel ${dif.value}. Use las áreas con errores como guía de estudio.`;
+ el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;
+}
+function retry(){clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();}
+function certificate(){
+ const name=el('candidateName').value.trim(),score=scoreNow(),pct=Math.round(score/40*100);if(pct<70)return;
+ const title='Certificado de aprovechamiento';
+ const activity=mode.value==='interview'?`Simulación de entrevista laboral ${role.value}`:mode.value==='stack'?`Simulación de conocimientos · ${currentCert.name}`:`Simulación de examen · ${currentCert.name}`;
+ if(typeof window.downloadStyledCertificatePdf==='function')window.downloadStyledCertificatePdf(`certificado-${slug(name)}.pdf`,{title,name,activity,result:`Resultado obtenido: ${score}/40 · ${pct}%`,date:new Date()});
+ else downloadSimplePdf(`certificado-${slug(name)}.pdf`,[title,name,activity,`Resultado: ${score}/40`,new Date().toLocaleDateString()]);
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

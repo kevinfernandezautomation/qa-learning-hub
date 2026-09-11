@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /qa-learning-hub/
+Sitemap: https://kevinfernandezautomation.github.io/qa-learning-hub/sitemap.xml
