@@ -117,3 +117,19 @@ if(voiceBtn){voiceBtn.onclick=()=>{const SR=window.SpeechRecognition||window.web
 
 // Botón volver al inicio en todas las páginas
 (()=>{let b=document.getElementById('backToTop');if(!b){b=document.createElement('button');b.id='backToTop';b.className='back-to-top';b.type='button';b.setAttribute('aria-label','Volver al inicio');b.title='Volver al inicio';b.textContent='↑';document.body.appendChild(b);}const sync=()=>b.classList.toggle('show',window.scrollY>420);window.addEventListener('scroll',sync,{passive:true});b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));sync();})();
+
+
+function cartItems(){try{const x=JSON.parse(localStorage.getItem('selectedAcademyCourses')||'[]');return Array.isArray(x)?x:[]}catch{return[]}}
+function updateGlobalCart(){
+ const count=cartItems().length;
+ document.querySelectorAll('[data-global-cart-count]').forEach(x=>x.textContent=count);
+}
+(function injectGlobalCart(){
+ const actions=document.querySelector('.header-actions');if(!actions||document.getElementById('globalCartLink'))return;
+ const a=document.createElement('a');a.id='globalCartLink';a.className='icon-btn cart-icon-btn';a.href='pago.html';a.setAttribute('aria-label','Abrir carrito');
+ a.innerHTML=`<span aria-hidden="true">🛒</span><span class="cart-badge" data-global-cart-count>0</span>`;
+ const login=[...actions.querySelectorAll('a')].find(x=>/login\.html/.test(x.getAttribute('href')||''));
+ if(login)actions.insertBefore(a,login);else actions.appendChild(a);
+ updateGlobalCart();
+})();
+window.addEventListener('storage',updateGlobalCart);

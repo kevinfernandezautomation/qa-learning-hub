@@ -54,3 +54,6 @@ CREATE INDEX IF NOT EXISTS idx_reset_user ON password_reset_tokens(user_id);
 -- INSERT INTO users(full_name,email,password_hash,preferred_language)
 -- VALUES ($1,$2,$3,$4)
 -- RETURNING id,full_name,email,preferred_language,created_at;
+
+-- CITEXT + UNIQUE impide correos duplicados sin diferenciar mayúsculas/minúsculas.
+-- El constraint UNIQUE de users.email es la protección definitiva en base de datos.

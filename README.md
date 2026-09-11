@@ -123,3 +123,45 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - Workday cambia el título de ayuda a `Cómo buscar vacantes`.
 - Virtuoso QA actualizado a 9 cursos/rutas de la Training Library y 22 h totales según el catálogo suministrado.
 - `Competencias QA profesional` se unifica dentro de `Learning paths y competencias QA`; se elimina la sección separada.
+
+## v24
+- Certificaciones movidas a `certificaciones.html`; Academia ya no duplica ese catálogo.
+- Stacks QA rediseñados con el mismo estilo visual de Learning Paths.
+- Eliminado duplicado de `QA con imágenes e IA`; se conserva la primera ruta y ahora incluye `Aprender más`.
+- Nueva competencia `Software Quality Engineering para dispositivos médicos y SaMD`, con C#/.NET, Angular, SQL Server, V&V, trazabilidad, IEC 62304 e ISO 13485.
+- Learning Paths incorpora credenciales externas verificadas para Python testing, Java, SQL Server, PL/SQL, DevOps, performance, Selenium, automatización ISTQB y mobile.
+- Bancos propios nuevos para CTAL-TA, CTAL-TAE, CTAL-TM y CTAL-TTA, basados en la estructura de los syllabus adjuntos y con niveles Básico/Intermedio/Avanzado.
+- Prompts IA incorpora repositorios GitHub para Selenium, REST Assured/API, Java QA, JMeter, k6, SQL Server y PL/SQL.
+- Empleo incorpora guía de freelance, ANE Costa Rica y Get on Board.
+
+## v25
+- Agregada `GUIA_INTEGRACION_PAGO_BANCO.txt` con requisitos, arquitectura, seguridad, webhook, PCI, pruebas y checklist.
+- Certificaciones externas retiradas de Academia y movidas a la página `certificaciones.html`.
+- Stacks QA integrados en el mismo grid de Learning Paths, sin duplicidad; botones `Aprender más` y `Practicar`.
+- Agregado stack `Jira + Confluence para QA` con cursos oficiales gratuitos de Atlassian.
+- Simulador bloquea respuestas al vencer el tiempo y muestra/posiciona la sección de resultados.
+- Registro frontend impide correos duplicados y habilita `Registrarse` solo con datos válidos y contraseñas coincidentes.
+- Backend + PostgreSQL mantienen protección definitiva contra correos duplicados mediante CITEXT UNIQUE y respuesta HTTP 409.
+- Academia conserva selección acumulativa tipo carrito mediante localStorage.
+- Eliminado el texto del paquete ISTQB solicitado.
+- QA por industria incorpora una referencia de producto para cada sector.
+- Nueva ruta `English for QA` con Business English, vocabulario de testing, defectos, entrevistas y documentación.
+
+## v26
+- Corregido carrito: Academia persiste la selección y Pago restaura `selectedAcademyCourses`.
+- Icono global de carrito agregado al header con contador.
+- Botones de cursos pagados simplificados a `Agregar al carrito`; eliminado `Ver carrito`.
+- English for QA ampliado a 9 módulos; cada módulo tiene `Practicar` y página detallada.
+- Nuevos módulos: English for Medical QA, Financial QA y Project Managers.
+- Performance QA unificado dentro de `JMeter + k6 · Performance QA`.
+- Salesforce QA ampliado con objetos/metadata, seguridad, Flow, Apex, LWC/Jest, APIs, E2E y release.
+- Nueva ruta `Oracle APEX QA` con simulador, App Builder, SQL Workshop, session state, seguridad, UI y APIs.
+- Learning Paths/competencias/stacks simplificados eliminando duplicidades de web automation, API, performance, Selenium, manual, datos y DevOps.
+- Agregada `GUIA_BASES_DATOS_USUARIOS.txt` con PostgreSQL/Supabase, Neon, MongoDB Atlas, Firestore y Oracle Always Free.
+
+## v27
+- Cada certificación principal y externa incorpora `Agregar al carrito`.
+- La página de Certificaciones agrega el botón `Proveedores` junto a `Ir a simuladores`.
+- `Fundamentos de QA y preparación CTFL` y `Preparación AICS ASTFC` fueron retirados de Academia para evitar duplicidad con la página de Certificaciones.
+- Pago restaura también preparaciones de certificaciones externas agregadas desde Certificaciones.
+- JMeter + k6 amplía su ruta con introducción, comparación, requisitos, instalación, configuración y primeros flujos prácticos de cada herramienta.

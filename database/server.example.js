@@ -10,7 +10,10 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: process
 app.use(helmet()); app.use(express.json({limit:'20kb'})); app.use('/api/auth',rateLimit({windowMs:15*60*1000,max:50}));
 app.post('/api/auth/register', async (req,res)=>{
   const fullName=String(req.body.fullName||'').trim(); const email=String(req.body.email||'').trim().toLowerCase(); const password=String(req.body.password||''); const lang=String(req.body.language||'es');
-  if(fullName.length<2||!/^\S+@\S+\.\S+$/.test(email)||password.length<8) return res.status(400).json({error:'Datos inválidos'});
+  const strong=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,64}$/.test(password);
+  if(fullName.split(/\s+/).filter(Boolean).length<2||!/^\S+@\S+\.\S+$/.test(email)||!strong) return res.status(400).json({error:'Datos inválidos'});
+  const exists=await pool.query('SELECT 1 FROM users WHERE email=$1 LIMIT 1',[email]);
+  if(exists.rowCount) return res.status(409).json({error:'El correo ya está registrado'});
   try{
     const passwordHash=await argon2.hash(password,{type:argon2.argon2id});
     const q=`INSERT INTO users(full_name,email,password_hash,preferred_language) VALUES($1,$2,$3,$4) RETURNING id,full_name,email,preferred_language,created_at`;

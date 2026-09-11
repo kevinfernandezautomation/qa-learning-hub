@@ -9,7 +9,9 @@ window.QA_STACKS={
  mobile:{name:"Appium + BrowserStack",topics:["dispositivos reales","emuladores","permisos","orientación","interrupciones","conectividad","gestos","fragmentación"]},
  accessibility:{name:"WCAG + Accessibility Testing",topics:["teclado","foco visible","semántica","ARIA","contraste","texto alternativo","lectores de pantalla","automatización asistida"]},
  salesforce:{name:"Salesforce QA",topics:["sandbox","UAT","Apex tests","Lightning Web Components","roles y permisos","automatización","datos y configuraciones","deployment"]},
- aiqa:{name:"AI-assisted QA & Agents",topics:["prompts trazables","generación de pruebas","análisis de resultados","evidencia visual","crawling","Human-in-the-Loop","riesgo","no alucinación"]}
+ aiqa:{name:"AI-assisted QA & Agents",topics:["prompts trazables","generación de pruebas","análisis de resultados","evidencia visual","crawling","Human-in-the-Loop","riesgo","no alucinación"]},
+ "jira-confluence":{name:"Jira + Confluence para QA",topics:["work items y bugs","prioridad y severidad","workflows","boards y filtros","trazabilidad de defectos","Confluence para evidencia","documentación de pruebas","reportes y colaboración"]},
+ "oracle-apex":{name:"Oracle APEX QA",topics:["App Builder","Page Designer","SQL Workshop","validaciones","procesos","autenticación","autorización","session state","responsive UI","accesibilidad","REST integrations","regresión"]}
 };
 
 (function(){

@@ -3,9 +3,12 @@
 const stat=$('#paymentStatus'),input=$('#paymentCourseInput'),suggestions=$('#courseSuggestions'),cat=$('#paymentCategory'),scheme=$('#paymentScheme'),cart=$('#cartItems');
 const PRICE=Number(window.ACADEMY_COURSE_PRICE||5),VAT=Number(window.ACADEMY_VAT||0.13),catalog=[];const add=(name,category,schemeType,price=PRICE)=>{if(!catalog.some(x=>x.name===name))catalog.push({name,category,scheme:schemeType,price});};
 (window.CERTIFICATIONS||[]).forEach(c=>add(`Preparación ${c.id} — ${c.name}`,c.id.startsWith('AICS-')?'Preparación AICS':'Preparación ISTQB',c.id.startsWith('AICS-')?'AICS':'ISTQB'));
+(window.PRO_CREDENTIAL_PATHS||[]).forEach(x=>add(`Preparación ${x.name}`,'Certificación externa','OTROS'));
 add('Paquete certificaciones ISTQB','Paquete ISTQB','ISTQB',100);
 (window.LEARNING_PATHS||[]).filter(x=>!x.external&&!x.free&&x.id!=='game-qa').forEach(x=>add(x.name,'Learning Path','OTROS'));
-catalog.sort((a,b)=>a.category.localeCompare(b.category,'es')||a.name.localeCompare(b.name,'es'));let selected=new Set(),highlight=-1,currentMatches=[];
+catalog.sort((a,b)=>a.category.localeCompare(b.category,'es')||a.name.localeCompare(b.name,'es'));
+let persisted=[];try{persisted=JSON.parse(localStorage.getItem('selectedAcademyCourses')||'[]')}catch{}
+let selected=new Set((Array.isArray(persisted)?persisted:[]).filter(name=>catalog.some(x=>x.name===name))),highlight=-1,currentMatches=[];
 new URLSearchParams(location.search).getAll('course').forEach(r=>{const exact=catalog.find(x=>x.name===r)||catalog.find(x=>x.name.includes(r));if(exact)selected.add(exact.name);});
 function money(n){return `US$${n.toFixed(2)}`;}
 function filtered(){const q=(input.value||'').trim().toLowerCase(),c=cat.value,sc=scheme.value;return catalog.filter(x=>(!c||x.category===c)&&(!sc||x.scheme===sc)&&(!q||`${x.name} ${x.category} ${x.scheme}`.toLowerCase().includes(q))&&!selected.has(x.name));}
@@ -26,7 +29,7 @@ function render(){
  $('#summarySubtotal').textContent=money(subtotal);
  $('#summaryVat').textContent=money(vat);
  $('#summaryTotal').textContent=money(total);
- localStorage.setItem('selectedAcademyCourses',JSON.stringify(items));
+ localStorage.setItem('selectedAcademyCourses',JSON.stringify(items));window.updateGlobalCart?.();
  stat.textContent='';input.value='';delete input.dataset.selected;hideSuggestions();window.applyTranslations?.();
 }
 input.addEventListener('input',()=>{delete input.dataset.selected;renderSuggestions();});input.addEventListener('focus',renderSuggestions);

@@ -60,7 +60,7 @@ const SCENARIOS=[
  'durante la revisión de una historia de usuario','antes de una liberación de alto impacto','después de corregir un defecto crítico','al preparar una regresión para el siguiente sprint','cuando existe poco tiempo para probar','al recibir una nueva versión del sistema','durante una sesión de refinamiento','al analizar un cambio con dependencias','cuando un resultado no coincide con lo esperado','al preparar evidencia para una decisión de release','cuando cambia una regla de negocio','al validar una funcionalidad en un ambiente nuevo'
 ];
 
-let simCert,provider,dif,mode,role,examLang,simStack,qs=[],idx=0,tick=null,left=0,currentCert=null,currentBankSize=0,responses=[];
+let simCert,provider,dif,mode,role,examLang,simStack,qs=[],idx=0,tick=null,left=0,currentCert=null,currentBankSize=0,responses=[],examLocked=false;
 const el=id=>document.getElementById(id);
 const showEl=(node,show=true)=>{if(!node)return;node.hidden=!show;node.style.display=show?'':'';};
 
@@ -179,6 +179,7 @@ function updateCert(){
 
 function ctflSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTFL';}
 function ctalAtSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTAL-AT';}
+function advancedSyllabusSelected(){return mode.value==='cert' && ['CTAL-TA','CTAL-TAE','CTAL-TM','CTAL-TTA'].includes(currentCert?.id);}
 function buildCtflBank(){
  const full=window.buildCtflSyllabusBank?.()||[];
  const weight={Principiante:{Básico:.65,Intermedio:.30,Avanzado:.05},Fácil:{Básico:.50,Intermedio:.40,Avanzado:.10},Medio:{Básico:.25,Intermedio:.50,Avanzado:.25},Difícil:{Básico:.10,Intermedio:.35,Avanzado:.55}}[dif.value]||{Básico:.34,Intermedio:.33,Avanzado:.33};
@@ -203,9 +204,24 @@ function buildCtalAtBank(){
  for(const q of shuffle(full)){if(out.length>=120)break;if(!used.has(q.uid)){used.add(q.uid);out.push(q)}}
  return out;
 }
+
+function buildUploadedAdvancedBank(){
+ const full=window.buildAdvancedSyllabusBank?.(currentCert.id)||[];
+ const weight={Principiante:{Básico:.55,Intermedio:.35,Avanzado:.10},Fácil:{Básico:.40,Intermedio:.45,Avanzado:.15},Medio:{Básico:.20,Intermedio:.50,Avanzado:.30},Difícil:{Básico:.10,Intermedio:.35,Avanzado:.55}}[dif.value]||{Básico:.34,Intermedio:.33,Avanzado:.33};
+ const grouped={Básico:shuffle(full.filter(q=>q.d==='Básico')),Intermedio:shuffle(full.filter(q=>q.d==='Intermedio')),Avanzado:shuffle(full.filter(q=>q.d==='Avanzado'))};
+ const out=[],used=new Set();
+ for(const level of ['Básico','Intermedio','Avanzado']){
+  const count=Math.round(120*weight[level]);
+  for(let i=0;i<count&&i<grouped[level].length;i++){out.push(grouped[level][i]);used.add(grouped[level][i].uid)}
+ }
+ for(const q of shuffle(full)){if(out.length>=120)break;if(!used.has(q.uid)){out.push(q);used.add(q.uid)}}
+ return out;
+}
+
 function buildCertificationBank(){
  if(ctflSelected())return buildCtflBank();
  if(ctalAtSelected())return buildCtalAtBank();
+ if(advancedSyllabusSelected())return buildUploadedAdvancedBank();
  if(provider.value==='MIX'){const a=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='CTFL'),dif.value)||[];const b=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='AICS-ASTFC'),dif.value)||[];return localizeBank(shuffle(a).slice(0,60).concat(shuffle(b).slice(0,60)),examLang.value,currentCert);}
  const bank=window.buildExamQuestionBank(currentCert,dif.value)||[];return localizeBank(bank,examLang.value,currentCert);
 }
@@ -224,7 +240,7 @@ function buildInterviewBank(){
 function buildStackBank(){const cfg=stackModeConfig();return window.buildStackQuestions?.(simStack.value,cfg.level)||[];}
 
 function localizeBank(bank,lang,cert){
- if(lang==='es'||ctflSelected()||mode.value==='stack')return bank;
+ if(lang==='es'||ctflSelected()||ctalAtSelected()||advancedSyllabusSelected()||mode.value==='stack')return bank;
  const en=lang==='en';
  const contexts=en?['during requirement review','before a high-risk release','after a critical defect fix','while planning regression','when evidence is incomplete','during sprint refinement','when a result is unexpected','when prioritizing limited test time','while assessing release readiness','when a business rule changes','while reviewing test coverage','when a dependency changes']:['durante a revisão de requisitos','antes de uma liberação de alto risco','após corrigir um defeito crítico','ao planejar regressão','quando a evidência está incompleta','durante o refinamento do sprint','quando um resultado é inesperado','ao priorizar tempo limitado de teste','ao avaliar prontidão para release','quando uma regra de negócio muda','ao revisar a cobertura de testes','quando uma dependência muda'];
  const stems=en?['Which action best supports reliable testing','What should QA prioritize','Which option provides the strongest evidence','Which response best reduces product risk','What is the most appropriate testing decision','Which practice best improves traceability','What should be verified first','Which approach best supports a defensible quality decision','Which option is most consistent with sound QA practice','What would be the best next step']:['Qual ação melhor apoia testes confiáveis','O que QA deve priorizar','Qual opção fornece a evidência mais forte','Qual resposta reduz melhor o risco do produto','Qual é a decisão de teste mais adequada','Qual prática melhora melhor a rastreabilidade','O que deve ser verificado primeiro','Qual abordagem apoia melhor uma decisão de qualidade defensável','Qual opção é mais consistente com boas práticas de QA','Qual seria o melhor próximo passo'];
@@ -260,10 +276,10 @@ function start(){
  let pick=shuffle(unique).slice(0,40);
  const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`,last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');
  if(last===sig){pick=shuffle(unique).slice(0,40);sig=pick.map(q=>q.q).join('|');}
- sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;
+ sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;examLocked=false;
  showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);
  const minutes=mode.value==='stack'?stackModeConfig().minutes:DIFFICULTY_TIME[dif.value];
- if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{left--;renderTimer();if(left<=0)finish(true)},1000);}
+ if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{if(examLocked)return;left--;renderTimer();if(left<=0){left=0;renderTimer();finish(true)}},1000);}
  else el('timer').textContent='Sin cronómetro';
  show();
 }
@@ -278,18 +294,21 @@ function show(){
  el('prevQ').disabled=idx===0;el('nextQ').disabled=response===null;el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';
  if(mode.value!=='stack'&&DIFFICULTY_TIME[dif.value])renderTimer();
 }
-function answer(i){if(responses[idx]!==null)return;responses[idx]=i;show();}
-function nextQuestion(){if(responses[idx]===null)return;if(idx>=39)finish(false);else{idx++;show();}}
-function prevQuestion(){if(idx>0){idx--;show();}}
+function answer(i){if(examLocked||left<0||responses[idx]!==null)return;responses[idx]=i;show();}
+function nextQuestion(){if(examLocked||responses[idx]===null)return;if(idx>=39)finish(false);else{idx++;show();}}
+function prevQuestion(){if(examLocked)return;if(idx>0){idx--;show();}}
 function finish(timeout){
- clearInterval(tick);showEl(el('simQuiz'),false);showEl(el('simResult'),true);
+ if(examLocked&&el('simResult')&&!el('simResult').hidden)return;
+ examLocked=true;clearInterval(tick);
+ document.querySelectorAll('.answer-btn,#nextQ,#prevQ').forEach(b=>{b.disabled=true});
+ showEl(el('simQuiz'),false);showEl(el('simResult'),true);
  const score=scoreNow(),pct=Math.round(score/40*100),passed=pct>=70;el('resultScore').textContent=`${score}/40 · ${pct}%`;
  let advice=timeout?'El tiempo finalizó. Revise sus áreas de mejora y vuelva a practicar.':passed?'Buen resultado de práctica. Continúe contrastando con fuentes oficiales o requisitos reales del puesto.':'Revise los temas con más errores antes del siguiente intento.';
  if(mode.value==='cert'&&dif.value==='Difícil'){const key=`readiness:${currentCert.id}`;let hist=[];try{hist=JSON.parse(localStorage.getItem(key)||'[]')}catch{}hist.push({score:pct,date:new Date().toISOString()});hist=hist.slice(-50);localStorage.setItem(key,JSON.stringify(hist));const strong=hist.filter(x=>x.score>=90).length;advice+=` Meta interna antes de pagar: ${Math.min(strong,11)}/11 intentos Difícil con 90% o más.`;}
  if(mode.value==='stack')advice=`Resultado del stack ${currentCert.name} · nivel ${dif.value}. Use las áreas con errores como guía de estudio.`;
- el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;
+ el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function retry(){clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();}
+function retry(){examLocked=false;clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();}
 function certificate(){
  const name=el('candidateName').value.trim(),score=scoreNow(),pct=Math.round(score/40*100);if(pct<70)return;
  const title='Certificado de aprovechamiento';

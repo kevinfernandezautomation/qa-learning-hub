@@ -50,6 +50,16 @@ const resources={
  {t:"Análisis de imágenes con IA",d:"Utilice IA para clasificar hallazgos visuales, sugerir riesgos y enriquecer evidencia; valide manualmente antes de confirmar defectos.",r:[]},
  {t:"Accesibilidad visual",d:"Revise contraste, legibilidad, jerarquía, foco, zoom y comportamiento responsive junto con pruebas automáticas.",r:["https://www.w3.org/WAI/standards-guidelines/wcag/"]},
  {t:"Human-in-the-Loop",d:"Mantenga una persona responsable para confirmar defectos, aprobar baselines y decidir impacto antes de modificar producto o liberar.",r:[]}
+],
+"medical-device-samd":[
+ {t:"C#/.NET para software regulado",d:"Diseñe servicios mantenibles con separación de responsabilidades, manejo de errores, logging y pruebas automatizadas. En un entorno regulado, el código debe quedar respaldado por requisitos, revisiones y evidencia verificable.",r:["https://learn.microsoft.com/dotnet/csharp/"]},
+ {t:"Angular y usabilidad",d:"Implemente componentes previsibles, formularios validados, accesibilidad y manejo claro de estados. En software médico, cambios de interfaz pueden tener impacto de riesgo y deben evaluarse junto con requisitos y usabilidad.",r:["https://angular.dev/"]},
+ {t:"SQL Server y trazabilidad de datos",d:"Valide tablas, vistas, stored procedures, constraints, transacciones e integridad. Relacione resultados de UI/API con persistencia y conserve evidencia reproducible.",r:["https://learn.microsoft.com/sql/"]},
+ {t:"Requisitos, diseño y risk controls",d:"Conecte requisitos de software, especificaciones de diseño, riesgos, controles y casos de prueba mediante trazabilidad bidireccional. Una modificación debe permitir analizar impacto sobre requisitos y evidencia.",r:[]},
+ {t:"Verificación y validación",d:"La verificación aporta evidencia de que los productos de trabajo cumplen requisitos especificados; la validación confirma que la solución satisface el uso previsto en su contexto. Prepare protocolos, resultados, desviaciones y evidencia.",r:[]},
+ {t:"IEC 62304",d:"Estudie los procesos de ciclo de vida de software para medical devices: desarrollo, mantenimiento y actividades relacionadas. Use la norma como marco para procesos y documentación, no como sustituto de requisitos regulatorios del producto.",r:["https://webstore.iec.ch/en/publication/22794"]},
+ {t:"ISO 13485",d:"Comprenda el sistema de gestión de calidad específico para medical devices, con énfasis en requisitos regulatorios, procesos controlados, riesgo y evidencia de calidad.",r:["https://www.iso.org/standard/59752.html"]},
+ {t:"SaMD, defectos y evidencia",d:"Diferencie software como dispositivo médico (SaMD) de software integrado en hardware médico y conserve evidencia suficiente para investigación de defectos, code review, V&V y decisiones de release.",r:["https://www.fda.gov/medical-devices/digital-health-center-excellence/software-medical-device-samd"]}
 ]};
 const id=new URLSearchParams(location.search).get('id')||'programming-qa';
 const path=(window.QA_COMPETENCY_PATHS||[]).find(x=>x.id===id)||window.QA_COMPETENCY_PATHS?.[0];
