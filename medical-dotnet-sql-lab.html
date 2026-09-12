@@ -1,0 +1,31 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Práctica Medical Device/SaMD con Requirement, C#/.NET, SQL Server, test, defect, correction y retest."><title>C#/.NET + SQL Server Medical QA Lab | QA Learning Hub</title><link rel="stylesheet" href="styles.css"></head><body data-page="academy"><header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">.NET</span><span><strong>QA Learning Hub</strong><small>Medical Software · C# · SQL Server</small></span></a><nav class="main-nav"><a href="academia.html">Academia</a><a href="competencia.html?id=medical-device-samd">Ruta Medical/SaMD</a><a href="medical-qa-lab.html">Medical QA Lab</a></nav><div class="header-actions"><button id="themeToggle" class="icon-btn">◐</button></div></header><main id="main"><section class="page-hero shell"><span class="eyebrow">Proyecto práctico · Medical Software</span><h1>Requirement → C# implementation → SQL → test → defect → correction → retest</h1><p>Proyecto ficticio orientado a demostrar experiencia práctica más cercana a un stack C#/.NET + SQL Server que un ejercicio únicamente en Python/Playwright.</p><div class="notice"><strong>Uso profesional responsable:</strong> es un proyecto de portafolio simulado. No debe presentarse como experiencia laboral regulada ni como certificación IEC 62304/ISO 13485.</div><div class="hero-actions"><a class="btn ghost" href="competencia.html?id=medical-device-samd">← Volver a la ruta</a><a class="btn primary" href="#chain">Ver cadena completa</a></div></section>
+<section id="chain" class="shell"><div class="section-heading"><div><span class="eyebrow">Cadena trazable</span><h2>Un cambio completo con evidencia</h2><p>El ejemplo utiliza un requisito ficticio de auditoría de exportaciones para MedReview Trainer.</p></div></div><div class="trace-chain">
+<article><b>1</b><h3>Requirement</h3><p><code>SWR-006</code>: cada exportación de reporte debe registrar usuario, recordId, timestamp UTC, softwareVersion y resultado.</p><small>Evidencia: requirement + risk link.</small></article>
+<article><b>2</b><h3>C#/.NET implementation</h3><pre><code>public async Task&lt;ExportResult&gt; ExportAsync(string recordId, UserContext user) {
+  var result = await _report.ExportAsync(recordId);
+  await _audit.WriteAsync(new AuditEvent {
+    Action = "REPORT_EXPORT",
+    RecordId = recordId,
+    UserId = user.Id,
+    SoftwareVersion = _build.Version,
+    OccurredAtUtc = _clock.UtcNow,
+    Result = result.Status
+  });
+  return result;
+}</code></pre></article>
+<article><b>3</b><h3>SQL Server</h3><pre><code>CREATE TABLE dbo.AuditEvent(
+  AuditEventId BIGINT IDENTITY PRIMARY KEY,
+  Action NVARCHAR(50) NOT NULL,
+  RecordId NVARCHAR(50) NOT NULL,
+  UserId NVARCHAR(100) NOT NULL,
+  SoftwareVersion NVARCHAR(30) NOT NULL,
+  OccurredAtUtc DATETIME2 NOT NULL,
+  Result NVARCHAR(30) NOT NULL
+);</code></pre></article>
+<article><b>4</b><h3>Test</h3><p>Ejecute exportación con usuario autorizado. Valide HTTP/UI, archivo generado y fila en <code>AuditEvent</code>. Compare recordId, usuario, timestamp y versión.</p><small>Artefacto: TC-AUD-003.</small></article>
+<article><b>5</b><h3>Defect</h3><p><code>DEF-21</code>: el archivo se genera, pero no existe evento de auditoría. Severidad alta para el ejercicio por pérdida de trazabilidad.</p><small>Evidencia: pasos, build, query SQL y captura/log.</small></article>
+<article><b>6</b><h3>Correction</h3><p>Agregar <code>_audit.WriteAsync(...)</code>, manejar fallo de persistencia y revisar que la exportación no declare éxito si la evidencia requerida no queda registrada.</p></article>
+<article><b>7</b><h3>Retest</h3><p>Repita TC-AUD-003 sobre el build corregido y ejecute regresión de exportación + audit log. Adjunte query y resultado.</p><small>Resultado: PASS solo si la evidencia coincide con el requirement.</small></article>
+</div></section>
+<section class="shell"><div class="section-heading"><div><span class="eyebrow">Capas del proyecto</span><h2>Carpetas de implementación y pruebas</h2></div></div><div class="learn-path-grid"><article class="learn-path-card"><h3>C#/.NET + SQL Server</h3><p>Implementación principal del caso: modelos, servicio de exportación, script SQL y pruebas unitarias.</p><a class="btn primary small" href="medical-device-samd-project/csharp-dotnet-sqlserver/index.html">Abrir guía</a></article><article class="learn-path-card"><h3>Python</h3><p>Herramientas auxiliares de QA para validar trazabilidad/evidencia y revisar datos exportados. No sustituye la implementación C# solicitada por el rol.</p><a class="btn primary small" href="medical-device-samd-project/python/index.html">Abrir guía</a></article><article class="learn-path-card"><h3>Playwright</h3><p>Prueba UI/E2E complementaria que verifica la exportación desde la interfaz y correlaciona la acción con la evidencia esperada.</p><a class="btn primary small" href="medical-device-samd-project/playwright/index.html">Abrir guía</a></article></div></section>
+<section class="shell"><div class="notice"><strong>Cómo explicarlo en entrevista:</strong> “Construí un proyecto simulado donde tracé un requirement hasta C#/.NET y SQL Server, diseñé el test, documenté un defecto, implementé la corrección y ejecuté retest/regresión. Python y Playwright se usaron como capas auxiliares de QA, no como sustitutos del backend C#.”</div></section></main><footer class="footer"><strong>QA Learning Hub</strong></footer><script src="common.js"></script></body></html>

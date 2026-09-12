@@ -381,3 +381,6 @@ body[data-page="academy"] main{padding-bottom:28px}
 .mistake-review,.reading-advice{display:grid;gap:12px;margin:18px 0}.review-mistake,.reading-advice article{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}.review-mistake p{margin:.45rem 0}.listening-player{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 @media(max-width:900px){.guided-steps{grid-template-columns:1fr 1fr}.medreview-app{grid-template-columns:1fr}.med-sidebar{display:none}.med-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.guided-steps,.med-grid{grid-template-columns:1fr}}
+
+/* v33 */
+.trace-chain{display:grid;gap:14px}.trace-chain article{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--surface)}.trace-chain article>b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff}.trace-chain pre{overflow:auto;padding:14px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}.accent-config{padding-top:10px;padding-bottom:18px}.accent-config label{max-width:560px}.writing-meta{display:flex;justify-content:space-between;gap:12px;margin-top:8px;color:var(--muted)}#writingText,#speakTranscript{width:100%}

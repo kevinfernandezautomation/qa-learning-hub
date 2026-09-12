@@ -215,3 +215,10 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - Nueva `ingles-listening.html` con 30 audios originales A1–C2 usando Speech Synthesis del navegador.
 - Nuevo Learning Path `QA + Mejora de Procesos` con DMAIC, PDCA, RCA, Pareto, métricas y control.
 - Nueva carpeta `microlearning-scripts/` con un TXT de guion + recomendaciones visuales por cada Learning Path, competencia y stack.
+
+## v33
+- Ruta Medical Device/SaMD incorpora una sección explícita `Requirement → C#/.NET implementation → SQL Server → test → defect → correction → retest`.
+- Nuevo `medical-dotnet-sql-lab.html` y carpeta `medical-device-samd-project/` con subcarpetas C#/.NET+SQL Server, Python auxiliar y Playwright E2E.
+- Nuevas pruebas orientativas `Writing A1–C2` y `Speaking A1–C2`.
+- Listening y Speaking permiten seleccionar voz/acento de EE. UU., India, Reino Unido, Bulgaria, Alemania, Filipinas, Japón, China y Brasil, sujeto a voces disponibles en el dispositivo.
+- Speaking aclara que el navegador estima contenido transcrito y no puede calificar con fiabilidad pronunciación/acento.
