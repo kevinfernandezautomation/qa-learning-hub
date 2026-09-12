@@ -1,0 +1,1940 @@
+QA LEARNING HUB — TODOS LOS PLANES DE MICROLEARNING
+Versión unificada
+Duración máxima recomendada por video: 2 minutos
+Archivos integrados: 27
+
+==============================================================================
+
+PLAN: 00-INDICE-PLANES-MICROVIDEOS.txt
+------------------------------------------------------------------------------
+QA LEARNING HUB — PLANES DE MICROVIDEOS
+Duración máxima recomendada por video: 2:00 minutos
+
+- AcademyBugs – laboratorio de detección y reporte de defectos: 14 videos · archivo academybugs-practice-academybugs-laboratorio-de-deteccion-y-reporte-de-defectos.txt
+- uTest Academy – práctica de testing y comunidad: 14 videos · archivo utest-academy-utest-academy-practica-de-testing-y-comunidad.txt
+- Virtuoso QA – Training Library y certificaciones: 18 videos · archivo virtuoso-qa-virtuoso-qa-training-library-y-certificaciones.txt
+- QA con imágenes e IA: 12 videos · archivo visual-ai-qa-con-imagenes-e-ia.txt
+- QA de videojuegos: 12 videos · archivo game-qa-qa-de-videojuegos.txt
+- English for QA: 12 videos · archivo english-qa-english-for-qa.txt
+- QA para Robótica: 24 videos · archivo robotics-qa-qa-para-robotica.txt
+- QA para Software de Aviación: 24 videos · archivo aviation-qa-qa-para-software-de-aviacion.txt
+- Programación aplicada a QA: 8 videos · archivo programming-qa-programacion-aplicada-a-qa.txt
+- Software Quality Engineering para dispositivos médicos y SaMD: 24 videos · archivo medical-device-samd-software-quality-engineering-para-dispositivos-medicos-y-samd.txt
+- QA Manual Web & Mobile: 8 videos · archivo manual-qa-manual-web-mobile.txt
+- Playwright / Cypress / Selenium: 8 videos · archivo webauto-playwright-cypress-selenium.txt
+- API Quality Engineering: 8 videos · archivo api-api-quality-engineering.txt
+- JMeter + k6 · Performance QA: 12 videos · archivo performance-jmeter-k6-performance-qa.txt
+- SQL Server + PL/SQL: 8 videos · archivo data-sql-server-pl-sql.txt
+- Azure DevOps / TFS + Git + CI/CD: 8 videos · archivo devops-azure-devops-tfs-git-ci-cd.txt
+- Appium + BrowserStack: 8 videos · archivo mobile-appium-browserstack.txt
+- WCAG + Accessibility Testing: 8 videos · archivo accessibility-wcag-accessibility-testing.txt
+- Salesforce QA: 16 videos · archivo salesforce-salesforce-qa.txt
+- AI-assisted QA & Agents: 8 videos · archivo aiqa-ai-assisted-qa-agents.txt
+- Jira + Confluence para QA: 8 videos · archivo jira-confluence-jira-confluence-para-qa.txt
+- Oracle APEX QA: 16 videos · archivo oracle-apex-oracle-apex-qa.txt
+
+==============================================================================
+
+PLAN: academybugs-practice-academybugs-laboratorio-de-deteccion-y-reporte-de-defectos.txt
+------------------------------------------------------------------------------
+LEARNING PATH: AcademyBugs – laboratorio de detección y reporte de defectos
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 7
+Videos recomendados: 14
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 24 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Tutorial y ejemplos de defectos
+  Video 1. Concepto esencial: Tutorial y ejemplos de defectos
+  Subtema: Definición, propósito y vocabulario mínimo de Tutorial y ejemplos de defectos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Tutorial y ejemplos de defectos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Tipos de bugs
+  Video 3. Concepto esencial: Tipos de bugs
+  Subtema: Definición, propósito y vocabulario mínimo de Tipos de bugs.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Tipos de bugs
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Exploración del sitio de práctica
+  Video 5. Concepto esencial: Exploración del sitio de práctica
+  Subtema: Definición, propósito y vocabulario mínimo de Exploración del sitio de práctica.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Exploración del sitio de práctica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Detección de 25 bugs plantados
+  Video 7. Concepto esencial: Detección de 25 bugs plantados
+  Subtema: Definición, propósito y vocabulario mínimo de Detección de 25 bugs plantados.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Detección de 25 bugs plantados
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Clasificación funcional, visual, contenido, rendimiento y crash
+  Video 9. Concepto esencial: Clasificación funcional, visual, contenido, rendimiento y crash
+  Subtema: Definición, propósito y vocabulario mínimo de Clasificación funcional, visual, contenido, rendimiento y crash.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Clasificación funcional, visual, contenido, rendimiento y crash
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Redacción de reportes profesionales
+  Video 11. Concepto esencial: Redacción de reportes profesionales
+  Subtema: Definición, propósito y vocabulario mínimo de Redacción de reportes profesionales.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Redacción de reportes profesionales
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Práctica guiada de cinco escenarios de reporte
+  Video 13. Concepto esencial: Práctica guiada de cinco escenarios de reporte
+  Subtema: Definición, propósito y vocabulario mínimo de Práctica guiada de cinco escenarios de reporte.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Práctica guiada de cinco escenarios de reporte
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: accessibility-wcag-accessibility-testing.txt
+------------------------------------------------------------------------------
+LEARNING PATH: WCAG + Accessibility Testing
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Teclado
+  Video 1. Concepto esencial: Teclado
+  Subtema: Definición, propósito y vocabulario mínimo de Teclado.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Teclado
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Semántica
+  Video 3. Concepto esencial: Semántica
+  Subtema: Definición, propósito y vocabulario mínimo de Semántica.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Semántica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Contraste
+  Video 5. Concepto esencial: Contraste
+  Subtema: Definición, propósito y vocabulario mínimo de Contraste.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Contraste
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Automatización asistida
+  Video 7. Concepto esencial: Automatización asistida
+  Subtema: Definición, propósito y vocabulario mínimo de Automatización asistida.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Automatización asistida
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: aiqa-ai-assisted-qa-agents.txt
+------------------------------------------------------------------------------
+LEARNING PATH: AI-assisted QA & Agents
+Tipo: Stack QA
+Nivel: Intermedio–Avanzado
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Prompts
+  Video 1. Concepto esencial: Prompts
+  Subtema: Definición, propósito y vocabulario mínimo de Prompts.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Prompts
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Generación de pruebas
+  Video 3. Concepto esencial: Generación de pruebas
+  Subtema: Definición, propósito y vocabulario mínimo de Generación de pruebas.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Generación de pruebas
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Evidencia visual
+  Video 5. Concepto esencial: Evidencia visual
+  Subtema: Definición, propósito y vocabulario mínimo de Evidencia visual.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Evidencia visual
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Agentes y Human-in-the-Loop
+  Video 7. Concepto esencial: Agentes y Human-in-the-Loop
+  Subtema: Definición, propósito y vocabulario mínimo de Agentes y Human-in-the-Loop.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Agentes y Human-in-the-Loop
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: api-api-quality-engineering.txt
+------------------------------------------------------------------------------
+LEARNING PATH: API Quality Engineering
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: HTTP y contratos
+  Video 1. Concepto esencial: HTTP y contratos
+  Subtema: Definición, propósito y vocabulario mínimo de HTTP y contratos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: HTTP y contratos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Auth
+  Video 3. Concepto esencial: Auth
+  Subtema: Definición, propósito y vocabulario mínimo de Auth.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Auth
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Negativos
+  Video 5. Concepto esencial: Negativos
+  Subtema: Definición, propósito y vocabulario mínimo de Negativos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Negativos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Automatización y CI
+  Video 7. Concepto esencial: Automatización y CI
+  Subtema: Definición, propósito y vocabulario mínimo de Automatización y CI.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Automatización y CI
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: aviation-qa-qa-para-software-de-aviacion.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA para Software de Aviación
+Tipo: Learning Path
+Nivel: Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Software aeronáutico y safety assurance
+  Video 1. Concepto esencial: Software aeronáutico y safety assurance
+  Subtema: Definición, propósito y vocabulario mínimo de Software aeronáutico y safety assurance.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Software aeronáutico y safety assurance
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: Software aeronáutico y safety assurance
+  Subtema: Mini escenario y checklist para aplicar Software aeronáutico y safety assurance en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: DO-178C: propósito y contexto
+  Video 4. Concepto esencial: DO-178C: propósito y contexto
+  Subtema: Definición, propósito y vocabulario mínimo de DO-178C: propósito y contexto.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: DO-178C: propósito y contexto
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: DO-178C: propósito y contexto
+  Subtema: Mini escenario y checklist para aplicar DO-178C: propósito y contexto en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Requisitos y trazabilidad
+  Video 7. Concepto esencial: Requisitos y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos y trazabilidad.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Requisitos y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: Requisitos y trazabilidad
+  Subtema: Mini escenario y checklist para aplicar Requisitos y trazabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Verificación y revisiones
+  Video 10. Concepto esencial: Verificación y revisiones
+  Subtema: Definición, propósito y vocabulario mínimo de Verificación y revisiones.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Verificación y revisiones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Verificación y revisiones
+  Subtema: Mini escenario y checklist para aplicar Verificación y revisiones en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Pruebas basadas en requisitos
+  Video 13. Concepto esencial: Pruebas basadas en requisitos
+  Subtema: Definición, propósito y vocabulario mínimo de Pruebas basadas en requisitos.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Pruebas basadas en requisitos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Pruebas basadas en requisitos
+  Subtema: Mini escenario y checklist para aplicar Pruebas basadas en requisitos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Cobertura estructural y MC/DC
+  Video 16. Concepto esencial: Cobertura estructural y MC/DC
+  Subtema: Definición, propósito y vocabulario mínimo de Cobertura estructural y MC/DC.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: Cobertura estructural y MC/DC
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: Cobertura estructural y MC/DC
+  Subtema: Mini escenario y checklist para aplicar Cobertura estructural y MC/DC en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Configuración, evidencia y cambios
+  Video 19. Concepto esencial: Configuración, evidencia y cambios
+  Subtema: Definición, propósito y vocabulario mínimo de Configuración, evidencia y cambios.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: Configuración, evidencia y cambios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: Configuración, evidencia y cambios
+  Subtema: Mini escenario y checklist para aplicar Configuración, evidencia y cambios en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Integración, HIL y regresión
+  Video 22. Concepto esencial: Integración, HIL y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de Integración, HIL y regresión.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Integración, HIL y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Integración, HIL y regresión
+  Subtema: Mini escenario y checklist para aplicar Integración, HIL y regresión en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: content-marketing-qa-qa-para-software-de-contenido-y-marketing-digital.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA para Software de Contenido y Marketing Digital
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: CMS y flujos editoriales
+  Video 1. Concepto esencial: CMS y flujos editoriales
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: CMS y flujos editoriales
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Contenido, enlaces y metadatos
+  Video 3. Concepto esencial: Contenido, enlaces y metadatos
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Contenido, enlaces y metadatos
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: SEO técnico y accesibilidad
+  Video 5. Concepto esencial: SEO técnico y accesibilidad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: SEO técnico y accesibilidad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: UTM y analítica
+  Video 7. Concepto esencial: UTM y analítica
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: UTM y analítica
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Formularios y conversiones
+  Video 9. Concepto esencial: Formularios y conversiones
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Formularios y conversiones
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Email y responsive
+  Video 11. Concepto esencial: Email y responsive
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Email y responsive
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: Consentimiento y privacidad
+  Video 13. Concepto esencial: Consentimiento y privacidad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: Consentimiento y privacidad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: A/B testing y releases
+  Video 15. Concepto esencial: A/B testing y releases
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: A/B testing y releases
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+==============================================================================
+
+PLAN: data-sql-server-pl-sql.txt
+------------------------------------------------------------------------------
+LEARNING PATH: SQL Server + PL/SQL
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: SQL
+  Video 1. Concepto esencial: SQL
+  Subtema: Definición, propósito y vocabulario mínimo de SQL.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: SQL
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Integridad
+  Video 3. Concepto esencial: Integridad
+  Subtema: Definición, propósito y vocabulario mínimo de Integridad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Integridad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Transacciones
+  Video 5. Concepto esencial: Transacciones
+  Subtema: Definición, propósito y vocabulario mínimo de Transacciones.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Transacciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Procedimientos
+  Video 7. Concepto esencial: Procedimientos
+  Subtema: Definición, propósito y vocabulario mínimo de Procedimientos.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Procedimientos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: devops-azure-devops-tfs-git-ci-cd.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Azure DevOps / TFS + Git + CI/CD
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Work items
+  Video 1. Concepto esencial: Work items
+  Subtema: Definición, propósito y vocabulario mínimo de Work items.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Work items
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Repositorios
+  Video 3. Concepto esencial: Repositorios
+  Subtema: Definición, propósito y vocabulario mínimo de Repositorios.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Repositorios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Pipelines
+  Video 5. Concepto esencial: Pipelines
+  Subtema: Definición, propósito y vocabulario mínimo de Pipelines.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Pipelines
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Quality gates
+  Video 7. Concepto esencial: Quality gates
+  Subtema: Definición, propósito y vocabulario mínimo de Quality gates.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Quality gates
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: english-qa-english-for-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: English for QA
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: QA vocabulary
+  Video 1. Concepto esencial: QA vocabulary
+  Subtema: Definición, propósito y vocabulario mínimo de QA vocabulary.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: QA vocabulary
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bug reports
+  Video 3. Concepto esencial: Bug reports
+  Subtema: Definición, propósito y vocabulario mínimo de Bug reports.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bug reports
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Agile meetings
+  Video 5. Concepto esencial: Agile meetings
+  Subtema: Definición, propósito y vocabulario mínimo de Agile meetings.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Agile meetings
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Interviews
+  Video 7. Concepto esencial: Interviews
+  Subtema: Definición, propósito y vocabulario mínimo de Interviews.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Interviews
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Technical reading
+  Video 9. Concepto esencial: Technical reading
+  Subtema: Definición, propósito y vocabulario mínimo de Technical reading.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Technical reading
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Professional writing
+  Video 11. Concepto esencial: Professional writing
+  Subtema: Definición, propósito y vocabulario mínimo de Professional writing.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Professional writing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: game-qa-qa-de-videojuegos.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA de videojuegos
+Tipo: Learning Path
+Nivel: Inicial
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Testing de videojuegos
+  Video 1. Concepto esencial: Testing de videojuegos
+  Subtema: Definición, propósito y vocabulario mínimo de Testing de videojuegos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Testing de videojuegos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bugs y severidad
+  Video 3. Concepto esencial: Bugs y severidad
+  Subtema: Definición, propósito y vocabulario mínimo de Bugs y severidad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bugs y severidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Playtesting y regresión
+  Video 5. Concepto esencial: Playtesting y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de Playtesting y regresión.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Playtesting y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Unity y Unreal para QA
+  Video 7. Concepto esencial: Unity y Unreal para QA
+  Subtema: Definición, propósito y vocabulario mínimo de Unity y Unreal para QA.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Unity y Unreal para QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Jira y evidencias
+  Video 9. Concepto esencial: Jira y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Jira y evidencias.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Jira y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Portafolio gamer QA
+  Video 11. Concepto esencial: Portafolio gamer QA
+  Subtema: Definición, propósito y vocabulario mínimo de Portafolio gamer QA.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Portafolio gamer QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: jira-confluence-jira-confluence-para-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Jira + Confluence para QA
+Tipo: Stack QA
+Nivel: Inicial–Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Jira: work items, boards y workflows
+  Video 1. Concepto esencial: Jira: work items, boards y workflows
+  Subtema: Definición, propósito y vocabulario mínimo de Jira: work items, boards y workflows.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Jira: work items, boards y workflows
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Bugs y trazabilidad
+  Video 3. Concepto esencial: Bugs y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Bugs y trazabilidad.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Bugs y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Confluence: documentación y evidencias
+  Video 5. Concepto esencial: Confluence: documentación y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Confluence: documentación y evidencias.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Confluence: documentación y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Filtros, reportes y colaboración
+  Video 7. Concepto esencial: Filtros, reportes y colaboración
+  Subtema: Definición, propósito y vocabulario mínimo de Filtros, reportes y colaboración.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Filtros, reportes y colaboración
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: manual-qa-manual-web-mobile.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA Manual Web & Mobile
+Tipo: Stack QA
+Nivel: Inicial
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Requisitos y criterios
+  Video 1. Concepto esencial: Requisitos y criterios
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos y criterios.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Requisitos y criterios
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Caja negra
+  Video 3. Concepto esencial: Caja negra
+  Subtema: Definición, propósito y vocabulario mínimo de Caja negra.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Caja negra
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Exploración
+  Video 5. Concepto esencial: Exploración
+  Subtema: Definición, propósito y vocabulario mínimo de Exploración.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Exploración
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Web responsive y mobile
+  Video 7. Concepto esencial: Web responsive y mobile
+  Subtema: Definición, propósito y vocabulario mínimo de Web responsive y mobile.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Web responsive y mobile
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: medical-device-samd-software-quality-engineering-para-dispositivos-medicos-y-samd.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Software Quality Engineering para dispositivos médicos y SaMD
+Tipo: Competencia QA
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: C#/.NET para backend regulado
+  Video 1. Concepto esencial: C#/.NET para backend regulado
+  Subtema: Definición, propósito y vocabulario mínimo de C#/.NET para backend regulado.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: C#/.NET para backend regulado
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: C#/.NET para backend regulado
+  Subtema: Mini escenario y checklist para aplicar C#/.NET para backend regulado en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Angular y usabilidad bajo restricciones
+  Video 4. Concepto esencial: Angular y usabilidad bajo restricciones
+  Subtema: Definición, propósito y vocabulario mínimo de Angular y usabilidad bajo restricciones.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: Angular y usabilidad bajo restricciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: Angular y usabilidad bajo restricciones
+  Subtema: Mini escenario y checklist para aplicar Angular y usabilidad bajo restricciones en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: SQL Server, tablas, vistas y stored procedures
+  Video 7. Concepto esencial: SQL Server, tablas, vistas y stored procedures
+  Subtema: Definición, propósito y vocabulario mínimo de SQL Server, tablas, vistas y stored procedures.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: SQL Server, tablas, vistas y stored procedures
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: SQL Server, tablas, vistas y stored procedures
+  Subtema: Mini escenario y checklist para aplicar SQL Server, tablas, vistas y stored procedures en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Requisitos, diseño, risk controls y trazabilidad
+  Video 10. Concepto esencial: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Requisitos, diseño, risk controls y trazabilidad.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Requisitos, diseño, risk controls y trazabilidad
+  Subtema: Mini escenario y checklist para aplicar Requisitos, diseño, risk controls y trazabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Verificación y validación (V&V)
+  Video 13. Concepto esencial: Verificación y validación (V&V)
+  Subtema: Definición, propósito y vocabulario mínimo de Verificación y validación (V&V).
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Verificación y validación (V&V)
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Verificación y validación (V&V)
+  Subtema: Mini escenario y checklist para aplicar Verificación y validación (V&V) en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: IEC 62304: ciclo de vida de software médico
+  Video 16. Concepto esencial: IEC 62304: ciclo de vida de software médico
+  Subtema: Definición, propósito y vocabulario mínimo de IEC 62304: ciclo de vida de software médico.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: IEC 62304: ciclo de vida de software médico
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: IEC 62304: ciclo de vida de software médico
+  Subtema: Mini escenario y checklist para aplicar IEC 62304: ciclo de vida de software médico en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: ISO 13485: sistema de gestión de calidad
+  Video 19. Concepto esencial: ISO 13485: sistema de gestión de calidad
+  Subtema: Definición, propósito y vocabulario mínimo de ISO 13485: sistema de gestión de calidad.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: ISO 13485: sistema de gestión de calidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: ISO 13485: sistema de gestión de calidad
+  Subtema: Mini escenario y checklist para aplicar ISO 13485: sistema de gestión de calidad en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Defectos, code review y evidencia regulatoria
+  Video 22. Concepto esencial: Defectos, code review y evidencia regulatoria
+  Subtema: Definición, propósito y vocabulario mínimo de Defectos, code review y evidencia regulatoria.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Defectos, code review y evidencia regulatoria
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Defectos, code review y evidencia regulatoria
+  Subtema: Mini escenario y checklist para aplicar Defectos, code review y evidencia regulatoria en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: mobile-appium-browserstack.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Appium + BrowserStack
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Dispositivos
+  Video 1. Concepto esencial: Dispositivos
+  Subtema: Definición, propósito y vocabulario mínimo de Dispositivos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Dispositivos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Permisos
+  Video 3. Concepto esencial: Permisos
+  Subtema: Definición, propósito y vocabulario mínimo de Permisos.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Permisos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Gestos
+  Video 5. Concepto esencial: Gestos
+  Subtema: Definición, propósito y vocabulario mínimo de Gestos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Gestos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Cloud testing
+  Video 7. Concepto esencial: Cloud testing
+  Subtema: Definición, propósito y vocabulario mínimo de Cloud testing.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Cloud testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: oracle-apex-oracle-apex-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Oracle APEX QA
+Tipo: Stack QA
+Nivel: Inicial–Intermedio
+Módulos: 8
+Videos recomendados: 16
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 28 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Qué es Oracle APEX
+  Video 1. Concepto esencial: Qué es Oracle APEX
+  Subtema: Definición, propósito y vocabulario mínimo de Qué es Oracle APEX.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Qué es Oracle APEX
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: App Builder y Page Designer
+  Video 3. Concepto esencial: App Builder y Page Designer
+  Subtema: Definición, propósito y vocabulario mínimo de App Builder y Page Designer.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: App Builder y Page Designer
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: SQL Workshop y datos
+  Video 5. Concepto esencial: SQL Workshop y datos
+  Subtema: Definición, propósito y vocabulario mínimo de SQL Workshop y datos.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: SQL Workshop y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Autenticación y autorización
+  Video 7. Concepto esencial: Autenticación y autorización
+  Subtema: Definición, propósito y vocabulario mínimo de Autenticación y autorización.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Autenticación y autorización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Validaciones y procesos
+  Video 9. Concepto esencial: Validaciones y procesos
+  Subtema: Definición, propósito y vocabulario mínimo de Validaciones y procesos.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Validaciones y procesos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: UI, accesibilidad y responsive
+  Video 11. Concepto esencial: UI, accesibilidad y responsive
+  Subtema: Definición, propósito y vocabulario mínimo de UI, accesibilidad y responsive.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: UI, accesibilidad y responsive
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: APIs e integraciones
+  Video 13. Concepto esencial: APIs e integraciones
+  Subtema: Definición, propósito y vocabulario mínimo de APIs e integraciones.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: APIs e integraciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Regresión y despliegues
+  Video 15. Concepto esencial: Regresión y despliegues
+  Subtema: Definición, propósito y vocabulario mínimo de Regresión y despliegues.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: Regresión y despliegues
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: payment-gateway-qa-qa-para-pasarelas-de-pago.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA para Pasarelas de Pago
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Ecosistema de pagos
+  Video 1. Concepto esencial: Ecosistema de pagos
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: Ecosistema de pagos
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Checkout y tokenización
+  Video 3. Concepto esencial: Checkout y tokenización
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Checkout y tokenización
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: Autorización y captura
+  Video 5. Concepto esencial: Autorización y captura
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: Autorización y captura
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: 3-D Secure
+  Video 7. Concepto esencial: 3-D Secure
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: 3-D Secure
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Webhooks e idempotencia
+  Video 9. Concepto esencial: Webhooks e idempotencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Webhooks e idempotencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Refunds y disputes
+  Video 11. Concepto esencial: Refunds y disputes
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Refunds y disputes
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: PCI DSS y seguridad
+  Video 13. Concepto esencial: PCI DSS y seguridad
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: PCI DSS y seguridad
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: Conciliación y factura electrónica
+  Video 15. Concepto esencial: Conciliación y factura electrónica
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: Conciliación y factura electrónica
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+==============================================================================
+
+PLAN: performance-jmeter-k6-performance-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: JMeter + k6 · Performance QA
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Modelo de carga
+  Video 1. Concepto esencial: Modelo de carga
+  Subtema: Definición, propósito y vocabulario mínimo de Modelo de carga.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Modelo de carga
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: JMeter Test Plans
+  Video 3. Concepto esencial: JMeter Test Plans
+  Subtema: Definición, propósito y vocabulario mínimo de JMeter Test Plans.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: JMeter Test Plans
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: k6 tests-as-code
+  Video 5. Concepto esencial: k6 tests-as-code
+  Subtema: Definición, propósito y vocabulario mínimo de k6 tests-as-code.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: k6 tests-as-code
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Percentiles y throughput
+  Video 7. Concepto esencial: Percentiles y throughput
+  Subtema: Definición, propósito y vocabulario mínimo de Percentiles y throughput.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Percentiles y throughput
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Thresholds
+  Video 9. Concepto esencial: Thresholds
+  Subtema: Definición, propósito y vocabulario mínimo de Thresholds.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Thresholds
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: CI/CD y observabilidad
+  Video 11. Concepto esencial: CI/CD y observabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de CI/CD y observabilidad.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: CI/CD y observabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: programming-qa-programacion-aplicada-a-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Programación aplicada a QA
+Tipo: Competencia QA
+Nivel: Inicial–Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: C# para utilidades y automatización
+  Video 1. Concepto esencial: C# para utilidades y automatización
+  Subtema: Definición, propósito y vocabulario mínimo de C# para utilidades y automatización.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: C# para utilidades y automatización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: JavaScript para testing web
+  Video 3. Concepto esencial: JavaScript para testing web
+  Subtema: Definición, propósito y vocabulario mínimo de JavaScript para testing web.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: JavaScript para testing web
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Java para Selenium y frameworks
+  Video 5. Concepto esencial: Java para Selenium y frameworks
+  Subtema: Definición, propósito y vocabulario mínimo de Java para Selenium y frameworks.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Java para Selenium y frameworks
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Python para Pytest, API y automatización
+  Video 7. Concepto esencial: Python para Pytest, API y automatización
+  Subtema: Definición, propósito y vocabulario mínimo de Python para Pytest, API y automatización.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Python para Pytest, API y automatización
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: qa-process-improvement-qa-mejora-de-procesos.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA + Mejora de Procesos
+Módulos: 10
+Videos recomendados: 20
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Calidad de producto vs calidad de proceso
+  Video 1. Concepto esencial — Calidad de producto vs calidad de proceso
+  Duración: 1:30
+  Video 2. Aplicación QA — Calidad de producto vs calidad de proceso
+  Duración: 1:50
+
+MÓDULO 2: Mapeo del flujo de QA
+  Video 3. Concepto esencial — Mapeo del flujo de QA
+  Duración: 1:30
+  Video 4. Aplicación QA — Mapeo del flujo de QA
+  Duración: 1:50
+
+MÓDULO 3: Definir métricas y baseline
+  Video 5. Concepto esencial — Definir métricas y baseline
+  Duración: 1:30
+  Video 6. Aplicación QA — Definir métricas y baseline
+  Duración: 1:50
+
+MÓDULO 4: DMAIC aplicado a defectos
+  Video 7. Concepto esencial — DMAIC aplicado a defectos
+  Duración: 1:30
+  Video 8. Aplicación QA — DMAIC aplicado a defectos
+  Duración: 1:50
+
+MÓDULO 5: Root Cause Analysis
+  Video 9. Concepto esencial — Root Cause Analysis
+  Duración: 1:30
+  Video 10. Aplicación QA — Root Cause Analysis
+  Duración: 1:50
+
+MÓDULO 6: Pareto, Ishikawa y 5 Why
+  Video 11. Concepto esencial — Pareto, Ishikawa y 5 Why
+  Duración: 1:30
+  Video 12. Aplicación QA — Pareto, Ishikawa y 5 Why
+  Duración: 1:50
+
+MÓDULO 7: PDCA y experimentos pequeños
+  Video 13. Concepto esencial — PDCA y experimentos pequeños
+  Duración: 1:30
+  Video 14. Aplicación QA — PDCA y experimentos pequeños
+  Duración: 1:50
+
+MÓDULO 8: Defect prevention y quality gates
+  Video 15. Concepto esencial — Defect prevention y quality gates
+  Duración: 1:30
+  Video 16. Aplicación QA — Defect prevention y quality gates
+  Duración: 1:50
+
+MÓDULO 9: Control plan y seguimiento
+  Video 17. Concepto esencial — Control plan y seguimiento
+  Duración: 1:30
+  Video 18. Aplicación QA — Control plan y seguimiento
+  Duración: 1:50
+
+MÓDULO 10: Caso práctico end-to-end
+  Video 19. Concepto esencial — Caso práctico end-to-end
+  Duración: 1:30
+  Video 20. Aplicación QA — Caso práctico end-to-end
+  Duración: 1:50
+
+==============================================================================
+
+PLAN: robotics-qa-qa-para-robotica.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA para Robótica
+Tipo: Learning Path
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 24
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 42 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Fundamentos de sistemas robóticos
+  Video 1. Concepto esencial: Fundamentos de sistemas robóticos
+  Subtema: Definición, propósito y vocabulario mínimo de Fundamentos de sistemas robóticos.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Fundamentos de sistemas robóticos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 3. Práctica guiada: Fundamentos de sistemas robóticos
+  Subtema: Mini escenario y checklist para aplicar Fundamentos de sistemas robóticos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 2: ROS 2 y arquitectura distribuida
+  Video 4. Concepto esencial: ROS 2 y arquitectura distribuida
+  Subtema: Definición, propósito y vocabulario mínimo de ROS 2 y arquitectura distribuida.
+  Duración objetivo: 1:30
+  Video 5. Aplicación QA: ROS 2 y arquitectura distribuida
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 6. Práctica guiada: ROS 2 y arquitectura distribuida
+  Subtema: Mini escenario y checklist para aplicar ROS 2 y arquitectura distribuida en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Unit, integration y system testing
+  Video 7. Concepto esencial: Unit, integration y system testing
+  Subtema: Definición, propósito y vocabulario mínimo de Unit, integration y system testing.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Unit, integration y system testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 9. Práctica guiada: Unit, integration y system testing
+  Subtema: Mini escenario y checklist para aplicar Unit, integration y system testing en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Simulación con Gazebo
+  Video 10. Concepto esencial: Simulación con Gazebo
+  Subtema: Definición, propósito y vocabulario mínimo de Simulación con Gazebo.
+  Duración objetivo: 1:30
+  Video 11. Aplicación QA: Simulación con Gazebo
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 12. Práctica guiada: Simulación con Gazebo
+  Subtema: Mini escenario y checklist para aplicar Simulación con Gazebo en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Sensores, ruido y datos
+  Video 13. Concepto esencial: Sensores, ruido y datos
+  Subtema: Definición, propósito y vocabulario mínimo de Sensores, ruido y datos.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Sensores, ruido y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 15. Práctica guiada: Sensores, ruido y datos
+  Subtema: Mini escenario y checklist para aplicar Sensores, ruido y datos en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 6: SIL/HIL y hardware real
+  Video 16. Concepto esencial: SIL/HIL y hardware real
+  Subtema: Definición, propósito y vocabulario mínimo de SIL/HIL y hardware real.
+  Duración objetivo: 1:30
+  Video 17. Aplicación QA: SIL/HIL y hardware real
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 18. Práctica guiada: SIL/HIL y hardware real
+  Subtema: Mini escenario y checklist para aplicar SIL/HIL y hardware real en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Safety, fallos y recuperación
+  Video 19. Concepto esencial: Safety, fallos y recuperación
+  Subtema: Definición, propósito y vocabulario mínimo de Safety, fallos y recuperación.
+  Duración objetivo: 1:30
+  Video 20. Aplicación QA: Safety, fallos y recuperación
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 21. Práctica guiada: Safety, fallos y recuperación
+  Subtema: Mini escenario y checklist para aplicar Safety, fallos y recuperación en un caso realista.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Regresión, CI y observabilidad
+  Video 22. Concepto esencial: Regresión, CI y observabilidad
+  Subtema: Definición, propósito y vocabulario mínimo de Regresión, CI y observabilidad.
+  Duración objetivo: 1:30
+  Video 23. Aplicación QA: Regresión, CI y observabilidad
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+  Video 24. Práctica guiada: Regresión, CI y observabilidad
+  Subtema: Mini escenario y checklist para aplicar Regresión, CI y observabilidad en un caso realista.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: salesforce-salesforce-qa.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Salesforce QA
+Tipo: Stack QA
+Nivel: Intermedio–Avanzado
+Módulos: 8
+Videos recomendados: 16
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 28 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: CRM, objetos y metadata
+  Video 1. Concepto esencial: CRM, objetos y metadata
+  Subtema: Definición, propósito y vocabulario mínimo de CRM, objetos y metadata.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: CRM, objetos y metadata
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Sandboxes y datos
+  Video 3. Concepto esencial: Sandboxes y datos
+  Subtema: Definición, propósito y vocabulario mínimo de Sandboxes y datos.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Sandboxes y datos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Roles, perfiles y permission sets
+  Video 5. Concepto esencial: Roles, perfiles y permission sets
+  Subtema: Definición, propósito y vocabulario mínimo de Roles, perfiles y permission sets.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Roles, perfiles y permission sets
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Flows y automatizaciones
+  Video 7. Concepto esencial: Flows y automatizaciones
+  Subtema: Definición, propósito y vocabulario mínimo de Flows y automatizaciones.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Flows y automatizaciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Apex tests
+  Video 9. Concepto esencial: Apex tests
+  Subtema: Definición, propósito y vocabulario mínimo de Apex tests.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Apex tests
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: LWC + Jest
+  Video 11. Concepto esencial: LWC + Jest
+  Subtema: Definición, propósito y vocabulario mínimo de LWC + Jest.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: LWC + Jest
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: APIs e integraciones
+  Video 13. Concepto esencial: APIs e integraciones
+  Subtema: Definición, propósito y vocabulario mínimo de APIs e integraciones.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: APIs e integraciones
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: UAT, releases y regresión
+  Video 15. Concepto esencial: UAT, releases y regresión
+  Subtema: Definición, propósito y vocabulario mínimo de UAT, releases y regresión.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: UAT, releases y regresión
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: software-auditor-qa-auditor-de-software.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA Auditor de Software
+Módulos: 8
+Videos recomendados: 16
+Duración máxima por video: 2:00 minutos
+
+MÓDULO 1: Principios de auditoría
+  Video 1. Concepto esencial: Principios de auditoría
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 2. Aplicación QA: Principios de auditoría
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 2: Programa y alcance
+  Video 3. Concepto esencial: Programa y alcance
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 4. Aplicación QA: Programa y alcance
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 3: Criterios y evidencia
+  Video 5. Concepto esencial: Criterios y evidencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 6. Aplicación QA: Criterios y evidencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 4: Muestreo y entrevistas
+  Video 7. Concepto esencial: Muestreo y entrevistas
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 8. Aplicación QA: Muestreo y entrevistas
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 5: Auditoría de SDLC y QA
+  Video 9. Concepto esencial: Auditoría de SDLC y QA
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 10. Aplicación QA: Auditoría de SDLC y QA
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 6: Hallazgos y no conformidades
+  Video 11. Concepto esencial: Hallazgos y no conformidades
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 12. Aplicación QA: Hallazgos y no conformidades
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 7: Riesgo e independencia
+  Video 13. Concepto esencial: Riesgo e independencia
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 14. Aplicación QA: Riesgo e independencia
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+MÓDULO 8: Informe, seguimiento y mejora
+  Video 15. Concepto esencial: Informe, seguimiento y mejora
+  Subtema: definición, propósito y vocabulario clave.
+  Duración: 1:30
+  Video 16. Aplicación QA: Informe, seguimiento y mejora
+  Subtema: ejemplo, riesgo, evidencia y mini práctica.
+  Duración: 1:50
+
+==============================================================================
+
+PLAN: utest-academy-utest-academy-practica-de-testing-y-comunidad.txt
+------------------------------------------------------------------------------
+LEARNING PATH: uTest Academy – práctica de testing y comunidad
+Tipo: Learning Path
+Nivel: Inicial–Intermedio
+Módulos: 7
+Videos recomendados: 14
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 24 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Introducción a uTest y perfil del tester
+  Video 1. Concepto esencial: Introducción a uTest y perfil del tester
+  Subtema: Definición, propósito y vocabulario mínimo de Introducción a uTest y perfil del tester.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Introducción a uTest y perfil del tester
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Fundamentos de testing
+  Video 3. Concepto esencial: Fundamentos de testing
+  Subtema: Definición, propósito y vocabulario mínimo de Fundamentos de testing.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Fundamentos de testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Reporte de defectos y evidencias
+  Video 5. Concepto esencial: Reporte de defectos y evidencias
+  Subtema: Definición, propósito y vocabulario mínimo de Reporte de defectos y evidencias.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Reporte de defectos y evidencias
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Ciclos de prueba de práctica
+  Video 7. Concepto esencial: Ciclos de prueba de práctica
+  Subtema: Definición, propósito y vocabulario mínimo de Ciclos de prueba de práctica.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Ciclos de prueba de práctica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Logs y depuración básica
+  Video 9. Concepto esencial: Logs y depuración básica
+  Subtema: Definición, propósito y vocabulario mínimo de Logs y depuración básica.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Logs y depuración básica
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: API y HTTP básicos
+  Video 11. Concepto esencial: API y HTTP básicos
+  Subtema: Definición, propósito y vocabulario mínimo de API y HTTP básicos.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: API y HTTP básicos
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Preparación para proyectos de testing
+  Video 13. Concepto esencial: Preparación para proyectos de testing
+  Subtema: Definición, propósito y vocabulario mínimo de Preparación para proyectos de testing.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Preparación para proyectos de testing
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: virtuoso-qa-virtuoso-qa-training-library-y-certificaciones.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Virtuoso QA – Training Library y certificaciones
+Tipo: Learning Path
+Nivel: Inicial–Avanzado
+Módulos: 9
+Videos recomendados: 18
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 32 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Virtuoso Platform Introduction
+  Video 1. Concepto esencial: Virtuoso Platform Introduction
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Platform Introduction.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Virtuoso Platform Introduction
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Getting Started with Virtuoso
+  Video 3. Concepto esencial: Getting Started with Virtuoso
+  Subtema: Definición, propósito y vocabulario mínimo de Getting Started with Virtuoso.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Getting Started with Virtuoso
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Virtuoso Certified Associate Level 1
+  Video 5. Concepto esencial: Virtuoso Certified Associate Level 1
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate Level 1.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Virtuoso Certified Associate Level 1
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Virtuoso Certified Associate Level 2
+  Video 7. Concepto esencial: Virtuoso Certified Associate Level 2
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate Level 2.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Virtuoso Certified Associate Level 2
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Virtuoso Platform Specialist
+  Video 9. Concepto esencial: Virtuoso Platform Specialist
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Platform Specialist.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Virtuoso Platform Specialist
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Virtuoso Extensions Specialist
+  Video 11. Concepto esencial: Virtuoso Extensions Specialist
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Extensions Specialist.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Virtuoso Extensions Specialist
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 7: Virtuoso Certified Associate for D365
+  Video 13. Concepto esencial: Virtuoso Certified Associate for D365
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate for D365.
+  Duración objetivo: 1:30
+  Video 14. Aplicación QA: Virtuoso Certified Associate for D365
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 8: Virtuoso Certified Associate for SFDC
+  Video 15. Concepto esencial: Virtuoso Certified Associate for SFDC
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Certified Associate for SFDC.
+  Duración objetivo: 1:30
+  Video 16. Aplicación QA: Virtuoso Certified Associate for SFDC
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 9: Virtuoso Best Practices
+  Video 17. Concepto esencial: Virtuoso Best Practices
+  Subtema: Definición, propósito y vocabulario mínimo de Virtuoso Best Practices.
+  Duración objetivo: 1:30
+  Video 18. Aplicación QA: Virtuoso Best Practices
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: visual-ai-qa-con-imagenes-e-ia.txt
+------------------------------------------------------------------------------
+LEARNING PATH: QA con imágenes e IA
+Tipo: Learning Path
+Nivel: Intermedio
+Módulos: 6
+Videos recomendados: 12
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 21 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Evidencia visual de QA
+  Video 1. Concepto esencial: Evidencia visual de QA
+  Subtema: Definición, propósito y vocabulario mínimo de Evidencia visual de QA.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Evidencia visual de QA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Capturas y baselines
+  Video 3. Concepto esencial: Capturas y baselines
+  Subtema: Definición, propósito y vocabulario mínimo de Capturas y baselines.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Capturas y baselines
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Detección de regresiones visuales
+  Video 5. Concepto esencial: Detección de regresiones visuales
+  Subtema: Definición, propósito y vocabulario mínimo de Detección de regresiones visuales.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Detección de regresiones visuales
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Análisis de imágenes con IA
+  Video 7. Concepto esencial: Análisis de imágenes con IA
+  Subtema: Definición, propósito y vocabulario mínimo de Análisis de imágenes con IA.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Análisis de imágenes con IA
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 5: Accesibilidad visual
+  Video 9. Concepto esencial: Accesibilidad visual
+  Subtema: Definición, propósito y vocabulario mínimo de Accesibilidad visual.
+  Duración objetivo: 1:30
+  Video 10. Aplicación QA: Accesibilidad visual
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 6: Human-in-the-Loop
+  Video 11. Concepto esencial: Human-in-the-Loop
+  Subtema: Definición, propósito y vocabulario mínimo de Human-in-the-Loop.
+  Duración objetivo: 1:30
+  Video 12. Aplicación QA: Human-in-the-Loop
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
+
+PLAN: webauto-playwright-cypress-selenium.txt
+------------------------------------------------------------------------------
+LEARNING PATH: Playwright / Cypress / Selenium
+Tipo: Stack QA
+Nivel: Intermedio
+Módulos: 4
+Videos recomendados: 8
+Duración por video: 1:20–2:00 minutos (máximo 2:00)
+Duración total estimada: 14 minutos
+
+Estructura sugerida:
+Cada módulo se divide en microvideos para mantener una sola idea principal, un ejemplo breve y una acción concreta.
+
+MÓDULO 1: Locators
+  Video 1. Concepto esencial: Locators
+  Subtema: Definición, propósito y vocabulario mínimo de Locators.
+  Duración objetivo: 1:30
+  Video 2. Aplicación QA: Locators
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 2: Assertions
+  Video 3. Concepto esencial: Assertions
+  Subtema: Definición, propósito y vocabulario mínimo de Assertions.
+  Duración objetivo: 1:30
+  Video 4. Aplicación QA: Assertions
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 3: Page Objects
+  Video 5. Concepto esencial: Page Objects
+  Subtema: Definición, propósito y vocabulario mínimo de Page Objects.
+  Duración objetivo: 1:30
+  Video 6. Aplicación QA: Page Objects
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+MÓDULO 4: Cross-browser y CI/CD
+  Video 7. Concepto esencial: Cross-browser y CI/CD
+  Subtema: Definición, propósito y vocabulario mínimo de Cross-browser y CI/CD.
+  Duración objetivo: 1:30
+  Video 8. Aplicación QA: Cross-browser y CI/CD
+  Subtema: Ejemplo breve, riesgo que ayuda a controlar y evidencia esperada.
+  Duración objetivo: 1:50
+
+Criterios de producción:
+- Máximo 2 minutos por video.
+- Una sola idea principal por video.
+- Incluir ejemplo concreto de QA.
+- Terminar con una pregunta o microtarea.
+- Evitar leer diapositivas completas.
+- Añadir subtítulos y transcripción.
+- Mantener vocabulario consistente con las fuentes oficiales del tema cuando aplique.
+
+==============================================================================
