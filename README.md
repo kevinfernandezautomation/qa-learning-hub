@@ -249,3 +249,50 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - MedReview Trainer: recorrido dividido en subpasos contextuales para autorización, audit log, validación, trazabilidad y configuration identification; panel posicionado junto al elemento señalado.
 - Bug Lab: las 8 misiones se reformulan como preguntas explícitas basadas en lo observado durante el recorrido.
 - V&V: nuevo paquete `medical-vv-support.html` con intended use, requisitos, riesgos, arquitectura, datos de prueba y evidencia para fundamentar cada artefacto.
+
+## v38
+- Prompts IA: navegación interna a Mega-Prompts, repositorios, agente IA y privacidad.
+- Buscador de prompts reforzado con similitud por tokens/campos.
+- Expandir/contraer unificado en un único botón dinámico.
+- Eliminado el texto solicitado de FAQ.
+- Login: mensaje de estado oculto inicialmente y máximo de 5 intentos fallidos; bloqueo temporal de 15 minutos.
+- Simulador: ya no revela respuesta correcta durante el intento; revisión completa al finalizar.
+- Certificado: abre `certificado.html` en una pestaña nueva y permite imprimir/guardar PDF.
+- El correo se solicita antes de comenzar; con nota >=70 se intenta notificación automática vía `/api/certificates/complete`.
+- Carpeta `guides/` creada para guías TXT.
+- QA de videojuegos actualizado a 5 unidades, 5 meses y horario oficial de 6 h/semana según Frecuencia Gamer.
+
+## v39
+- El simulador permite cambiar una respuesta seleccionada antes de finalizar.
+- Se elimina el mensaje de respuesta guardada durante el examen.
+- La recomendación de preparación se muestra únicamente antes de comenzar.
+- `certificado.html` indica la simulación completada y permite descargar un PDF.
+- QA Testing para videojuegos se muestra sin “referencia Frecuencia Gamer” y con duración aproximada de 130 h.
+- Se integran “AI-assisted QA & Agents” y “QA con imágenes e IA” en una sola ruta.
+- Se añade un Learning Path de Claude Academy para QA y desarrollo con IA.
+- Empleo integra 10 gremios/comunidades de videojuegos de América para networking y oferta de servicios de testing.
+
+## v40
+- Corregido el botón Siguiente/Anterior del simulador con funciones de navegación explícitas.
+- Claude Academy muestra 20 h y botón “Aprender más”.
+- El stack SQL Server + PL/SQL se amplía a “QA de Bases de Datos · SQL + NoSQL” con SQL Server, PostgreSQL, MySQL, Oracle, MongoDB, Firestore y SQLite.
+- Nueva página `qa-bases-datos.html` con ruta de Database Quality Engineering para web, APIs y mobile.
+- Nueva página `preparacion-examen.html` con instrucciones, criterio interno de 90%+ en más de 10 intentos difíciles, referencia CTFL y checklist del día del examen.
+- V&V deja de depender de un checkbox: cada artefacto recibe una evaluación de cumplimiento 0–100% con criterios y feedback; 80%+ cuenta como completado.
+
+## v41
+- Nombre y correo vacíos por defecto; solo se prellenan con una sesión iniciada, salvo un borrador de la misma sesión al volver de recomendaciones.
+- Se elimina “Antes de pagar el examen oficial”; el botón “Recomendaciones antes de iniciar el examen” aparece debajo del formato de práctica.
+- Se repara Finalizar → Resultado y la revisión final.
+- En Difícil/30 min se oculta el badge de dificultad.
+- El modo de integridad limita copiar, imprimir, menú contextual y atajos comunes; no puede impedir técnicamente todas las capturas del sistema operativo ni el acceso al código cliente.
+- Cada certificación ISTQB del catálogo incorpora un escenario laboral realista.
+- V&V muestra porcentaje, criterios faltantes y recomendaciones específicas para elevar el cumplimiento.
+
+## v43
+- Corrige el inicio del simulador: se restauran funciones faltantes de integridad y nombre de actividad que provocaban error de JavaScript al comenzar.
+- Las tarjetas ISTQB dejan de mostrar “Fuente oficial”; mantienen Syllabus y añaden “Escenario paso a paso”. AICS conserva “Fuente oficial”.
+- Se elimina el mensaje “Preparación agregada al carrito”.
+- Nueva página `cert-aplicacion.html` con implementación laboral paso a paso para las 26 certificaciones del catálogo.
+- Nuevos laboratorios ficticios `medical-iec62304-lab.html` y `medical-iso13485-lab.html`.
+- Habilidades blandas QA agrega un escenario laboral concreto para demostrar cada habilidad.

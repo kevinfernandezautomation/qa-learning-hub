@@ -44,12 +44,15 @@ const resources={
  {t:"Web responsive y mobile",d:"Pruebe orientación, resolución, teclado, permisos, red, interrupciones y compatibilidad.",r:[]}
 ],
 "visual-ai":[
- {t:"Evidencia visual de QA",d:"Use capturas como evidencia contextual: incluya estado, versión, navegador/dispositivo y resultado esperado.",r:[]},
- {t:"Capturas y baselines",d:"Establezca imágenes de referencia controladas y reglas para actualizar baselines evitando aceptar cambios incorrectos.",r:[]},
- {t:"Detección de regresiones visuales",d:"Compare renderizados para identificar diferencias de layout, tipografía, color, espaciado o componentes.",r:["https://playwright.dev/docs/test-snapshots"]},
- {t:"Análisis de imágenes con IA",d:"Utilice IA para clasificar hallazgos visuales, sugerir riesgos y enriquecer evidencia; valide manualmente antes de confirmar defectos.",r:[]},
- {t:"Accesibilidad visual",d:"Revise contraste, legibilidad, jerarquía, foco, zoom y comportamiento responsive junto con pruebas automáticas.",r:["https://www.w3.org/WAI/standards-guidelines/wcag/"]},
- {t:"Human-in-the-Loop",d:"Mantenga una persona responsable para confirmar defectos, aprobar baselines y decidir impacto antes de modificar producto o liberar.",r:[]}
+ {t:"Evidencia visual de QA",d:"Use capturas como evidencia contextual: estado, versión, navegador/dispositivo y resultado esperado.",r:[]},
+ {t:"Capturas, baselines y regresión visual",d:"Establezca referencias controladas y compare renderizados para detectar cambios reales sin aceptar regresiones incorrectas.",r:["https://playwright.dev/docs/test-snapshots"]},
+ {t:"Análisis de imágenes con IA",d:"Utilice IA para clasificar hallazgos visuales y sugerir riesgos. Trate la salida como hipótesis hasta verificarla.",r:[]},
+ {t:"Accesibilidad visual",d:"Revise contraste, legibilidad, jerarquía, foco, zoom y responsive con validación automática y humana.",r:["https://www.w3.org/WAI/standards-guidelines/wcag/"]},
+ {t:"Prompts trazables para QA",d:"Defina contexto, requisito, objetivo, restricciones, evidencia y formato de salida. Versione prompts relevantes para reproducibilidad.",r:["prompts.html"]},
+ {t:"Generación y revisión de pruebas con IA",d:"Use IA para proponer happy paths, negativos, boundaries y combinaciones. El QA confirma expected results y cobertura.",r:["prompts.html"]},
+ {t:"Agentes QA",d:"Un agente puede explorar aplicaciones, identificar elementos, proponer casos, ejecutar herramientas y consolidar evidencia. Requiere límites, permisos mínimos y logging.",r:["prompts.html#agente-qa-ia"]},
+ {t:"Evals, alucinación y riesgo",d:"Defina criterios de éxito, compare contra casos conocidos, mida falsos positivos/negativos y mantenga evidencia de evaluación.",r:["https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"]},
+ {t:"Human-in-the-Loop",d:"Mantenga una persona responsable de confirmar defectos, aprobar baselines, revisar código generado y decidir impacto.",r:[]}
 ],
 "medical-device-samd":[
  {t:"C#/.NET + SQL Server: trazabilidad de cambio end-to-end",d:"Practique una cadena completa alineada con un rol de Software Quality Engineer en medical software: Requirement → C#/.NET implementation → SQL Server → test → defect → correction → retest. El objetivo no es solo automatizar, sino demostrar cómo un requisito se implementa, persiste, se verifica, genera un hallazgo y vuelve a probarse con evidencia trazable.",r:["medical-dotnet-sql-lab.html","https://learn.microsoft.com/dotnet/csharp/","https://learn.microsoft.com/sql/"]},

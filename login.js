@@ -51,7 +51,33 @@ function registrationReady(){
 function updateRegisterButton(){
  const b=$('#registerSubmit');if(!b)return;const ok=registrationReady();b.disabled=!ok;b.setAttribute('aria-disabled',String(!ok));
 }
-function showStatus(t){status.textContent=t}
+function showStatus(t){
+ if(!status)return;
+ status.textContent=t;
+ status.hidden=!t;
+}
+function clearStatus(){if(status){status.textContent='';status.hidden=true}}
+const LOGIN_MAX_ATTEMPTS=5;
+const LOGIN_LOCK_MS=15*60*1000;
+function getLoginGuard(){
+ try{return JSON.parse(localStorage.getItem('academyLoginGuard')||'{}')}catch{return{}}
+}
+function saveLoginGuard(g){localStorage.setItem('academyLoginGuard',JSON.stringify(g))}
+function loginGuardKey(email){return String(email||'').trim().toLowerCase()}
+function loginRemaining(email){
+ const all=getLoginGuard(),key=loginGuardKey(email),g=all[key]||{count:0,lockedUntil:0};
+ if(g.lockedUntil&&Date.now()>=g.lockedUntil){delete all[key];saveLoginGuard(all);return {count:0,lockedUntil:0}}
+ return g;
+}
+function recordLoginFailure(email){
+ const all=getLoginGuard(),key=loginGuardKey(email),g=loginRemaining(email);
+ const next={count:(g.count||0)+1,lockedUntil:0};
+ if(next.count>=LOGIN_MAX_ATTEMPTS)next.lockedUntil=Date.now()+LOGIN_LOCK_MS;
+ all[key]=next;saveLoginGuard(all);return next;
+}
+function resetLoginFailures(email){
+ const all=getLoginGuard();delete all[loginGuardKey(email)];saveLoginGuard(all);
+}
 function strongPassword(v){return passwordIsValid(v)}
 function makePassword(){
   const upper='ABCDEFGHJKLMNPQRSTUVWXYZ';
@@ -70,7 +96,7 @@ function makePassword(){
   const password=chars.join('');
   return passwordIsValid(password)?password:makePassword();
 }
-$$('[data-auth]').forEach(b=>b.onclick=()=>{$$('[data-auth]').forEach(x=>x.classList.toggle('active',x===b));$$('[data-auth-panel]').forEach(p=>p.hidden=p.dataset.authPanel!==b.dataset.auth);showStatus('')});
+$$('[data-auth]').forEach(b=>b.onclick=()=>{$$('[data-auth]').forEach(x=>x.classList.toggle('active',x===b));$$('[data-auth-panel]').forEach(p=>p.hidden=p.dataset.authPanel!==b.dataset.auth);clearStatus()});
 $('#generatePassword')?.addEventListener('click',()=>{
   const pw=makePassword();
   $('#registerPassword').value=pw;
@@ -89,9 +115,31 @@ $('#registerForm').onsubmit=async e=>{
  showStatus('Cuenta creada. Bienvenido a la Academia.');window.renderUserSession?.();updateRegisterButton();
 };
 $('#loginForm').onsubmit=async e=>{
- e.preventDefault();const email=$('#loginEmail').value.trim().toLowerCase(),pw=$('#loginPassword').value,a=findAccount(email);
- if(!a||a.passwordHash!==await hash(pw)){showStatus('Correo o contraseña incorrectos.');return}
- localStorage.setItem('academyUser',JSON.stringify({name:a.name,email:a.email}));localStorage.setItem('academySessionLastActivity',String(Date.now()));window.renderUserSession?.();showStatus(`Bienvenido, ${a.name}.`);$('#loginPassword').value='';
+ e.preventDefault();
+ const email=$('#loginEmail').value.trim().toLowerCase(),pw=$('#loginPassword').value;
+ const guard=loginRemaining(email);
+ if(guard.lockedUntil>Date.now()){
+   const mins=Math.max(1,Math.ceil((guard.lockedUntil-Date.now())/60000));
+   showStatus(`Demasiados intentos fallidos. Intente nuevamente en aproximadamente ${mins} minuto(s).`);
+   return;
+ }
+ const a=findAccount(email);
+ if(!a||a.passwordHash!==await hash(pw)){
+   const failed=recordLoginFailure(email);
+   const remaining=Math.max(0,LOGIN_MAX_ATTEMPTS-failed.count);
+   if(failed.lockedUntil){
+     showStatus('Se alcanzó el máximo de 5 intentos. El acceso queda bloqueado temporalmente durante 15 minutos.');
+   }else{
+     showStatus(`Correo o contraseña incorrectos. Quedan ${remaining} intento(s).`);
+   }
+   return;
+ }
+ resetLoginFailures(email);
+ localStorage.setItem('academyUser',JSON.stringify({name:a.name,email:a.email}));
+ localStorage.setItem('academySessionLastActivity',String(Date.now()));
+ window.renderUserSession?.();
+ showStatus(`Bienvenido, ${a.name}.`);
+ $('#loginPassword').value='';
 };
 $('#recoverForm').onsubmit=async e=>{
  e.preventDefault();const email=$('#recoverEmail').value.trim().toLowerCase(),pw=$('#recoverPassword').value,a=findAccount(email);
@@ -117,7 +165,7 @@ document.querySelectorAll('[data-password-target]').forEach(btn=>{
  input.addEventListener('input',()=>{
   if(id==='registerPassword')renderPasswordRequirements(input);
   if(id==='registerEmail'&&input.value.trim()&&emailIsDuplicate(input.value)){showStatus('Ese correo ya está registrado.');}
-  else if(id==='registerEmail'&&status.textContent==='Ese correo ya está registrado.')showStatus('');
+  else if(id==='registerEmail'&&status.textContent==='Ese correo ya está registrado.')clearStatus();
   updateRegisterButton();
  });
 });

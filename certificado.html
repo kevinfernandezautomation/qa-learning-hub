@@ -1,0 +1,50 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certificado de aprovechamiento | QA Learning Hub</title><link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head><body class="certificate-page"><main class="certificate-preview-shell">
+<section id="certificatePreview" class="certificate-sheet">
+<div class="certificate-brand"><span class="brand-mark">✓</span><strong>QA Learning Hub</strong></div>
+<p class="certificate-kicker">CERTIFICADO</p><h1>Certificado de aprovechamiento</h1>
+<p>Se reconoce a</p><h2 id="certName"></h2>
+<p>por haber aprobado satisfactoriamente la simulación</p>
+<h3 id="certActivity"></h3>
+<div class="certificate-result" id="certResult"></div><p id="certDate"></p>
+<div class="certificate-foot">Proyecto educativo de práctica · No sustituye una certificación oficial de terceros.</div>
+</section>
+<div class="certificate-actions"><button id="downloadPdfCertificate" class="btn primary" type="button">Descargar PDF</button><button id="printCertificate" class="btn secondary" type="button">Imprimir</button><button id="closeCertificate" class="btn ghost" type="button">Cerrar</button></div>
+<p id="pdfStatus" class="muted-note" aria-live="polite"></p>
+</main><script>
+function readCertificateData(){
+ const q=new URLSearchParams(location.search);
+ const fromUrl=q.get('name')&&q.get('activity')?{name:q.get('name'),activity:q.get('activity'),score:Number(q.get('score')||0),total:Number(q.get('total')||40),pct:Number(q.get('pct')||0),date:q.get('date')||new Date().toISOString()}:null;
+ if(fromUrl)return fromUrl;
+ try{return JSON.parse(localStorage.getItem('qaCertificatePreview')||'null')}catch{return null}
+}
+const safeData=readCertificateData()||{name:'Participante',activity:'Actividad de Quality Assurance',score:0,total:40,pct:0,date:new Date().toISOString()};
+document.getElementById('certName').textContent=safeData.name;
+document.getElementById('certActivity').textContent=safeData.activity;
+document.getElementById('certResult').textContent=`Resultado: ${safeData.score}/${safeData.total||40} · ${safeData.pct}%`;
+document.getElementById('certDate').textContent=new Date(safeData.date).toLocaleDateString('es-CR',{year:'numeric',month:'long',day:'numeric'});
+async function downloadCertificatePdf(){
+ const status=document.getElementById('pdfStatus');status.textContent='Generando PDF…';
+ try{
+   if(!window.html2canvas||!window.jspdf?.jsPDF)throw new Error('PDF libraries unavailable');
+   const node=document.getElementById('certificatePreview');
+   const canvas=await html2canvas(node,{scale:2,useCORS:true,backgroundColor:'#ffffff'});
+   const img=canvas.toDataURL('image/png',1.0);
+   const {jsPDF}=window.jspdf;
+   const pdf=new jsPDF({orientation:'landscape',unit:'mm',format:'a4'});
+   const pageW=pdf.internal.pageSize.getWidth(),pageH=pdf.internal.pageSize.getHeight();
+   const ratio=Math.min(pageW/canvas.width,pageH/canvas.height);
+   const w=canvas.width*ratio,h=canvas.height*ratio,x=(pageW-w)/2,y=(pageH-h)/2;
+   pdf.addImage(img,'PNG',x,y,w,h,undefined,'FAST');
+   const slug=(safeData.activity||'qa').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').toLowerCase();
+   pdf.save(`certificado-${slug||'qa'}.pdf`);status.textContent='PDF descargado.';
+ }catch(e){status.textContent='No fue posible generar el PDF automáticamente. Use Imprimir y seleccione “Guardar como PDF”.';window.print();}
+}
+document.getElementById('downloadPdfCertificate').onclick=downloadCertificatePdf;
+document.getElementById('printCertificate').onclick=()=>window.print();
+document.getElementById('closeCertificate').onclick=()=>window.close();
+</script></body></html>

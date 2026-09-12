@@ -99,8 +99,32 @@ function persistCurrentVV(){
  s.evidence=document.getElementById('vvEvidence').value;
  s.conclusion=document.getElementById('vvConclusion').value;
  const ready=Boolean(s.objective.trim()&&s.evidence.trim()&&s.conclusion.trim());
- s.done=ready && document.getElementById('vvDone').checked;
+ s.done=Boolean(s.assessment?.score>=80);
  state.vv[v.id]=s;save();
+}
+function evaluateVVState(s){
+ const checks=[
+  {key:'objective',label:'Objetivo claro y verificable',points:15,ok:(s.objective||'').trim().length>=20,tip:'Indique qué debe verificarse y una condición observable de éxito.'},
+  {key:'source',label:'Requirement / riesgo / fuente identificable',points:15,ok:/\b(SWR|REQ|RISK|URS|CR|ID)[-_ ]?\w+/i.test(s.source||'')||(s.source||'').trim().length>=12,tip:'Referencie un ID o fuente concreta que permita rastrear por qué existe esta verificación.'},
+  {key:'setup',label:'Ambiente, build y datos definidos',points:15,ok:(s.setup||'').trim().length>=25,tip:'Incluya build, ambiente, rol o usuario, datos y precondiciones relevantes.'},
+  {key:'procedure',label:'Procedimiento reproducible',points:20,ok:(s.procedure||'').trim().length>=45||/\b1[.)]|\b2[.)]/.test(s.procedure||''),tip:'Describa pasos suficientes para que otra persona pueda repetir la actividad sin adivinar.'},
+  {key:'evidence',label:'Evidencia observada concreta',points:20,ok:(s.evidence||'').trim().length>=30&&/result|log|captura|screenshot|api|response|eviden|observ|registro|dato/i.test(s.evidence||''),tip:'Describa el resultado y cite una evidencia verificable: log, API, captura, registro o dato.'},
+  {key:'conclusion',label:'Conclusión con estado y siguiente acción',points:15,ok:(s.conclusion||'').trim().length>=25&&/pass|fail|aprobad|rechaz|riesgo|retest|acción|accion|correg|bloque|acept/i.test(s.conclusion||''),tip:'Declare PASS/FAIL o equivalente, riesgo pendiente y qué debe ocurrir después.'}
+ ];
+ const score=checks.reduce((n,c)=>n+(c.ok?c.points:0),0);
+ return {score,checks,status:score>=80?'Cumple':score>=60?'Parcial':'Insuficiente'};
+}
+function renderVVAssessment(s){
+ const a=s.assessment||evaluateVVState(s);
+ const badge=document.getElementById('vvScoreBadge'),bar=document.getElementById('vvScoreBar'),list=document.getElementById('vvCriteria');
+ if(badge)badge.textContent=`${a.score}% · ${a.status}`;
+ if(bar)bar.style.width=`${a.score}%`;
+ if(list)list.innerHTML=a.checks.map(c=>`<li class="${c.ok?'criterion-ok':'criterion-missing'}"><span>${c.ok?'✓':'○'}</span><span>${c.label}</span><strong>${c.ok?c.points:0}/${c.points}</strong></li>`).join(''); const advice=document.getElementById('vvAssessmentAdvice'); if(advice){const missing=a.checks.filter(c=>!c.ok); advice.innerHTML=missing.length?`<strong>Para mejorar este artefacto:</strong><ul>${missing.map(c=>`<li>${c.tip}</li>`).join('')}</ul><p>Meta del laboratorio: <strong>80% o más</strong>. Un 100% indica que los seis criterios mínimos están presentes; no sustituye una revisión regulatoria profesional.</p>`:`<strong>100% de criterios mínimos presentes.</strong><p>Revise coherencia, exactitud y calidad de la evidencia antes de considerar el artefacto listo.</p>`;}
+}
+function evaluateCurrentVV(){
+ persistCurrentVV();
+ const v=VV[vvIndex],s=state.vv[v.id]||{};
+ const a=evaluateVVState(s);s.assessment=a;s.done=a.score>=80;state.vv[v.id]=s;save();renderVV();updateSummary();
 }
 function renderVV(){
  const v=VV[vvIndex],s=vvStateFor(v.id);
@@ -116,9 +140,8 @@ function renderVV(){
  document.getElementById('vvEvidence').value=s.evidence||'';
  document.getElementById('vvConclusion').value=s.conclusion||'';
  const ready=Boolean(s.objective?.trim()&&s.evidence?.trim()&&s.conclusion?.trim());
- const done=document.getElementById('vvDone');
- done.checked=!!s.done;done.disabled=!ready;
- document.getElementById('vvReadyHint').textContent=ready?'Ya puede marcarlo como completado.':'Complete al menos objetivo, evidencia y conclusión.';
+ renderVVAssessment(s);
+ document.getElementById('vvReadyHint').textContent=ready?'Puede ejecutar la evaluación de cumplimiento.':'Complete al menos objetivo, evidencia y conclusión antes de evaluar.';
  document.getElementById('vvPrev').disabled=vvIndex===0;
  document.getElementById('vvNext').textContent=vvIndex===VV.length-1?'Ir a Trazabilidad →':'Siguiente →';
  const completed=VV.filter(x=>state.vv[x.id]?.done).length;
@@ -172,26 +195,19 @@ document.getElementById('downloadEvidenceTxt')?.addEventListener('click',()=>{co
 document.getElementById('downloadTraceCsv')?.addEventListener('click',()=>{const rows=[['ID','Requirement','Risk-Control','Test','Evidence','Status'],...TRACE.map(r=>[r.id,r.req,r.risk,r.test,r.evidence,(r.ok||state.trace[r.id]?.fixed)?'TRACEABLE':'GAP'])];download('medical-qa-traceability.csv',rows.map(row=>row.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')});
 
 function syncVVReadiness(){
- const ready=Boolean(
-   document.getElementById('vvObjective').value.trim() &&
-   document.getElementById('vvEvidence').value.trim() &&
-   document.getElementById('vvConclusion').value.trim()
- );
- const done=document.getElementById('vvDone');
- done.disabled=!ready;
- if(!ready)done.checked=false;
- document.getElementById('vvReadyHint').textContent=ready?'Ya puede marcarlo como completado.':'Complete al menos objetivo, evidencia y conclusión.';
+ const v=VV[vvIndex],s=state.vv[v.id]||{};
+ renderVVAssessment(s);
 }
 ['vvObjective','vvSource','vvSetup','vvProcedure','vvEvidence','vvConclusion'].forEach(id=>{
  document.getElementById(id)?.addEventListener('input',()=>{
    const v=VV[vvIndex],s=state.vv[v.id]||{done:false};
    const map={vvObjective:'objective',vvSource:'source',vvSetup:'setup',vvProcedure:'procedure',vvEvidence:'evidence',vvConclusion:'conclusion'};
    s[map[id]]=document.getElementById(id).value;
-   if(!(document.getElementById('vvObjective').value.trim()&&document.getElementById('vvEvidence').value.trim()&&document.getElementById('vvConclusion').value.trim()))s.done=false;
+   s.assessment=evaluateVVState(s);s.done=false;
    state.vv[v.id]=s;localStorage.setItem(LAB_KEY,JSON.stringify(state));syncVVReadiness();updateSummary();
  });
 });
-document.getElementById('vvDone')?.addEventListener('change',()=>{persistCurrentVV();renderVV();});
+document.getElementById('vvEvaluate')?.addEventListener('click',evaluateCurrentVV);
 document.getElementById('vvPrev')?.addEventListener('click',()=>{persistCurrentVV();if(vvIndex>0){vvIndex--;renderVV();document.getElementById('vv-panel').scrollIntoView({behavior:'smooth',block:'start'});}});
 document.getElementById('vvNext')?.addEventListener('click',()=>{persistCurrentVV();if(vvIndex<VV.length-1){vvIndex++;renderVV();document.getElementById('vv-panel').scrollIntoView({behavior:'smooth',block:'start'});}else document.querySelector('[data-target="trace-panel"]')?.click();});
 

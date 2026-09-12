@@ -4,12 +4,12 @@ window.QA_STACKS={
  webauto:{name:"Playwright / Cypress / Selenium",topics:["locators robustos","assertions","Page Object Model","esperas y sincronización","datos de prueba","cross-browser","mantenibilidad","CI/CD"]},
  api:{name:"API Quality Engineering",topics:["métodos HTTP","status codes","headers","autenticación","schema","pruebas negativas","idempotencia","contratos OpenAPI"]},
  performance:{name:"JMeter + k6",topics:["perfil de carga","usuarios virtuales","throughput","percentiles","thresholds","correlación","parametrización","ejecución CI/CD"]},
- data:{name:"SQL Server + PL/SQL",topics:["SELECT y filtros","JOIN","constraints","integridad referencial","transacciones","rollback","procedimientos","validación UI-API-BD"]},
+ data:{name:"QA de Bases de Datos · SQL + NoSQL",topics:["modelos relacionales y NoSQL","SQL Server","PostgreSQL","MySQL","Oracle/PLSQL","MongoDB","Firestore","SQLite","integridad y schema validation","transacciones y concurrencia","seguridad y permisos","validación UI-API-BD","rendimiento e índices"]},
  devops:{name:"Azure DevOps / TFS + Git + CI/CD",topics:["repositorios Git","work items","build pipelines","release pipelines","quality gates","artefactos","trazabilidad","gestión de fallos"]},
  mobile:{name:"Appium + BrowserStack",topics:["dispositivos reales","emuladores","permisos","orientación","interrupciones","conectividad","gestos","fragmentación"]},
  accessibility:{name:"WCAG + Accessibility Testing",topics:["teclado","foco visible","semántica","ARIA","contraste","texto alternativo","lectores de pantalla","automatización asistida"]},
  salesforce:{name:"Salesforce QA",topics:["sandbox","UAT","Apex tests","Lightning Web Components","roles y permisos","automatización","datos y configuraciones","deployment"]},
- aiqa:{name:"AI-assisted QA & Agents",topics:["prompts trazables","generación de pruebas","análisis de resultados","evidencia visual","crawling","Human-in-the-Loop","riesgo","no alucinación"]},
+ aiqa:{name:"QA con imágenes, IA y agentes",topics:["prompts trazables","generación de pruebas","análisis de resultados","evidencia visual","crawling","Human-in-the-Loop","riesgo","no alucinación"]},
  "jira-confluence":{name:"Jira + Confluence para QA",topics:["work items y bugs","prioridad y severidad","workflows","boards y filtros","trazabilidad de defectos","Confluence para evidencia","documentación de pruebas","reportes y colaboración"]},
  "oracle-apex":{name:"Oracle APEX QA",topics:["App Builder","Page Designer","SQL Workshop","validaciones","procesos","autenticación","autorización","session state","responsive UI","accesibilidad","REST integrations","regresión"]}
 };

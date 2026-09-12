@@ -71,16 +71,36 @@ function validFullName(value){
  return parts.length>=2 && parts.every(p=>/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ'’-]{2,}$/.test(p));
 }
 function updateStartState(){
- const btn=el('startExam'),input=el('candidateName');
- if(!btn||!input)return;
- const ok=validFullName(input.value);
+ const btn=el('startExam'),name=el('candidateName'),email=el('candidateEmail');
+ if(!btn||!name||!email)return;
+ const nameOk=validFullName(name.value);
+ const emailOk=/^\S+@\S+\.\S+$/.test((email.value||'').trim());
+ const ok=nameOk&&emailOk;
  btn.disabled=!ok;
  btn.setAttribute('aria-disabled',String(!ok));
- btn.title=ok?'':'Ingrese nombre y apellidos para comenzar.';
+ btn.title=ok?'':!nameOk?'Ingrese nombre y apellidos para comenzar.':'Ingrese un correo válido para recibir el resultado/certificado.';
 }
+function saveConfigDraft(){
+ const payload={name:(el('candidateName')?.value||'').trim(),email:(el('candidateEmail')?.value||'').trim(),mode:mode?.value||'cert',provider:provider?.value||'ISTQB',cert:simCert?.value||'',role:role?.value||'',stack:simStack?.value||'',difficulty:dif?.value||'',language:examLang?.value||'es'};
+ sessionStorage.setItem('qaExamConfigDraft',JSON.stringify(payload));
+}
+function recommendationsLink(){return `<a id="examRecommendationsLink" class="btn secondary small" href="preparacion-examen.html">Recomendaciones antes de iniciar el examen →</a>`;}
 function stackModeConfig(){
  const raw=(dif?.value||'Básico|0').split('|');
  return {level:raw[0]||'Básico',minutes:Number(raw[1]||0)};
+}
+
+
+function activateExamIntegrity(){
+ document.body.classList.add('exam-active');
+}
+function deactivateExamIntegrity(){
+ document.body.classList.remove('exam-active');
+}
+function selectedActivityName(){
+ if(mode?.value==='interview')return role?.value||'Entrevista laboral QA';
+ if(mode?.value==='stack')return window.QA_STACKS?.[simStack?.value]?.name||simStack?.value||'Stack QA';
+ return currentCert?.name||simCert?.selectedOptions?.[0]?.textContent||'Simulación QA';
 }
 
 function shuffle(a){const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];}return x;}
@@ -100,7 +120,10 @@ function boot(){
  if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
  fillCerts(requested);
  let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
- const savedName=localStorage.getItem('candidateName');el('candidateName').value=(savedName&&savedName!=='Participante'?savedName:(user?.name&&user.name!=='Participante'?user.name:''));
+ let draft=null;const returningFromGuide=sessionStorage.getItem('qaExamReturnPending')==='1';
+ if(returningFromGuide){try{draft=JSON.parse(sessionStorage.getItem('qaExamConfigDraft')||'null')}catch{}sessionStorage.removeItem('qaExamReturnPending');}
+ el('candidateName').value=user?.name&&user.name!=='Participante'?user.name:(returningFromGuide?(draft?.name||''):'');
+ el('candidateEmail').value=user?.email?user.email:(returningFromGuide?(draft?.email||''):'');
  mode.addEventListener('change',changeMode);
  provider.addEventListener('change',()=>fillCerts());
  simCert.addEventListener('change',updateCert);
@@ -108,11 +131,14 @@ function boot(){
  simStack.addEventListener('change',updateCert);
  dif.addEventListener('change',updatePracticeMeta);
  examLang.addEventListener('change',updatePracticeMeta);
- el('startExam').addEventListener('click',start);el('candidateName').addEventListener('input',updateStartState);
+ el('startExam').addEventListener('click',start);
+ el('candidateName').addEventListener('input',()=>{updateStartState();saveConfigDraft()});
+ el('candidateEmail').addEventListener('input',()=>{updateStartState();saveConfigDraft()});
  el('nextQ').addEventListener('click',nextQuestion);
  el('prevQ').addEventListener('click',prevQuestion);
  el('retryExam').addEventListener('click',retry);
  el('downloadCertificate').addEventListener('click',certificate);
+ el('reviewExam')?.addEventListener('click',toggleExamReview);
  if(params.get('mode')==='stack'){
    mode.value='stack';
    if(params.get('stack')&&window.QA_STACKS?.[params.get('stack')])simStack.value=params.get('stack');
@@ -128,7 +154,6 @@ function changeMode(){
  showEl(el('certWrap'),!interview&&!stackMode);
  showEl(el('roleWrap'),interview);
  showEl(el('stackWrap'),stackMode);
- showEl(el('officialExamReadiness'),mode.value==='cert');
  showEl(el('examProvidersLink'),mode.value==='cert');
  const difficultyLabel=el('difficultyLabel');if(difficultyLabel)difficultyLabel.textContent=stackMode?'Dificultad y tiempo':'Dificultad';
  simCert.disabled=interview||stackMode;provider.disabled=interview||stackMode;
@@ -146,7 +171,7 @@ function fillCerts(preselect){
  const kind=provider.value;let list=[];
  if(kind==='MIX'){simCert.innerHTML='';simCert.add(new Option(MIXED.name,MIXED.id));currentCert=MIXED;updateCert();return;}
  list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));
- simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(`${c.id} — ${c.name}`,c.id)));
+ simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(c.name,c.id)));
  if(preselect&&list.some(c=>c.id===preselect))simCert.value=preselect;updateCert();
 }
 
@@ -257,27 +282,32 @@ function buildBank(){
 function updatePracticeMeta(){
  if(!currentCert)return;let bank=[];try{bank=buildBank()}catch{}
  currentBankSize=bank.length;
+ let summary='';
  if(mode.value==='stack'){
    const cfg=stackModeConfig(),stackTiming=cfg.minutes?`${cfg.minutes} min`:'sin cronómetro';
-   el('practiceMeta').innerHTML=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize} preguntas · intento: 40 aleatorias · ${escapeHtml(cfg.level)} · ${stackTiming}</span>`;showEl(el('practiceMeta'),true);
-   return;
+   summary=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize} preguntas · intento: 40 aleatorias · ${escapeHtml(cfg.level)} · ${stackTiming}</span>`;
+ }else{
+   const mins=DIFFICULTY_TIME[dif.value],timing=mins?`${mins} min`:'sin cronómetro';
+   summary=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: 40 aleatorias · ${timing}</span>`;
  }
- const mins=DIFFICULTY_TIME[dif.value],timing=mins?`${mins} min`:'sin cronómetro';
- el('practiceMeta').innerHTML=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: 40 aleatorias · ${timing}</span>`;showEl(el('practiceMeta'),true);
+ el('practiceMeta').innerHTML=`${summary}<div class="practice-guide-action">${recommendationsLink()}</div>`;
+ showEl(el('practiceMeta'),true);
+ el('examRecommendationsLink')?.addEventListener('click',()=>{saveConfigDraft();sessionStorage.setItem('qaExamReturnPending','1')});
+ updateStartState();
 }
 
 function start(){
  clearInterval(tick);updateCert();
- const name=el('candidateName').value.trim();if(!validFullName(name)){updateStartState();return;}localStorage.setItem('candidateName',name);
+ const name=el('candidateName').value.trim(),email=(el('candidateEmail').value||'').trim();if(!validFullName(name)||!/^\S+@\S+\.\S+$/.test(email)){updateStartState();return;}saveConfigDraft();
  let bank=[];try{bank=buildBank()}catch(err){console.error(err);}
  const unique=[...new Map((bank||[]).map(q=>[q.q,q])).values()];
- const minRequired=mode.value==='stack'?40:100;
- if(unique.length<minRequired){el('practiceMeta').textContent=`No fue posible cargar un banco mínimo de ${minRequired} preguntas diferentes.`;return;}
+ const minRequired=40;
+ if(unique.length<minRequired){el('practiceMeta').innerHTML=`<strong>No fue posible iniciar</strong><span>El banco seleccionado contiene ${unique.length} preguntas únicas y se requieren al menos ${minRequired}.</span>${recommendationsLink()}`;return;}
  let pick=shuffle(unique).slice(0,40);
  const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`,last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');
  if(last===sig){pick=shuffle(unique).slice(0,40);sig=pick.map(q=>q.q).join('|');}
  sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;examLocked=false;
- showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);
+ showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);activateExamIntegrity();
  const minutes=mode.value==='stack'?stackModeConfig().minutes:DIFFICULTY_TIME[dif.value];
  if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{if(examLocked)return;left--;renderTimer();if(left<=0){left=0;renderTimer();finish(true)}},1000);}
  else el('timer').textContent='Sin cronómetro';
@@ -286,62 +316,86 @@ function start(){
 function renderTimer(){const m=Math.floor(left/60),s=left%60;el('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
 function scoreNow(){return responses.reduce((sum,r,i)=>sum+(r===qs[i]?.c?1:0),0);}
 function show(){
- const q=qs[idx];if(!q){finish(false);return;}const response=responses[idx];
- el('qCounter').textContent=`Pregunta ${idx+1} / 40`;el('liveScore').textContent=`${scoreNow()} correctas`;el('qDifficulty').textContent=q.d||dif.value;el('qText').textContent=q.q;el('quizProgress').style.width=`${((idx+1)/40)*100}%`;
- el('answers').innerHTML=q.a.map((a,i)=>`<button type="button" class="answer-btn" data-i="${i}">${String.fromCharCode(65+i)}. ${escapeHtml(a)}</button>`).join('');
- const buttons=[...document.querySelectorAll('.answer-btn')];buttons.forEach(b=>b.addEventListener('click',()=>answer(Number(b.dataset.i))));
- if(response!==null){buttons.forEach(b=>b.disabled=true);buttons[q.c]?.classList.add('correct');if(response!==q.c)buttons[response]?.classList.add('wrong');el('feedback').textContent=response===q.c?'Correcto.':`Respuesta correcta: ${String.fromCharCode(65+q.c)}.`;}else el('feedback').textContent='';
- el('prevQ').disabled=idx===0;el('nextQ').disabled=response===null;el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';
+ const q=qs[idx];if(!q){finish(false);return;}
+ const response=responses[idx];
+ el('qCounter').textContent=`Pregunta ${idx+1} / 40`;
+ el('liveScore').textContent=`${responses.filter(x=>x!==null).length} respondidas`;
+ const qd=el('qDifficulty');
+ const hideDifficulty=(mode.value==='cert'&&dif.value==='Difícil')||(mode.value==='stack'&&stackModeConfig().minutes===30);
+ if(qd){qd.textContent=q.d||dif.value;showEl(qd,!hideDifficulty);}
+ el('qText').textContent=q.q;
+ el('quizProgress').style.width=`${((idx+1)/40)*100}%`;
+ el('answers').innerHTML=q.a.map((a,i)=>`<button type="button" class="answer-btn ${response===i?'selected':''}" data-i="${i}" aria-pressed="${response===i?'true':'false'}">${String.fromCharCode(65+i)}. ${escapeHtml(a)}</button>`).join('');
+ [...document.querySelectorAll('.answer-btn')].forEach(b=>b.addEventListener('click',()=>answer(Number(b.dataset.i))));
+ const feedback=el('feedback');if(feedback){feedback.textContent='';feedback.hidden=true;}
+ el('prevQ').disabled=idx===0;
+ el('nextQ').disabled=response===null;
+ el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';
  if(mode.value!=='stack'&&DIFFICULTY_TIME[dif.value])renderTimer();
 }
-function answer(i){if(examLocked||left<0||responses[idx]!==null)return;responses[idx]=i;show();}
-function nextQuestion(){if(examLocked||responses[idx]===null)return;if(idx>=39)finish(false);else{idx++;show();}}
-function prevQuestion(){if(examLocked)return;if(idx>0){idx--;show();}}
-function finish(timeout){
- if(examLocked&&el('simResult')&&!el('simResult').hidden)return;
- examLocked=true;clearInterval(tick);
- document.querySelectorAll('.answer-btn,#nextQ,#prevQ').forEach(b=>{b.disabled=true});
- showEl(el('simQuiz'),false);showEl(el('simResult'),true);
- const score=scoreNow(),pct=Math.round(score/40*100),passed=pct>=70;el('resultScore').textContent=`${score}/40 · ${pct}%`;
- let advice=timeout?'El tiempo finalizó. Revise sus áreas de mejora y vuelva a practicar.':passed?'Buen resultado de práctica. Continúe contrastando con fuentes oficiales o requisitos reales del puesto.':'Revise los temas con más errores antes del siguiente intento.';
- if(mode.value==='cert'&&dif.value==='Difícil'){const key=`readiness:${currentCert.id}`;let hist=[];try{hist=JSON.parse(localStorage.getItem(key)||'[]')}catch{}hist.push({score:pct,date:new Date().toISOString()});hist=hist.slice(-50);localStorage.setItem(key,JSON.stringify(hist));const strong=hist.filter(x=>x.score>=90).length;advice+=` Meta interna antes de pagar: ${Math.min(strong,11)}/11 intentos Difícil con 90% o más.`;}
- if(mode.value==='stack')advice=`Resultado del stack ${currentCert.name} · nivel ${dif.value}. Use las áreas con errores como guía de estudio.`;
- el('resultAdvice').textContent=advice;el('downloadCertificate').hidden=!passed;showEl(el('certificateEmailPanel'),passed);el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
+function answer(i){
+ if(examLocked||left<0)return;
+ responses[idx]=i;
+ show();
 }
-function retry(){examLocked=false;clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();}
+function nextQuestion(){
+ if(examLocked)return;
+ if(responses[idx]===null)return;
+ if(idx<qs.length-1){idx++;show();document.getElementById('simQuiz')?.scrollIntoView({behavior:'smooth',block:'start'});}
+ else finish(false);
+}
+function prevQuestion(){
+ if(examLocked)return;
+ if(idx>0){idx--;show();document.getElementById('simQuiz')?.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+function questionExplanation(q){
+ if(q.explanation)return q.explanation;
+ const correct=q.a?.[q.c]||'';
+ return `La respuesta correcta es la opción que mejor cumple el criterio de la pregunta: ${correct}. Revise el concepto, requisito o práctica asociada antes del siguiente intento.`;
+}
+function renderExamReview(){
+ const review=el('examReview');if(!review)return;
+ const rows=qs.map((q,i)=>({q,i,chosen:responses[i],correct:responses[i]===q.c}));
+ const correctCount=rows.filter(x=>x.correct).length;
+ review.innerHTML=`<div class="section-heading compact"><div><span class="eyebrow">Revisión final</span><h2>Preguntas y respuestas del intento</h2><p>${correctCount} correctas de ${rows.length}. Compare su respuesta con la respuesta correcta y revise la explicación.</p></div></div>`+
+ rows.map(({q,i,chosen,correct})=>`<article class="exam-review-item ${correct?'review-correct':'review-wrong'}">
+   <div class="review-head"><span class="badge">Pregunta ${i+1}</span><span class="review-state">${correct?'Correcta ✓':'Revisar'}</span></div>
+   <h3>${escapeHtml(q.q)}</h3>
+   <p><strong>Su respuesta:</strong> ${chosen===null?'Sin respuesta':`${String.fromCharCode(65+chosen)}. ${escapeHtml(q.a[chosen])}`}</p>
+   <p><strong>Respuesta correcta:</strong> ${String.fromCharCode(65+q.c)}. ${escapeHtml(q.a[q.c])}</p>
+   <p><strong>Por qué:</strong> ${escapeHtml(questionExplanation(q))}</p>
+ </article>`).join('');
+ review.hidden=true;
+ const btn=el('reviewExam');if(btn){btn.textContent='Revisar preguntas y respuestas';btn.setAttribute('aria-expanded','false');}
+}
+function toggleExamReview(){
+ const review=el('examReview'),btn=el('reviewExam');if(!review||!btn)return;
+ const show=review.hidden;
+ review.hidden=!show;
+ btn.textContent=show?'Ocultar revisión':'Revisar preguntas y respuestas';
+ btn.setAttribute('aria-expanded',String(show));
+ if(show)review.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function finish(timeout=false){
+ if(examLocked)return;
+ examLocked=true;clearInterval(tick);deactivateExamIntegrity();
+ const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100),passed=pct>=70;
+ showEl(el('simQuiz'),false);showEl(el('simConfig'),false);showEl(el('simResult'),true);
+ el('resultScore').textContent=`${score}/${qs.length} · ${pct}%`;
+ el('resultAdvice').textContent=timeout?`El tiempo finalizó. ${passed?'Aprobó la simulación.':'Revise las respuestas y vuelva a practicar los temas con mayor dificultad.'}`:(passed?'Aprobó la simulación. Revise el detalle de respuestas para consolidar el aprendizaje.':'No alcanzó 70%. Revise las preguntas falladas y vuelva a practicar antes de un nuevo intento.');
+ renderExamReview();showEl(el('reviewExam'),true);showEl(el('downloadCertificate'),passed);if(passed)attemptAutomaticCertificateEmail(score,pct);
+ el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function retry(){examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();el('simConfig')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function certificate(){
- const name=el('candidateName').value.trim(),score=scoreNow(),pct=Math.round(score/40*100);if(pct<70)return;
- const title='Certificado de aprovechamiento';
- const activity=mode.value==='interview'?`Simulación de entrevista laboral ${role.value}`:mode.value==='stack'?`Simulación de conocimientos · ${currentCert.name}`:`Simulación de examen · ${currentCert.name}`;
- if(typeof window.downloadStyledCertificatePdf==='function')window.downloadStyledCertificatePdf(`certificado-${slug(name)}.pdf`,{title,name,activity,result:`Resultado obtenido: ${score}/40 · ${pct}%`,date:new Date()});
- else downloadSimplePdf(`certificado-${slug(name)}.pdf`,[title,name,activity,`Resultado: ${score}/40`,new Date().toLocaleDateString()]);
+ const name=(el('candidateName')?.value||'').trim()||'Participante';
+ const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100);
+ const activity=selectedActivityName();
+ const payload={name,activity,score,total:qs.length,pct,date:new Date().toISOString(),title:`Certificado de aprovechamiento ${activity}`};
+ localStorage.setItem('qaCertificatePreview',JSON.stringify(payload));
+ const params=new URLSearchParams({name,activity,score:String(score),total:String(qs.length),pct:String(pct),date:payload.date});
+ window.open(`certificado.html?${params.toString()}`,'_blank');
 }
+window.addEventListener('pageshow',()=>{if(el('simConfig')&&!el('simConfig').hidden){updateStartState();updatePracticeMeta();}});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
-
-
-function initCertificateEmail(){
- const opt=el('emailCertificateOptIn'),fields=el('certificateEmailFields'),email=el('certificateEmail'),btn=el('requestCertificateEmail'),status=el('certificateEmailStatus');
- if(!opt||!fields||!email||!btn)return;
- try{const u=JSON.parse(localStorage.getItem('academyUser')||'null');if(u?.email)email.value=u.email}catch{}
- opt.addEventListener('change',()=>{fields.hidden=!opt.checked});
- btn.addEventListener('click',async()=>{
-   const address=email.value.trim();
-   if(!/^\S+@\S+\.\S+$/.test(address)){status.textContent='Digite un correo válido.';return}
-   const name=el('candidateName').value.trim(),score=responses.filter((a,i)=>a===qs[i].c).length,pct=Math.round(score/40*100);
-   const activity=mode.value==='interview'?role.value:mode.value==='stack'?(window.STACK_QA_BANKS?.[simStack.value]?.name||simStack.value):(currentCert?.name||simCert.value);
-   const request={email:address,name,activity,score,pct,requestedAt:new Date().toISOString()};
-   status.textContent='Preparando solicitud…';
-   try{
-     const r=await fetch('/api/certificates/email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});
-     if(!r.ok)throw new Error('backend unavailable');
-     status.textContent='Solicitud enviada. Revise su correo.';
-   }catch{
-     let q=[];try{q=JSON.parse(localStorage.getItem('certificateEmailQueue')||'[]')}catch{}
-     q.push(request);localStorage.setItem('certificateEmailQueue',JSON.stringify(q));
-     status.textContent='Solicitud guardada en este navegador. Para envío real debe conectarse el backend de correo.';
-   }
- });
-}
-
-initCertificateEmail();
