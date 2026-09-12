@@ -1,0 +1,78 @@
+QA LEARNING HUB
+GUÍA PARA ENVÍO AUTOMÁTICO DE FELICITACIÓN Y CERTIFICADO
+
+OBJETIVO
+--------
+Cuando una persona obtiene 70% o más:
+1. El frontend valida nombre + correo.
+2. El simulador calcula score/pct.
+3. El frontend envía POST /api/certificates/complete.
+4. El backend vuelve a validar la solicitud.
+5. El backend genera el PDF del certificado.
+6. El backend envía un correo de felicitación.
+7. El PDF se adjunta al correo o se incluye un enlace firmado/temporal.
+8. El backend registra request_id, fecha, email y estado del envío.
+
+IMPORTANTE PARA GITHUB PAGES
+----------------------------
+GitHub Pages es hosting estático. No ejecute claves API de correo en JavaScript público.
+La documentación de GitHub Pages indica que no soporta lenguajes del lado servidor como PHP, Ruby o Python.
+Por ello, /api/certificates/complete debe estar en un backend externo/serverless.
+
+ARQUITECTURA RECOMENDADA
+------------------------
+GitHub Pages
+   ↓ POST HTTPS
+Backend / Function serverless
+   ↓
+Validar score + email + rate limit
+   ↓
+Generar certificado PDF
+   ↓
+Proveedor de correo transaccional
+   ↓
+Correo de felicitación + PDF/enlace
+
+OPCIONES DE EMAIL
+-----------------
+Resend:
+- API para correo transaccional.
+- Requiere API key y dominio verificado.
+- Permite attachments.
+- La API key debe vivir solo en backend.
+
+Twilio SendGrid:
+- API de correo transaccional.
+- Requiere API key y remitente/dominio verificado.
+- La API key debe estar en variable de entorno del backend.
+
+PAYLOAD PROPUESTO
+-----------------
+POST /api/certificates/complete
+Content-Type: application/json
+
+{
+  "email": "persona@dominio.com",
+  "name": "Nombre Apellidos",
+  "activity": "CTFL v4.0",
+  "score": 34,
+  "pct": 85,
+  "subject": "¡Felicitaciones! Aprobó la simulación",
+  "certificate": {
+    "name": "Nombre Apellidos",
+    "activity": "CTFL v4.0",
+    "score": 34,
+    "pct": 85
+  }
+}
+
+REGLAS DE SEGURIDAD
+-------------------
+- No confiar únicamente en score enviado por navegador en producción.
+- Firmar/validar el intento desde backend si existe autenticación real.
+- Rate limiting por IP/usuario.
+- Validar email.
+- Idempotency key para evitar correos duplicados.
+- No almacenar contraseñas ni API keys en GitHub Pages.
+- Registrar eventos de envío y rebotes.
+- Permitir reintento controlado.

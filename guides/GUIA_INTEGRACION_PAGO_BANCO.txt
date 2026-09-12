@@ -1,0 +1,357 @@
+QA LEARNING HUB
+GUÍA AMPLIADA PARA INTEGRAR UNA PASARELA DE PAGO CON BANCO/ADQUIRENTE
+Costa Rica · Referencia educativa · Actualización 2026
+
+IMPORTANTE
+==========
+Esta guía describe un proceso general. Cada banco/adquirente/proveedor tiene contrato, precios, formularios, certificación, API y requisitos propios. Antes de desarrollar, solicite al proveedor su documentación vigente.
+
+GLOSARIO BÁSICO
+===============
+Comercio / merchant:
+Organización que vende el curso o servicio y recibe el dinero.
+
+Cuenta de comercio / merchant account:
+Relación o cuenta de adquirencia usada para liquidar pagos del comercio.
+
+Banco emisor / issuer:
+Banco o entidad que emitió la tarjeta del cliente y decide la autorización.
+
+Banco adquirente / acquirer:
+Entidad que afilia al comercio y recibe/procesa transacciones para liquidarlas al comercio.
+
+Payment gateway / pasarela:
+Tecnología de front-end/checkout que captura y protege la información necesaria para iniciar el pago.
+
+Payment processor:
+Sistema back-end que intercambia mensajes entre comercio/adquirente, redes de tarjetas y emisor.
+
+Authorization:
+Respuesta inicial que aprueba o rechaza reservar/usar fondos o crédito.
+
+Capture:
+Confirmación para completar/capturar una autorización cuando el modelo del proveedor separa ambos pasos.
+
+Settlement / liquidación:
+Movimiento y conciliación de fondos hacia el comercio después del procesamiento.
+
+Tokenización:
+Sustituye datos sensibles de tarjeta por un token para que el comercio no necesite manejar el PAN en procesos posteriores.
+
+3-D Secure:
+Mecanismo de autenticación adicional para transacciones de tarjeta no presente, según emisor/red/proveedor.
+
+Webhook:
+Llamada HTTP servidor-a-servidor enviada por el proveedor para informar estados del pago.
+
+Idempotencia:
+Diseño que evita que una misma solicitud/evento repetido cree dos cargos, dos órdenes o dos facturas.
+
+Refund:
+Devolución posterior a una transacción pagada.
+
+Chargeback / disputa:
+Proceso mediante el cual se disputa una transacción de tarjeta, sujeto a reglas de red, emisor y adquirente.
+
+PCI DSS:
+Estándar de seguridad para datos de tarjetas. El alcance aplicable depende de cómo está implementado el pago.
+
+PASO 1 — DEFINIR EL MODELO COMERCIAL
+====================================
+Qué es:
+Definir quién venderá, qué se cobrará, moneda, impuestos, política de devolución, países y volumen esperado.
+
+Con quién se habla:
+- persona responsable del negocio;
+- contabilidad;
+- asesor fiscal/legal cuando corresponda.
+
+Requisitos:
+- nombre/razón social;
+- identificación tributaria;
+- cuenta bancaria;
+- catálogo y precios;
+- moneda;
+- política de cancelación/reembolso;
+- estimación de transacciones.
+
+Resultado esperado:
+Una ficha de negocio que pueda entregarse al banco/adquirente.
+
+PASO 2 — ELEGIR ADQUIRENTE / PROVEEDOR
+======================================
+Qué es:
+Seleccionar quién afiliará el comercio y qué gateway/checkout se utilizará.
+
+Con quién se habla:
+- ejecutivo de afiliación de comercios;
+- área de e-commerce/adquirencia;
+- proveedor de payment gateway.
+
+Preguntas:
+- ¿Aceptan Visa/Mastercard?
+- ¿Qué monedas?
+- ¿Comisión fija/porcentaje?
+- ¿Costo de afiliación o mensualidad?
+- ¿Liquidación T+N?
+- ¿Refunds parciales?
+- ¿3-D Secure?
+- ¿Checkout hospedado, redirect, iframe o API directa?
+- ¿Sandbox?
+- ¿Webhooks?
+- ¿Tokenización?
+- ¿Documentación API?
+- ¿Qué SAQ PCI aplica?
+- ¿Quién brinda soporte y certifica producción?
+
+Resultado:
+Proveedor seleccionado con costos y arquitectura documentados.
+
+PASO 3 — AFILIACIÓN DEL COMERCIO / KYC
+=======================================
+Qué es:
+Proceso mediante el cual el proveedor valida identidad, negocio, beneficiarios, cuenta y actividad.
+
+Con quién se habla:
+- onboarding/KYC;
+- ejecutivo de comercio;
+- legal/compliance del proveedor.
+
+Posibles requerimientos:
+- identificación;
+- personería/constitución si aplica;
+- cuenta IBAN;
+- actividad económica;
+- sitio web;
+- términos y privacidad;
+- política de devoluciones;
+- contacto de soporte;
+- información de beneficiario final según proveedor.
+
+No programe credenciales de producción antes de que la afiliación sea aprobada.
+
+PASO 4 — DEFINIR ARQUITECTURA DE SEGURIDAD
+===========================================
+Recomendación:
+GitHub Pages -> backend HTTPS -> gateway/adquirente
+                              -> base de datos
+                              -> facturación electrónica
+
+No coloque secretos del banco en JavaScript público.
+
+Preferencia:
+Hosted checkout o iframe provisto completamente por proveedor PCI cuando sea compatible con el negocio. PCI SSC explica que, para elegibilidad SAQ A, los elementos que capturan/procesan datos de tarjeta deben originarse directamente en un proveedor PCI validado; el alcance exacto debe confirmarse con adquirente/QSA.
+
+Con quién se habla:
+- arquitecto/desarrollador;
+- seguridad;
+- adquirente/proveedor;
+- QSA si se necesita asesoría PCI formal.
+
+PASO 5 — OBTENER SANDBOX Y CREDENCIALES
+========================================
+Qué es:
+Ambiente de pruebas separado de dinero real.
+
+Solicitar:
+- URL Sandbox;
+- merchant ID;
+- API key/client ID;
+- secrets;
+- certificados si aplica;
+- tarjetas/escenarios de prueba;
+- webhook signing secret;
+- ejemplos de payload;
+- códigos de respuesta;
+- rate limits;
+- documentación 3DS.
+
+Guardar secretos solo en backend/secret manager.
+
+PASO 6 — MODELAR ÓRDENES INTERNAMENTE
+=====================================
+Antes de llamar al banco cree una orden propia.
+
+orders:
+- id
+- user_id
+- subtotal
+- tax
+- total
+- currency
+- status
+- provider_reference
+- created_at / paid_at
+
+order_items:
+- order_id
+- product_id
+- description
+- quantity
+- unit_price
+- tax
+
+Regla:
+El backend recalcula el precio; nunca debe confiar en total/IVA enviado por navegador.
+
+PASO 7 — CREAR SESIÓN / PAYMENT INTENT
+======================================
+Qué es:
+El backend solicita al gateway una sesión/intención/token de pago.
+
+Flujo:
+1. frontend envía IDs del carrito;
+2. backend valida sesión;
+3. backend recalcula monto;
+4. crea order=PENDING;
+5. solicita sesión al gateway;
+6. devuelve al navegador solo información pública/URL/token permitido.
+
+PASO 8 — CHECKOUT DEL CLIENTE
+=============================
+El cliente introduce información en la página/componente del proveedor.
+
+Pruebas:
+- aprobado;
+- rechazado;
+- expirada;
+- cancelación;
+- timeout;
+- doble clic;
+- refresh;
+- volver atrás;
+- móvil;
+- accesibilidad;
+- 3DS challenge/frictionless si aplica.
+
+Nunca registre CVV.
+
+PASO 9 — WEBHOOK
+================
+Qué es:
+Confirmación servidor-a-servidor. No confíe únicamente en que el navegador regrese a una URL de éxito.
+
+Validar:
+- firma;
+- event ID;
+- merchant/order ID;
+- monto;
+- moneda;
+- estado;
+- timestamp;
+- idempotencia.
+
+Un event ID ya procesado debe ignorarse de forma segura.
+
+PASO 10 — CONFIRMAR PAGO Y DAR ACCESO
+=====================================
+Solo después de una confirmación confiable:
+PENDING -> PAID
+
+Entonces:
+- guardar provider_reference;
+- paid_at;
+- habilitar curso/producto;
+- limpiar carrito;
+- iniciar facturación;
+- enviar correo/recibo.
+
+PASO 11 — FACTURACIÓN ELECTRÓNICA COSTA RICA
+============================================
+La facturación tributaria no debe generarse solo desde el navegador.
+
+La versión 4.4 de comprobantes electrónicos es obligatoria desde el 1 de setiembre de 2025, según material oficial de Hacienda.
+
+Proceso de producción:
+1. Backend confirma pago.
+2. Obtiene datos fiscales del emisor y receptor.
+3. Genera clave/consecutivo según especificación vigente.
+4. Construye XML Factura Electrónica v4.4 conforme al XSD.
+5. Firma el XML con el mecanismo requerido.
+6. Codifica/envía el XML mediante la API vigente de Hacienda.
+7. Hacienda recibe el comprobante y devuelve/permite consultar estado.
+8. Guardar XML enviado + respuesta oficial + clave.
+9. Generar representación gráfica (PDF/HTML) para lectura.
+10. Entregar al cliente el comprobante y conservar evidencia según obligación aplicable.
+
+Hacienda indica que el PDF facilita lectura, pero el comprobante válido es el XML.
+
+Requisitos técnicos históricos/publicados por Hacienda para su API incluyen HTTPS, JSON y autenticación OIDC/OAuth2; use SIEMPRE la documentación vigente antes de producción.
+
+PASO 12 — REEMBOLSOS Y NOTAS
+=============================
+Un refund del gateway y una corrección tributaria no son exactamente la misma operación.
+Coordine con contabilidad:
+- refund total/parcial;
+- nota de crédito cuando corresponda;
+- acceso al curso;
+- conciliación.
+
+PASO 13 — CONCILIACIÓN
+======================
+Compare periódicamente:
+- órdenes internas;
+- pagos del gateway;
+- settlement del adquirente;
+- refunds/chargebacks;
+- facturas/notas.
+
+Toda diferencia debe ser investigable por referencia.
+
+PASO 14 — SEGURIDAD OPERATIVA
+=============================
+- HTTPS.
+- MFA en cuentas administrativas.
+- mínimos privilegios.
+- secretos fuera del repo.
+- rotación.
+- logs sin PAN/CVV.
+- alertas.
+- backups.
+- rate limiting.
+- protección CSRF donde aplique.
+- dependency scanning.
+- CSP.
+- ASV/PCI según alcance aplicable.
+
+PASO 15 — CERTIFICACIÓN / GO LIVE
+=================================
+Con quién:
+- soporte técnico del gateway;
+- ejecutivo de comercio;
+- seguridad/compliance.
+
+Usualmente se valida:
+- URLs de éxito/error;
+- webhook;
+- monto/moneda;
+- 3DS;
+- refunds;
+- seguridad;
+- credenciales de producción.
+
+PASO 16 — MONITOREO POSTERIOR
+=============================
+Métricas:
+- approval rate;
+- decline rate;
+- errores técnicos;
+- abandono de checkout;
+- webhooks fallidos;
+- duplicados evitados;
+- tiempo de conciliación;
+- facturas rechazadas por Hacienda.
+
+REFERENCIAS
+===========
+Visa · componentes del proceso de pago:
+https://corporate.visa.com/en/solutions/acceptance/payments.html
+
+PCI SSC:
+https://www.pcisecuritystandards.org/
+
+Ministerio de Hacienda · material versión 4.4:
+https://www.hacienda.go.cr/docs/ComprobantesElectronicosversion4.4.pdf
+
+API de comprobantes electrónicos (validar vigencia antes de producción):
+https://www.hacienda.go.cr/docs/ComprobantesElectronicosAPI.html

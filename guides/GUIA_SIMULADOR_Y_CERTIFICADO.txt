@@ -1,0 +1,23 @@
+QA LEARNING HUB
+GUÍA DE COMPORTAMIENTO DEL SIMULADOR
+
+Durante el examen:
+- No mostrar si la respuesta elegida es correcta o incorrecta.
+- No mostrar la opción correcta.
+- Mostrar únicamente que la respuesta fue guardada.
+- Mantener Atrás/Siguiente según la lógica elegida por el simulador.
+
+Al finalizar:
+- Calcular nota.
+- Mostrar revisión de respuestas incorrectas.
+- Para cada error mostrar:
+  pregunta;
+  respuesta elegida;
+  respuesta correcta;
+  explicación breve.
+- Mostrar certificado solo si nota >= 70%.
+- Intentar correo automático solo con backend configurado.
+
+Certificado:
+- El botón abre certificado.html en una pestaña nueva.
+- Desde allí la persona puede imprimir/guardar como PDF.

@@ -1,0 +1,23 @@
+QA LEARNING HUB — FUENTES PARA ESCENARIOS LABORALES DE CERTIFICACIONES
+
+Los escenarios incorporados en certificaciones.html son ejemplos laborales ilustrativos creados para conectar los objetivos de aprendizaje con tareas reales de QA. No son preguntas oficiales ni casos textuales de ISTQB.
+
+Fuente principal del catálogo y rutas oficiales:
+https://istqb.org/certifications/
+
+Referencias oficiales revisadas especialmente para la actualización v41:
+- CTFL v4.0: https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/
+- CTAL Agile Tester v2.0: https://istqb.org/certifications/certified-tester-advanced-level-agile-tester-ctal-at/
+- CTAL Test Analyst v4.0: https://istqb.org/certifications/certified-tester-advanced-level-test-analyst/
+- CTAL Technical Test Analyst: https://istqb.org/certifications/certified-tester-advanced-level-technical-test-analyst-ctal-tta/
+- CT-AI v2.0: https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/
+- CT-Finance Testing: https://istqb.org/certifications/certified-tester-finance-testing-ct-ft/
+- CT-Quality in DevOps: https://istqb.org/certifications/certified-tester-quality-in-devops-ct-qdo/
+- CT-Mobile Application Testing: https://istqb.org/certifications/certified-tester-mobile-application-testing-ct-mat/
+- CT-Test Automation Strategy: https://istqb.org/certifications/certified-tester-test-automation-strategy-ct-tas/
+- CT-Agile Test Leadership at Scale: https://istqb.org/certifications/certified-tester-agile-test-leadership-at-scale-ct-atlas/
+- CT-Acceptance Testing: https://istqb.org/certifications/certified-tester-acceptance-testing-ct-act/
+- CT-Performance Testing: https://istqb.org/certifications/certified-tester-performance-testing-ct-pt/
+- CT-Usability Testing: https://istqb.org/certifications/certified-tester-usability-testing-ct-ut/
+
+Para las demás certificaciones del catálogo, cada tarjeta mantiene un enlace “Fuente oficial” que debe considerarse la fuente de verdad para syllabus, estructura de examen, prerequisitos y cambios de versión.

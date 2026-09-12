@@ -5,7 +5,7 @@ Cada TXT contiene guion narrado y recomendaciones visuales.
 - AcademyBugs – laboratorio de detección y reporte de defectos: 14 videos · academybugs-practice-academybugs-laboratorio-de-deteccion-y-reporte-de-defectos-GUIONES.txt
 - uTest Academy – práctica de testing y comunidad: 14 videos · utest-academy-utest-academy-practica-de-testing-y-comunidad-GUIONES.txt
 - Virtuoso QA – Training Library y certificaciones: 18 videos · virtuoso-qa-virtuoso-qa-training-library-y-certificaciones-GUIONES.txt
-- QA con imágenes e IA: 12 videos · visual-ai-qa-con-imagenes-e-ia-GUIONES.txt
+- QA con imágenes, IA y agentes: contenido integrado · visual-ai-qa-con-imagenes-e-ia-GUIONES.txt
 - QA de videojuegos: 12 videos · game-qa-qa-de-videojuegos-GUIONES.txt
 - English for QA: 12 videos · english-qa-english-for-qa-GUIONES.txt
 - QA para Robótica: 16 videos · robotics-qa-qa-para-robotica-GUIONES.txt
@@ -25,6 +25,5 @@ Cada TXT contiene guion narrado y recomendaciones visuales.
 - Appium + BrowserStack: 8 videos · mobile-appium-browserstack-GUIONES.txt
 - WCAG + Accessibility Testing: 8 videos · accessibility-wcag-accessibility-testing-GUIONES.txt
 - Salesforce QA: 16 videos · salesforce-salesforce-qa-GUIONES.txt
-- AI-assisted QA & Agents: 8 videos · aiqa-ai-assisted-qa-agents-GUIONES.txt
 - Jira + Confluence para QA: 8 videos · jira-confluence-jira-confluence-para-qa-GUIONES.txt
 - Oracle APEX QA: 16 videos · oracle-apex-oracle-apex-qa-GUIONES.txt
