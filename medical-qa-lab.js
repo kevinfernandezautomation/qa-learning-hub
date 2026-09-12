@@ -1,13 +1,13 @@
 const LAB_KEY='medicalQaLabV31';
 const MISSIONS=[
-{id:'M01',area:'Access control',title:'Rol incorrecto puede abrir registros restringidos',scenario:'Un usuario con rol Viewer abre directamente la URL de un registro asignado a otro equipo y la pantalla carga el detalle.',choices:['Defecto de autorización: falta control server-side por rol/alcance','Solo un problema cosmético','No es defecto si conoce la URL','Debe resolverse agregando un tooltip'],correct:0,req:'SWR-003',risk:'RISK-SEC-01',lesson:'La UI no debe ser la única barrera de autorización. El control debe verificarse también en API/backend y quedar evidenciado.'},
-{id:'M02',area:'Data integrity',title:'Registro sin timestamp de adquisición',scenario:'La pantalla muestra un registro sintético procesado pero no indica cuándo fue adquirido ni cuándo fue procesado.',choices:['Falta de información crítica de contexto y trazabilidad','Solo falta diseño visual','No importa si existe ID','Se arregla cambiando el color'],correct:0,req:'SWR-002',risk:'RISK-DATA-02',lesson:'Datos sin contexto temporal pueden inducir interpretación incorrecta. El requisito debe definir qué timestamps son visibles y auditables.'},
-{id:'M03',area:'Validation',title:'Estado “Processed” aunque la importación falló',scenario:'La API responde error al importar el archivo sintético, pero la UI mantiene el badge Processed.',choices:['Inconsistencia de estado: resultado mostrado no corresponde con backend','Problema de performance','Comportamiento esperado','Solo bug de traducción'],correct:0,req:'SWR-004',risk:'RISK-STATE-01',lesson:'El estado mostrado debe derivarse de una fuente confiable y manejar errores/rollback de forma explícita.'},
-{id:'M04',area:'Auditability',title:'Exportación sin evento de auditoría',scenario:'Un revisor exporta un reporte del registro ficticio. El archivo se genera, pero no existe evento en audit log.',choices:['Defecto de auditabilidad / evidencia','Solo falta una animación','No se debe registrar ninguna exportación','Únicamente un problema del navegador'],correct:0,req:'SWR-006',risk:'RISK-AUD-01',lesson:'Si el proceso requiere registro de acciones relevantes, la prueba debe verificar evento, actor, timestamp y referencia.'},
-{id:'M05',area:'Boundary',title:'API acepta identificador vacío',scenario:'Una solicitud POST de prueba permite crear un registro con recordId vacío y devuelve 201.',choices:['Falla de validación de entrada y requisito de integridad','Solo error de UI','No es problema si SQL genera ID interno','Debe probarse únicamente manualmente'],correct:0,req:'SWR-001',risk:'RISK-DATA-01',lesson:'Las reglas críticas deben validarse en capas apropiadas; no dependa exclusivamente de required en HTML.'},
-{id:'M06',area:'Traceability',title:'Risk control sin test asociado',scenario:'La matriz contiene un control para impedir acceso no autorizado, pero la columna Test está vacía.',choices:['Gap de trazabilidad: falta evidencia de verificación del control','No importa si el control está documentado','Solo hay que cambiar el ID','El control reemplaza la prueba'],correct:0,req:'SWR-003',risk:'RISK-SEC-01',lesson:'Un control documentado necesita evidencia de que fue implementado y verificado según el plan aplicable.'},
-{id:'M07',area:'Configuration',title:'Reporte muestra versión distinta al build probado',scenario:'El sistema bajo prueba es build 1.4.2, pero el reporte exportado indica 1.4.1.',choices:['Problema de configuration identification y reproducibilidad','Solo typo irrelevante','No afecta evidencia','Debe ocultarse la versión'],correct:0,req:'SWR-007',risk:'RISK-CFG-01',lesson:'La evidencia debe identificar la configuración realmente verificada para que el resultado sea reproducible y auditable.'},
-{id:'M08',area:'Problem resolution',title:'Defecto crítico cerrado sin evidencia de retest',scenario:'El ticket aparece Closed después del cambio de código, pero no contiene resultado de confirmación ni regresión relacionada.',choices:['Cierre insuficiente: falta evidencia de resolución/verificación','Correcto si el developer lo cerró','Solo falta una etiqueta','No se requiere retest nunca'],correct:0,req:'SWR-008',risk:'RISK-PR-01',lesson:'Problem resolution debe dejar evidencia suficiente del análisis, corrección y verificación apropiada antes del cierre.'}
+{id:'M01',area:'Access control',title:'¿Qué defecto existe en el control de acceso?',scenario:'Durante el recorrido observó que MR-10022 pertenece a Team B, pero el usuario conectado training.viewer pertenece a Team A y aun así puede abrir el registro. ¿Cuál es el problema principal?',choices:['Falta control de autorización por rol/equipo en backend o API','Solo existe un problema cosmético','No existe defecto porque el usuario conoce la URL','Solo falta agregar un tooltip'],correct:0,req:'SWR-003',risk:'RISK-SEC-01',lesson:'La interfaz no debe ser la única barrera de autorización. El control debe verificarse en backend/API y dejar evidencia de acceso permitido o denegado.'},
+{id:'M02',area:'Data integrity',title:'¿Qué problema existe si falta “Acquisition time”?',scenario:'El registro se muestra como procesado, pero el campo Acquisition time aparece como “Not available”. Si el requisito exige trazabilidad temporal, ¿qué debe reportar QA?',choices:['Falta información necesaria para contexto temporal y trazabilidad','Solo falta mejorar el color del campo','No importa si existe un Record ID','Debe ocultarse el campo para evitar confusión'],correct:0,req:'SWR-002',risk:'RISK-DATA-02',lesson:'Los timestamps permiten reconstruir cuándo ocurrieron eventos. Si son parte del requisito, deben estar presentes, ser correctos y auditables.'},
+{id:'M03',area:'State validation',title:'¿Qué debe reportar QA cuando dos estados se contradicen?',scenario:'En la misma pantalla se observa “Processed”, pero la respuesta de la fuente indica “500 IMPORT_FAILED”. ¿Cuál es el defecto principal?',choices:['La UI muestra un estado de éxito que no coincide con el resultado real del backend','Existe únicamente un problema de performance','Ambos mensajes representan el mismo estado','Es solamente un problema de idioma'],correct:0,req:'SWR-004',risk:'RISK-STATE-01',lesson:'El estado visible debe corresponder con la fuente confiable y manejar los errores de forma explícita.'},
+{id:'M04',area:'Auditability',title:'Después de exportar, ¿qué falta en el Audit log?',scenario:'Se presiona “Export report”, pero el Audit log continúa mostrando solamente VIEW y LOGIN. Si las exportaciones deben ser auditables, ¿qué defecto existe?',choices:['Falta registrar el evento EXPORT con actor, timestamp y referencia','Solo falta una animación al exportar','No es necesario registrar exportaciones','Es un problema exclusivo del navegador'],correct:0,req:'SWR-006',risk:'RISK-AUD-01',lesson:'Cuando una acción debe ser auditable, la prueba debe comprobar que exista evidencia suficiente del evento.'},
+{id:'M05',area:'Input validation',title:'¿Qué defecto existe si Record ID vacío devuelve 201 Created?',scenario:'En Create synthetic record se deja Record ID vacío y se presiona Create. El sistema responde 201 Created. ¿Cómo debería clasificarse el problema?',choices:['Falla de validación de entrada e integridad de datos','Solo error visual de UI','Es correcto porque la base puede inventar cualquier ID','Solo debe probarse manualmente, por lo que no es defecto'],correct:0,req:'SWR-001',risk:'RISK-DATA-01',lesson:'Los datos obligatorios deben validarse en la capa adecuada; una respuesta de creación exitosa ante un identificador requerido vacío indica una regla no aplicada.'},
+{id:'M06',area:'Traceability',title:'¿Qué falta para demostrar que el control de autorización fue verificado?',scenario:'Existe el requisito SWR-003 y el riesgo RISK-SEC-01 para impedir acceso entre equipos. ¿Qué elemento falta si no hay un test asociado ni evidencia de ejecución?',choices:['Existe un gap de trazabilidad entre control, prueba y evidencia','El requisito por sí solo ya demuestra que funciona','Solo hace falta cambiar el identificador del requisito','El control documentado reemplaza la necesidad de probarlo'],correct:0,req:'SWR-003',risk:'RISK-SEC-01',lesson:'La trazabilidad útil conecta requisito/riesgo con test y evidencia. Un control documentado no demuestra por sí mismo que fue implementado correctamente.'},
+{id:'M07',area:'Configuration',title:'¿Qué problema existe si el build actual es 1.4.2 y el reporte dice 1.4.1?',scenario:'La aplicación que se está probando muestra Build 1.4.2, pero el reporte exportado indica MedReview Trainer 1.4.1. ¿Por qué esto es un defecto?',choices:['La evidencia identifica una configuración distinta y dificulta reproducibilidad/auditoría','Es solo un typo sin impacto en evidencia','La versión del reporte nunca importa','La solución correcta es ocultar todas las versiones'],correct:0,req:'SWR-007',risk:'RISK-CFG-01',lesson:'La evidencia debe identificar exactamente la configuración/build que fue verificada.'},
+{id:'M08',area:'Problem resolution',title:'¿Es suficiente cerrar DEF-77 con la nota “Fixed”?',scenario:'DEF-77 aparece Closed después de un cambio de código, pero no contiene confirmation test ni evidencia de regresión. ¿Qué debe señalar QA?',choices:['El cierre es insuficiente porque falta evidencia de corrección y retest','Es correcto si desarrollo escribió “Fixed”','Solo falta cambiar una etiqueta del ticket','Nunca se requiere retest después de corregir un defecto'],correct:0,req:'SWR-008',risk:'RISK-PR-01',lesson:'La resolución de problemas debe conservar evidencia apropiada de la corrección, confirmation testing y regresión cuando corresponda.'}
 ];
 
 const VV=[
@@ -18,6 +18,15 @@ const VV=[
 {id:'VV-05',type:'Validation',title:'User Workflow Validation',desc:'Evalúe el flujo completo con usuarios/escenarios representativos del intended use ficticio.'},
 {id:'VV-06',type:'Validation',title:'Validation Summary',desc:'Resuma alcance, configuración, desviaciones, resultados, riesgos pendientes y conclusión del ejercicio.'}
 ];
+
+const VV_SUPPORT={
+ 'VV-01':{label:'Apóyese en requisitos + intended use',anchor:'requirements',hint:'Revise SWR-001 a SWR-008, el intended use y las reglas de usuario. Busque ambigüedad, ausencia de criterios verificables o falta de vínculo con riesgos.'},
+ 'VV-02':{label:'Apóyese en arquitectura + interfaces',anchor:'architecture',hint:'Use el flujo Web UI → API → SQL → Audit log → Export. Identifique dependencias, interfaces y dónde debe aplicarse cada control.'},
+ 'VV-03':{label:'Apóyese en requisitos + build + datos',anchor:'test-protocol',hint:'Elija un requisito y conviértalo en prerequisitos, datos, pasos, expected result y evidencia reproducible.'},
+ 'VV-04':{label:'Apóyese en Risk Register',anchor:'risks',hint:'Seleccione un riesgo y compruebe que exista un control verificable, un test asociado y evidencia del resultado.'},
+ 'VV-05':{label:'Apóyese en Intended Use + roles',anchor:'intended-use',hint:'Piense como usuario representativo del producto ficticio y recorra el flujo completo que satisface su necesidad prevista.'},
+ 'VV-06':{label:'Apóyese en todo el Evidence Pack',anchor:'summary',hint:'Integre alcance, build, resultados, defectos, desviaciones, riesgos pendientes y una conclusión coherente.'}
+};
 
 const TRACE=[
 {id:'SWR-001',req:'Cada registro debe tener identificador no vacío.',risk:'RISK-DATA-01 · Integridad',test:'TC-API-001',evidence:'API test result',ok:true},
@@ -39,6 +48,14 @@ const RELEASE=[
 
 function loadState(){try{return JSON.parse(localStorage.getItem(LAB_KEY)||'{}')}catch{return{}}}
 let state=Object.assign({missions:{},vv:{},trace:{},release:{},decision:'',justification:''},loadState());
+const __params=new URLSearchParams(location.search);
+if(__params.get('new')==='1'){
+  state.missions={};
+  state.vv={};
+}else if(__params.get('resume')!=='1'){
+  state.missions={};
+}
+
 function save(){localStorage.setItem(LAB_KEY,JSON.stringify(state));updateSummary()}
 
 let missionIndex=0;
@@ -67,11 +84,48 @@ function renderMissions(){
  document.getElementById('missionProgressBar').style.width=`${answered/MISSIONS.length*100}%`;
 }
 
+let vvIndex=0;
+function vvStateFor(id){return state.vv[id]||{}}
+function currentVVReady(){
+ const s=vvStateFor(VV[vvIndex].id);
+ return Boolean(s.objective?.trim() && s.evidence?.trim() && s.conclusion?.trim());
+}
+function persistCurrentVV(){
+ const v=VV[vvIndex],s=state.vv[v.id]||{};
+ s.objective=document.getElementById('vvObjective').value;
+ s.source=document.getElementById('vvSource').value;
+ s.setup=document.getElementById('vvSetup').value;
+ s.procedure=document.getElementById('vvProcedure').value;
+ s.evidence=document.getElementById('vvEvidence').value;
+ s.conclusion=document.getElementById('vvConclusion').value;
+ const ready=Boolean(s.objective.trim()&&s.evidence.trim()&&s.conclusion.trim());
+ s.done=ready && document.getElementById('vvDone').checked;
+ state.vv[v.id]=s;save();
+}
 function renderVV(){
- const box=document.getElementById('vvArtifacts');if(!box)return;
- box.innerHTML=VV.map((v,i)=>{const st=state.vv[v.id]||{};const ready=Boolean(st.objective?.trim() && st.evidence?.trim() && st.conclusion?.trim());return `<article class="vv-card guided-vv-card"><div class="vv-card-head"><span class="badge">${v.type}</span><strong>${v.id}</strong></div><h3>${v.title}</h3><p>${v.desc}</p><div class="guided-vv-form"><label><span>1. Objetivo</span><textarea data-vv-field="${v.id}" data-field="objective" rows="2" placeholder="¿Qué quiere demostrar?">${st.objective||''}</textarea></label><label><span>2. Requirement / risk / fuente</span><input data-vv-field="${v.id}" data-field="source" value="${st.source||''}" placeholder="Ej.: SWR-003 / RISK-SEC-01"></label><label><span>3. Ambiente, build y datos</span><textarea data-vv-field="${v.id}" data-field="setup" rows="2" placeholder="Build, ambiente, rol, datos sintéticos…">${st.setup||''}</textarea></label><label><span>4. Procedimiento / pasos</span><textarea data-vv-field="${v.id}" data-field="procedure" rows="3" placeholder="Cómo ejecutaría o revisaría la actividad…">${st.procedure||''}</textarea></label><label><span>5. Evidencia observada</span><textarea data-vv-field="${v.id}" data-field="evidence" rows="3" placeholder="Resultado, log, screenshot, review notes…">${st.evidence||''}</textarea></label><label><span>6. Conclusión</span><textarea data-vv-field="${v.id}" data-field="conclusion" rows="3" placeholder="Pass/fail, desviación, riesgo pendiente…">${st.conclusion||''}</textarea></label><label class="check-row"><input type="checkbox" data-vv-done="${v.id}" ${st.done?'checked':''} ${ready?'':'disabled'}> Marcar artefacto como completado</label><small class="muted-note">${ready?'Ya puede marcarlo como completado.':'Complete al menos objetivo, evidencia y conclusión.'}</small></div></article>`;}).join('');
- box.querySelectorAll('[data-vv-field]').forEach(el=>el.addEventListener('change',()=>{const id=el.dataset.vvField,field=el.dataset.field;state.vv[id]=state.vv[id]||{done:false};state.vv[id][field]=el.value;if(!(state.vv[id].objective?.trim()&&state.vv[id].evidence?.trim()&&state.vv[id].conclusion?.trim()))state.vv[id].done=false;save();renderVV();}));
- box.querySelectorAll('[data-vv-done]').forEach(c=>c.addEventListener('change',()=>{const id=c.dataset.vvDone;state.vv[id]=state.vv[id]||{};state.vv[id].done=c.checked;save();updateSummary();}));
+ const v=VV[vvIndex],s=vvStateFor(v.id);
+ document.getElementById('vvNumber').textContent=`Artefacto ${vvIndex+1} de ${VV.length}`;
+ document.getElementById('vvType').textContent=v.type;
+ document.getElementById('vvTitle').textContent=v.title;
+ document.getElementById('vvDescription').textContent=v.desc;
+ const sup=VV_SUPPORT[v.id];const support=document.getElementById('vvSupportHint');if(support&&sup){support.innerHTML=`<strong>${sup.label}</strong><p>${sup.hint}</p><a class="btn ghost small" href="medical-vv-support.html#${sup.anchor}" target="_blank" rel="noopener">Abrir material de apoyo ↗</a>`;}
+ document.getElementById('vvObjective').value=s.objective||'';
+ document.getElementById('vvSource').value=s.source||'';
+ document.getElementById('vvSetup').value=s.setup||'';
+ document.getElementById('vvProcedure').value=s.procedure||'';
+ document.getElementById('vvEvidence').value=s.evidence||'';
+ document.getElementById('vvConclusion').value=s.conclusion||'';
+ const ready=Boolean(s.objective?.trim()&&s.evidence?.trim()&&s.conclusion?.trim());
+ const done=document.getElementById('vvDone');
+ done.checked=!!s.done;done.disabled=!ready;
+ document.getElementById('vvReadyHint').textContent=ready?'Ya puede marcarlo como completado.':'Complete al menos objetivo, evidencia y conclusión.';
+ document.getElementById('vvPrev').disabled=vvIndex===0;
+ document.getElementById('vvNext').textContent=vvIndex===VV.length-1?'Ir a Trazabilidad →':'Siguiente →';
+ const completed=VV.filter(x=>state.vv[x.id]?.done).length;
+ document.getElementById('vvProgress').textContent=`${completed} / ${VV.length} completados`;
+ document.getElementById('vvProgressBar').style.width=`${completed/VV.length*100}%`;
+ window.applyTranslations?.(localStorage.getItem('lang')||'es');
+ window.dispatchEvent(new CustomEvent('qa-content-rendered'));
 }
 
 function renderTrace(){
@@ -114,8 +168,32 @@ function evidencePack(){
 }
 function download(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 document.getElementById('downloadEvidenceJson')?.addEventListener('click',()=>download('medical-qa-lab-evidence.json',JSON.stringify(evidencePack(),null,2),'application/json'));
-document.getElementById('downloadEvidenceTxt')?.addEventListener('click',()=>{const p=evidencePack();download('medical-qa-lab-summary.txt',`MEDICAL DEVICE / SaMD QA LAB — SIMULATED PORTFOLIO PROJECT\nGenerated: ${p.generatedAt}\n\nDISCLAIMER\n${p.disclaimer}\n\nMISSIONS\n${p.missions.map(x=>`${x.id} | ${x.area} | ${x.completed?'DONE':'PENDING'} | ${x.requirement} | ${x.risk}`).join('\n')}\n\nV&V\n${p.vv.map(x=>`${x.id} | ${x.type} | ${x.title} | ${x.completed?'DONE':'PENDING'} | ${x.note}`).join('\n')}\n\nRELEASE DECISION\n${p.release.decision||'Pending'}\n${p.release.justification||''}`)});
+document.getElementById('downloadEvidenceTxt')?.addEventListener('click',()=>{const p=evidencePack();download('medical-qa-lab-summary.txt',`MEDICAL DEVICE / SaMD QA LAB — SIMULATED PORTFOLIO PROJECT\nGenerated: ${p.generatedAt}\n\nDISCLAIMER\n${p.disclaimer}\n\nMISSIONS\n${p.missions.map(x=>`${x.id} | ${x.area} | ${x.completed?'DONE':'PENDING'} | ${x.requirement} | ${x.risk}`).join('\n')}\n\nV&V\n${p.vv.map(x=>`${x.id} | ${x.type} | ${x.title} | ${x.completed?'DONE':'PENDING'} | ${x.conclusion||''}`).join('\n')}\n\nRELEASE DECISION\n${p.release.decision||'Pending'}\n${p.release.justification||''}`)});
 document.getElementById('downloadTraceCsv')?.addEventListener('click',()=>{const rows=[['ID','Requirement','Risk-Control','Test','Evidence','Status'],...TRACE.map(r=>[r.id,r.req,r.risk,r.test,r.evidence,(r.ok||state.trace[r.id]?.fixed)?'TRACEABLE':'GAP'])];download('medical-qa-traceability.csv',rows.map(row=>row.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')});
+
+function syncVVReadiness(){
+ const ready=Boolean(
+   document.getElementById('vvObjective').value.trim() &&
+   document.getElementById('vvEvidence').value.trim() &&
+   document.getElementById('vvConclusion').value.trim()
+ );
+ const done=document.getElementById('vvDone');
+ done.disabled=!ready;
+ if(!ready)done.checked=false;
+ document.getElementById('vvReadyHint').textContent=ready?'Ya puede marcarlo como completado.':'Complete al menos objetivo, evidencia y conclusión.';
+}
+['vvObjective','vvSource','vvSetup','vvProcedure','vvEvidence','vvConclusion'].forEach(id=>{
+ document.getElementById(id)?.addEventListener('input',()=>{
+   const v=VV[vvIndex],s=state.vv[v.id]||{done:false};
+   const map={vvObjective:'objective',vvSource:'source',vvSetup:'setup',vvProcedure:'procedure',vvEvidence:'evidence',vvConclusion:'conclusion'};
+   s[map[id]]=document.getElementById(id).value;
+   if(!(document.getElementById('vvObjective').value.trim()&&document.getElementById('vvEvidence').value.trim()&&document.getElementById('vvConclusion').value.trim()))s.done=false;
+   state.vv[v.id]=s;localStorage.setItem(LAB_KEY,JSON.stringify(state));syncVVReadiness();updateSummary();
+ });
+});
+document.getElementById('vvDone')?.addEventListener('change',()=>{persistCurrentVV();renderVV();});
+document.getElementById('vvPrev')?.addEventListener('click',()=>{persistCurrentVV();if(vvIndex>0){vvIndex--;renderVV();document.getElementById('vv-panel').scrollIntoView({behavior:'smooth',block:'start'});}});
+document.getElementById('vvNext')?.addEventListener('click',()=>{persistCurrentVV();if(vvIndex<VV.length-1){vvIndex++;renderVV();document.getElementById('vv-panel').scrollIntoView({behavior:'smooth',block:'start'});}else document.querySelector('[data-target="trace-panel"]')?.click();});
 
 document.getElementById('missionPrev')?.addEventListener('click',()=>{if(missionIndex>0){missionIndex--;renderMissions();}});
 document.getElementById('missionNext')?.addEventListener('click',()=>{const m=MISSIONS[missionIndex],saved=state.missions[m.id];if(saved?.answer===undefined)return;if(missionIndex<MISSIONS.length-1){missionIndex++;renderMissions();document.getElementById('mission-panel').scrollIntoView({behavior:'smooth',block:'start'});}else document.querySelector('[data-target="vv-panel"]')?.click();});

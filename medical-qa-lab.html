@@ -12,17 +12,15 @@
 <body data-page="academy">
 <a class="skip-link" href="#main">Saltar al contenido</a>
 <header class="topbar">
-<a class="brand" href="index.html"><span class="brand-mark">✓</span><span><strong>QA Learning Hub</strong><small>Medical Software · V&amp;V</small></span></a>
+<a class="brand" href="index.html"><span class="brand-mark">✓</span><span><strong>QA Learning Hub</strong><small>Testing · Quality Engineering</small></span></a>
 <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-<nav id="mainNav" class="main-nav">
-<a href="index.html">Inicio</a><a href="academia.html">Academia</a><a href="certificaciones.html">Certificaciones</a><a href="simuladores.html">Simuladores</a><a href="empleos.html">Empleo</a>
+<nav id="mainNav" class="main-nav" aria-label="Navegación principal">
+<a href="index.html">Inicio</a><a href="academia.html">Academia</a><a href="certificaciones.html">Certificaciones</a><a href="simuladores.html">Simuladores</a><a href="prompts.html">Prompts IA</a><a href="biblioteca.html">Biblioteca</a><a href="empleos.html">Empleo</a>
 </nav>
 <div class="header-actions">
 <select id="language" aria-label="Idioma"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="zh">中文</option><option value="hi">हिन्दी</option></select>
-<button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">◐</button>
-<a class="btn small" href="login.html">Iniciar sesión</a>
-</div>
-</header>
+<button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">◐</button><button id="voiceNav" class="icon-btn voice-btn" aria-label="Navegación por voz">🎙</button><a class="btn small" href="login.html">Iniciar sesión</a>
+</div></header>
 
 <main id="main">
 <section class="page-hero shell medical-hero">
@@ -71,9 +69,45 @@
 </section>
 
 <section id="vv-panel" class="shell lab-panel" hidden>
-  <div class="section-heading"><div><span class="eyebrow">Verification &amp; Validation</span><h2>Construya evidencia V&amp;V — práctica guiada</h2><p>Complete cada artefacto siguiendo una secuencia: objetivo → fuente/requisito → procedimiento → evidencia → conclusión.</p></div></div>
-  <div class="guided-steps"><article><b>1</b><h3>Defina qué quiere demostrar</h3><p>Escriba el objetivo y qué requisito, riesgo o necesidad cubre.</p></article><article><b>2</b><h3>Prepare condiciones y datos</h3><p>Identifique build, ambiente, datos sintéticos, roles y prerequisitos.</p></article><article><b>3</b><h3>Ejecute y capture evidencia</h3><p>Registre pasos, esperado, observado y archivos/logs relevantes.</p></article><article><b>4</b><h3>Concluya</h3><p>Declare pass/fail, desviación, riesgo pendiente y acción recomendada.</p></article></div>
-  <div id="vvArtifacts" class="vv-grid"></div><div class="notice"><strong>Práctica de portafolio:</strong> no marque un artefacto como completado hasta haber llenado objetivo, evidencia y conclusión.</div>
+  <div class="section-heading"><div><span class="eyebrow">Verification &amp; Validation</span><h2>Construya evidencia V&amp;V — práctica guiada</h2><p>Trabaje un artefacto a la vez. No tiene que responder de memoria: use el paquete de apoyo del producto ficticio para fundamentar cada decisión.</p></div></div>
+<div class="vv-support-intro"><div><strong>¿Contra qué puede apoyarse?</strong><p>Intended use, roles, requisitos SWR, riesgos, arquitectura, build/configuración, defectos encontrados, matriz de trazabilidad y evidencia del Bug Lab.</p></div><a class="btn secondary" href="medical-vv-support.html" target="_blank" rel="noopener">Abrir paquete de apoyo V&amp;V ↗</a></div>
+
+  <article class="vv-example-card">
+    <div class="vv-example-head"><span class="badge">Ejemplo resuelto</span><strong>VV-EX · Risk Control Verification</strong></div>
+    <h3>Ejemplo de cómo llenar un artefacto</h3>
+    <div class="vv-example-grid">
+      <div><span>Objetivo</span><p>Verificar que un usuario Viewer no pueda abrir registros de otro equipo.</p></div>
+      <div><span>Requirement / risk</span><p>SWR-003 / RISK-SEC-01.</p></div>
+      <div><span>Ambiente</span><p>Build 1.4.2 · QA · usuario training.viewer · Team A.</p></div>
+      <div><span>Procedimiento</span><p>1) Iniciar sesión como Viewer. 2) Intentar abrir MR-10022 de Team B. 3) Revisar respuesta API.</p></div>
+      <div><span>Evidencia</span><p>La UI abrió el registro y la API respondió 200. Screenshot + network log.</p></div>
+      <div><span>Conclusión</span><p>FAIL. El control de autorización no se cumple. Bloquear release hasta corregir y ejecutar retest.</p></div>
+    </div>
+  </article>
+
+  <div class="lab-progress"><span id="vvProgress">0 / 6 completados</span><div class="progress-track"><i id="vvProgressBar"></i></div></div>
+
+  <div id="vvForm" class="vv-single-form">
+    <div class="quiz-meta"><span id="vvNumber"></span><span id="vvType" class="badge"></span></div>
+    <article class="vv-card vv-card-single">
+      <h3 id="vvTitle"></h3>
+      <p id="vvDescription"></p><div id="vvSupportHint" class="vv-support-hint"></div>
+      <div class="guided-vv-form">
+        <label><span>1. Objetivo</span><textarea id="vvObjective" rows="2" placeholder="¿Qué quiere demostrar?"></textarea></label>
+        <label><span>2. Requirement / risk / fuente</span><input id="vvSource" placeholder="Ej.: SWR-003 / RISK-SEC-01"></label>
+        <label><span>3. Ambiente, build y datos</span><textarea id="vvSetup" rows="2" placeholder="Build, ambiente, rol, datos sintéticos…"></textarea></label>
+        <label><span>4. Procedimiento / pasos</span><textarea id="vvProcedure" rows="3" placeholder="Describa cómo ejecutaría o revisaría la actividad…"></textarea></label>
+        <label><span>5. Evidencia observada</span><textarea id="vvEvidence" rows="3" placeholder="Resultado, log, screenshot, review notes…"></textarea></label>
+        <label><span>6. Conclusión</span><textarea id="vvConclusion" rows="3" placeholder="Pass/fail, desviación, riesgo pendiente y siguiente acción…"></textarea></label>
+        <label class="check-row"><input type="checkbox" id="vvDone"> Marcar artefacto como completado</label>
+        <small id="vvReadyHint" class="muted-note">Complete al menos objetivo, evidencia y conclusión.</small>
+      </div>
+    </article>
+    <div class="quiz-actions">
+      <button id="vvPrev" class="btn ghost" type="button">← Atrás</button>
+      <button id="vvNext" class="btn primary" type="button">Siguiente →</button>
+    </div>
+  </div>
 </section>
 
 <section id="trace-panel" class="shell lab-panel" hidden>
@@ -88,8 +122,7 @@
   <label>Decisión técnica
     <select id="releaseDecision"><option value="">Seleccione…</option><option value="NO-GO">NO-GO · falta evidencia o existen riesgos abiertos</option><option value="CONDITIONAL">GO condicionado · requiere acciones documentadas</option><option value="GO">GO · evidencia suficiente para el ejercicio</option></select>
   </label>
-  <label>Justificación
-    <textarea id="releaseJustification" rows="5" placeholder="Explique qué evidencia revisó, riesgos pendientes y por qué recomienda GO/NO-GO…"></textarea>
+  <label class="release-justification-field"><span>Justificación técnica</span><textarea id="releaseJustification" rows="5" placeholder="Explique qué evidencia revisó, riesgos pendientes y por qué recomienda GO/NO-GO…"></textarea>
   </label>
 </section>
 

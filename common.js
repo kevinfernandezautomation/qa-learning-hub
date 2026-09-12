@@ -34,6 +34,7 @@ const UI_TRANSLATIONS={
 function translateString(source,lang){if(lang==='es')return source;return (window.DATA_TRANSLATIONS?.[lang]?.[source])||(UI_TRANSLATIONS[lang]&&UI_TRANSLATIONS[lang][source])||source;}
 function applyTranslations(lang=localStorage.getItem('lang')||'es',root=document){
  document.documentElement.lang=lang;
+
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(n){if(!n.parentElement||['SCRIPT','STYLE','NOSCRIPT'].includes(n.parentElement.tagName))return NodeFilter.FILTER_REJECT;return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
  nodes.forEach(n=>{if(n.__i18nSource===undefined)n.__i18nSource=n.nodeValue;const raw=n.__i18nSource,trim=raw.trim(),lead=raw.slice(0,raw.indexOf(trim)),trail=raw.slice(raw.indexOf(trim)+trim.length);n.nodeValue=lead+translateString(trim,lang)+trail;});
@@ -42,7 +43,11 @@ function applyTranslations(lang=localStorage.getItem('lang')||'es',root=document
  const sel=$('#language');if(sel)sel.value=lang;
 }
 window.applyTranslations=applyTranslations;window.t=(s)=>translateString(s,localStorage.getItem('lang')||'es');
-const langSelect=$('#language');if(langSelect){langSelect.value=prefs.lang;langSelect.addEventListener('change',e=>{localStorage.setItem('lang',e.target.value);applyTranslations(e.target.value);window.dispatchEvent(new CustomEvent('languagechange',{detail:{lang:e.target.value}}));});}
+const langSelect=$('#language');if(langSelect){langSelect.value=prefs.lang;langSelect.addEventListener('change',e=>{
+ localStorage.setItem('lang',e.target.value);
+ applyTranslations(e.target.value);
+ window.dispatchEvent(new CustomEvent('languagechange',{detail:{lang:e.target.value}}));
+});}
 applyTranslations(prefs.lang);
 
 $('#themeToggle') && ($('#themeToggle').onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light')});

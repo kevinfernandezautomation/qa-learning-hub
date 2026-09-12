@@ -1,8 +1,5 @@
 (function(){
-'use strict';
-const level=document.getElementById('jobLevel'),link=document.getElementById('linkedinJobSearch');if(!level||!link)return;
-const terms={jr:'Junior QA OR Junior Quality Assurance OR QA Tester',mid:'QA Engineer OR Quality Assurance Engineer OR QA Analyst',sr:'Senior QA OR Senior Quality Assurance Engineer OR Senior QA Engineer',lead:'QA Lead OR Quality Assurance Lead OR Test Lead'};
-const labels={jr:'QA Jr',mid:'QA Mid',sr:'QA Sr',lead:'QA Lead'};
-function update(){const key=level.value||'jr';link.href='https://www.linkedin.com/jobs/search/?keywords='+encodeURIComponent(terms[key]);link.textContent='Buscar';}
-level.addEventListener('change',update);update();
+ const level=document.getElementById('jobLevel'),button=document.getElementById('linkedinJobSearch');
+ const terms={jr:'Junior QA / QA Tester',mid:'QA Engineer / QA Analyst',sr:'Senior QA / Senior QA Engineer',lead:'QA Lead / Test Lead'};
+ if(level&&button){button.removeAttribute('href');button.removeAttribute('target');button.setAttribute('role','button');button.addEventListener('click',e=>{e.preventDefault();const guide=document.querySelector('.linkedin-guide');if(guide){guide.innerHTML=`<strong>Búsqueda preparada: ${terms[level.value]}</strong><p>Revise oportunidades en la sección <a href="#linkedin-reciente">LinkedIn · oportunidades recientes</a>. Puede combinar este nivel con país, modalidad, tipo de empleo y palabra clave sin salir de esta página.</p>`;guide.scrollIntoView({behavior:'smooth',block:'nearest'});}});}
 })();

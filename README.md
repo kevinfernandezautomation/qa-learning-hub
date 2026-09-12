@@ -222,3 +222,30 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - Nuevas pruebas orientativas `Writing A1–C2` y `Speaking A1–C2`.
 - Listening y Speaking permiten seleccionar voz/acento de EE. UU., India, Reino Unido, Bulgaria, Alemania, Filipinas, Japón, China y Brasil, sujeto a voces disponibles en el dispositivo.
 - Speaking aclara que el navegador estima contenido transcrito y no puede calificar con fiabilidad pronunciación/acento.
+
+## v34
+- Appium + BrowserStack explica qué es BrowserStack e integra el video https://youtu.be/pXPAs2eIteI.
+- Menú estandarizado en páginas de Learning Paths / Aprender más, con idioma, tema, voz y accesos principales.
+- Jira + Confluence agrega módulo de búsquedas avanzadas con JQL.
+- Empleo agrega preguntas que un QA puede hacer al final de la entrevista.
+- Empleo agrega 5 vacantes QA recientes de LinkedIn encontradas durante la revisión y un buscador con filtros Remoto/Híbrido/Presencial y Contrato/Tiempo completo.
+- `microlearning-plans/` se unifica en `TODOS_LOS_PLANES_MICROLEARNING.txt`.
+- QA Aviación agrega explicación de software de aviación y ejemplos ForeFlight, SMART/FAA y Jeppesen/ForeFlight.
+- QA Aviación y QA Robótica reciben separación visual inferior para recursos.
+- Release Gate corrige el layout del textarea de justificación.
+- MedReview Trainer agrega recorrido step-by-step que resalta y explica cada uno de los 8 errores antes de abrir el Bug Lab.
+
+## v35
+- Appium + BrowserStack muestra el video `pXPAs2eIteI` dentro de la ruta y además incluye un botón visible `Ver video en YouTube`.
+- Las páginas reales de `Aprender más` usan traducción de página completa para ES/EN/PT/ZH/HI; los diccionarios locales quedan como fallback de UI.
+- MedReview Trainer elimina el botón `Señalar y explicar`: cada paso resalta automáticamente el elemento y muestra la explicación.
+- Paso 3 del recorrido usa un elemento identificable (`#importStatus`) y explica claramente la inconsistencia `Processed` vs `500 IMPORT_FAILED`.
+- El Bug Lab inicia un nuevo intento con progreso 0/8 por defecto; `?resume=1` permite conservar el intento.
+- V&V ahora se completa artefacto por artefacto, con Atrás/Siguiente, barra de progreso y ejemplo inicial completamente resuelto.
+
+## v37
+- Empleo: filtro por continente y todos los países de América, Europa y Asia; el buscador ya no genera ofertas ficticias ni redirige al pulsar Buscar.
+- Navegación interna de Empleo dejó de ser sticky; al seleccionar una sección, el título queda en la parte superior y la barra desaparece al desplazarse.
+- MedReview Trainer: recorrido dividido en subpasos contextuales para autorización, audit log, validación, trazabilidad y configuration identification; panel posicionado junto al elemento señalado.
+- Bug Lab: las 8 misiones se reformulan como preguntas explícitas basadas en lo observado durante el recorrido.
+- V&V: nuevo paquete `medical-vv-support.html` con intended use, requisitos, riesgos, arquitectura, datos de prueba y evidencia para fundamentar cada artefacto.

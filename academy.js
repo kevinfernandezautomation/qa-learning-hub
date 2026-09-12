@@ -24,8 +24,8 @@ function renderAcademy(){
 
 function renderLearningPaths(){
  const el=$('#learningPathGrid');if(!el)return;
- const paths=(window.LEARNING_PATHS||[]).map(x=>({...x,_kind:'learning'}));
- const competencies=(window.QA_COMPETENCY_PATHS||[]).map(x=>({...x,duration:x.duration||'Autodirigido',_kind:'competency'}));
+ const paths=(window.LEARNING_PATHS||[]).filter(x=>x.id!=='academybugs-practice').map(x=>({...x,_kind:'learning'}));
+ const competencies=(window.QA_COMPETENCY_PATHS||[]).filter(x=>x.id!=='medical-device-samd').map(x=>({...x,duration:x.duration||'Autodirigido',_kind:'competency'}));
  const all=[...paths,...competencies,...STACK_LEARNING.map(x=>({...x,_kind:'stack',duration:'Autodirigido'}))];
  el.innerHTML=all.map(x=>{
    if(x._kind==='stack'){
@@ -66,7 +66,7 @@ const STACK_LEARNING=[
  {id:"accessibility",name:"WCAG + Accessibility Testing",level:"Intermedio",modules:["Teclado","Semántica","Contraste","Automatización asistida"],desc:"Detección de barreras de accesibilidad con validación humana."},
  {id:"salesforce",name:"Salesforce QA",level:"Intermedio–Avanzado",modules:["CRM, objetos y metadata","Sandboxes y datos","Roles, perfiles y permission sets","Flows y automatizaciones","Apex tests","LWC + Jest","APIs e integraciones","UAT, releases y regresión"],desc:"Ruta completa para comprender Salesforce y probar configuración, seguridad, automatizaciones, Apex, Lightning y procesos de negocio."},
  {id:"aiqa",name:"AI-assisted QA & Agents",level:"Intermedio–Avanzado",modules:["Prompts","Generación de pruebas","Evidencia visual","Agentes y Human-in-the-Loop"],desc:"Uso responsable de IA para potenciar Quality Engineering."},
- {id:"jira-confluence",name:"Jira + Confluence para QA",level:"Inicial–Intermedio",modules:["Jira: work items, boards y workflows","Bugs y trazabilidad","Confluence: documentación y evidencias","Filtros, reportes y colaboración"],desc:"Ruta para gestionar defectos, trabajo de pruebas, trazabilidad y documentación QA con Atlassian."},
+ {id:"jira-confluence",name:"Jira + Confluence para QA",level:"Inicial–Intermedio",modules:["Jira: work items, boards y workflows","Bugs y trazabilidad","Buscar con JQL","Confluence: documentación y evidencias","Filtros, reportes y colaboración"],desc:"Ruta para gestionar defectos, búsquedas avanzadas con JQL, trazabilidad y documentación QA con Atlassian."},
  {id:"oracle-apex",name:"Oracle APEX QA",level:"Inicial–Intermedio",modules:["Qué es Oracle APEX","App Builder y Page Designer","SQL Workshop y datos","Autenticación y autorización","Validaciones y procesos","UI, accesibilidad y responsive","APIs e integraciones","Regresión y despliegues"],desc:"Ruta para comprender Oracle APEX y diseñar pruebas funcionales, de datos, seguridad, accesibilidad e integración."}
 ];
 function renderStackLearning(){
