@@ -11,7 +11,9 @@ window.QA_STACKS={
  salesforce:{name:"Salesforce QA",topics:["sandbox","UAT","Apex tests","Lightning Web Components","roles y permisos","automatización","datos y configuraciones","deployment"]},
  aiqa:{name:"QA con imágenes, IA y agentes",topics:["prompts trazables","generación de pruebas","análisis de resultados","evidencia visual","crawling","Human-in-the-Loop","riesgo","no alucinación"]},
  "jira-confluence":{name:"Jira + Confluence para QA",topics:["work items y bugs","prioridad y severidad","workflows","boards y filtros","trazabilidad de defectos","Confluence para evidencia","documentación de pruebas","reportes y colaboración"]},
- "oracle-apex":{name:"Oracle APEX QA",topics:["App Builder","Page Designer","SQL Workshop","validaciones","procesos","autenticación","autorización","session state","responsive UI","accesibilidad","REST integrations","regresión"]}
+ "oracle-apex":{name:"Oracle APEX QA",topics:["App Builder","Page Designer","SQL Workshop","validaciones","procesos","autenticación","autorización","session state","responsive UI","accesibilidad","REST integrations","regresión"]},
+ "testmanagement":{name:"Test Management · Jira + Xray + TestRail + Zephyr",topics:["test planning","test cases","test runs","traceability","coverage","defect management","dashboards","release readiness","Xray","TestRail","Zephyr"]},
+ "cloudobservability":{name:"Cloud QA · Docker + Kubernetes + Observabilidad",topics:["Docker","Kubernetes","containers","logs","metrics","traces","OpenTelemetry","distributed systems","resilience","quality gates"]}
 };
 
 (function(){

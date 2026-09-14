@@ -296,3 +296,24 @@ Versión enfocada en calidad del simulador, entrevistas laborales, certificado P
 - Nueva página `cert-aplicacion.html` con implementación laboral paso a paso para las 26 certificaciones del catálogo.
 - Nuevos laboratorios ficticios `medical-iec62304-lab.html` y `medical-iso13485-lab.html`.
 - Habilidades blandas QA agrega un escenario laboral concreto para demostrar cada habilidad.
+
+## v44
+- Menú “Prompts IA” renombrado a “IA aplicada a QA” porque la sección incluye prompts, agentes, repositorios y prácticas de IA.
+- Laboratorios IEC 62304 e ISO 13485 corrigen layout, navegación, retorno y responsive.
+- Certificaciones: “Ver ruta” + “Escenario paso a paso” se unifican en “Capacitación”; K-level y aplicación laboral pasan a la página de capacitación.
+- Certificaciones externas agregan alternativas gratuitas de autoestudio/capacitación.
+- CTFL integra un banco adicional de preguntas originales en español alineadas con LO/K-level y con el estilo estructural de los sample exams A/B v1.7, sin copiar preguntas oficiales.
+- CTFL deduplica por texto normalizado y mejora terminología en español.
+- Academia agrega “QA Engineering por seniority · Jr a Manager” con gaps del mercado: TestRail/Zephyr, Karate, Maven/Gradle, Kubernetes, contract testing, observabilidad y governance.
+- Se ejecuta regresión estática de JavaScript, enlaces internos, HTML crítico, preguntas duplicadas y consistencia del banco CTFL.
+
+
+## v45
+- Simulador ISTQB actualizado a lógica tipo sample exam: K-level, escenarios, cálculos, mapeos y preguntas de selección múltiple originales.
+- CTFL incorpora nuevos ítems originales inspirados en la estructura de los sample exams C/D sin copiar preguntas oficiales.
+- Certificaciones ISTQB generan bancos diferenciados por Foundation, Advanced, Specialist y Expert.
+- Aprobación para certificado: 75%.
+- Menú global estandarizado y botón Regresar en páginas que cargan common.js.
+- Inicio elimina conteos estáticos de módulos y muestra una propuesta de valor más estable.
+- QA Vocabulary amplía términos, definición, ejemplo, traducción y pronunciación con Speech Synthesis.
+- Nueva ruta QA actual en Costa Rica con brechas de herramientas detectadas en vacantes recientes.
