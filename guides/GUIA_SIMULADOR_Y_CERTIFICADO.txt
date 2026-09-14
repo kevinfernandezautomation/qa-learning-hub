@@ -15,7 +15,7 @@ Al finalizar:
   respuesta elegida;
   respuesta correcta;
   explicación breve.
-- Mostrar certificado solo si nota >= 70%.
+- Mostrar certificado solo si nota >= 75%.
 - Intentar correo automático solo con backend configurado.
 
 Certificado:

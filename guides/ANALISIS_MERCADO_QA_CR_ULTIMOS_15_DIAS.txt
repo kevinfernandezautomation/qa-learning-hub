@@ -1,0 +1,40 @@
+QA Learning Hub v45 - contraste de mercado Costa Rica
+Fecha de revisión: 14 septiembre 2026
+Ventana solicitada: últimos 15 días
+
+Hallazgos principales en vacantes recientes del sector privado:
+- Cypress y Playwright para automatización web.
+- Appium para Android/mobile; experiencia con dispositivos reales y emuladores.
+- JavaScript/TypeScript, Java, Kotlin y Python según el stack de automatización.
+- REST y GraphQL; pruebas de microservicios y contratos.
+- Accesibilidad automatizada con axe-core y alineamiento con WCAG.
+- Performance web con Lighthouse CI, además de pruebas de carga/rendimiento.
+- GitLab CI, Jenkins, GitHub Actions y Azure DevOps como integración CI/CD.
+- Jira, Xray, TestRail y Zephyr para gestión, trazabilidad y defectos.
+- Métricas de calidad, release readiness, escaped defects, cobertura de automatización y duración de regresión.
+- Reliability/resilience/scalability testing en posiciones senior.
+- IA aplicada a triage de defectos con revisión humana.
+- Inglés B2 o superior en algunas posiciones internacionales.
+
+Vacantes usadas como contraste:
+1. Avionyx - Senior Software Quality Assurance Engineer / Verification Engineer - publicada hace aproximadamente 1 semana.
+   https://cr.linkedin.com/jobs/view/senior-software-quality-assurance-engineer-verification-engineer-at-avionyx-4463386004
+2. EPAM Systems - Senior QA Automation Engineer (JavaScript) - publicada hace aproximadamente 1 semana.
+   https://cr.linkedin.com/jobs/view/senior-qa-automation-engineer-javascript-at-epam-systems-4461908694
+3. Applaudo - QA Automation Engineer (AI Native) - publicada hace aproximadamente 1 semana.
+   https://cr.linkedin.com/jobs/view/qa-automation-engineer-ai-native-at-applaudo-4461286314
+4. Perform - Quality Engineer (Mobile Testing) - publicación reciente dentro de la ventana.
+   https://www.linkedin.com/jobs/view/4457114748/
+5. Listados LinkedIn Costa Rica QA/Automation revisados para comprobar volumen y recencia.
+   https://cr.linkedin.com/jobs/qa-automation-empleos
+   https://cr.linkedin.com/jobs/software-quality-assurance-engineer-empleos
+
+Sector público:
+- La búsqueda no devolvió una vacante pública específicamente titulada QA/software tester dentro de la ventana de 15 días.
+- Se conservaron competencias ya alineadas con el sector público costarricense, como Azure DevOps, SQL Server, .NET, Python, Scrum, documentación y gestión de pruebas.
+- Como referencia de procesos públicos, documentación de la CCSS muestra actividades explícitas de planificación y control de calidad de software, y uso de Azure DevOps para gestión de pruebas.
+
+Acciones incorporadas en v45:
+- Nueva ruta qa-mercado-cr.html.
+- Se refuerzan Cypress/Playwright, Appium, GraphQL/microservicios, axe-core, Lighthouse CI, Xray/TestRail/Zephyr, GitLab CI y quality strategy.
+- Se mantiene la cobertura ya existente de Selenium, Postman, JMeter/k6, BrowserStack, Azure DevOps, bases de datos, accesibilidad, IA y QA por industria.

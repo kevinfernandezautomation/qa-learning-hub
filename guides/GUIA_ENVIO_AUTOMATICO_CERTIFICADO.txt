@@ -3,7 +3,7 @@ GUÍA PARA ENVÍO AUTOMÁTICO DE FELICITACIÓN Y CERTIFICADO
 
 OBJETIVO
 --------
-Cuando una persona obtiene 70% o más:
+Cuando una persona obtiene 75% o más:
 1. El frontend valida nombre + correo.
 2. El simulador calcula score/pct.
 3. El frontend envía POST /api/certificates/complete.
