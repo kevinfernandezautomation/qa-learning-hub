@@ -509,3 +509,45 @@ body{top:0!important}
 .skill-scenario{margin-top:12px;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--primary) 8%,var(--surface2));border:1px solid var(--line)}
 .medical-hero .card-actions{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
 @media(max-width:780px){.implementation-step-grid,.iec-flow-grid{grid-template-columns:1fr}.implementation-step,.iec-flow-grid>article{grid-template-columns:38px 1fr}.implementation-step .step-index,.iec-flow-grid .step-index{width:34px;height:34px}}
+
+/* v44 */
+.cert-meta-compact{grid-template-columns:repeat(2,minmax(0,1fr))}
+.free-training-box{margin:14px 0;padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)}
+.free-training-box h3{margin:.55rem 0 .35rem}.free-training-box p{margin:.35rem 0 12px}
+.training-section{padding-top:18px;padding-bottom:34px}.work-application-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.application-summary{padding:20px}
+.implementation-step-body{min-width:0}.implementation-step-body h3{margin:.55rem 0}.implementation-step-body p{line-height:1.65}.implementation-step .step-evidence{margin-top:12px}
+.medical-lab-topbar{position:sticky}.medical-lab-back{margin-bottom:18px}
+.iec-flow-grid>article{grid-template-columns:46px minmax(0,1fr);align-items:start;min-width:0}
+.iec-flow-grid>article>:not(.step-index){grid-column:2;min-width:0}
+.iec-flow-grid>article h2{margin:4px 0 8px;font-size:1.25rem;overflow-wrap:anywhere}
+.iec-flow-grid>article p,.iec-flow-grid>article ol{line-height:1.6;margin:.45rem 0}.iec-flow-grid>article ol{padding-left:1.3rem}
+.iec-flow-grid>article .step-evidence{display:block;width:100%;box-sizing:border-box;margin-top:12px;padding:14px;border-radius:12px;background:var(--surface2);border-left:4px solid var(--primary);overflow-wrap:anywhere}
+.seniority-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding-bottom:36px}.seniority-card{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.seniority-card p{line-height:1.62;color:var(--muted)}
+@media(max-width:780px){.work-application-grid,.seniority-grid{grid-template-columns:1fr}.iec-flow-grid>article{grid-template-columns:38px minmax(0,1fr)}.cert-meta-compact{grid-template-columns:1fr}.medical-lab-back .btn{width:100%}}
+
+/* v45 navigation + vocabulary */
+.history-back{white-space:nowrap}.home-value-panel{max-width:520px}.vocab-guide{grid-column:1/-1;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.vocab-card .vocab-es{font-size:1.05rem}.vocab-example{margin:14px 0;padding:12px 14px;border-left:3px solid var(--primary);background:var(--soft);border-radius:10px;line-height:1.55}.vocab-example small{display:block;margin-top:6px;color:var(--muted)}
+.answer-btn.selected{outline:2px solid color-mix(in srgb,var(--primary) 55%,transparent)}
+@media(max-width:900px){.history-back{order:-1}.main-nav{max-height:70vh;overflow:auto}}
+
+/* v46: etiquetas del menú en una sola línea */
+.main-nav a{white-space:nowrap}
+
+/* v46: metadatos de certificación y formato de práctica en una sola tarjeta */
+.practice-meta-unified{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.practice-meta-unified strong,.practice-meta-unified span{display:block}
+.practice-meta-unified span{margin-top:3px;color:var(--muted);font-size:.86rem}
+.practice-guide-action{margin-top:12px}
+
+
+/* v47 · prompt guidance, practice answers and concise review */
+.prompt-guidance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.prompt-guidance-card{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:0 8px 24px #0b2c6410}
+.prompt-guidance-card h3{margin:1px 0 6px;font-size:1rem}.prompt-guidance-card p{margin:0;color:var(--muted);line-height:1.65}
+.guidance-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--surface2);color:var(--primary);font-weight:900;font-size:.82rem}
+.prompt-guidance-privacy{grid-column:1/-1}.prompt-guidance-privacy .guidance-icon{font-size:1rem}
+.review-why{margin-top:10px;padding:10px 12px;border-left:3px solid var(--primary);border-radius:8px;background:var(--surface2)}
+.practice-card{display:flex;flex-direction:column}.practice-result{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}.practice-result summary{cursor:pointer;font-weight:800;color:var(--primary);list-style:none}.practice-result summary::-webkit-details-marker{display:none}.practice-result summary:before{content:'＋ ';font-weight:900}.practice-result[open] summary:before{content:'− '}.practice-result-body{margin-top:10px;padding:12px 14px;border-radius:12px;background:var(--surface2)}.practice-result-body p{margin:6px 0;color:var(--text)}.practice-result-body small{color:var(--muted)}
+.interview-reference-card{border-style:dashed}
+@media(max-width:900px){.prompt-guidance-grid{grid-template-columns:1fr}.prompt-guidance-privacy{grid-column:auto}}
