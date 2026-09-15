@@ -1,6 +1,7 @@
 
 window.QA_STACKS={
  manual:{name:"QA Manual Web & Mobile",topics:["requisitos verificables","partición de equivalencia","valores límite","tablas de decisión","transición de estados","pruebas exploratorias","regresión","defectos y evidencia"]},
+ manualmid:{name:"QA Manual Mid · Web, Mobile, API & Cloud",topics:["criterios de aceptación verificables","test planning basado en riesgo","trazabilidad requisito-prueba-defecto","usabilidad web","mobile Android iOS","REST Postman cURL","regresión y release readiness","test management y reportes","WCAG 2.2","comunicación Agile","troubleshooting DevTools","cloud QA AWS Azure GCP"]},
  webauto:{name:"Playwright / Cypress / Selenium",topics:["locators robustos","assertions","Page Object Model","esperas y sincronización","datos de prueba","cross-browser","mantenibilidad","CI/CD"]},
  api:{name:"API Quality Engineering",topics:["métodos HTTP","status codes","headers","autenticación","schema","pruebas negativas","idempotencia","contratos OpenAPI"]},
  performance:{name:"JMeter + k6",topics:["perfil de carga","usuarios virtuales","throughput","percentiles","thresholds","correlación","parametrización","ejecución CI/CD"]},

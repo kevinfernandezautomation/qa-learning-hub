@@ -49,9 +49,20 @@ input.addEventListener('keydown',e=>{if(suggestions.hidden&&['ArrowDown','ArrowU
 document.addEventListener('click',e=>{if(!e.target.closest('.autocomplete-wrap'))hideSuggestions();});cat.onchange=()=>{input.value='';renderSuggestions();};scheme.onchange=()=>{input.value='';renderSuggestions();};
 $('#addIstqbPackage')?.addEventListener('click',()=>{selected.add('Paquete certificaciones ISTQB');render();});
 $('#addCourseToCart').onclick=()=>{let name=input.dataset.selected||'';if(!name){const exact=filtered().find(x=>x.name.toLowerCase()===input.value.trim().toLowerCase());if(exact)name=exact.name;}if(!name){stat.textContent='Seleccione una opción de las sugerencias antes de agregarla.';renderSuggestions();return;}selected.add(name);render();};$('#clearCart').onclick=()=>{selected.clear();render();};
-$$('[data-pay]').forEach(b=>b.onclick=()=>{$$('[data-pay]').forEach(x=>x.classList.toggle('active',x===b));$$('[data-pay-panel]').forEach(p=>p.hidden=p.dataset.payPanel!==b.dataset.pay);stat.textContent='';});
+$$('[data-pay]').forEach(b=>b.onclick=()=>{$$('[data-pay]').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-selected',String(active));});$$('[data-pay-panel]').forEach(p=>p.hidden=p.dataset.payPanel!==b.dataset.pay);stat.textContent='';});
 $('#cardNumber').oninput=e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim()};$('#cardExpiry').oninput=e=>{let v=e.target.value.replace(/\D/g,'').slice(0,4);e.target.value=v.length>2?v.slice(0,2)+'/'+v.slice(2):v};
 $('#cardPayment').onsubmit=e=>{e.preventDefault();if(!selected.size){stat.textContent='Seleccione al menos un curso antes de continuar.';return;}const inv=buildDemoInvoice('card-demo');stat.textContent=`Pago demostrativo completado por ${money(inv.total)}. Se generó una factura demostrativa.`;};
 $('#paypalDemo').onclick=()=>{if(!selected.size){stat.textContent='Seleccione al menos un curso antes de continuar con PayPal.';return;}const inv=buildDemoInvoice('paypal-demo');stat.textContent=`Pago PayPal demostrativo completado por ${money(inv.total)}. Se generó una factura demostrativa.`;};
 window.addEventListener('languagechange',render);render();
+})();
+
+/* Hotmart checkout. El enlace real se define en hotmart-config.js. */
+(function(){
+ const b=document.getElementById('hotmartCheckout'); if(!b)return;
+ b.addEventListener('click',()=>{
+  if(!selected.size){stat.textContent='Seleccione al menos un curso antes de continuar con Hotmart.';return;}
+  const url=(window.HOTMART_CHECKOUT_URL||'').trim();
+  if(!url)return;
+  try{const u=new URL(url);if(!/(^|\.)hotmart\.com$/i.test(u.hostname))return;location.href=url;}catch{}
+ });
 })();

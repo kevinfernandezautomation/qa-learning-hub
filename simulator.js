@@ -3,14 +3,8 @@
 const DIFFICULTY_TIME={Principiante:null,'Fácil':60,'Medio':45,'Difícil':30};
 const MIXED={id:'MIX-CTFL-ASTFC',name:'Práctica comparativa CTFL v4.0 + AICS ASTFC',level:'Comparativa',difficulty:'Inicial',k:'Fundamentos',focus:'Conceptos compartidos de fundamentos de testing, SDLC, técnicas, defectos, riesgo y gestión básica.',url:'proveedores.html'};
 const ROLE_TOPICS={
- 'QA Jr Manual':['fundamentos de testing','diseño de casos','reporte de defectos','regresión','prioridad y severidad','pruebas exploratorias','criterios de aceptación','evidencia de prueba'],
- 'QA Jr Automatización':['fundamentos de automatización','locators','assertions','Page Objects','Git','CI básico','Playwright/Selenium','datos de prueba'],
- 'QA Mid Manual':['estrategia de pruebas','riesgo de producto','técnicas de diseño','pruebas exploratorias','SQL para validación','métricas','coordinación con desarrollo','release readiness'],
- 'QA Mid Automatización':['arquitectura de automatización','Playwright/Selenium','API automation','CI/CD','mantenibilidad','flaky tests','datos de prueba','paralelización'],
- 'QA Sr Manual':['estrategia basada en riesgo','estimación','calidad de requisitos','mentoría','métricas','release readiness','stakeholders','mejora de procesos'],
- 'QA Sr Automatización':['frameworks escalables','testability','CI/CD avanzado','observabilidad','performance','arquitectura','quality gates','estrategia de automatización'],
- 'QA Lead Manual':['estrategia QA','liderazgo','planificación','riesgos','KPIs','mejora de procesos','gestión de equipo','comunicación ejecutiva'],
- 'QA Lead Automatización':['estrategia de automatización','ROI','arquitectura','gobernanza','CI/CD','quality gates','estándares','coaching técnico']
+ 'QA Manual · Evaluación de nivel (Jr–Lead)':['fundamentos de testing','criterios de aceptación','técnicas de diseño','defectos y evidencia','regresión','testing exploratorio','riesgo de producto','test planning','métricas y release readiness','stakeholders','mentoría','estrategia QA','mejora de procesos','liderazgo y comunicación'],
+ 'QA Automation · Evaluación de nivel (Jr–Lead)':['fundamentos de automatización','locators y assertions','Page Objects y arquitectura','Git y code review','API automation','CI/CD','datos y ambientes','flaky tests','paralelización','observabilidad','performance','quality gates','ROI y estrategia','gobernanza','mentoría y liderazgo técnico']
 };
 const MANUAL_Q=[
  ['Un requisito indica que el sistema debe ser “rápido”. ¿Cuál sería la mejor acción de QA?',['Solicitar un criterio medible y verificable antes de diseñar la prueba','Aceptar el término sin aclaración','Registrar un defecto sin ejecutar pruebas','Definir un tiempo arbitrario'],0],
@@ -185,12 +179,12 @@ function updateSimulationHeading(){
  if(mode.value==='stack')h.textContent=`Simulación para ${currentCert.name}`;
  else if(mode.value==='interview')h.textContent=`Entrevista práctica · ${currentCert.name}`;
  else h.textContent=`Simulación para ${currentCert.name}`;
- if(p)p.textContent='Responda 40 preguntas del banco seleccionado y revise su resultado al finalizar.';
+ if(p)p.textContent=`Responda ${attemptQuestionCount()} preguntas y revise su resultado al finalizar.`;
 }
 
 function updateCert(){
  if(mode.value==='interview'){
-   currentCert={id:`JOB-${slug(role.value)}`,name:role.value,level:'Entrevista laboral',difficulty:'Por seniority',k:'Competencias del puesto',focus:(ROLE_TOPICS[role.value]||[]).join(', '),url:'empleos.html'};
+   currentCert={id:`JOB-${slug(role.value)}`,name:role.value,level:'Entrevista laboral',difficulty:(/Evaluación de nivel/.test(role.value)?'Diagnóstico Jr–Lead':'Por seniority'),k:'Competencias del puesto',focus:(ROLE_TOPICS[role.value]||[]).join(', '),url:'empleos.html'};
    el('certMeta').innerHTML=`<b>${escapeHtml(role.value)}</b><span>Simulación de entrevista laboral</span><p>${escapeHtml(currentCert.focus)}</p>`;showEl(el('certMeta'),true);
    const link=el('officialExamLink');if(link){showEl(link,true);link.href='empleos.html';link.target='';link.textContent='Preparación de empleo';}updateSimulationHeading();updatePracticeMeta();return;
  }
@@ -252,7 +246,7 @@ function buildCertificationBank(){
  if(provider.value==='MIX'){const a=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='CTFL'),dif.value)||[];const b=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='AICS-ASTFC'),dif.value)||[];return localizeBank(shuffle(a).slice(0,60).concat(shuffle(b).slice(0,60)),examLang.value,currentCert);}
  const bank=window.buildExamQuestionBank(currentCert,dif.value)||[];return localizeBank(bank,examLang.value,currentCert);
 }
-function roleSeed(){return /Automatización/.test(role.value)?AUTO_Q:MANUAL_Q;}
+function roleSeed(){return /Automatización|Automation/i.test(role.value)?AUTO_Q:MANUAL_Q;}
 function buildInterviewBank(){
  const seed=roleSeed(),topics=ROLE_TOPICS[role.value]||[],out=[],seen=new Set();
  for(let round=0;out.length<120;round++){
@@ -290,7 +284,7 @@ function updatePracticeMeta(){
    summary=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize} preguntas · intento: 40 aleatorias · ${escapeHtml(cfg.level)} · ${stackTiming}</span>`;
  }else{
    const mins=DIFFICULTY_TIME[dif.value],timing=mins?`${mins} min`:'sin cronómetro';
-   summary=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: 40 aleatorias · ${timing}</span>`;
+   summary=`<strong>Formato de práctica</strong><span>Banco: ${currentBankSize}+ preguntas · intento: ${attemptQuestionCount()} aleatorias · ${timing}</span>`;
  }
  const meta=el('certMeta');
  if(meta){
@@ -311,17 +305,20 @@ function shuffleQuestionOptions(q){
  return {...q,a:shuffled.map(x=>x.text),c:Array.isArray(q.c)?mapped:mapped[0]};
 }
 function questionKey(q){return String(q?.q||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+function attemptQuestionCount(){return 40;}
+function manualSeniorityFromPct(pct){if(pct<55)return 'Jr';if(pct<72)return 'Mid';if(pct<86)return 'Sr';return 'Lead';}
+function automationSeniorityFromPct(pct){return pct<55?'Jr':pct<75?'Mid':pct<90?'Sr':'Lead';}
 function start(){
  clearInterval(tick);updateCert();
  const name=el('candidateName').value.trim(),email=(el('candidateEmail').value||'').trim();if(!validFullName(name)||!/^\S+@\S+\.\S+$/.test(email)){updateStartState();return;}saveConfigDraft();
  let bank=[];try{bank=buildBank()}catch(err){console.error(err);}
  const unique=[...new Map((bank||[]).map(q=>[questionKey(q),q])).values()];
- const minRequired=40;
+ const targetCount=attemptQuestionCount(),minRequired=targetCount;
  if(unique.length<minRequired){el('practiceMeta').innerHTML=`<strong>No fue posible iniciar</strong><span>El banco seleccionado contiene ${unique.length} preguntas únicas y se requieren al menos ${minRequired}.</span>${recommendationsLink()}`;return;}
- let pick=shuffle(unique).slice(0,40).map(shuffleQuestionOptions);
+ let pick=shuffle(unique).slice(0,targetCount).map(shuffleQuestionOptions);
  const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`,last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');
- if(last===sig){pick=shuffle(unique).slice(0,40).map(shuffleQuestionOptions);sig=pick.map(q=>q.q).join('|');}
- sessionStorage.setItem(key,sig);qs=pick;responses=Array(40).fill(null);idx=0;examLocked=false;
+ if(last===sig){pick=shuffle(unique).slice(0,targetCount).map(shuffleQuestionOptions);sig=pick.map(q=>q.q).join('|');}
+ sessionStorage.setItem(key,sig);qs=pick;responses=Array(targetCount).fill(null);idx=0;examLocked=false;
  showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);activateExamIntegrity();
  const minutes=mode.value==='stack'?stackModeConfig().minutes:DIFFICULTY_TIME[dif.value];
  if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{if(examLocked)return;left--;renderTimer();if(left<=0){left=0;renderTimer();finish(true)}},1000);}
@@ -339,20 +336,20 @@ function scoreNow(){return responses.reduce((sum,r,i)=>sum+(sameAnswer(r,qs[i]?.
 function show(){
  const q=qs[idx];if(!q){finish(false);return;}
  const response=responses[idx];
- el('qCounter').textContent=`Pregunta ${idx+1} / 40`;
+ el('qCounter').textContent=`Pregunta ${idx+1} / ${qs.length}`;
  el('liveScore').textContent=`${responses.filter(x=>x!==null).length} respondidas`;
  const qd=el('qDifficulty');
  const hideDifficulty=(mode.value==='cert'&&dif.value==='Difícil')||(mode.value==='stack'&&stackModeConfig().minutes===30);
  if(qd){qd.textContent=q.d||dif.value;showEl(qd,!hideDifficulty);}
  el('qText').textContent=q.q;
- el('quizProgress').style.width=`${((idx+1)/40)*100}%`;
+ el('quizProgress').style.width=`${((idx+1)/qs.length)*100}%`;
  const selected=Array.isArray(response)?response:(response===null?[]:[response]);
  el('answers').innerHTML=q.a.map((a,i)=>`<button type="button" class="answer-btn ${selected.includes(i)?'selected':''}" data-i="${i}" aria-pressed="${selected.includes(i)?'true':'false'}">${String.fromCharCode(65+i)}. ${escapeHtml(a)}</button>`).join('');
  [...document.querySelectorAll('.answer-btn')].forEach(b=>b.addEventListener('click',()=>answer(Number(b.dataset.i))));
  const feedback=el('feedback');if(feedback){feedback.textContent='';feedback.hidden=true;}
  el('prevQ').disabled=idx===0;
  el('nextQ').disabled=!answered(response,q.c);
- el('nextQ').textContent=idx===39?'Finalizar':'Siguiente →';
+ el('nextQ').textContent=idx===qs.length-1?'Finalizar':'Siguiente →';
  if(mode.value!=='stack'&&DIFFICULTY_TIME[dif.value])renderTimer();
 }
 function answer(i){
@@ -414,7 +411,7 @@ function finish(timeout=false){
  const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100),passThreshold=mode.value==='cert'?75:70,passed=pct>=passThreshold;
  showEl(el('simQuiz'),false);showEl(el('simConfig'),false);showEl(el('simResult'),true);
  el('resultScore').textContent=`${score}/${qs.length} · ${pct}%`;
- el('resultAdvice').textContent=timeout?`El tiempo finalizó. ${passed?'Aprobó la simulación.':'Revise las respuestas y vuelva a practicar los temas con mayor dificultad.'}`:(passed?'Aprobó la simulación. Revise el detalle de respuestas para consolidar el aprendizaje.':`No alcanzó ${passThreshold}%. Revise las preguntas falladas y vuelva a practicar antes de un nuevo intento.`);
+ if(mode.value==='interview'&&/QA Manual · Evaluación/.test(role.value)){const level=manualSeniorityFromPct(pct);el('resultAdvice').innerHTML=`<strong>Nivel orientativo: ${level}</strong> · ${pct}%. ${level==='Jr'?'Fortalezca fundamentos, diseño de pruebas, evidencia y defectos.':level==='Mid'?'Consolide riesgo, planificación, API/mobile, métricas y release readiness.':level==='Sr'?'Profundice estrategia, estimación, mentoring, stakeholders y mejora de procesos.':'Su resultado refleja dominio amplio; contraste liderazgo, estrategia, métricas y decisiones de calidad con experiencia real.'} Esta clasificación es educativa y debe complementarse con experiencia y entrevista.`;}else if(mode.value==='interview'&&/QA Automation · Evaluación/.test(role.value)){const level=automationSeniorityFromPct(pct);el('resultAdvice').innerHTML=`<strong>Nivel orientativo de automatización: ${level}</strong> · ${pct}%. ${level==='Jr'?'Fortalezca locators, assertions, Page Objects, Git y ejecución estable.':level==='Mid'?'Consolide arquitectura, API automation, CI/CD, datos, paralelización y diagnóstico de flaky tests.':level==='Sr'?'Profundice observabilidad, performance, quality gates, testability y arquitectura escalable.':'Su resultado refleja dominio amplio; contraste ROI, gobernanza, estándares, mentoring y liderazgo técnico con experiencia real.'} Esta clasificación es educativa y no sustituye una evaluación profesional.`;}else{el('resultAdvice').textContent=timeout?`El tiempo finalizó. ${passed?'Aprobó la simulación.':'Revise las respuestas y vuelva a practicar los temas con mayor dificultad.'}`:(passed?'Aprobó la simulación. Revise el detalle de respuestas para consolidar el aprendizaje.':`No alcanzó ${passThreshold}%. Revise las preguntas falladas y vuelva a practicar antes de un nuevo intento.`);}
  renderExamReview();showEl(el('reviewExam'),true);showEl(el('downloadCertificate'),passed);if(passed)attemptAutomaticCertificateEmail(score,pct);
  el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
 }

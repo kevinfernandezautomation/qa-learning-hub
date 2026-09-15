@@ -551,3 +551,22 @@ body{top:0!important}
 .practice-card{display:flex;flex-direction:column}.practice-result{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}.practice-result summary{cursor:pointer;font-weight:800;color:var(--primary);list-style:none}.practice-result summary::-webkit-details-marker{display:none}.practice-result summary:before{content:'＋ ';font-weight:900}.practice-result[open] summary:before{content:'− '}.practice-result-body{margin-top:10px;padding:12px 14px;border-radius:12px;background:var(--surface2)}.practice-result-body p{margin:6px 0;color:var(--text)}.practice-result-body small{color:var(--muted)}
 .interview-reference-card{border-style:dashed}
 @media(max-width:900px){.prompt-guidance-grid{grid-template-columns:1fr}.prompt-guidance-privacy{grid-column:auto}}
+
+/* v49 · Hotmart checkout */
+.hotmart-checkout-box{margin:1rem 0 1.25rem;padding:1.1rem;border:1px solid var(--border);border-radius:18px;background:var(--surface-2,rgba(127,127,127,.06))}.hotmart-checkout-box h2{margin:.35rem 0}.hotmart-checkout-box p{margin:.35rem 0 1rem}.hotmart-checkout-box small{display:block;margin-top:.7rem;opacity:.8}.mini-project-card{margin-top:1.25rem;padding:1.2rem;border:1px solid var(--border);border-radius:18px}.mini-project-card ul{margin:.7rem 0 0;padding-left:1.25rem}.mini-project-card .project-badge{display:inline-flex;font-size:.78rem;font-weight:700;padding:.3rem .6rem;border-radius:999px;background:var(--surface-2,rgba(127,127,127,.08))}
+
+/* v52 · selector visual de métodos de pago */
+.payment-choice-section{margin:1.25rem 0 1.4rem}.payment-choice-section h2{margin:.3rem 0}.payment-choice-intro{margin:.2rem 0 1rem;color:var(--muted)}.payment-methods.payment-method-cards{grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}.payment-method-card{display:flex;align-items:center;gap:12px;min-height:78px;text-align:left;padding:14px!important;border-radius:16px!important;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.payment-method-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.payment-method-card.active{border-width:2px!important}.payment-method-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--surface2);font-size:1.25rem;font-weight:900}.payment-method-card span:last-child{display:flex;flex-direction:column;gap:3px}.payment-method-card small{color:var(--muted);font-weight:600}.paypal-mark{font-family:Arial,sans-serif}.hotmart-mark{font-family:Arial,sans-serif}.hotmart-btn{margin-top:14px}@media(max-width:700px){.payment-methods.payment-method-cards{grid-template-columns:1fr}.payment-method-card{min-height:68px}}
+
+/* v53 · guías de mini proyecto */
+.mini-project-guide{margin:1rem 0;border:1px solid var(--border,#d7dce5);border-radius:14px;background:var(--surface,#fff);overflow:hidden}
+.mini-project-guide summary{cursor:pointer;font-weight:700;padding:.85rem 1rem;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.mini-project-guide summary::-webkit-details-marker{display:none}.mini-project-guide summary:after{content:"＋";font-size:1.1rem}.mini-project-guide[open] summary:after{content:"−"}
+.mini-project-body{padding:0 1rem 1rem;border-top:1px solid var(--border,#d7dce5)}.mini-project-body h3{margin:.9rem 0 .35rem}.mini-project-body ol{padding-left:1.25rem}.mini-project-body li{margin:.35rem 0}.mini-project-body .muted{opacity:.82;font-size:.93rem}
+
+.game-community-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1rem 0 1.25rem}.game-community-filters label{display:grid;gap:.45rem;font-weight:700}.game-community-filters select,.game-community-filters input{width:100%}.qaminds-card{margin-bottom:1.25rem}@media(max-width:700px){.game-community-filters{grid-template-columns:1fr}}
+
+/* Copyright notice — v55 */
+.footer .copyright-notice{flex:1 1 100%;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border,rgba(127,127,127,.25));font-size:.82rem;line-height:1.55;opacity:.88}
+.footer .copyright-notice strong{display:block;margin-bottom:.25rem;font-size:.86rem}
+.footer .copyright-notice p{margin:0;max-width:1100px}
