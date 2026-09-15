@@ -1,0 +1,32 @@
+QA LEARNING HUB — RUTA QA MANUAL MID · WEB, MOBILE, API & CLOUD
+
+Objetivo
+Elevar la cobertura del sitio para vacantes Mid QA Manual que solicitan planificación, documentación, análisis de criterios de aceptación, web/mobile, pruebas funcionales/no funcionales, REST manual, gestión, Agile, accesibilidad y exposición a cloud.
+
+Contenido incorporado
+1. Requisitos y criterios de aceptación verificables.
+2. Test planning basado en riesgo.
+3. Diseño, cobertura y trazabilidad.
+4. Web manual y usabilidad.
+5. Mobile manual Android/iOS.
+6. REST manual con Postman y cURL.
+7. Regresión, smoke, sanity y release readiness.
+8. Test management y Test Summary Report.
+9. Accesibilidad WCAG 2.2.
+10. Agile QA y comunicación con Developer/PO/Scrum Master.
+11. Troubleshooting con Chrome DevTools.
+12. Cloud QA: AWS, Azure y Google Cloud desde perspectiva QA.
+13. Proyecto integral de Release Candidate.
+
+Proyecto final
+Produce revisión de requisitos, Test Plan, matriz de riesgos, 20–30 casos trazables, evidencia web, sesión exploratoria, matriz mobile, colección Postman, cURL, hallazgos WCAG, defectos, regresión y Test Summary Report con decisión Go/Go with risk/No-Go.
+
+Fuentes de contraste usadas
+- ISTQB CTFL v4.0.1: test planning, risk, monitoring/control/completion, user stories y acceptance criteria.
+- Postman Docs: requests, collections, manual API testing, auth, scripts y regression/E2E.
+- W3C WAI: WCAG 2.2 y evaluación de accesibilidad.
+- Chrome DevTools: Network/Console como soporte de troubleshooting.
+- AWS CloudWatch, Azure Monitor/Application Insights y Google Cloud Logging: observabilidad y evidencia en cloud.
+
+Nota
+La ruta prepara competencias transferibles; no representa afiliación ni garantía de contratación por una empresa específica.

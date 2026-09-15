@@ -1,0 +1,10 @@
+QA LEARNING HUB · INTEGRACIÓN HOTMART (v49)
+
+1. Cree y apruebe SU producto/oferta en Hotmart.
+2. En Hotmart, copie el enlace de la Página de Pago / Checkout de su producto.
+3. Abra hotmart-config.js y coloque ese enlace en window.HOTMART_CHECKOUT_URL.
+4. pago.html mostrará “Pagar con Hotmart” y redirigirá únicamente a un dominio hotmart.com.
+5. No se incluyó el checkout de Aprende QA con Angie porque pertenece a otra productora.
+6. Los formularios de tarjeta/PayPal existentes permanecen claramente marcados como DEMO y no deben usarse como procesamiento real.
+
+Alternativa: Hotmart también ofrece Checkout Widget para integrarlo dentro de una página externa. El código del widget es específico de cada producto/oferta y debe obtenerse desde la cuenta del productor; no debe inventarse ni copiarse del producto de otra persona.

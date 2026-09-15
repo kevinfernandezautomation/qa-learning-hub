@@ -1,0 +1,24 @@
+QA Learning Hub v45 - prueba de regresión
+
+Validaciones realizadas:
+PASS - node --check sobre todos los archivos JavaScript: 0 errores de sintaxis.
+PASS - enlaces internos HTML: 0 archivos destino faltantes.
+PASS - IDs HTML duplicados: 0.
+PASS - todas las páginas HTML que tienen header cargan common.js para estandarizar navegación.
+PASS - menú global definido con Inicio, Academia, Simuladores, Certificaciones, Proveedores, IA aplicada a QA, FAQ, Empleo y Pago.
+PASS - botón Regresar inyectado globalmente cuando existe header.
+PASS - tarjetas estáticas de inicio "Fundamentos QA / Automatización / QA + IA" reemplazadas por contenido estable y útil.
+PASS - QA Vocabulary ampliado con 40 términos, definición, ejemplo, traducción y audio mediante Speech Synthesis del navegador.
+PASS - nueva ruta de mercado Costa Rica integrada.
+PASS - CTFL sample-style: 66 preguntas originales; 66 únicas; 3 preguntas de respuesta múltiple; 0 enunciados con inicio en inglés.
+PASS - motor lógico ISTQB: 26 certificaciones ISTQB revisadas; cada banco genérico produce al menos 120 preguntas únicas.
+PASS - CTFL incluye K1, K2 y K3 y lógica de escenario/cálculo/mapeo/selección múltiple.
+PASS - Advanced/Specialist/Expert incorporan lógica diferenciada por K-level y complejidad.
+PASS - simulador soporta respuesta única y selección múltiple exacta.
+PASS - opciones se reordenan por intento preservando la respuesta correcta, evitando sesgo por posición.
+PASS - certificaciones requieren 75% para habilitar certificado; Stack/entrevista conservan 70%.
+PASS - texto visible de simulación actualizado a 75% para certificaciones.
+PASS - 0 coincidencias relevantes con el antiguo mensaje de 70% para certificaciones.
+
+Limitación del entorno de validación:
+El navegador headless del contenedor bloqueó navegación local por política del entorno (ERR_BLOCKED_BY_ADMINISTRATOR). Por ello la regresión final se completó con validación estática, sintaxis JavaScript, integridad de enlaces, unicidad de preguntas y pruebas unitarias de los generadores de bancos. Se recomienda un smoke test visual final después de publicar en GitHub Pages.
