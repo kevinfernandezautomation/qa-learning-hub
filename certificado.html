@@ -1,10 +1,11 @@
-<!doctype html><html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Certificado de aprovechamiento | QA Learning Hub</title><link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<title>Certificado de aprovechamiento | QA Learning Hub</title><link href="styles.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-<link rel="icon" type="image/svg+xml" href="favicon.svg"></head><body class="certificate-page"><main class="certificate-preview-shell">
-<section id="certificatePreview" class="certificate-sheet">
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/><meta content="es_CR" property="og:locale"/><meta content="Certificado de aprovechamiento. Recursos educativos y práctica de Quality Assurance en QA Learning Hub." name="description"/><link href="https://kevinfernandezautomation.github.io/qa-learning-hub/certificado.html" rel="canonical"/></head><body class="certificate-page"><main class="certificate-preview-shell">
+<section class="certificate-sheet" id="certificatePreview">
 <div class="certificate-brand"><span class="brand-mark">✓</span><strong>QA Learning Hub</strong></div>
 <p class="certificate-kicker">CERTIFICADO</p><h1>Certificado de aprovechamiento</h1>
 <p>Se reconoce a</p><h2 id="certName"></h2>
@@ -13,8 +14,8 @@
 <div class="certificate-result" id="certResult"></div><p id="certDate"></p>
 <div class="certificate-foot">Proyecto educativo de práctica · No sustituye una certificación oficial de terceros.</div>
 </section>
-<div class="certificate-actions"><button id="downloadPdfCertificate" class="btn primary" type="button">Descargar PDF</button><button id="printCertificate" class="btn secondary" type="button">Imprimir</button><button id="closeCertificate" class="btn ghost" type="button">Cerrar</button></div>
-<p id="pdfStatus" class="muted-note" aria-live="polite"></p>
+<div class="certificate-actions"><button class="btn primary" id="downloadPdfCertificate" type="button">Descargar PDF</button><button class="btn secondary" id="printCertificate" type="button">Imprimir</button><button class="btn ghost" id="closeCertificate" type="button">Cerrar</button></div>
+<p aria-live="polite" class="muted-note" id="pdfStatus"></p>
 </main><script>
 function readCertificateData(){
  const q=new URLSearchParams(location.search);
