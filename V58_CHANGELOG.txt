@@ -1,0 +1,8 @@
+QA Learning Hub v58
+- LinkedIn recent opportunities moved to a dedicated section, separate from the broader QA job search.
+- Removed internal fallback/configuration wording from the jobs UI.
+- Improved voice-answer recognition for A/B/C/D, spoken variants and multiple recognition alternatives.
+- Question audio now explicitly asks the learner to choose the letter of the correct answer.
+- Replaced repetitive interview-question suffix about maintaining quality/traceability with varied scenario prompts.
+- Local instant-payment selector now adapts by country (e.g. SINPE Móvil, Bre-B, Pix, Transferencias 3.0), with safe generic fallbacks where recipient support must be confirmed.
+- QA Vocabulary renders English definitions, labels, guidance and exercises when English is selected, and refreshes the dynamic module on language changes.

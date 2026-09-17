@@ -113,7 +113,8 @@ function boot(){
  simStack.innerHTML=Object.entries(window.QA_STACKS||{}).map(([id,st])=>`<option value="${escapeHtml(id)}">${escapeHtml(st.name||id)}</option>`).join('');
  const params=new URLSearchParams(location.search);
  const requested=params.get('cert');
- if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
+ if(params.get('mode')==='external' && (window.PRO_CREDENTIAL_PATHS||[]).some(c=>c.id===requested))provider.value='EXTERNAL';
+ else if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
  fillCerts(requested);
  let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
  let draft=null;const returningFromGuide=sessionStorage.getItem('qaExamReturnPending')==='1';
@@ -166,7 +167,7 @@ function changeMode(){
 function fillCerts(preselect){
  const kind=provider.value;let list=[];
  if(kind==='MIX'){simCert.innerHTML='';simCert.add(new Option(MIXED.name,MIXED.id));currentCert=MIXED;updateCert();return;}
- list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));
+ if(kind==='EXTERNAL')list=(window.PRO_CREDENTIAL_PATHS||[]);else list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));
  simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(c.name,c.id)));
  if(preselect&&list.some(c=>c.id===preselect))simCert.value=preselect;updateCert();
 }
@@ -193,9 +194,9 @@ function updateCert(){
    el('certMeta').innerHTML=`<b>${escapeHtml(st?.name||'Stack QA')}</b><span>Evaluación de conocimientos del stack</span><p>${escapeHtml((st?.topics||[]).join(', '))}</p>`;showEl(el('certMeta'),true);
    const link=el('officialExamLink');if(link)showEl(link,false);updateSimulationHeading();updatePracticeMeta();return;
  }
- const baseCert=provider.value==='MIX'?MIXED:window.CERTIFICATIONS.find(c=>c.id===simCert.value);if(!baseCert)return;currentCert=baseCert;
+ const baseCert=provider.value==='MIX'?MIXED:provider.value==='EXTERNAL'?(window.PRO_CREDENTIAL_PATHS||[]).find(c=>c.id===simCert.value):window.CERTIFICATIONS.find(c=>c.id===simCert.value);if(!baseCert)return;currentCert=baseCert;
  el('certMeta').innerHTML=`<b>${escapeHtml(currentCert.level)} · ${escapeHtml(currentCert.difficulty)}</b><span>${escapeHtml(currentCert.k||'')}</span><p>${escapeHtml(currentCert.focus)}</p>`;showEl(el('certMeta'),true);
- const link=el('officialExamLink');if(link){showEl(link,true);link.href=currentCert.url||'proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='AICS'?'Información AICS ↗':provider.value==='MIX'?'Fuentes de certificación':'Material oficial ↗';}updateSimulationHeading();updatePracticeMeta();
+ const link=el('officialExamLink');if(link){showEl(link,true);link.href=currentCert.url||'proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='AICS'?'Información AICS ↗':provider.value==='MIX'?'Fuentes de certificación':provider.value==='EXTERNAL'?'Información de certificación ↗':'Material oficial ↗';}updateSimulationHeading();updatePracticeMeta();
 }
 
 function ctflSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTFL';}
@@ -239,7 +240,19 @@ function buildUploadedAdvancedBank(){
  return out;
 }
 
+function buildExternalCertificationBank(){
+ const cert=currentCert||{},modules=cert.modules||['Fundamentos'];
+ const scenarios=['durante una implementación real','antes de liberar un cambio','cuando aparece un fallo intermitente','al preparar una solución mantenible','durante una revisión técnica','al investigar un riesgo','cuando se necesita evidencia reproducible','al integrar la herramienta en CI/CD'];
+ const templates=[
+ (m,sc)=>({q:`${sc}, ¿qué enfoque demuestra mejor dominio de ${m}?`,a:[`Aplicar ${m} con un objetivo verificable, evidencia y revisión del resultado`,`Usar ${m} sin validar el resultado`,`Evitar documentar decisiones`,`Depender únicamente de valores por defecto`],c:0}),
+ (m,sc)=>({q:`¿Cuál práctica es más sólida al trabajar con ${m} ${sc}?`,a:[`Relacionar configuración, objetivo, riesgo y resultado observable`,`Priorizar velocidad aunque no exista evidencia`,`Copiar una configuración sin comprenderla`,`Omitir escenarios negativos`],c:0}),
+ (m,sc)=>({q:`${sc}, ¿qué evidencia sería más útil para evaluar ${m}?`,a:[`Resultado reproducible, configuración relevante y criterio esperado`,`Solo una impresión subjetiva`,`Una captura sin contexto`,`La cantidad de archivos del proyecto`],c:0}),
+ (m,sc)=>({q:`¿Qué decisión reduce mejor el riesgo relacionado con ${m} ${sc}?`,a:[`Validar supuestos críticos y usar comprobaciones repetibles cuando aporten valor`,`Ignorar casos límite`,`Cambiar varias variables sin registrar evidencia`,`Asumir que una ejecución exitosa cubre todos los escenarios`],c:0})];
+ const out=[];let n=0;for(let round=0;out.length<120;round++){const m=modules[round%modules.length],sc=scenarios[Math.floor(round/modules.length)%scenarios.length],q=templates[round%templates.length](m,sc);q.n=++n;q.d=dif.value;q.topic=m;q.uid=`EXT-${cert.id}-${n}`;out.push(q)}return localizeBank(out,examLang.value,currentCert);
+}
+
 function buildCertificationBank(){
+ if(provider.value==='EXTERNAL')return buildExternalCertificationBank();
  if(ctflSelected())return buildCtflBank();
  if(ctalAtSelected())return buildCtalAtBank();
  if(advancedSyllabusSelected())return buildUploadedAdvancedBank();
@@ -252,7 +265,7 @@ function buildInterviewBank(){
  for(let round=0;out.length<120;round++){
    const base=seed[round%seed.length],topic=topics[round%topics.length],scenario=SCENARIOS[Math.floor(round/seed.length)%SCENARIOS.length];
    let q=base[0];
-   if(round>=seed.length){const lead=/Lead/.test(role.value),sr=/Sr|Lead/.test(role.value);const suffix=lead?' ¿Qué decisión permitiría al equipo mantener calidad y trazabilidad?':sr?' ¿Qué respuesta sería más sólida considerando riesgo y evidencia?':' ¿Cuál opción sería más adecuada?';q=`${q.replace(/\?$/,'')} ${scenario}${suffix}`;}
+   if(round>=seed.length){const prompts=[' ¿Cómo lo abordaría y qué evidencia usaría para justificar su decisión?',' ¿Qué pasos seguiría para investigar el caso y comunicar el riesgo?',' ¿Qué información revisaría antes de decidir el siguiente paso?',' ¿Cómo priorizaría la situación y qué criterio utilizaría?',' ¿Qué haría primero y cómo comprobaría que la acción fue efectiva?',' ¿Cómo explicaría su recomendación al equipo y al Product Owner?',' ¿Qué riesgos consideraría y cómo los validaría?',' ¿Cómo convertiría este escenario en una decisión de pruebas defendible?'];const suffix=prompts[round%prompts.length];q=`${q.replace(/\?$/,'')} ${scenario}${suffix}`;}
    q=q.replace(/Caso\s*\d+/gi,'').trim();
    if(seen.has(q))continue;seen.add(q);out.push({q,a:[...base[1]],c:base[2],d:dif.value,n:out.length+1,topic});
  }
@@ -316,9 +329,7 @@ function start(){
  const targetCount=attemptQuestionCount(),minRequired=targetCount;
  if(unique.length<minRequired){el('practiceMeta').innerHTML=`<strong>No fue posible iniciar</strong><span>El banco seleccionado contiene ${unique.length} preguntas únicas y se requieren al menos ${minRequired}.</span>${recommendationsLink()}`;return;}
  let pick=shuffle(unique).slice(0,targetCount).map(shuffleQuestionOptions);
- const key=`lastExam:${currentCert.id}:${dif.value}:${examLang.value}`,last=sessionStorage.getItem(key);let sig=pick.map(q=>q.q).join('|');
- if(last===sig){pick=shuffle(unique).slice(0,targetCount).map(shuffleQuestionOptions);sig=pick.map(q=>q.q).join('|');}
- sessionStorage.setItem(key,sig);qs=pick;responses=Array(targetCount).fill(null);idx=0;examLocked=false;
+ const key=`examHistory:${currentCert.id}:${dif.value}:${examLang.value}`;let history=[];try{history=JSON.parse(localStorage.getItem(key)||'[]')}catch{};const used=new Set(history.flat());const fresh=unique.filter(q=>!used.has(questionKey(q)));const pool=fresh.length>=targetCount?fresh:unique;pick=shuffle(pool).slice(0,targetCount).map(shuffleQuestionOptions);const keys=pick.map(questionKey);history.push(keys);if(history.length>5)history=history.slice(-5);localStorage.setItem(key,JSON.stringify(history));qs=pick;responses=Array(targetCount).fill(null);idx=0;examLocked=false;
  showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);activateExamIntegrity();
  const minutes=mode.value==='stack'?stackModeConfig().minutes:DIFFICULTY_TIME[dif.value];
  if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{if(examLocked)return;left--;renderTimer();if(left<=0){left=0;renderTimer();finish(true)}},1000);}
@@ -427,4 +438,10 @@ function certificate(){
 }
 window.addEventListener('pageshow',()=>{if(el('simConfig')&&!el('simConfig').hidden){updateStartState();updatePracticeMeta();}});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+
+function examSpeechLang(){return examLang.value==='en'?'en-US':examLang.value==='pt'?'pt-BR':'es-ES'}
+function speakCurrentQuestion(){if(!('speechSynthesis'in window)||!qs[idx])return;window.speechSynthesis.cancel();const q=qs[idx];const instruction=examLang.value==='en'?'Choose the letter of the answer you consider correct.':examLang.value==='pt'?'Escolha a letra da resposta que considera correta.':'Escoja la letra de la respuesta que considera correcta.';const text=[`Pregunta ${idx+1}. ${q.q}`,...q.a.map((a,i)=>`${String.fromCharCode(65+i)}. ${a}`),instruction].join('. ');const u=new SpeechSynthesisUtterance(text);u.lang=examSpeechLang();window.speechSynthesis.speak(u)}
+function recognizeAnswer(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition,status=el('examVoiceStatus');if(!SR){if(status)status.textContent='Reconocimiento de voz no disponible en este navegador.';return}const r=new SR();r.lang=examSpeechLang();r.interimResults=false;r.maxAlternatives=3;if(status)status.textContent='Escuchando… diga la letra A, B, C o D.';r.onresult=e=>{const variants=[...e.results[0]].map(x=>x.transcript.toLowerCase().trim());const normalize=x=>x.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();const words={a:0,b:1,c:2,d:3,ah:0,be:1,ve:1,ce:2,se:2,de:3,'uno':0,'una':0,'dos':1,'tres':2,'cuatro':3,one:0,two:1,three:2,four:3};let n;let heard=variants[0]||'';for(const v of variants){const h=normalize(v);const phrases=h.match(/(?:opcion|option|letra|letter)\s+([abcd])/);if(phrases){n={a:0,b:1,c:2,d:3}[phrases[1]];heard=v;break}if(words[h]!==undefined){n=words[h];heard=v;break}for(const t of h.split(' ')){if(words[t]!==undefined){n=words[t];heard=v;break}}if(n!==undefined)break;}if(n===undefined){const h=normalize(heard);n=qs[idx].a.findIndex(a=>{const x=normalize(a);return h.length>3&&(x.includes(h)||h.includes(x))});}if(Number.isInteger(n)&&n>=0&&n<qs[idx].a.length){answer(n);if(status)status.textContent=`Respuesta registrada: ${String.fromCharCode(65+n)}.`}else if(status)status.textContent=`No se reconoció una letra válida: “${heard}”. Intente decir, por ejemplo, “letra B”.`;};r.onerror=()=>{if(status)status.textContent='No fue posible reconocer la respuesta.'};try{r.start()}catch{if(status)status.textContent='El reconocimiento de voz ya está activo.'}}
+el('readQuestion')?.addEventListener('click',speakCurrentQuestion);el('voiceAnswer')?.addEventListener('click',recognizeAnswer);
+
 })();

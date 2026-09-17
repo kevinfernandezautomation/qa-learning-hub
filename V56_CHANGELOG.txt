@@ -1,0 +1,8 @@
+v56
+- SINPE Móvil añadido como método de pago con referencia y verificación.
+- Panel admin local de usuarios/pagos (demostración); producción requiere backend.
+- Simulaciones: lectura TTS y respuesta por voz con Web Speech API cuando el navegador lo soporte.
+- Historial de preguntas para reducir repetición entre los últimos cinco intentos.
+- Learning Path Fundamentos de Software Testing · ISTQB CTFL + AICS ASTFC.
+- Traducción full-page activada en Inicio y Academia como fallback además de diccionarios locales.
+- _headers y nota de seguridad añadidos.

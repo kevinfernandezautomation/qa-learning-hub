@@ -73,3 +73,5 @@ function build(stackId,level){
 }
 window.buildStackQuestions=build;
 })();
+
+window.STACK_EXTRA_TOPICS=window.STACK_EXTRA_TOPICS||{};window.STACK_EXTRA_TOPICS['ctfl-astfc-foundations']=['fundamentos','SDLC','niveles y tipos','testing estático','técnicas black-box','white-box','experiencia','criterios de aceptación','planificación','riesgo','métricas','defectos','herramientas'];
