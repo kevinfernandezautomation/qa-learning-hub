@@ -1,0 +1,2 @@
+BÚSQUEDA QA — v57
+La interfaz pagina 10 resultados y consulta /api/search-jobs. La consulta usa términos QA Engineer, Quality Assurance, Software Tester, SDET y Test Engineer, más país/modalidad/tipo, restringiendo resultados a dominios de empleo conocidos. Configure GOOGLE_CSE_API_KEY y GOOGLE_CSE_CX solo en servidor. Google indica en 2026 que Custom Search JSON API está cerrado para nuevos clientes y los clientes existentes deben migrar antes del 1 de enero de 2027; el frontend quedó desacoplado para poder sustituir el proveedor.

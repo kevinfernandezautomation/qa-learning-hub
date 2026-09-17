@@ -16,20 +16,14 @@
  }
  function modeText(v){return v==='remote'?'Remoto':v==='hybrid'?'Híbrido':'Presencial'}
  function typeText(v){return v==='internship'?'Internship / pasantía':v==='contract'?'Contrato':'Tiempo completo'}
- function render(){
-   const kw=(document.getElementById('qaJobKeyword').value||'').trim().toLowerCase();
-   const c=continent.value,co=country.value,mode=document.getElementById('qaJobWorkplace').value,type=document.getElementById('qaJobType').value;
-   const list=JOBS.filter(j=>(!kw||(`${j.title} ${j.company} ${j.desc}`.toLowerCase().includes(kw)||kw==='quality assurance'||kw==='qa'))&&(!c||j.continent===c)&&(!co||j.country===co)&&(!mode||j.mode===mode)&&(!type||j.type===type));
-   status.hidden=true;status.textContent='';
-   if(!list.length){
-     box.innerHTML=`<div class="empty-state"><h3>No se encontraron vacantes verificadas con esos filtros</h3><p>Este catálogo contiene únicamente publicaciones reales verificadas durante la última revisión; no genera ofertas ficticias. Cambie los filtros o consulte LinkedIn con los mismos criterios.</p></div>`;
-     return;
-   }
-   box.innerHTML=list.map(j=>`<article class="job-opportunity"><div class="job-card-top"><span class="badge">${modeText(j.mode)}</span><span class="job-age">${j.age}</span></div><h3>${j.title}</h3><p><strong>${j.company}</strong> · ${j.country} · ${labels[j.continent]}</p><p>${j.desc}</p><small>${typeText(j.type)}</small><div class="card-actions"><a class="btn secondary small" href="${j.url}" target="_blank" rel="noopener">Ver publicación ↗</a></div></article>`).join('');
- }
+ function filters(){return {continent:continent.value,country:country.value,workplace:document.getElementById('qaJobWorkplace').value,type:document.getElementById('qaJobType').value,keyword:(document.getElementById('qaJobKeyword').value||'Quality Assurance').trim()}}
+ let page=1,hasNext=false;const pager=document.getElementById('qaJobPagination'),prev=document.getElementById('qaJobPrev'),next=document.getElementById('qaJobNext'),pageLabel=document.getElementById('qaJobPageLabel');
+ function renderFallback(){const f=filters(),kw=f.keyword.toLowerCase();const list=JOBS.filter(j=>(!kw||(`${j.title} ${j.company} ${j.desc}`.toLowerCase().includes(kw)||kw==='quality assurance'||kw==='qa'))&&(!f.continent||j.continent===f.continent)&&(!f.country||j.country===f.country)&&(!f.workplace||j.mode===f.workplace)&&(!f.type||j.type===f.type));box.innerHTML=list.map(j=>`<article class="job-opportunity"><div class="job-card-top"><span class="badge">Catálogo verificado</span><span class="job-age">${j.age}</span></div><h3>${j.title}</h3><p><strong>${j.company}</strong> · ${j.country}</p><p>${j.desc}</p><div class="card-actions"><a class="btn secondary small" href="${j.url}" target="_blank" rel="noopener noreferrer">Ver publicación ↗</a></div></article>`).join('')||'<div class="empty-state"><h3>Sin resultados</h3></div>';if(pager)pager.hidden=true;}
+ async function render(reset=true){if(reset)page=1;status.hidden=false;status.textContent='Buscando oportunidades QA…';box.innerHTML='';try{const q=new URLSearchParams({...filters(),page});const r=await fetch('/api/search-jobs?'+q),data=await r.json();if(!r.ok)throw new Error();box.innerHTML=(data.items||[]).map(j=>`<article class="job-opportunity"><div class="job-card-top"><span class="badge">${j.source}</span></div><h3>${escapeHtml(j.title)}</h3><p>${escapeHtml(j.snippet||'')}</p><a class="btn secondary small" href="${j.link}" target="_blank" rel="noopener noreferrer">Ver publicación ↗</a></article>`).join('');hasNext=!!data.hasNext;pager.hidden=false;pageLabel.textContent=`Página ${page}`;prev.disabled=page<=1;next.disabled=!hasNext;status.textContent=`${data.items?.length||0} resultados encontrados.`;}catch(e){renderFallback();status.textContent=box.querySelector('.job-opportunity')?'Resultados disponibles para los filtros seleccionados.':'No se encontraron resultados con estos filtros.';}}
  continent.addEventListener('change',()=>{populateCountries();box.innerHTML='';status.hidden=true;});
- btn.addEventListener('click',render);
- document.getElementById('qaJobKeyword')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render();}});
+ btn.addEventListener('click',()=>render(true));
+ prev?.addEventListener('click',()=>{if(page>1){page--;render(false)}});next?.addEventListener('click',()=>{if(hasNext){page++;render(false)}});
+ document.getElementById('qaJobKeyword')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();render(true);}});
  populateCountries();
  box.innerHTML='';status.hidden=true;
 
