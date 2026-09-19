@@ -1,0 +1,7 @@
+V59 — Senior Quality Engineering & QA Lead
+- Nueva ruta Senior/Lead de 15 módulos y capstone integral.
+- Cobertura explícita de QA Strategy, roadmap, QA from scratch, RBT, RTM, automation architecture, REST/GraphQL/microservices, CI/CD, performance/scalability/reliability/resilience, UAT, release readiness, metrics, defects, leadership.
+- Nuevo analizador local de vacantes QA (job-match-ai.html); no envía el texto a terceros.
+- Nuevos estilos responsive para ruta y analizador.
+- TXT de paletas visuales recomendadas.
+- Regresión estática automatizada incluida en REGRESION_V59.txt.

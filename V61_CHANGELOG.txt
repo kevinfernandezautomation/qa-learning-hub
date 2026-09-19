@@ -1,0 +1,8 @@
+QA Learning Hub v61
+
+- Eliminada la sección visible “Especializaciones por puesto” de Academia.
+- career-specializations.html queda únicamente como redirección de compatibilidad hacia Academia; no es una sección independiente.
+- Integrado “macOS & System QA Engineer” como Learning Path propio en learning-data.js.
+- La ruta incluye fundamentos desktop/system QA, compatibilidad macOS, IPC, logs/crash reports, System Extensions, Endpoint Security, Network Extension, edge cases/race conditions, triage, automatización y release readiness.
+- Recursos oficiales Apple incluidos en los datos de la ruta.
+- La organización objetivo queda centralizada en Learning Paths de Academia.

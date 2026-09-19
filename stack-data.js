@@ -1,9 +1,8 @@
 
 window.QA_STACKS={
- manual:{name:"QA Manual Web & Mobile",topics:["requisitos verificables","partición de equivalencia","valores límite","tablas de decisión","transición de estados","pruebas exploratorias","regresión","defectos y evidencia"]},
- manualmid:{name:"QA Manual Mid · Web, Mobile, API & Cloud",topics:["criterios de aceptación verificables","test planning basado en riesgo","trazabilidad requisito-prueba-defecto","usabilidad web","mobile Android iOS","REST Postman cURL","regresión y release readiness","test management y reportes","WCAG 2.2","comunicación Agile","troubleshooting DevTools","cloud QA AWS Azure GCP"]},
+ manual:{name:"QA Manual · Fundamentos, CTFL + AICS y entrevista",topics:["principios y vocabulario","SDLC y Agile","niveles y tipos","testing estático","partición de equivalencia","valores límite","tablas de decisión","transición de estados","white-box básico","pruebas exploratorias","criterios de aceptación y ATDD","riesgo y planificación","trazabilidad","defectos y evidencia","herramientas y automatización","entrevista QA"]},
  webauto:{name:"Playwright / Cypress / Selenium",topics:["locators robustos","assertions","Page Object Model","esperas y sincronización","datos de prueba","cross-browser","mantenibilidad","CI/CD"]},
- api:{name:"API Quality Engineering",topics:["métodos HTTP","status codes","headers","autenticación","schema","pruebas negativas","idempotencia","contratos OpenAPI"]},
+ api:{name:"QA Mid · Web, Mobile, API & Cloud Quality Engineering",topics:["criterios de aceptación","test planning y riesgo","trazabilidad","web y usabilidad","mobile Android iOS","métodos HTTP","REST","GraphQL","status codes","headers","autenticación y autorización","schemas","pruebas negativas","idempotencia","OpenAPI","contract testing","microservicios","Postman y cURL","SQL básico","regresión y release readiness","WCAG","DevTools","cloud QA","CI/CD"]},
  performance:{name:"JMeter + k6",topics:["perfil de carga","usuarios virtuales","throughput","percentiles","thresholds","correlación","parametrización","ejecución CI/CD"]},
  data:{name:"QA de Bases de Datos · SQL + NoSQL",topics:["modelos relacionales y NoSQL","SQL Server","PostgreSQL","MySQL","Oracle/PLSQL","MongoDB","Firestore","SQLite","integridad y schema validation","transacciones y concurrencia","seguridad y permisos","validación UI-API-BD","rendimiento e índices"]},
  devops:{name:"Azure DevOps / TFS + Git + CI/CD",topics:["repositorios Git","work items","build pipelines","release pipelines","quality gates","artefactos","trazabilidad","gestión de fallos"]},
@@ -74,4 +73,4 @@ function build(stackId,level){
 window.buildStackQuestions=build;
 })();
 
-window.STACK_EXTRA_TOPICS=window.STACK_EXTRA_TOPICS||{};window.STACK_EXTRA_TOPICS['ctfl-astfc-foundations']=['fundamentos','SDLC','niveles y tipos','testing estático','técnicas black-box','white-box','experiencia','criterios de aceptación','planificación','riesgo','métricas','defectos','herramientas'];
+window.STACK_EXTRA_TOPICS=window.STACK_EXTRA_TOPICS||{};

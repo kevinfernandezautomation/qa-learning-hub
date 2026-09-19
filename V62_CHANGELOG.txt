@@ -1,0 +1,10 @@
+QA Learning Hub v62
+
+- Unifica “Fundamentos de Software Testing · ISTQB CTFL + AICS ASTFC” con “QA Manual · De fundamentos a entrevista”.
+- La nueva ruta se denomina “QA Manual · Fundamentos, ISTQB CTFL + AICS ASTFC y entrevista”.
+- Integra fundamentos, SDLC/Agile, testing estático, black-box/white-box/experience-based, ATDD, riesgo, trazabilidad, herramientas, práctica manual e entrevista.
+- Unifica “QA Manual Mid · Web, Mobile, API & Cloud” con “API Quality Engineering”.
+- La nueva ruta se denomina “QA Mid · Web, Mobile, API & Cloud Quality Engineering”.
+- Integra requisitos, planificación, web, mobile, REST, GraphQL, microservicios, OpenAPI/contract testing, SQL básico, accesibilidad, cloud, release readiness y CI/CD.
+- Elimina las tarjetas/rutas duplicadas anteriores y conserva los IDs manual y api para reducir roturas de enlaces.
+- Actualiza simuladores y metadatos de stacks.

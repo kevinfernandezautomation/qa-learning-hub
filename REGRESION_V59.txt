@@ -1,0 +1,26 @@
+QA LEARNING HUB — REGRESIÓN V59
+Fecha: 2026-09-18
+
+ALCANCE
+- 55 páginas HTML.
+- 49 archivos JavaScript.
+- Navegación y referencias locales.
+- Nuevas páginas Senior Quality Engineering y Job Match.
+- Integración de la nueva ruta en Academia.
+- Responsive CSS agregado.
+
+RESULTADOS AUTOMATIZADOS
+1. Sintaxis JavaScript (node --check): 49/49 PASS; 0 errores.
+2. Referencias locales HTML (href/src): PASS; 0 archivos locales faltantes.
+3. Estructura DOCTYPE: PASS; 55/55 páginas con un único DOCTYPE.
+4. IDs HTML duplicados: PASS; 0 páginas con IDs duplicados.
+5. Smoke HTTP local: PASS para index.html, academia.html, senior-quality-engineering.html, job-match-ai.html, simuladores.html, pago.html y empleos.html (HTTP 200).
+6. Nueva ruta enlazada desde learning-data.js y academy.js: PASS.
+7. Analizador de vacantes: sintaxis JS PASS; validación de entrada, limpiar, detección de competencias y render de resultados implementados.
+
+COBERTURA CURRICULAR OBJETIVO SENIOR/LEAD
+La ruta nueva aborda explícitamente las áreas solicitadas en la vacante analizada: estrategia/roadmap, proceso QA desde cero, colaboración y criterios de aceptación, estrategia/plan/estimación/trazabilidad, UI/API/E2E automation, CI/CD, funcional/exploratorio/regresión/integración, mobile/accesibilidad/compatibilidad/performance, risk-based testing, UAT/release readiness, métricas, defect lifecycle, mentoring/liderazgo, REST/GraphQL/microservices, reliability/resilience/scalability y comunicación/continuous improvement.
+Resultado de mapeo temático: todas las áreas principales identificadas cuentan con al menos un módulo o actividad explícita. Objetivo de cobertura curricular >=95% satisfecho a nivel de temario. Esto no equivale a certificar dominio individual ni probabilidad de contratación.
+
+LIMITACIÓN DE LA REGRESIÓN
+Esta ejecución valida regresión estática, sintaxis, enlaces locales y smoke HTTP. No sustituye una matriz E2E completa en navegadores reales ni pruebas de backend/pasarela/base de datos, ya que esas integraciones productivas aún requieren configuración externa.

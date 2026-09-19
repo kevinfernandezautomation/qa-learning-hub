@@ -1,0 +1,19 @@
+QA Learning Hub v60 — Career-ready curriculum expansion
+
+- Nueva página career-specializations.html enlazada desde Academia.
+- Ruta profunda QA Automation con Playwright + TypeScript: locators, waits, fixtures, mocks, datos, API, E2E, multi-browser, traces y CI/CD.
+- BDD/Cucumber y patrones de arquitectura de automatización.
+- QA Lead/Test Automation Architect.
+- Performance Engineering con k6/JMeter, escenarios, SLO/thresholds, métricas y observabilidad.
+- Mobile QA iOS/Android + Appium y estrategia multi-device.
+- Data Quality/ETL: SQL avanzado aplicado a QA, profiling, reconciliación, ETL y orquestación.
+- Salesforce QA: objetos, permisos, Flow, SOQL, regresión, UAT y release readiness.
+- AI-native QA: evals, no determinismo, agentes, guardrails y Human-in-the-Loop.
+- Payments/Billing/Revenue Assurance: conciliación, proration, rounding, multi-currency y SQL.
+- Observability for QA.
+- System/Desktop/macOS QA con enlaces oficiales de Apple.
+- IT Service Quality Analyst: AHT/FCR/CSAT/scorecards/calibración/coaching.
+- Git + CI/CD for QE con GitHub Actions.
+- Professional Skills evaluadas por escenarios.
+- Modelo de evaluación: Knowledge 25%, Labs 35%, Scenarios 20%, Capstone 20%.
+- Enlaces de estudio priorizan documentación oficial y gratuita.
