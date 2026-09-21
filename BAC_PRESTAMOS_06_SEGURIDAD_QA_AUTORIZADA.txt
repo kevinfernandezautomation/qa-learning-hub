@@ -1,0 +1,25 @@
+SEGURIDAD / ISTQB CT-SEC y CT-STE
+
+Este archivo NO contiene payloads de explotación ni pruebas intrusivas contra BAC.
+El sitio es un sistema bancario real. Las pruebas activas de seguridad deben realizarse únicamente con autorización escrita y en un entorno designado.
+
+Cobertura para sandbox autorizado:
+1. Requisitos y threat/risk modeling.
+2. Autenticación, autorización y gestión de sesión.
+3. Protección de datos sensibles y secretos.
+4. Validación de entradas y salidas.
+5. Headers, TLS y cookies seguras.
+6. CSRF, XSS, inyección y SSRF: validar mediante herramientas aprobadas en laboratorio, no en producción.
+7. Rate limiting, anti-automation y manejo seguro de errores.
+8. Dependencias/SCA, SAST, DAST y secret scanning en CI/CD.
+9. Logging/auditoría sin exponer PII.
+10. Privacidad/consentimiento y minimización de datos.
+11. Revisión de APIs en sandbox: autenticación, autorización por objeto, schemas e idempotencia.
+12. Evidencia, severidad, reproducibilidad, remediación y re-test.
+
+Automatización segura en CI:
+- unit/integration tests
+- SAST/SCA/secret scanning del código propio
+- policy checks
+- pruebas de headers/configuración sobre un ambiente propio
+- DAST únicamente sobre targets expresamente autorizados

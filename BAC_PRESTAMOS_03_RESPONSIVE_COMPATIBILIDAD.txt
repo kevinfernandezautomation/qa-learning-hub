@@ -1,0 +1,17 @@
+// Tipo: compatibilidad, responsive y portabilidad percibida.
+// Playwright config sugerido: Chromium, Firefox, WebKit + desktop/mobile.
+import { test, expect, devices } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+const viewports=[
+  {name:'mobile',width:390,height:844},
+  {name:'tablet',width:768,height:1024},
+  {name:'desktop',width:1440,height:900}
+];
+for (const vp of viewports) test(`${vp.name}: sin overflow horizontal y CTA visible`, async ({page})=>{
+  await page.setViewportSize({width:vp.width,height:vp.height});
+  await page.goto(URL,{waitUntil:'domcontentloaded'});
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2);
+  expect(overflow).toBeFalsy();
+  await expect(page.getByRole('heading',{name:/préstamo personal/i}).first()).toBeVisible();
+  await expect(page.getByRole('link',{name:/solicit/i}).first()).toBeVisible();
+});

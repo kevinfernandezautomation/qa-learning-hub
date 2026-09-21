@@ -1,0 +1,34 @@
+LABORATORIO JMETER · SOLO SANDBOX/QA AUTORIZADO
+
+Objetivo: crear una prueba reproducible contra una API DEMO propia, nunca contra producción bancaria.
+
+Estructura sugerida del .jmx:
+Test Plan
+  User Defined Variables: BASE_URL, USERS, RAMP_UP, DURATION
+  Thread Group / Concurrency model
+    CSV Data Set Config (datos sintéticos)
+    HTTP Request Defaults
+    Transaction Controller: consultar-cuentas-demo
+      HTTP GET /api/demo/accounts
+      Response Assertion: 200
+      JSON Assertion: estructura esperada
+    Timer / pacing
+  Backend Listener -> observabilidad de laboratorio
+
+JSR223/Groovy de ejemplo para marcar una respuesta lenta:
+long ms = prev.getTime()
+if (ms > 1000) {
+    log.warn("Respuesta DEMO sobre 1000 ms: " + ms)
+}
+
+Ejecución recomendada en CI:
+jmeter -n -t performance-demo.jmx -l results.jtl -e -o report
+
+Escenarios didácticos:
+- Baseline: 1 usuario.
+- Load: volumen esperado del sandbox.
+- Stress: incremento gradual hasta degradación controlada.
+- Spike: cambio abrupto de demanda en sandbox.
+- Capacity: determinar capacidad bajo criterios definidos.
+
+No copie cifras de producción como criterio universal. Defina SLO/criterios con negocio, arquitectura y baseline del ambiente.

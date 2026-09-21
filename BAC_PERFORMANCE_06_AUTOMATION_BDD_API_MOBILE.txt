@@ -1,0 +1,18 @@
+AUTOMATIZACIÓN COMPLEMENTARIA
+
+Web: Playwright / Selenium WebDriver
+Mobile: Appium + device/emulator matrix
+API: Postman/Newman, Insomnia/SoapUI como herramientas complementarias
+BDD: Cucumber, Serenity, SpecFlow, Behave
+Cloud/device: Sauce Labs u opciones equivalentes
+
+Diseño:
+- separar smoke funcional de carga;
+- Page/Screen Objects para UI;
+- API clients reutilizables;
+- fixtures y datos sintéticos;
+- tags por capa/riesgo;
+- evidencia y reporte;
+- pruebas deterministas antes de añadir carga.
+
+BDD no debe usarse para convertir cada detalle técnico de performance en Given/When/Then. Úselo cuando mejore la comunicación de comportamiento/criterios con negocio. Mantenga perfiles técnicos y métricas en configuración especializada.

@@ -1,0 +1,29 @@
+CAPSTONE · PERFORMANCE & AUTOMATION ENGINEER
+
+Sistema ficticio: banca-demo con Web + REST + microservicios + DB + cache.
+Entregables:
+1. NFR y criterios de aceptación.
+2. Workload model.
+3. JMeter parametrizado con datos sintéticos.
+4. k6 smoke/performance gate.
+5. Dashboard de observabilidad.
+6. Correlación app/infra/DB.
+7. Identificación de un bottleneck controlado.
+8. Recomendación y retest.
+9. Suite funcional Web/API/Mobile mínima.
+10. Reporte ejecutivo y técnico.
+
+Evaluación:
+25% conocimiento
+35% laboratorio
+20% análisis situacional
+20% capstone
+
+Preguntas de entrevista:
+- Diferencia load/stress/spike/capacity.
+- Por qué P95 puede ser más útil que promedio.
+- Qué revisar si throughput deja de crecer y CPU no está saturada.
+- Cómo distinguir problema de DB, gateway o servicio.
+- Cómo parametrizar/correlacionar JMeter.
+- Cómo evitar que datos de prueba invaliden resultados.
+- Qué performance checks ejecutar en CI y cuáles reservar para un ambiente dedicado.

@@ -1,0 +1,26 @@
+K6 + CI/CD · EJEMPLO PARA API DEMO
+
+import http from 'k6/http';
+import { check } from 'k6';
+
+export const options = {
+  stages: [
+    { duration: '30s', target: 10 },
+    { duration: '1m', target: 10 },
+    { duration: '30s', target: 0 },
+  ],
+  thresholds: {
+    http_req_failed: ['rate<0.01'],
+    http_req_duration: ['p(90)<400', 'p(95)<600', 'p(99)<1000'],
+    checks: ['rate>0.99'],
+  },
+};
+
+export default function () {
+  const baseUrl = __ENV.BASE_URL || 'https://test-api.example.invalid';
+  const r = http.get(`${baseUrl}/health`);
+  check(r, { 'status esperado': (x) => x.status === 200 });
+}
+
+NOTA
+Los valores son didácticos, no SLO de BAC. En un proyecto real deben provenir de requisitos/baseline. Los thresholds convierten criterios en pass/fail y pueden integrarse en CI/CD.

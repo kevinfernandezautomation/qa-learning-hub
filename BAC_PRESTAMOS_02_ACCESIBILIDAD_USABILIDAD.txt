@@ -1,0 +1,25 @@
+// Tipo: accesibilidad + usabilidad. Inspirado en ISTQB CT-UT y calidad de interacción.
+// Dependencias: npm i -D @playwright/test @axe-core/playwright
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('WCAG automatizable: sin violaciones serious/critical', async ({ page }) => {
+  await page.goto(URL, { waitUntil:'domcontentloaded' });
+  const result = await new AxeBuilder({ page }).analyze();
+  const severe = result.violations.filter(v => ['serious','critical'].includes(v.impact ?? ''));
+  expect(severe, JSON.stringify(severe, null, 2)).toEqual([]);
+});
+
+test('estructura semántica y navegación por teclado', async ({ page }) => {
+  await page.goto(URL, { waitUntil:'domcontentloaded' });
+  await expect(page.locator('h1')).toHaveCount(1);
+  const images = page.locator('img');
+  for (let i=0; i<await images.count(); i++) expect(await images.nth(i).getAttribute('alt')).not.toBeNull();
+  await page.keyboard.press('Tab');
+  await expect(page.locator(':focus')).toBeVisible();
+});
+
+// Complementar manualmente: lenguaje claro, consistencia, orden de foco,
+// zoom 200/400%, lector de pantalla, subtítulos/transcripción de videos,
+// comprensión de tasas/monedas/plazos y prevención de errores.

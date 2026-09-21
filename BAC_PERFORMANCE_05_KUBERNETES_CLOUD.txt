@@ -1,0 +1,20 @@
+PERFORMANCE EN MICROSERVICIOS, KUBERNETES Y CLOUD
+
+Mapa mental:
+Cliente -> Load Balancer -> API Gateway -> Microservicio -> Cache/DB/servicio externo.
+
+Durante una prueba autorizada correlacione:
+- demanda/throughput con réplicas y autoscaling;
+- CPU/memory por pod;
+- requests/limits y throttling;
+- restarts/errores;
+- latencia gateway->service->DB;
+- connection pools y cache hit rate;
+- saturación de dependencias.
+
+AWS: practicar conceptos de CloudWatch para métricas/logs/alarmas.
+Azure: practicar Azure Monitor/Application Insights en un laboratorio propio.
+Prometheus/Grafana: métricas, histogramas, dashboards y alertas.
+Dynatrace/New Relic: estudiar APM, trazas y correlación cuando se disponga de entorno/licencia.
+
+Ejercicio: provocar en una aplicación demo un cuello de botella controlado, observar P95/P99 y recursos, formular hipótesis, corregir configuración/código de laboratorio y repetir la prueba.

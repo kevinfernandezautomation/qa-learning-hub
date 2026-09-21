@@ -1,0 +1,32 @@
+MAPEO DE CALIDAD · BAC PRÉSTAMO PERSONAL · CASO EDUCATIVO
+
+ISO/IEC 25010:2023 define nueve características del modelo de calidad de producto. Aplicación al caso:
+- Functional suitability: contenido, CTA, condiciones, FAQ y flujos esperados.
+- Performance efficiency: tiempos, recursos y comportamiento bajo carga (solo sandbox autorizado para carga).
+- Compatibility: navegadores, dispositivos, coexistencia e interoperabilidad.
+- Interaction capability: learnability, operability, error protection, accessibility y experiencia.
+- Reliability: disponibilidad, tolerancia a fallos, recuperación y resiliencia (sandbox).
+- Security: confidencialidad, integridad, autenticidad, accountability y controles (sandbox autorizado).
+- Maintainability: modularidad, analizabilidad, modificabilidad, testabilidad y reusabilidad del código de pruebas.
+- Flexibility: adaptación a canales, configuración, escalabilidad de la solución y variaciones de entorno.
+- Safety: identificar riesgos donde una falla del sistema pueda causar consecuencias no aceptables; tratar mediante análisis de riesgo y controles.
+
+ISTQB aplicado de forma transversal (selección pertinente del portafolio):
+- CTFL: fundamentos, técnicas, riesgo, defectos y proceso.
+- CTAL Test Analyst: análisis/diseño y cobertura funcional.
+- CTAL Technical Test Analyst: calidad técnica/no funcional.
+- CTAL Test Management: estrategia, riesgo, métricas y gobernanza.
+- CTAL Test Automation Engineering + CT-TAS: arquitectura y estrategia de automatización.
+- CT-PT: performance.
+- CT-UT: usabilidad/accesibilidad.
+- CT-SEC / CT-STE: seguridad en entorno autorizado.
+- CT-MAT: conceptos aplicables a Banca Móvil.
+- CT-AcT: UAT/acceptance criteria.
+- CT-AI / AI Testing: IA para testing y testing de sistemas con IA cuando corresponda.
+- CT-GenAI: uso responsable de GenAI en actividades de testing cuando corresponda.
+- CT-FT (Finance Testing): dominio financiero, riesgos y escenarios propios de finanzas.
+- Agile Tester / Agile Technical Tester: colaboración y testing continuo.
+- Model-Based Tester: modelos de estados y reglas para flujos financieros.
+
+Trazabilidad recomendada:
+Requisito/regla -> riesgo -> condición de prueba -> caso -> automatización -> evidencia -> defecto -> re-test -> criterio de salida.

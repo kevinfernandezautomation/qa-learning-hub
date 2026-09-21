@@ -1,0 +1,16 @@
+IA ASISTIDA PARA PERFORMANCE QA
+
+Usos apropiados:
+- proponer hipótesis de bottleneck a partir de métricas anonimizadas;
+- generar borradores de scripts para sandbox;
+- explicar P90/P95/P99;
+- comparar ejecuciones y resumir tendencias;
+- generar borrador de reporte técnico/ejecutivo;
+- revisar código de scripts y detectar duplicación.
+
+Controles:
+- no enviar secretos, tokens, PII, datos bancarios ni arquitectura confidencial a servicios no autorizados;
+- toda conclusión debe verificarse contra telemetría;
+- separar correlación de causalidad;
+- registrar prompt/modelo/versión cuando sea relevante para reproducibilidad;
+- revisión humana antes de recomendaciones de release.

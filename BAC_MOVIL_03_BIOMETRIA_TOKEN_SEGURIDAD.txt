@@ -1,0 +1,30 @@
+QA LEARNING HUB — BIOMETRÍA, TOKEN Y SEGURIDAD
+SOLO DEMO/SANDBOX AUTORIZADO
+
+AUTOMATIZAR EN ENTORNO CONTROLADO
+1. Usuario/contraseña correctos e incorrectos.
+2. Biometría habilitada, rechazada, cancelada y no disponible.
+3. Cambio de biometría del dispositivo y revocación de sesión.
+4. Token/OTP correcto, incorrecto, vencido y reutilizado usando mocks.
+5. Sesión expirada tras inactividad.
+6. Cambio de dispositivo.
+7. Background/foreground durante autenticación.
+8. Rate limiting y bloqueo únicamente en ambiente QA.
+9. Datos sensibles ausentes de logs, screenshots y reportes.
+10. Validar que una autenticación cancelada nunca continúe una transacción.
+
+EJEMPLO DE DISEÑO
+- No automatizar una huella física real en CI.
+- Abstraer BiometricService y simular SUCCESS / FAILURE / CANCELLED / UNAVAILABLE.
+- Mockear TokenService con ACTIVE / EXPIRED / INVALID.
+- Ejecutar pruebas reales de biometría solo en device farm/QA autorizado.
+
+RIESGOS
+SEC-01 Exposición de secretos.
+SEC-02 Reutilización de token.
+SEC-03 sesión válida después de logout.
+SEC-04 información sensible en notificaciones.
+SEC-05 comprobante con más datos de los necesarios.
+SEC-06 acción irreversible por doble tap/retry.
+
+No se incluyen técnicas de evasión, explotación ni pruebas contra producción.

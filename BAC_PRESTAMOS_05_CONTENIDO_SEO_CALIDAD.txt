@@ -1,0 +1,20 @@
+// Tipo: calidad de contenido, SEO técnico y consistencia de reglas públicas.
+import { test, expect } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('metadatos mínimos y jerarquía', async ({page})=>{
+ await page.goto(URL,{waitUntil:'domcontentloaded'});
+ await expect(page).toHaveTitle(/préstamo/i);
+ expect(await page.locator('meta[name="description"]').getAttribute('content')).toBeTruthy();
+ await expect(page.locator('h1')).toHaveCount(1);
+});
+
+test('detecta contradicciones de contenido para revisión humana', async ({page})=>{
+ await page.goto(URL,{waitUntil:'domcontentloaded'});
+ const text=(await page.locator('body').innerText()).replace(/\s+/g,' ');
+ // Ejemplo de regla de auditoría: si se publican Colones como condición y la FAQ dice colones o dólares,
+ // registrar una observación para revisión editorial; no asumir automáticamente que sea un defecto.
+ const conditionColones=/Moneda:\s*Colones/i.test(text);
+ const faqDosMonedas=/colones o dólares/i.test(text);
+ console.log({conditionColones,faqDosMonedas});
+});

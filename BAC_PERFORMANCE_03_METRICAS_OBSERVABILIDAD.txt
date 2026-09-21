@@ -1,0 +1,24 @@
+MÉTRICAS Y OBSERVABILIDAD
+
+Cliente/prueba:
+- Throughput: operaciones completadas por unidad de tiempo.
+- Response time: duración observada de la operación.
+- Latency: demora asociada a la respuesta; documente exactamente qué mide la herramienta.
+- Error rate: proporción de operaciones fallidas.
+- Concurrency: trabajo simultáneo activo.
+- P90/P95/P99: percentiles; evitan depender solo del promedio.
+
+Aplicación:
+- request rate, errores, duración, pools, colas, GC/runtime cuando aplique.
+Infraestructura:
+- CPU, memoria, red, almacenamiento/IO.
+Datos:
+- query duration, conexiones, locks, pool exhaustion, caché hit/miss.
+Distribuido:
+- gateway, balanceador, servicio, dependencia, DB/cache; usar correlation/trace IDs en laboratorio.
+
+Prometheus/Grafana:
+Los histogramas permiten calcular percentiles agregables. Evite promediar percentiles precomputados entre instancias. Correlacione P95/P99 con CPU/memoria/error rate y cambios de throughput.
+
+Reporte mínimo:
+Objetivo | ambiente | workload | datos | criterio | resultado | evidencia | bottleneck | impacto | recomendación | riesgo residual.

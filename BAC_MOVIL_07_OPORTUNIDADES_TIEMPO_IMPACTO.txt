@@ -1,0 +1,47 @@
+QA LEARNING HUB — OPORTUNIDADES DE MEJORA Y MODELO DE AHORRO DE TIEMPO
+
+DATOS DE REFERENCIA PÚBLICOS (consultados en septiembre 2026)
+- Una fuente de 2025 cita al presidente ejecutivo de BAC Costa Rica indicando más de 1,7 millones de clientes.
+- BAC reportó que 68,5% de su clientela era digital en 2025.
+- BAC Holding reporta más de 6 millones de clientes regionales a diciembre de 2025.
+
+IMPORTANTE: 1,7 millones NO equivale a usuarios activos mensuales de Banca Móvil. Para un business case real se necesita MAU/DAU de la app y número mensual de transferencias.
+
+ESTIMACIÓN ILUSTRATIVA
+Si se combinan 1,7 M clientes con 68,5% digital, se obtiene aproximadamente 1,164,500 clientes digitales. Es una aproximación, no una cifra oficial de usuarios activos de la app.
+
+AHORRO PROPUESTO POR TRANSFERENCIA (HIPÓTESIS A MEDIR)
+- búsqueda/selección de favorito más rápida: 10–25 s
+- claridad/sugerencias en detalle: 5–15 s
+- acceso directo al tipo de transferencia frecuente: 5–15 s
+- compartir comprobante con acción contextual: 5–20 s
+TOTAL HIPOTÉTICO: ~25–75 segundos por transferencia recurrente.
+
+ESCENARIO CONSERVADOR PARA PRODUCT DISCOVERY
+Usar 30–60 segundos como hipótesis inicial, NO como ahorro demostrado.
+
+Si 1,164,500 clientes digitales hicieran una sola transferencia y cada uno ahorrara:
+30 s → 582,250 minutos (~9,704 h) agregadas.
+45 s → 873,375 minutos (~14,556 h).
+60 s → 1,164,500 minutos (~19,408 h).
+
+No debe presentarse esto como ahorro anual del banco. Para anualizar: transferencias elegibles/mes × segundos ahorrados medidos en usability testing × 12.
+
+PLAN PARA MEDIRLO
+1. Instrumentar funnel anónimo: inicio transferencia → destinatario → monto → revisión → confirmación.
+2. Medir mediana y p75/p95 de tiempo por paso.
+3. Separar nuevos vs recurrentes.
+4. A/B test de búsqueda, recientes y acceso rápido.
+5. Medir task completion, error rate, backtracking y abandono.
+6. Usability test con consentimiento.
+7. Ganancia = tiempo baseline - tiempo variante.
+8. Solo después proyectar impacto poblacional.
+
+OPORTUNIDADES PRIORIZADAS
+- búsqueda/recientes en favoritos;
+- acceso rápido a destinatarios frecuentes;
+- detalle explícitamente opcional si la regla lo permite;
+- fallback para imágenes;
+- comprobante con compartir contextual, nunca envío externo automático sin consentimiento;
+- reducir navegación redundante;
+- mantener revisión final y autenticación adaptativa por seguridad.

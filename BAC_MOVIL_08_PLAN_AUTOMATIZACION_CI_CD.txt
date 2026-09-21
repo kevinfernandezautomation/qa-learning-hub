@@ -1,0 +1,43 @@
+QA LEARNING HUB — PLAN DE AUTOMATIZACIÓN MÓVIL CI/CD
+
+PIRÁMIDE PRÁCTICA
+1. Unit/component: reglas, formatters, validadores, estados, mocks.
+2. API/contract: servicios sandbox, schemas, idempotencia y errores.
+3. Mobile UI: pocos journeys críticos Appium/WDIO.
+4. Exploratorio/manual: biometría física, accesibilidad real, UX, interrupciones y dispositivos especiales.
+
+SUITE SMOKE
+- abrir app demo
+- login sandbox
+- cuentas visibles
+- navegar Transferir o pagar
+- abrir Transferir dinero
+- seleccionar favorito sintético
+- completar monto/detalle
+- llegar a revisión SIN confirmar operación real
+
+REGRESIÓN
+- Android/iOS soportados
+- tamaños de pantalla
+- red normal/lenta/offline
+- permisos
+- background/foreground
+- localización/moneda
+- accesibilidad
+- errores de recursos
+
+PIPELINE
+PR: lint + unit + component + API mock
+Merge: smoke móvil emulador/simulador
+Nightly: matriz de dispositivos QA + regresión
+Release candidate: dispositivos físicos + accesibilidad + exploratory + performance del cliente móvil
+
+QUALITY GATES EJEMPLO
+- 100% smoke
+- 0 defectos críticos abiertos
+- crash-free objetivo definido por producto
+- sin secretos/PII en logs
+- accesibilidad crítica sin bloqueadores
+- p95 de pasos clave dentro del presupuesto definido
+
+No ejecutar suites masivas, carga ni transacciones contra producción de terceros.

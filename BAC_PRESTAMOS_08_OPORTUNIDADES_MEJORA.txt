@@ -1,0 +1,17 @@
+OPORTUNIDADES DE MEJORA OBSERVADAS EN CONTENIDO PÚBLICO
+Fecha de análisis: 2026-09-20
+
+Estas son observaciones para revisión, no defectos confirmados del sistema interno.
+
+1. Consistencia de moneda: la sección de condiciones indica "Moneda: Colones", mientras la FAQ indica que puede solicitarse en colones o dólares. Conviene aclarar alcance/producto/segmento para evitar ambigüedad.
+2. Consistencia entre páginas: la página general de préstamos y la página específica muestran montos/tasas/requisitos que pueden corresponder a variantes distintas. Conviene etiquetar claramente vigencia, segmento y producto.
+3. TAE: revisar presentación textual del dato "TAE máxima" para que monto, porcentaje y unidad sean inequívocos.
+4. Plazo: "período mínimo y máximo es de 60 meses" podría redactarse de forma más explícita si realmente existe un único plazo o un rango.
+5. Cancelación anticipada: FAQ indica que podría aplicar comisión si fue informada; otra información pública puede mencionar cancelación sin comisiones. Conviene explicar cuándo aplica cada regla.
+6. Videos/tutoriales: asegurar título accesible, transcripción/subtítulos y estado del paso actual correcto.
+7. Accesibilidad: validar contraste, foco, zoom/reflow, alt text, landmarks y lector de pantalla.
+8. CTA: mantener un nombre accesible y contexto consistente para "Solicitá tu préstamo".
+9. Contenido legal/comercial: mostrar fecha de actualización/vigencia cerca de tasas, montos, seguros y comisiones.
+10. Arquitectura de información: enlazar claramente condiciones, contrato/reglamento, seguros, privacidad y canales de ayuda.
+11. Automatización editorial: implementar pruebas de consistencia entre condiciones, FAQ, página de categoría y material tutorial.
+12. Observabilidad UX: medir abandono por sección, errores de navegación y efectividad de CTA sin capturar datos sensibles innecesarios.

@@ -1,0 +1,22 @@
+// Tipo: performance ligero de una sola navegación. NO es carga/estrés contra producción.
+// Para CT-PT, load/stress/spike/soak deben ejecutarse sólo en ambiente autorizado.
+import { test, expect } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('captura métricas de navegación sin generar carga', async ({page})=>{
+  await page.goto(URL,{waitUntil:'load'});
+  const m=await page.evaluate(()=>{
+    const n=performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    return {domContentLoaded:n.domContentLoadedEventEnd-n.startTime, load:n.loadEventEnd-n.startTime, transfer:n.transferSize};
+  });
+  console.table(m);
+  expect(m.load).toBeGreaterThan(0);
+});
+
+/* En QA/sandbox autorizado:
+- baseline, load, stress, spike, endurance/soak y capacity
+- p50/p90/p95/p99, throughput, error rate
+- CDN/cache, imágenes, JS/CSS, terceros, API y backend
+- thresholds/SLO y quality gates CI/CD
+Nunca lanzar carga o estrés contra el sitio bancario público sin autorización explícita.
+*/

@@ -1,0 +1,28 @@
+QA Learning Hub · Ruta Performance & Automation Engineering
+Caso de referencia curricular: Analista Programador II (QA Rendimiento & Automatización)
+
+OBJETIVO
+Formar para diseñar, ejecutar, analizar y comunicar pruebas de rendimiento en Web/API, complementadas con automatización Web/Mobile/API y gestión de datos de prueba.
+
+MÓDULOS
+1. Fundamentos: baseline, carga, estrés, spike, capacidad, escalabilidad, resiliencia.
+2. Modelado de carga: usuarios, concurrencia, arrival rate, ramp-up/down, think time, pacing.
+3. JMeter: Thread Groups, HTTP Request, variables, CSV Data Set, correlation, assertions, timers, controllers, Groovy/JSR223, CLI y reportes.
+4. Métricas: throughput, response time, latency, concurrency, error rate, P90/P95/P99.
+5. Infraestructura: CPU, memoria, red, almacenamiento, saturación y colas.
+6. Datos: SQL/NoSQL, connection pools, queries lentas, locks, índices y caché.
+7. Arquitecturas: microservicios, API gateway, load balancer, caché distribuida, integración.
+8. Kubernetes: pods, requests/limits, autoscaling, CPU/memory y correlación con la prueba.
+9. Cloud: AWS/Azure y conceptos de capacidad/observabilidad.
+10. Observabilidad: CloudWatch, Dynatrace, New Relic, Grafana, Prometheus y Azure Monitor.
+11. Alternativas: k6, Gatling, LoadRunner, BlazeMeter y NeoLoad.
+12. Automatización funcional: Playwright/Selenium, Appium, Postman/Newman/SoapUI.
+13. BDD: Cucumber/Serenity/SpecFlow/Behave y criterios de uso.
+14. Datos de prueba: generación sintética, parametrización, privacidad, limpieza y repetibilidad.
+15. IA para Performance QA: asistentes para análisis, hipótesis y borradores; validar siempre contra métricas.
+16. Reporte: ejecutivo vs técnico, evidencia, bottlenecks, recomendaciones y riesgo residual.
+17. CI/CD: smoke performance, thresholds, tendencias y quality gates.
+18. Capstone: laboratorio distribuido ficticio con Web/API + observabilidad + reporte.
+
+CRITERIO DE COBERTURA
+Una competencia se considera cubierta cuando incluye teoría + ejemplo + laboratorio + evaluación. Las herramientas comerciales se estudian a nivel conceptual cuando no exista licencia de laboratorio.

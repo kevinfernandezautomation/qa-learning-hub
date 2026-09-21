@@ -1,0 +1,47 @@
+QA LEARNING HUB — LABORATORIO EDUCATIVO DE BANCA MÓVIL
+Caso de estudio inspirado en un flujo público de banca digital
+
+IMPORTANTE
+Este material NO automatiza la aplicación productiva de BAC, no contiene package IDs, credenciales, endpoints privados ni selectores internos. Debe ejecutarse contra una app demo, mock, sandbox o ambiente QA expresamente autorizado.
+
+FLUJO MODELO
+1. Instalar/abrir app.
+2. Login: usuario + contraseña.
+3. Validación de Token/Código de seguridad cuando corresponda.
+4. Activación/uso de biometría (huella/Face ID) en dispositivo compatible.
+5. Accesos previos al login: Quiero ser cliente/crear usuario, tipo de cambio, Código BAC y ayuda.
+6. Login correcto → Inicio/Cuentas.
+7. Navegación inferior: Inicio, Centro de pagos/Transferir o pagar, Solicitudes, Más.
+8. Transferir o pagar → Transferir dinero / traer dinero de otro banco / retiro de efectivo / recargar / centro de pagos / favoritos / tarjeta de crédito.
+9. Transferir dinero → tipo de transferencia → cuenta origen → cuenta destino/favorito → monto → detalle/descripción → revisión → autenticación → comprobante.
+
+CASOS PRIORITARIOS
+MOB-001 Primera apertura y permisos.
+MOB-002 Login válido.
+MOB-003 Login inválido sin revelar información sensible.
+MOB-004 Biometría disponible/no disponible/cancelada.
+MOB-005 Token/OTP válido, inválido y expirado en sandbox.
+MOB-006 Recuperación de sesión tras background/foreground.
+MOB-007 Accesos públicos antes del login.
+MOB-008 Render de cuentas y estados vacíos.
+MOB-009 Menú principal y navegación.
+MOB-010 Catálogo de Transferir o pagar.
+MOB-011 Transferencia a cuenta BAC favorita.
+MOB-012 Búsqueda/filtrado de favoritos.
+MOB-013 Transferencia a cuenta no favorita en sandbox.
+MOB-014 Monto mínimo/máximo y formato de moneda.
+MOB-015 Descripción opcional y sugerencias de concepto.
+MOB-016 Revisión antes de confirmar.
+MOB-017 Comprobante generado.
+MOB-018 Compartir comprobante mediante share sheet simulado.
+MOB-019 Imagen/recurso roto: fallback accesible y reintento.
+MOB-020 Sin red / red lenta / reconexión.
+MOB-021 Doble tap en confirmar no duplica operación (sandbox).
+MOB-022 Accesibilidad con lector de pantalla, foco y tamaño de texto.
+MOB-023 Orientación/tamaños de pantalla soportados.
+MOB-024 Deep links permitidos y sesión expirada.
+MOB-025 Logs no contienen credenciales, tokens ni datos financieros.
+
+TRAZABILIDAD
+ISTQB: diseño basado en riesgo, particiones, valores límite, transición de estados, tablas de decisión, exploratorio, regresión y automatización.
+ISO/IEC 25010: adecuación funcional, eficiencia, compatibilidad, capacidad de interacción, fiabilidad, seguridad, mantenibilidad y flexibilidad. Safety se analiza cuando sea pertinente al contexto del producto.

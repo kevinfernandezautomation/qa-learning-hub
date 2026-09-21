@@ -1,0 +1,30 @@
+QA LEARNING HUB — IMAGEN/RECURSO ROTO Y RESILIENCIA
+
+El reporte de una imagen rota en una pantalla debe registrarse como observación reproducible antes de clasificarla como defecto confirmado.
+
+CASOS
+IMG-01 Recurso carga con Wi-Fi estable.
+IMG-02 Recurso carga con red lenta simulada.
+IMG-03 CDN responde 404 → aparece fallback, no icono roto.
+IMG-04 timeout → skeleton/fallback y reintento controlado.
+IMG-05 recurso corrupto → UI conserva layout.
+IMG-06 sin conexión → mensaje útil y contenido esencial sigue disponible.
+IMG-07 imagen decorativa no bloquea transferencia.
+IMG-08 imagen informativa tiene texto alternativo/equivalente accesible.
+IMG-09 caché vencida no deja recurso inconsistente.
+IMG-10 cambio dark/light no vuelve ilegible el fallback.
+
+EJEMPLO DE TEST DE COMPONENTE
+it('muestra fallback cuando falla el recurso', async () => {
+  mockImageService.failWith(404);
+  await transferScreen.open();
+  await expect(transferScreen.imageFallback).toBeDisplayed();
+  await expect(transferScreen.continueButton).toBeEnabled();
+});
+
+MÉTRICAS
+- image load success rate
+- fallback activation rate
+- p95 resource load
+- errores por versión/dispositivo/red
+- impacto en abandono del flujo

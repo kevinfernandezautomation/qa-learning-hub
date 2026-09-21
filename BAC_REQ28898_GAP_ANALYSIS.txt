@@ -1,0 +1,38 @@
+QA LEARNING HUB v64 — MATRIZ DE COBERTURA
+Vacante analizada: Ingeniero de Automatización de TI – BAC Share Services (req28898)
+Fecha de publicación indicada por la vacante suministrada: 18/09/2026
+
+OBJETIVO
+Convertir los requisitos de la vacante en conocimiento entrenable dentro de QA Learning Hub. Esta matriz no afirma afiliación con BAC ni garantiza contratación.
+
+REQUISITO -> COBERTURA INTEGRADA
+1. Python / Java / JavaScript / PowerShell -> Ruta Automatización de TI & Agentes de IA: desarrollo para automatización.
+2. REST / web services / mensajería / SQL / NoSQL -> Integraciones empresariales.
+3. Ansible -> Automatización de infraestructura: inventory, YAML/playbooks, roles, variables, secretos e idempotencia.
+4. Power Automate -> RPA/low-code: cloud/desktop flows, triggers, actions, connectors, excepciones y gobierno.
+5. Automation Anywhere -> Fundamentos RPA: bots, Control Room/Bot Agent a nivel conceptual, ejecución y gobierno.
+6. IA generativa / LLM -> Fundamentos GenAI, contexto, grounding, evaluación y límites.
+7. Prompt engineering -> Diseño, versionado, pruebas y evaluación de prompts.
+8. Agentes inteligentes -> tools, handoffs, guardrails, estado, orquestación, trazas y Human-in-the-Loop.
+9. Automatización TI / infraestructura / apps / datos -> patrones y selección API vs código vs RPA vs IaC.
+10. Git / repositorios -> branching, commits, pull requests, revisión y trazabilidad.
+11. CI/CD -> build/test/deploy, quality gates y GitHub Actions como laboratorio.
+12. Pruebas automatizadas -> unitarias, integración, API, contratos, regresión y evals de agentes.
+13. Desarrollo seguro -> secretos, permisos mínimos, validación de entradas/salidas, dependencias y auditabilidad.
+14. Cloud / arquitecturas modernas -> servicios gestionados, eventos, contenedores, serverless, resiliencia y observabilidad.
+15. Diseñar soluciones escalables/reutilizables -> modularidad, idempotencia, retries, colas, concurrencia y mantenibilidad.
+16. Agile/Scrum/Design Thinking -> descubrimiento, prototipo, iteración y colaboración multidisciplinaria.
+17. Liderazgo / comunidad -> code review, estándares, mentoring y documentación reutilizable.
+18. Medición de impacto -> horas ahorradas, tiempo de ciclo, tasa de éxito, errores evitados, adopción, costo y experiencia.
+19. Innovación -> evaluación de oportunidades, hipótesis, prototipos y experimentación controlada.
+20. Proyectos/comunidades/hackatones -> capstone diseñado para convertirse en evidencia de portafolio.
+
+CAPSTONE RECOMENDADO
+Agente de automatización de TI en sandbox: recibe una solicitud ficticia, clasifica intención, consulta una API simulada, usa una herramienta permitida, requiere aprobación humana cuando corresponda, registra trazas y genera evidencia. Debe incluir pruebas, pipeline CI/CD, documentación, riesgos y métricas de impacto.
+
+FUENTES PRIMARIAS RECOMENDADAS
+- OpenAI developer docs: agentes y orquestación.
+- Microsoft Learn: Power Automate.
+- Ansible official docs.
+- Automation Anywhere docs.
+- GitHub Actions docs.

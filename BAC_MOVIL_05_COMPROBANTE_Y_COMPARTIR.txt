@@ -1,0 +1,29 @@
+QA LEARNING HUB — COMPROBANTE Y COMPARTIR
+
+ESTADO DOCUMENTADO
+BAC indica públicamente que después de una transferencia se muestra confirmación y que el comprobante puede compartirse por correo, WhatsApp u otros medios disponibles.
+
+OPORTUNIDAD DE PRODUCTO
+Reducir pasos posteriores a la transferencia sin enviar información financiera a un tercero sin consentimiento.
+
+Alternativas a experimentar:
+A. Botón principal 'Compartir comprobante'.
+B. Recordar el canal preferido SOLO con consentimiento.
+C. Para destinatarios favoritos, mostrar 'Compartir con [alias]' como acción sugerida, pero requerir confirmación explícita.
+D. En vez de enviar automáticamente una imagen, ofrecer una notificación/confirmación dentro del ecosistema bancario cuando ambas partes sean clientes, sujeto a privacidad y reglas del producto.
+E. Generar comprobante accesible en texto/PDF además de imagen.
+
+POR QUÉ NO RECOMENDAR ENVÍO AUTOMÁTICO SIN CONFIRMACIÓN
+- riesgo de enviar datos al contacto equivocado;
+- privacidad;
+- número de teléfono/canal puede haber cambiado;
+- una transferencia no implica consentimiento para compartir información fuera del banco.
+
+PRUEBAS
+- share sheet abre una sola vez;
+- cancelar compartir no repite transferencia;
+- comprobante no muestra datos innecesarios;
+- accesibilidad del comprobante;
+- contenido correcto: referencia, fecha, monto, destinatario enmascarado;
+- error al generar imagen/PDF tiene fallback;
+- no se guarda el comprobante en almacenamiento público sin consentimiento.

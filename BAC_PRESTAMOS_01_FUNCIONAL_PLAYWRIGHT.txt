@@ -1,0 +1,53 @@
+// QA Learning Hub · Caso educativo BAC Préstamo Personal
+// Tipo: funcional, contenido, navegación y regresión UI.
+// Ejecutar únicamente sobre contenido público y no enviar solicitudes reales.
+// Dependencias: npm i -D @playwright/test
+
+import { test, expect } from '@playwright/test';
+const URL = 'https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test.describe('Préstamo Personal BAC - sitio público', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(URL, { waitUntil: 'domcontentloaded' });
+  });
+
+  test('muestra título, beneficios y CTA', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /préstamo personal/i }).first()).toBeVisible();
+    await expect(page.getByText(/trámite 100% en línea/i)).toBeVisible();
+    await expect(page.getByText(/aprobación rápida/i)).toBeVisible();
+    await expect(page.getByText(/pagos mensuales/i)).toBeVisible();
+    await expect(page.getByRole('link', { name: /solicit/i }).first()).toBeVisible();
+  });
+
+  test('presenta condiciones y requisitos públicos', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /condiciones y requisitos/i })).toBeVisible();
+    await expect(page.getByText(/tarjeta de crédito BAC/i).first()).toBeVisible();
+    await expect(page.getByText(/mayor de 21 años/i)).toBeVisible();
+    await expect(page.getByText(/tasa fija/i).first()).toBeVisible();
+  });
+
+  test('FAQ expone información clave', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /preguntas frecuentes/i })).toBeVisible();
+    for (const q of [/moneda/i,/primera cuota/i,/saldo y las cuotas/i,/pagos anticipados/i,/cancelar mi préstamo/i]) {
+      await expect(page.getByText(q).first()).toBeVisible();
+    }
+  });
+
+  test('CTA de solicitud tiene destino válido sin ejecutar transacción', async ({ page }) => {
+    const cta = page.getByRole('link', { name: /solicit/i }).first();
+    const href = await cta.getAttribute('href');
+    expect(href).toBeTruthy();
+    expect(href).toMatch(/^https?:\/\//);
+    // No se hace click: evita entrar o enviar un flujo transaccional real.
+  });
+
+  test('preferencias de cookies son operables', async ({ page }) => {
+    const config = page.getByRole('button', { name: /configurar cookies/i });
+    if (await config.isVisible().catch(() => false)) {
+      await config.click();
+      await expect(page.getByRole('heading', { name: /preferencias de cookies/i })).toBeVisible();
+      await expect(page.getByRole('button', { name: /guardar/i })).toBeVisible();
+      await expect(page.getByRole('button', { name: /cancelar/i })).toBeVisible();
+    }
+  });
+});

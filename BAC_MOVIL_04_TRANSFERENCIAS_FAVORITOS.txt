@@ -1,0 +1,30 @@
+QA LEARNING HUB — TRANSFERENCIAS Y FAVORITOS
+
+El Centro de Ayuda de BAC documenta que las cuentas favoritas buscan hacer transferencias más rápidas y reducir la digitación repetitiva. También indica que en Banca Móvil se puede seleccionar Transferir o pagar → Transferir dinero y elegir favoritos.
+
+COBERTURA AUTOMATIZABLE EN SANDBOX
+- Cuenta origen con/sin saldo simulado.
+- Lista de favoritos vacía, pequeña y grande.
+- Buscar favorito por alias/nombre.
+- Ordenar recientes/frecuentes (si el producto lo implementa).
+- Favorito eliminado/inactivo.
+- Cuenta BAC / otro banco / SINPE según fixtures.
+- Monto: vacío, cero, límites y decimales válidos.
+- Descripción opcional.
+- Pantalla de revisión.
+- Confirmación una sola vez.
+- Comprobante y retorno al inicio.
+- Historial refleja operación de sandbox.
+
+OPORTUNIDADES DE UX A VALIDAR CON USUARIOS
+1. Barra de búsqueda siempre visible en favoritos.
+2. Sección 'Recientes' y 'Más usados'.
+3. Alias/foto/inicial del destinatario para reconocerlo rápido.
+4. Acceso rápido a 3–5 destinatarios frecuentes desde Transferir.
+5. Si 'Detalle' no es obligatorio, indicarlo claramente como opcional.
+6. Si aporta valor, sugerencias de detalle: Alquiler, Comida, Transporte, Familia, Otro.
+7. Recordar de forma local/segura conceptos recientes sin almacenar información sensible innecesaria.
+8. Confirmación previa con nombre, cuenta enmascarada, monto, comisión y tiempo estimado de acreditación.
+
+NOTA
+BAC ya documenta cuentas favoritas como mecanismo de agilidad. Por ello, cualquier propuesta de 'hacer favoritos más ágiles' debe evaluarse sobre la versión concreta de la app y mediante pruebas de usabilidad, no asumirse como defecto.

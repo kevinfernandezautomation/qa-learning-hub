@@ -1,0 +1,85 @@
+QA LEARNING HUB — EJEMPLO APPIUM + TYPESCRIPT
+SOLO APP DEMO / SANDBOX AUTORIZADO
+
+Objetivo: mostrar cómo automatizar el flujo sin apuntar a la aplicación real de una entidad financiera.
+
+Dependencias sugeridas:
+- Appium 2
+- WebdriverIO + TypeScript
+- driver UiAutomator2 (Android) / XCUITest (iOS)
+
+// pages/LoginPage.ts
+export class LoginPage {
+  get user() { return $('~login-user'); }
+  get password() { return $('~login-password'); }
+  get submit() { return $('~login-submit'); }
+  get help() { return $('~login-help'); }
+  get exchangeRate() { return $('~exchange-rate'); }
+
+  async login(username: string, password: string) {
+    await this.user.setValue(username);
+    await this.password.setValue(password);
+    await this.submit.click();
+  }
+}
+
+// pages/HomePage.ts
+export class HomePage {
+  get accounts() { return $('~home-accounts'); }
+  get transferOrPay() { return $('~nav-transfer-pay'); }
+  get requests() { return $('~nav-requests'); }
+  get more() { return $('~nav-more'); }
+}
+
+// pages/TransferPage.ts
+export class TransferPage {
+  get transferMoney() { return $('~transfer-money'); }
+  get bacAccounts() { return $('~transfer-bac-accounts'); }
+  get favoritesSearch() { return $('~favorites-search'); }
+  get amount() { return $('~transfer-amount'); }
+  get detail() { return $('~transfer-detail'); }
+  get review() { return $('~transfer-review'); }
+  get confirm() { return $('~transfer-confirm'); }
+  get receipt() { return $('~transfer-receipt'); }
+
+  async transferToFavorite(name: string, amount: string, detail = 'Transferencia') {
+    await this.transferMoney.click();
+    await this.bacAccounts.click();
+    await this.favoritesSearch.setValue(name);
+    await $(`~favorite-${name}`).click(); // ID de DEMO, no selector real.
+    await this.amount.setValue(amount);
+    await this.detail.setValue(detail);
+    await this.review.click();
+  }
+}
+
+// test/transfer.e2e.ts
+import { LoginPage } from '../pages/LoginPage';
+import { HomePage } from '../pages/HomePage';
+import { TransferPage } from '../pages/TransferPage';
+
+describe('Banca móvil demo - transferencia', () => {
+  it('prepara una transferencia a favorito sin ejecutar dinero real', async () => {
+    const login = new LoginPage();
+    const home = new HomePage();
+    const transfer = new TransferPage();
+
+    await login.login(process.env.DEMO_USER!, process.env.DEMO_PASSWORD!);
+    await expect(home.accounts).toBeDisplayed();
+    await home.transferOrPay.click();
+    await transfer.transferToFavorite('QA Demo', '1000', 'Prueba automatizada');
+    await expect(transfer.review).toBeDisplayed();
+
+    // En CI el flujo se detiene antes de una operación irreversible.
+    // En un sandbox transaccional autorizado puede usarse un fixture/mocked backend.
+  });
+});
+
+BUENAS PRÁCTICAS
+- accessibility IDs estables en lugar de XPath frágil.
+- Page/Screen Objects.
+- secretos solo en vault/CI secrets.
+- datos sintéticos.
+- mock del backend para errores, timeouts y estados extremos.
+- screenshots/video únicamente con datos enmascarados.
+- test IDs y correlation IDs para trazabilidad.
