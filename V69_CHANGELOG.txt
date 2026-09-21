@@ -1,0 +1,9 @@
+QA Learning Hub v69
+
+- Nueva página competencias-tecnicas-qa.html.
+- Curso progresivo básico/intermedio/avanzado para 22 competencias del formulario técnico.
+- Incluye C#, Java, Python, NUnit, xUnit, JUnit, Selenium, T-SQL, SQL Server Profiler, Postman, SoapUI, JMeter, ISTQB Foundation, Scrum, Azure DevOps/Test Plans, Jira, MantisBT, TestLink, XPath, Cypress, Cucumber y SonarQube.
+- Cada competencia incluye teoría, práctica, ejemplo, criterio de dominio y documentación.
+- Buscador, filtro por nivel e índice de navegación.
+- Capstone QA end-to-end.
+- Acceso agregado desde Academia.

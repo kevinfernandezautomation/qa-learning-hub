@@ -1,0 +1,9 @@
+QA Learning Hub v68
+
+- Nuevo curso Automatización de TI & Agentes de IA con 16 módulos investigados y prácticas.
+- Botón Curso agregado al path Automatización de TI & Agentes de IA.
+- Nuevo curso QA para Banca Digital & FinTech con 12 módulos y prácticas seguras.
+- Botón Curso agregado al path de banca.
+- Botón Analizar una vacante retirado de Senior Quality Engineering & QA Lead.
+- Analizador de vacantes movido a Empleo como funcionalidad transversal.
+- Sitemap actualizado.

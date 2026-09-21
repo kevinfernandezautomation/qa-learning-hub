@@ -1,0 +1,13 @@
+QA Learning Hub v67
+
+- Nueva especialización QA Rendimiento & Automatización.
+- Cobertura de JMeter, carga, estrés, spike y capacidad.
+- Métricas throughput, response time, latency, error rate, concurrencia, P90/P95/P99.
+- Observabilidad: CloudWatch, Dynatrace, New Relic, Grafana, Prometheus, Azure Monitor (conceptual/lab según disponibilidad).
+- Microservicios, Kubernetes, gateways, balanceadores, SQL/NoSQL, cachés.
+- AWS/Azure.
+- Automatización Web/Mobile/API, BDD y gestión de datos.
+- Alternativas k6/Gatling/LoadRunner/BlazeMeter/NeoLoad.
+- IA asistida con controles de privacidad.
+- Capstone y evaluación.
+- Carga/estrés solo en sandbox o ambientes autorizados.

@@ -1,0 +1,7 @@
+QA Learning Hub v66
+
+- Añadido laboratorio educativo de automatización móvil bancaria en banca-qa.html.
+- 8 guías TXT: flujo/casos, Appium TypeScript, biometría/token, transferencias/favoritos, comprobante, resiliencia de imágenes, tiempo/impacto y CI/CD.
+- El código usa selectores de una app DEMO y no identificadores de BAC producción.
+- Modelo de ahorro de tiempo claramente marcado como hipótesis para validar mediante usability testing/A-B testing.
+- Referencia de mercado: BAC Costa Rica reportado con >1.7M clientes; BAC reportó 68.5% de clientela digital en 2025.

@@ -1,0 +1,7 @@
+QA Learning Hub v63
+- Nuevo Learning Path: QA para Banca Digital & FinTech.
+- Nueva página banca-qa.html con 15 áreas/módulos de aprendizaje y capstone.
+- Nueva entrada Banca digital en QA por industria.
+- Nuevo catálogo PRUEBAS_AUTOMATIZADAS_BANCA_BAC.txt con cobertura Web, autenticación, cuentas, transferencias, tarjetas, préstamos, pagos, API, datos, performance, accesibilidad, compatibilidad, CI/CD y oportunidades de mejora observadas únicamente en contenido público.
+- El caso BAC se limita a investigación pública; pruebas transaccionales/performance deben ejecutarse solo en ambientes autorizados.
+- La requisición 28898 de Talento360 es una aplicación dinámica cuyo texto no fue recuperable de forma verificable durante esta revisión; no se inventaron requisitos del puesto. El contenido bancario se integró a partir de funcionalidades oficiales públicas de BAC y competencias de Quality Engineering relevantes al dominio.

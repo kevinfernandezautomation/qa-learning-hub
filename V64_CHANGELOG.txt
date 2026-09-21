@@ -1,0 +1,7 @@
+QA Learning Hub v64
+- Analizada e integrada la vacante BAC Share Services req28898 suministrada por el usuario.
+- Nuevo Learning Path: Automatización de TI & Agentes de IA.
+- Nueva página: it-automation-agentic-ai.html.
+- Nueva matriz: BAC_REQ28898_GAP_ANALYSIS.txt.
+- Cobertura añadida: Python/JS/PowerShell, APIs, mensajería, SQL/NoSQL, Ansible, Power Automate, Automation Anywhere, RPA, low-code/no-code, GenAI, prompt engineering, agentes, orquestación, Git, CI/CD, testing, secure development, cloud, arquitectura, liderazgo, Design Thinking y métricas de impacto.
+- Capstone de agente de TI en sandbox con tools, guardrails, trazas, Human-in-the-Loop, pruebas y CI/CD.

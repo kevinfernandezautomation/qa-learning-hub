@@ -1,0 +1,9 @@
+QA Learning Hub v65
+
+- Ampliado Learning Path QA para Banca Digital & FinTech.
+- Integrado laboratorio educativo basado en la página pública BAC Préstamo Personal.
+- 8 archivos TXT por tipo de prueba, con ejemplos TypeScript/Playwright y mapeos.
+- ISO/IEC 25010:2023: nueve características del modelo de calidad.
+- Mapeo transversal a certificaciones ISTQB pertinentes, incluyendo automatización, performance, usability, security, acceptance, mobile, AI/GenAI, finance, agile y model-based testing.
+- Pruebas públicas limitadas a navegación/contenido no destructivo. Carga, seguridad activa, transacciones y APIs privadas quedan explícitamente restringidas a ambientes autorizados.
+- Añadidas oportunidades de mejora de contenido público como observaciones para revisión, no defectos confirmados.
