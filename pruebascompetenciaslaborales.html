@@ -1,120 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Preparación Psicométrica | QA & Tecnología</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <meta
     name="description"
-    content="Simulador educativo para preparación en pruebas psicométricas, competencias y personalidad laboral."
+    content="Preparación educativa psicométrica, competencias y escenarios QA para banca digital."
   >
 
-  <style>
-    /* =====================================================
-       ESTILOS GENERALES
-       ===================================================== */
+  <title>Preparación Psicométrica · QA Banca & FinTech</title>
 
+  <style>
     * {
       box-sizing: border-box;
     }
 
     :root {
-      --primary: #1769e0;
-      --primary-dark: #0b3d91;
-      --text: #172b4d;
-      --title: #102a43;
-      --muted: #5b6b7f;
-      --border: #dce5f0;
-      --background: #ffffff;
+      --p: #1559c9;
+      --pd: #0d3475;
+      --ink: #12233f;
+      --muted: #607086;
+      --line: #d9e3ef;
       --soft: #f4f8fc;
-      --success: #18794e;
-      --danger: #b42318;
-      --warning: #8a5a00;
+      --ok: #18794e;
+      --bad: #b42318;
     }
 
     body {
       margin: 0;
       font-family: Arial, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--background);
+      color: var(--ink);
       line-height: 1.55;
+      background: #fff;
     }
 
-    .container {
-      width: min(1100px, calc(100% - 32px));
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
       margin: auto;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
-
     .hero {
-      padding: 50px 0 35px;
-      background: linear-gradient(
-        180deg,
-        #eef5ff 0%,
-        #ffffff 100%
-      );
-      border-bottom: 1px solid var(--border);
-    }
-
-    .eyebrow,
-    .tag,
-    .category {
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      padding: 48px 0 34px;
+      background: linear-gradient(180deg, #edf5ff, #fff);
+      border-bottom: 1px solid var(--line);
     }
 
     h1 {
-      margin: 8px 0 16px;
-      color: var(--title);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.1;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.08;
+      margin: .4rem 0 1rem;
+      color: var(--pd);
     }
 
     h2,
     h3 {
-      color: var(--title);
+      color: var(--pd);
     }
 
-    .notice {
-      margin-top: 20px;
-      padding: 18px;
-      background: #ffffff;
-      border-left: 4px solid var(--primary);
+    .eyebrow,
+    .tag,
+    .cat {
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--p);
+    }
+
+    .notice,
+    .guide {
+      padding: 17px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(20, 50, 90, 0.08);
+      background: var(--soft);
+      border-left: 4px solid var(--p);
+      margin: 20px 0;
     }
-
-    /* =====================================================
-       TARJETAS
-       ===================================================== */
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin: 28px 0;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .card,
+    .qcard,
+    .score,
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(15, 50, 90, .06);
     }
 
     .card {
       display: flex;
       flex-direction: column;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #ffffff;
-      box-shadow: 0 5px 20px rgba(20, 50, 90, 0.06);
     }
 
     .card p {
@@ -122,149 +105,105 @@
     }
 
     button {
-      padding: 12px 17px;
       border: 0;
       border-radius: 10px;
-      background: var(--primary);
-      color: #ffffff;
+      padding: 12px 16px;
+      background: var(--p);
+      color: #fff;
       font-weight: 800;
       cursor: pointer;
     }
 
-    button:hover {
-      filter: brightness(0.94);
-    }
-
     button:disabled {
-      opacity: 0.45;
+      opacity: .45;
       cursor: not-allowed;
     }
 
     .secondary {
       background: #e9eff7;
-      color: var(--title);
+      color: var(--ink);
     }
 
-    /* =====================================================
-       GUÍA
-       ===================================================== */
-
-    .guide {
-      margin: 25px 0;
-      padding: 20px;
-      background: var(--soft);
-      border: 1px solid var(--border);
-      border-radius: 15px;
+    .hidden {
+      display: none !important;
     }
 
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .guide-item {
-      padding: 15px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    /* =====================================================
-       EXAMEN
-       ===================================================== */
-
-    .exam-header {
+    .examhead {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 32px;
+      margin-top: 30px;
     }
 
     .timer {
-      min-width: 120px;
-      padding: 9px 15px;
-      text-align: center;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 12px;
+      padding: 8px 14px;
+      text-align: center;
     }
 
     .timer span {
       display: block;
+      font-size: .75rem;
       color: var(--muted);
-      font-size: 0.75rem;
     }
 
     .timer strong {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
 
     .progress {
       height: 9px;
-      overflow: hidden;
       background: #e7edf5;
-      border-radius: 100px;
+      border-radius: 99px;
+      overflow: hidden;
     }
 
     .progress div {
-      width: 0;
       height: 100%;
-      background: var(--primary);
-      transition: width 0.25s ease;
+      background: var(--p);
+      width: 0;
+      transition: .2s;
     }
 
     .muted {
       color: var(--muted);
     }
 
-    .question-card {
-      margin-top: 18px;
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #ffffff;
-      box-shadow: 0 5px 20px rgba(20, 50, 90, 0.06);
-    }
-
     .options {
       display: grid;
-      gap: 11px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .option {
       width: 100%;
       text-align: left;
-      background: #ffffff;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .option:hover {
-      background: #f5f9ff;
-      border-color: var(--primary);
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
     }
 
     .option.selected {
       background: #edf5ff;
-      border-color: var(--primary);
+      border-color: var(--p);
     }
 
     .option.correct {
       background: #ecf9f1;
-      border-color: var(--success);
+      border-color: var(--ok);
     }
 
-    .option.incorrect {
+    .option.wrong {
       background: #fff0f0;
-      border-color: var(--danger);
+      border-color: var(--bad);
     }
 
-    .explanation {
-      margin-top: 17px;
-      padding: 15px;
+    .explain {
+      margin-top: 15px;
+      padding: 14px;
       background: #eef5ff;
-      border-left: 4px solid var(--primary);
+      border-left: 4px solid var(--p);
       border-radius: 10px;
     }
 
@@ -272,60 +211,35 @@
       display: flex;
       justify-content: space-between;
       gap: 12px;
-      margin: 20px 0 32px;
+      margin: 18px 0 30px;
     }
 
-    /* =====================================================
-       RESULTADOS
-       ===================================================== */
-
-    .score {
-      margin: 18px 0;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: #ffffff;
-      font-size: 1.25rem;
-    }
-
-    .results-grid {
+    .results {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-
-    .result-card {
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      background: #ffffff;
-    }
-
-    /* =====================================================
-       HISTORIAL
-       ===================================================== */
 
     .history {
-      margin-top: 40px;
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
+      margin-top: 35px;
+      padding: 25px 0;
     }
 
     footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
 
     @media (max-width: 760px) {
       .cards,
-      .guide-grid,
-      .results-grid {
+      .results {
         grid-template-columns: 1fr;
       }
 
-      .exam-header {
+      .examhead {
         align-items: flex-start;
       }
     }
@@ -335,112 +249,103 @@
 <body>
 
 <header class="hero">
-  <div class="container">
+  <div class="wrap">
 
     <div class="eyebrow">
-      Preparación para procesos de selección
+      Preparación laboral · Banca, FinTech, QA y Tecnología
     </div>
 
     <h1>
-      Pruebas psicométricas, competencias y personalidad
+      Preparación psicométrica y escenarios QA para banca
     </h1>
 
     <p>
-      Practique razonamiento numérico, lógico, verbal,
-      atención y análisis mediante ejercicios educativos.
-      También puede practicar competencias y familiarizarse
-      con el formato de preguntas de personalidad laboral.
+      Practique aptitud cognitiva, competencias, personalidad
+      y razonamiento aplicado a sistemas bancarios.
     </p>
 
     <div class="notice">
-      <strong>Importante:</strong>
-      esta aplicación tiene fines educativos.
-      No reproduce la evaluación utilizada por BAC ni por
-      ningún otro empleador. Tampoco constituye una prueba
-      psicológica o psicométrica validada.
+      <strong>Uso educativo:</strong>
+      esta aplicación no reproduce pruebas de BAC ni de otra
+      entidad financiera, no constituye un instrumento
+      psicométrico validado y no predice resultados de contratación.
+      Los escenarios bancarios utilizados son ficticios.
     </div>
 
   </div>
 </header>
 
-
-<main class="container">
-
-  <!-- ===================================================
-       INICIO
-       =================================================== -->
+<main class="wrap">
 
   <section id="home">
 
-    <h2>Seleccione cómo desea prepararse</h2>
+    <h2>Modalidades de preparación</h2>
 
     <div class="cards">
 
       <article class="card">
 
-        <span class="tag">
-          Modo aprendizaje
-        </span>
+        <span class="tag">Aprender</span>
 
-        <h3>
-          Práctica psicométrica
-        </h3>
+        <h3>Práctica psicométrica</h3>
 
         <p>
-          Practique razonamiento numérico, lógico,
-          verbal, atención y análisis.
-          Después de responder podrá consultar
-          una explicación.
+          Preguntas con explicación inmediata sobre razonamiento
+          numérico, lógico, verbal, atención y análisis.
         </p>
 
-        <button onclick="startExam('practice')">
+        <button onclick="start('practice')">
           Iniciar práctica
         </button>
 
       </article>
 
-
       <article class="card">
 
-        <span class="tag">
-          Con cronómetro
-        </span>
+        <span class="tag">Cronómetro</span>
 
-        <h3>
-          Simulación psicométrica
-        </h3>
+        <h3>Simulación psicométrica</h3>
 
         <p>
-          Realice 20 preguntas aleatorias en
-          un máximo de 15 minutos.
-          Las soluciones se muestran al finalizar.
+          30 preguntas seleccionadas aleatoriamente con un límite
+          de 20 minutos y resultado por dimensión.
         </p>
 
-        <button onclick="startExam('timed')">
+        <button onclick="start('timed')">
           Iniciar simulación
         </button>
 
       </article>
 
+      <article class="card">
+
+        <span class="tag">Banca & FinTech</span>
+
+        <h3>Simulación QA para banca</h3>
+
+        <p>
+          Escenarios sobre transacciones, APIs, rendimiento,
+          SQL, seguridad, incidentes, trazabilidad y riesgo.
+        </p>
+
+        <button onclick="start('bank')">
+          Practicar QA banca
+        </button>
+
+      </article>
 
       <article class="card">
 
-        <span class="tag">
-          Sin cronómetro
-        </span>
+        <span class="tag">Sin cronómetro</span>
 
-        <h3>
-          Competencias & Personalidad
-        </h3>
+        <h3>Competencias & Personalidad</h3>
 
         <p>
-          Practique situaciones laborales y
-          familiarícese con preguntas de autopercepción.
-          Responda naturalmente y sin buscar una
-          personalidad supuestamente ideal.
+          Situaciones laborales y preguntas de autopercepción
+          orientadas a analizar tendencias de comportamiento.
         </p>
 
-        <button onclick="startExam('personality')">
+        <button onclick="start('personality')">
           Iniciar sección
         </button>
 
@@ -448,108 +353,62 @@
 
     </div>
 
+    <div class="guide">
 
-    <section class="guide">
+      <strong>Diseño del banco:</strong>
 
-      <h2>¿Cómo prepararse?</h2>
+      las simulaciones seleccionan preguntas aleatoriamente y
+      priorizan reactivos que no se hayan mostrado recientemente.
 
-      <div class="guide-grid">
+      Los escenarios bancarios evalúan razonamiento aplicado y
+      no conocimiento interno de una entidad financiera.
 
-        <div class="guide-item">
-          <strong>1. Lea las instrucciones</strong>
-          <p>
-            Antes de iniciar una evaluación real,
-            confirme duración, navegación, cantidad
-            de preguntas y reglas.
-          </p>
-        </div>
-
-        <div class="guide-item">
-          <strong>2. Practique el formato</strong>
-          <p>
-            Familiarícese con series, porcentajes,
-            inferencias, analogías y ejercicios
-            de atención.
-          </p>
-        </div>
-
-        <div class="guide-item">
-          <strong>3. Administre el tiempo</strong>
-          <p>
-            Mantenga un ritmo constante.
-            Evite consumir demasiado tiempo en
-            una sola pregunta.
-          </p>
-        </div>
-
-        <div class="guide-item">
-          <strong>4. Sea natural</strong>
-          <p>
-            En personalidad, responda de acuerdo
-            con su comportamiento habitual.
-            No intente construir artificialmente
-            un perfil.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
+    </div>
 
   </section>
 
 
-  <!-- ===================================================
-       SIMULADOR
-       =================================================== -->
-
   <section id="exam" class="hidden">
 
-    <div class="exam-header">
+    <div class="examhead">
 
       <div>
-        <span id="modeBadge" class="tag"></span>
-        <h2 id="examTitle">
-          Simulación
-        </h2>
+        <span id="badge" class="tag"></span>
+        <h2 id="title"></h2>
       </div>
 
       <div id="timerBox" class="timer hidden">
+
         <span>Tiempo restante</span>
-        <strong id="timer">15:00</strong>
+
+        <strong id="timer">
+          20:00
+        </strong>
+
       </div>
 
     </div>
-
 
     <div class="progress">
-      <div id="progressBar"></div>
+      <div id="bar"></div>
     </div>
 
-    <p id="progressText" class="muted"></p>
+    <p id="prog" class="muted"></p>
 
+    <article class="qcard">
 
-    <article class="question-card">
+      <span id="cat" class="cat"></span>
 
-      <span
-        id="questionCategory"
-        class="category">
-      </span>
+      <h3 id="qtext"></h3>
 
-      <h3 id="questionText"></h3>
+      <div id="opts" class="options"></div>
 
       <div
-        id="options"
-        class="options">
-      </div>
-
-      <div
-        id="explanation"
-        class="explanation hidden">
+        id="explain"
+        class="explain hidden">
       </div>
 
     </article>
-
 
     <div class="actions">
 
@@ -560,9 +419,9 @@
       </button>
 
       <button
-        id="nextButton"
+        id="next"
         disabled
-        onclick="nextQuestion()">
+        onclick="nextQ()">
         Siguiente
       </button>
 
@@ -571,42 +430,26 @@
   </section>
 
 
-  <!-- ===================================================
-       RESULTADOS
-       =================================================== -->
-
   <section id="result" class="hidden">
 
-    <h2>
-      Resultado de preparación
-    </h2>
+    <h2>Resultado</h2>
 
-    <div
-      id="score"
-      class="score">
-    </div>
+    <div id="score" class="score"></div>
 
-    <div
-      id="dimensionResults"
-      class="results-grid">
-    </div>
+    <div id="dims" class="results"></div>
 
-    <div
-      id="resultAdvice"
-      class="guide">
-    </div>
-
+    <div id="advice" class="guide"></div>
 
     <div class="actions">
 
       <button
         class="secondary"
-        onclick="goHome()">
-        Volver al inicio
+        onclick="home()">
+        Volver
       </button>
 
-      <button onclick="startExam(currentMode)">
-        Practicar nuevamente
+      <button onclick="start(mode)">
+        Nuevo intento
       </button>
 
     </div>
@@ -614,26 +457,19 @@
   </section>
 
 
-  <!-- ===================================================
-       HISTORIAL
-       =================================================== -->
-
   <section class="history">
 
-    <h2>
-      Historial de práctica
-    </h2>
+    <h2>Historial local</h2>
 
     <p class="muted">
-      La información se almacena únicamente
-      en este navegador.
+      Los resultados se almacenan únicamente en este navegador.
     </p>
 
     <div id="history"></div>
 
     <button
       class="secondary"
-      onclick="clearHistory()">
+      onclick="clearHist()">
       Borrar historial
     </button>
 
@@ -641,812 +477,1000 @@
 
 </main>
 
-
 <footer>
 
-  <div class="container">
-
-    Herramienta educativa para preparación laboral.
-    No sustituye una evaluación psicométrica profesional.
-
+  <div class="wrap">
+    Preparación educativa · Banca & FinTech · QA & Tecnología
   </div>
 
 </footer>
-
-
 <script>
 
+const Q = [];
+
+function add(
+  categoria,
+  pregunta,
+  opciones,
+  correcta,
+  explicacion,
+  nivel = "Intermedio"
+) {
+
+  Q.push({
+    id: "P" + (Q.length + 1),
+    c: categoria,
+    q: pregunta,
+    o: opciones,
+    a: correcta,
+    e: explicacion,
+    l: nivel
+  });
+
+}
+
+
 /* =========================================================
-   BANCO DE PREGUNTAS PSICOMÉTRICAS
+   RAZONAMIENTO NUMÉRICO
    ========================================================= */
 
-const psychometricQuestions = [
+add(
+  "Numérico",
+  "Una API procesa 1.200 solicitudes en 4 minutos. ¿Cuál es el promedio por segundo?",
+  [
+    "3 solicitudes/s",
+    "5 solicitudes/s",
+    "8 solicitudes/s",
+    "12 solicitudes/s"
+  ],
+  1,
+  "Cuatro minutos equivalen a 240 segundos. 1.200 / 240 = 5 solicitudes por segundo."
+);
 
-  {
-    category: "Razonamiento numérico",
 
-    question:
-      "Una suite ejecuta 240 casos en 30 minutos. " +
-      "Manteniendo el mismo ritmo, ¿cuántos ejecutaría " +
-      "en 45 minutos?",
+add(
+  "Numérico",
+  "De 2.000 transacciones, 30 fallan. ¿Cuál es la tasa de error?",
+  [
+    "0,15%",
+    "1,5%",
+    "15%",
+    "0,015%"
+  ],
+  1,
+  "30 / 2.000 × 100 = 1,5%."
+);
 
-    options: [
-      "300",
-      "320",
-      "360",
-      "400"
+
+add(
+  "Numérico",
+  "Un proceso disminuye de 80 a 60 minutos. ¿Cuál fue la reducción porcentual?",
+  [
+    "20%",
+    "25%",
+    "30%",
+    "33%"
+  ],
+  1,
+  "La reducción fue de 20 minutos. 20 / 80 × 100 = 25%."
+);
+
+
+add(
+  "Numérico",
+  "475 de 500 ejecuciones fueron exitosas. ¿Cuál fue la tasa de éxito?",
+  [
+    "90%",
+    "92%",
+    "95%",
+    "97,5%"
+  ],
+  2,
+  "475 / 500 × 100 = 95%."
+);
+
+
+add(
+  "Numérico",
+  "Tres tiempos de respuesta fueron 120 ms, 150 ms y 180 ms. ¿Cuál es el promedio?",
+  [
+    "140 ms",
+    "150 ms",
+    "160 ms",
+    "170 ms"
+  ],
+  1,
+  "(120 + 150 + 180) / 3 = 150 ms."
+);
+
+
+add(
+  "Numérico",
+  "Una operación aumenta de 200 ms a 260 ms. ¿Cuál fue el aumento porcentual?",
+  [
+    "20%",
+    "25%",
+    "30%",
+    "60%"
+  ],
+  2,
+  "El incremento fue de 60 ms. 60 / 200 × 100 = 30%."
+);
+
+
+add(
+  "Numérico",
+  "Una suite de 360 casos tarda 45 minutos. ¿Cuántos casos se ejecutan en promedio por minuto?",
+  [
+    "6",
+    "8",
+    "10",
+    "12"
+  ],
+  1,
+  "360 / 45 = 8 casos por minuto."
+);
+
+
+/* =========================================================
+   RAZONAMIENTO LÓGICO
+   ========================================================= */
+
+add(
+  "Lógico",
+  "Complete la serie: 3, 6, 12, 24, __",
+  [
+    "30",
+    "36",
+    "42",
+    "48"
+  ],
+  3,
+  "Cada término se multiplica por dos."
+);
+
+
+add(
+  "Lógico",
+  "Complete la serie: 2, 5, 11, 23, __",
+  [
+    "35",
+    "41",
+    "47",
+    "49"
+  ],
+  2,
+  "Cada término se obtiene multiplicando el anterior por dos y sumando uno."
+);
+
+
+add(
+  "Lógico",
+  "A ocurre antes de B y B ocurre antes de C. ¿Cuál secuencia cumple ambas condiciones?",
+  [
+    "C - B - A",
+    "B - A - C",
+    "A - C - B",
+    "A - B - C"
+  ],
+  3,
+  "A-B-C es la única secuencia que respeta las dos condiciones."
+);
+
+
+add(
+  "Lógico",
+  "Todos los casos críticos requieren evidencia. El caso X es crítico. ¿Qué se puede concluir?",
+  [
+    "X no requiere evidencia",
+    "X requiere evidencia",
+    "X está aprobado",
+    "No puede deducirse nada"
+  ],
+  1,
+  "La conclusión se deriva directamente de las premisas."
+);
+
+
+/* =========================================================
+   RAZONAMIENTO VERBAL
+   ========================================================= */
+
+add(
+  "Verbal",
+  "La palabra 'congruente' se aproxima más a:",
+  [
+    "Coherente",
+    "Rápido",
+    "Extenso",
+    "Ambiguo"
+  ],
+  0,
+  "Congruente hace referencia a algo coherente o consistente."
+);
+
+
+add(
+  "Verbal",
+  "Un informe observa correlación entre uso de CPU y latencia, pero no demuestra causalidad. ¿Cuál conclusión es más adecuada?",
+  [
+    "La CPU causó la latencia",
+    "Existe asociación, pero no se ha demostrado causalidad",
+    "La latencia causó el aumento de CPU",
+    "No ocurrió ningún cambio"
+  ],
+  1,
+  "La correlación por sí sola no demuestra causalidad."
+);
+
+
+add(
+  "Verbal",
+  "¿Cuál palabra representa mejor lo opuesto de 'ambiguo'?",
+  [
+    "Impreciso",
+    "Claro",
+    "Dudoso",
+    "Variable"
+  ],
+  1,
+  "Claro es el antónimo más cercano."
+);
+
+
+/* =========================================================
+   ATENCIÓN Y PRECISIÓN
+   ========================================================= */
+
+add(
+  "Atención",
+  "¿Cuál elemento es diferente?",
+  [
+    "P95-API-204",
+    "P95-API-204",
+    "P95-API-240",
+    "P95-API-204"
+  ],
+  2,
+  "El tercer elemento termina en 240 en lugar de 204."
+);
+
+
+add(
+  "Atención",
+  "Seleccione el código idéntico a QA-7B9-K6-P95.",
+  [
+    "QA-7B9-K6-P95",
+    "QA-7B9-KG-P95",
+    "QA-7B9-K6-P59",
+    "QA-7B8-K6-P95"
+  ],
+  0,
+  "La primera opción coincide carácter por carácter."
+);
+
+
+/* =========================================================
+   ANÁLISIS
+   ========================================================= */
+
+add(
+  "Análisis",
+  "En una prueba de rendimiento se obtiene P95 = 1,8 segundos. ¿Cuál interpretación es la más apropiada?",
+  [
+    "El 95% de las solicitudes tardó exactamente 1,8 segundos",
+    "Aproximadamente el 95% terminó en 1,8 segundos o menos",
+    "El promedio fue exactamente 1,8 segundos",
+    "Solo el 5% de las solicitudes fue exitoso"
+  ],
+  1,
+  "P95 representa el valor por debajo o igual al cual se encuentra aproximadamente el 95% de las observaciones."
+);
+
+
+add(
+  "Análisis",
+  "Los valores observados son 10, 12, 11, 40 y 12. ¿Cuál parece ser un valor atípico?",
+  [
+    "10",
+    "11",
+    "12",
+    "40"
+  ],
+  3,
+  "40 se encuentra considerablemente alejado del resto de los valores."
+);
+
+
+add(
+  "Análisis",
+  "El promedio de latencia permanece estable, pero P99 empeora considerablemente. ¿Qué debería revisarse?",
+  [
+    "Solamente la media",
+    "La cola de solicitudes con mayor latencia",
+    "El diseño del logotipo",
+    "La cantidad de requisitos"
+  ],
+  1,
+  "P99 permite observar el comportamiento de las solicitudes más lentas."
+);
+const BANK = [];
+
+function bank(
+  categoria,
+  pregunta,
+  opciones,
+  correcta,
+  explicacion
+) {
+
+  BANK.push({
+    id: "B" + (BANK.length + 1),
+    c: categoria,
+    q: pregunta,
+    o: opciones,
+    a: correcta,
+    e: explicacion,
+    l: "Aplicado"
+  });
+
+}
+
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+bank(
+  "Rendimiento",
+  "Una API de transferencias mantiene una tasa de error de 0,2%, pero P95 aumenta de 800 ms a 2,4 segundos. ¿Cuál sería un siguiente paso razonable?",
+  [
+    "Concluir inmediatamente que la base de datos es responsable",
+    "Correlacionar la latencia con CPU, memoria, base de datos, red y dependencias",
+    "Aumentar el timeout sin investigar",
+    "Ignorar el resultado porque la tasa de error es baja"
+  ],
+  1,
+  "La degradación debe correlacionarse con métricas y evidencia antes de atribuir una causa."
+);
+
+
+bank(
+  "Rendimiento",
+  "P99 es considerablemente alto mientras el promedio continúa normal. ¿Qué puede indicar?",
+  [
+    "Todas las operaciones son lentas",
+    "Existe una proporción pequeña de solicitudes con latencias muy altas",
+    "No existe latencia",
+    "Existe necesariamente un problema visual"
+  ],
+  1,
+  "Los percentiles altos permiten identificar problemas en la cola de la distribución."
+);
+
+
+/* =========================================================
+   TRANSACCIONES
+   ========================================================= */
+
+bank(
+  "Transacciones",
+  "Después de un timeout, un cliente reintenta una transferencia. ¿Qué propiedad puede ayudar a evitar que la operación se ejecute dos veces?",
+  [
+    "Compresión",
+    "Idempotencia",
+    "CSS",
+    "Paginación"
+  ],
+  1,
+  "La idempotencia permite que un reintento no produzca nuevamente el mismo efecto financiero."
+);
+
+
+bank(
+  "Pagos",
+  "Una tarjeta fue cobrada, pero la interfaz muestra un mensaje de error. ¿Cuál es un riesgo importante?",
+  [
+    "El usuario puede reintentar y provocar un posible cobro duplicado",
+    "El color de la aplicación puede cambiar",
+    "Puede afectar el SEO",
+    "Puede cambiar la resolución de pantalla"
+  ],
+  0,
+  "La incertidumbre sobre el estado final puede inducir al usuario a repetir una operación ya procesada."
+);
+
+
+/* =========================================================
+   APIs
+   ========================================================= */
+
+bank(
+  "API",
+  "POST /transfer devuelve HTTP 200, pero el saldo de la cuenta no cambia. ¿Qué debería validarse?",
+  [
+    "Únicamente el código HTTP",
+    "Respuesta, persistencia, saldos, registros transaccionales y trazabilidad",
+    "Solamente el diseño visual",
+    "Únicamente DNS"
+  ],
+  1,
+  "Un código HTTP exitoso no demuestra por sí mismo la integridad de una operación financiera."
+);
+
+
+bank(
+  "API",
+  "Una operación asíncrona responde HTTP 202. ¿Qué significa normalmente?",
+  [
+    "El procesamiento terminó exitosamente",
+    "La solicitud fue aceptada para procesamiento",
+    "La autenticación falló",
+    "El recurso no existe"
+  ],
+  1,
+  "HTTP 202 Accepted indica aceptación, pero no garantiza que el procesamiento haya finalizado."
+);
+
+
+/* =========================================================
+   SQL Y DATOS
+   ========================================================= */
+
+bank(
+  "SQL",
+  "¿Qué estrategia SQL resulta apropiada para identificar transaction_id duplicados?",
+  [
+    "GROUP BY junto con HAVING COUNT(*) > 1",
+    "DROP TABLE",
+    "ORDER BY únicamente",
+    "UPDATE"
+  ],
+  0,
+  "Agrupar por el identificador y filtrar los conteos superiores a uno permite localizar duplicados."
+);
+
+
+bank(
+  "Datos",
+  "Una transferencia CRC a USD aplica un tipo de cambio. ¿Qué condición merece especial atención?",
+  [
+    "Únicamente montos iguales a uno",
+    "Precisión, reglas de redondeo y valores límite",
+    "El color del formulario",
+    "Solamente el idioma"
+  ],
+  1,
+  "Los cálculos monetarios requieren reglas precisas de representación y redondeo."
+);
+
+
+/* =========================================================
+   SEGURIDAD
+   ========================================================= */
+
+bank(
+  "Seguridad",
+  "Durante una revisión se descubre que los logs contienen números completos de tarjetas. ¿Qué representa?",
+  [
+    "Una mejora de experiencia de usuario",
+    "Un riesgo de exposición de información sensible",
+    "Una optimización de rendimiento",
+    "Una estrategia de caché"
+  ],
+  1,
+  "Los registros deberían minimizar o enmascarar información sensible."
+);
+
+
+bank(
+  "Seguridad",
+  "Una prueba necesita información representativa, pero no requiere datos reales de clientes. ¿Qué enfoque es preferible?",
+  [
+    "Copiar producción completa",
+    "Utilizar datos sintéticos o adecuadamente enmascarados",
+    "Compartir datos por mensajería",
+    "Guardar credenciales junto con los scripts"
+  ],
+  1,
+  "La minimización y el enmascaramiento reducen la exposición innecesaria de datos."
+);
+
+
+/* =========================================================
+   TRAZABILIDAD
+   ========================================================= */
+
+bank(
+  "Trazabilidad",
+  "Para investigar una transferencia que atraviesa varios microservicios resulta especialmente útil:",
+  [
+    "Un correlation ID o trace ID",
+    "El color del botón",
+    "La resolución de pantalla",
+    "El nombre del navegador"
+  ],
+  0,
+  "Los identificadores de correlación permiten conectar eventos de una misma operación a través de diferentes servicios."
+);
+
+
+bank(
+  "Auditoría",
+  "¿Qué información favorece la trazabilidad de una operación?",
+  [
+    "Timestamp, actor, operación, identificador de correlación y resultado",
+    "Únicamente el nombre del usuario",
+    "Solamente una captura de pantalla",
+    "Únicamente la dirección IP"
+  ],
+  0,
+  "La auditoría necesita suficiente contexto para reconstruir el flujo sin registrar información sensible innecesaria."
+);
+
+
+/* =========================================================
+   RESILIENCIA
+   ========================================================= */
+
+bank(
+  "Resiliencia",
+  "Un servicio externo indispensable deja de responder. ¿Qué escenario de prueba aporta mayor valor?",
+  [
+    "Validar degradación controlada, manejo de errores y recuperación",
+    "Cambiar el logotipo",
+    "Eliminar los logs",
+    "Probar únicamente el happy path"
+  ],
+  0,
+  "La resiliencia analiza cómo se comporta y recupera el sistema ante fallas de dependencias."
+);
+
+
+/* =========================================================
+   MOBILE BANKING
+   ========================================================= */
+
+bank(
+  "Móvil",
+  "Una transferencia desde la aplicación móvil pierde conectividad inmediatamente después de la confirmación. ¿Qué debería verificarse?",
+  [
+    "Recuperación, estado final de la operación y ausencia de duplicidad",
+    "Solamente la pantalla de inicio",
+    "Solamente la tipografía",
+    "No es necesario probarlo"
+  ],
+  0,
+  "La aplicación debe permitir conocer el resultado real de la operación sin provocar duplicaciones."
+);
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+bank(
+  "Accesibilidad",
+  "Un formulario bancario crítico debería:",
+  [
+    "Depender únicamente del color para comunicar errores",
+    "Contar con etiquetas, navegación por teclado, foco visible y mensajes comprensibles",
+    "Bloquear el zoom",
+    "Usar placeholders como única identificación de campos"
+  ],
+  1,
+  "La accesibilidad requiere que la información y operación no dependan de una única modalidad visual."
+);
+const P = [
+
+  [
+    "Atención al detalle",
+    "Antes de cerrar una tarea importante reviso evidencias y detalles.",
+    false
+  ],
+
+  [
+    "Atención al detalle",
+    "Cuando algo parece sencillo considero innecesario revisarlo.",
+    true
+  ],
+
+  [
+    "Pensamiento analítico",
+    "Ante un problema complejo prefiero separar hechos, hipótesis y evidencia antes de concluir.",
+    false
+  ],
+
+  [
+    "Pensamiento analítico",
+    "Prefiero llegar rápidamente a una conclusión aunque todavía falten datos relevantes.",
+    true
+  ],
+
+  [
+    "Responsabilidad",
+    "Si cometo un error, procuro reconocerlo y corregir sus efectos.",
+    false
+  ],
+
+  [
+    "Colaboración",
+    "Cuando detecto un riesgo lo comunico y colaboro para resolverlo.",
+    false
+  ],
+
+  [
+    "Adaptabilidad",
+    "Puedo reorganizar mi trabajo cuando cambian las prioridades.",
+    false
+  ],
+
+  [
+    "Comunicación",
+    "Adapto el nivel técnico de mis explicaciones según la audiencia.",
+    false
+  ],
+
+  [
+    "Organización",
+    "Priorizo según impacto, urgencia y dependencias.",
+    false
+  ],
+
+  [
+    "Aprendizaje",
+    "Busco aprender herramientas nuevas cuando pueden mejorar mi trabajo.",
+    false
+  ]
+
+].map((x, i) => ({
+
+  id: "PP" + (i + 1),
+  d: x[0],
+  q: x[1],
+  r: x[2],
+  type: "p"
+
+}));
+
+
+const C = [
+
+  [
+    "Resolución de problemas",
+    "Un incidente intermitente no tiene una causa demostrada.",
+    [
+      "Asignar inmediatamente una causa",
+      "Reunir evidencia e intentar reproducirlo",
+      "Cerrar el incidente",
+      "Cambiar varios componentes simultáneamente"
     ],
+    1
+  ],
 
-    answer: 2,
-
-    explanation:
-      "240 ÷ 30 = 8 casos por minuto. " +
-      "8 × 45 = 360 casos."
-  },
-
-
-  {
-    category: "Razonamiento numérico",
-
-    question:
-      "Una ejecución reduce su duración de 50 a 40 minutos. " +
-      "¿Cuál fue la reducción porcentual?",
-
-    options: [
-      "10%",
-      "20%",
-      "25%",
-      "40%"
+  [
+    "Comunicación",
+    "Detecta un riesgo crítico cerca de una liberación.",
+    [
+      "Ocultarlo hasta tener una solución",
+      "Comunicar evidencia, impacto e incertidumbre",
+      "Indicar que todo el sistema está mal",
+      "Esperar a que ocurra en producción"
     ],
+    1
+  ],
 
-    answer: 1,
-
-    explanation:
-      "La reducción fue de 10 minutos. " +
-      "10 ÷ 50 × 100 = 20%."
-  },
-
-
-  {
-    category: "Razonamiento numérico",
-
-    question:
-      "De 800 solicitudes procesadas, 24 fallan. " +
-      "¿Cuál es la tasa de error?",
-
-    options: [
-      "0,3%",
-      "3%",
-      "24%",
-      "30%"
+  [
+    "Colaboración",
+    "QA y desarrollo discrepan sobre un criterio de aceptación.",
+    [
+      "Trabajar de forma separada",
+      "Revisar evidencia, alinear interpretación y documentar el acuerdo",
+      "Ignorar la diferencia",
+      "Eliminar la prueba"
     ],
+    1
+  ],
 
-    answer: 1,
-
-    explanation:
-      "24 ÷ 800 × 100 = 3%."
-  },
-
-
-  {
-    category: "Análisis",
-
-    question:
-      "En una prueba de rendimiento el P95 es 1,8 segundos. " +
-      "¿Cuál interpretación es la más adecuada?",
-
-    options: [
-      "95% de las respuestas tardaron exactamente 1,8 segundos",
-
-      "Aproximadamente 95% de las respuestas " +
-      "estuvieron en 1,8 segundos o menos",
-
-      "Solo 5% de las solicitudes fueron exitosas",
-
-      "El promedio necesariamente fue 1,8 segundos"
+  [
+    "Organización",
+    "Existe un defecto que bloquea pagos y otro que cambia un texto.",
+    [
+      "Priorizar considerando riesgo e impacto",
+      "Priorizar alfabéticamente",
+      "Resolver primero el más sencillo",
+      "Resolver primero el más reciente"
     ],
+    0
+  ]
 
-    answer: 1,
+].map((x, i) => ({
 
-    explanation:
-      "El percentil 95 representa el valor bajo el cual " +
-      "se encuentra aproximadamente el 95% de las observaciones."
-  },
+  id: "C" + (i + 1),
+  d: x[0],
+  q: x[1],
+  o: x[2],
+  a: x[3],
+  type: "c"
 
+}));
+/* =========================================================
+   MOTOR DE SIMULACIONES
+   ========================================================= */
 
-  {
-    category: "Razonamiento lógico",
+const $ = selector => document.querySelector(selector);
 
-    question:
-      "Complete la serie: 3, 6, 12, 24, __",
+const shuffle = array => {
+  const copy = [...array];
 
-    options: [
-      "30",
-      "36",
-      "42",
-      "48"
-    ],
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
 
-    answer: 3,
-
-    explanation:
-      "Cada término duplica al anterior."
-  },
-
-
-  {
-    category: "Razonamiento lógico",
-
-    question:
-      "Complete la serie: 2, 5, 11, 23, __",
-
-    options: [
-      "35",
-      "41",
-      "47",
-      "49"
-    ],
-
-    answer: 2,
-
-    explanation:
-      "Cada número se obtiene multiplicando el anterior " +
-      "por 2 y sumando 1."
-  },
-
-
-  {
-    category: "Razonamiento lógico",
-
-    question:
-      "Todos los scripts críticos requieren revisión. " +
-      "El script X es crítico. ¿Qué puede deducirse?",
-
-    options: [
-      "X no requiere revisión",
-      "X requiere revisión",
-      "X necesariamente está aprobado",
-      "No puede deducirse nada"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "La regla general establece que todos los scripts " +
-      "críticos requieren revisión."
-  },
-
-
-  {
-    category: "Razonamiento verbal",
-
-    question:
-      "Un informe indica: 'El aumento de latencia coincidió " +
-      "con un mayor uso de CPU, pero no se ha demostrado " +
-      "causalidad'. ¿Cuál conclusión respeta el texto?",
-
-    options: [
-      "La CPU causó definitivamente la latencia",
-
-      "Existe una asociación observada, " +
-      "pero no una causa demostrada",
-
-      "La latencia causó el uso de CPU",
-
-      "No existió ningún cambio"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "Una asociación o correlación observada " +
-      "no demuestra por sí misma causalidad."
-  },
-
-
-  {
-    category: "Atención",
-
-    question:
-      "¿Cuál elemento es diferente?",
-
-    options: [
-      "P95-API-204",
-      "P95-API-204",
-      "P95-API-240",
-      "P95-API-204"
-    ],
-
-    answer: 2,
-
-    explanation:
-      "El tercer elemento termina en 240; " +
-      "los demás terminan en 204."
-  },
-
-
-  {
-    category: "Atención",
-
-    question:
-      "Seleccione la cadena idéntica a: QA-7B9-K6-P95",
-
-    options: [
-      "QA-7B9-K6-P95",
-      "QA-7B9-KG-P95",
-      "QA-7B9-K6-P59",
-      "QA-7B8-K6-P95"
-    ],
-
-    answer: 0,
-
-    explanation:
-      "La primera opción coincide carácter por carácter."
-  },
-
-
-  {
-    category: "Análisis",
-
-    question:
-      "Un indicador pasa de 120 ms a 180 ms. " +
-      "¿Cuál fue el aumento porcentual?",
-
-    options: [
-      "33,3%",
-      "50%",
-      "60%",
-      "66,7%"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "El aumento fue de 60 ms. " +
-      "60 ÷ 120 × 100 = 50%."
-  },
-
-
-  {
-    category: "Razonamiento lógico",
-
-    question:
-      "A debe ejecutarse antes de B y B antes de C. " +
-      "¿Cuál secuencia es válida?",
-
-    options: [
-      "C - B - A",
-      "B - A - C",
-      "A - C - B",
-      "A - B - C"
-    ],
-
-    answer: 3,
-
-    explanation:
-      "A-B-C respeta las dos restricciones."
-  },
-
-
-  {
-    category: "Razonamiento numérico",
-
-    question:
-      "Tres ejecuciones tardan 12, 15 y 18 minutos. " +
-      "¿Cuál es el tiempo promedio?",
-
-    options: [
-      "14 minutos",
-      "15 minutos",
-      "16 minutos",
-      "17 minutos"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "(12 + 15 + 18) ÷ 3 = 15."
-  },
-
-
-  {
-    category: "Razonamiento verbal",
-
-    question:
-      "¿Qué palabra se aproxima más al significado " +
-      "de 'congruente'?",
-
-    options: [
-      "Coherente",
-      "Rápido",
-      "Extenso",
-      "Ambiguo"
-    ],
-
-    answer: 0,
-
-    explanation:
-      "Congruencia se relaciona con coherencia " +
-      "o correspondencia."
-  },
-
-
-  {
-    category: "Análisis",
-
-    question:
-      "Una prueba contiene 50 preguntas y dispone " +
-      "de 25 minutos. ¿Qué ritmo promedio permite " +
-      "completar todas las preguntas?",
-
-    options: [
-      "15 segundos",
-      "30 segundos",
-      "45 segundos",
-      "60 segundos"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "25 minutos equivalen a 1.500 segundos. " +
-      "1.500 ÷ 50 = 30 segundos por pregunta."
-  },
-
-
-  {
-    category: "Razonamiento lógico",
-
-    question:
-      "Ningún resultado no verificado debe publicarse. " +
-      "Este resultado todavía no está verificado. " +
-      "¿Qué corresponde?",
-
-    options: [
-      "Publicarlo inmediatamente",
-      "Publicarlo con otro nombre",
-      "No publicarlo todavía",
-      "Eliminarlo permanentemente"
-    ],
-
-    answer: 2,
-
-    explanation:
-      "La premisa indica que no debe publicarse " +
-      "mientras permanezca sin verificar."
-  },
-
-
-  {
-    category: "Atención",
-
-    question:
-      "¿Cuál número rompe el patrón de incremento de 5?",
-
-    options: [
-      "10",
-      "15",
-      "20",
-      "26"
-    ],
-
-    answer: 3,
-
-    explanation:
-      "La secuencia esperada sería 10, 15, 20, 25."
-  },
-
-
-  {
-    category: "Razonamiento numérico",
-
-    question:
-      "Un proceso termina correctamente en 475 de " +
-      "500 ejecuciones. ¿Cuál es su tasa de éxito?",
-
-    options: [
-      "90%",
-      "92%",
-      "95%",
-      "97,5%"
-    ],
-
-    answer: 2,
-
-    explanation:
-      "475 ÷ 500 × 100 = 95%."
-  },
-
-
-  {
-    category: "Análisis",
-
-    question:
-      "Se registraron 10, 12, 11, 40 y 12 errores " +
-      "en cinco ejecuciones. ¿Cuál valor merece " +
-      "especial revisión por ser atípico?",
-
-    options: [
-      "10",
-      "11",
-      "12",
-      "40"
-    ],
-
-    answer: 3,
-
-    explanation:
-      "40 se encuentra considerablemente alejado " +
-      "de los demás valores."
-  },
-
-
-  {
-    category: "Razonamiento lógico",
-
-    question:
-      "Si hoy es martes, ¿qué día será dentro de 10 días?",
-
-    options: [
-      "Jueves",
-      "Viernes",
-      "Sábado",
-      "Domingo"
-    ],
-
-    answer: 1,
-
-    explanation:
-      "Después de 7 días vuelve a ser martes; " +
-      "3 días adicionales llevan a viernes."
+    [copy[i], copy[j]] = [copy[j], copy[i]];
   }
 
-];
+  return copy;
+};
 
 
 /* =========================================================
-   PREGUNTAS DE PERSONALIDAD
-   No tienen respuestas correctas.
+   VARIABLES DE ESTADO
    ========================================================= */
 
-const personalityQuestions = [
-
-  {
-    dimension: "Atención al detalle",
-    question:
-      "Antes de cerrar una tarea importante, " +
-      "acostumbro revisar evidencias y detalles.",
-    reverse: false
-  },
-
-  {
-    dimension: "Atención al detalle",
-    question:
-      "Cuando una tarea parece sencilla, normalmente " +
-      "considero innecesario revisarla.",
-    reverse: true
-  },
-
-  {
-    dimension: "Pensamiento analítico",
-    question:
-      "Ante un problema complejo, prefiero separar " +
-      "hechos, hipótesis y evidencia antes de concluir.",
-    reverse: false
-  },
-
-  {
-    dimension: "Pensamiento analítico",
-    question:
-      "Me resulta natural comparar datos antes " +
-      "de proponer una causa.",
-    reverse: false
-  },
-
-  {
-    dimension: "Colaboración",
-    question:
-      "Cuando detecto un riesgo, procuro comunicarlo " +
-      "y colaborar con otras personas para resolverlo.",
-    reverse: false
-  },
-
-  {
-    dimension: "Colaboración",
-    question:
-      "Prefiero evitar pedir contexto aunque eso pueda " +
-      "hacer que interprete incorrectamente una situación.",
-    reverse: true
-  },
-
-  {
-    dimension: "Adaptabilidad",
-    question:
-      "Puedo reorganizar mi trabajo cuando cambian " +
-      "las prioridades.",
-    reverse: false
-  },
-
-  {
-    dimension: "Adaptabilidad",
-    question:
-      "Los cambios inesperados suelen impedirme " +
-      "reorganizar mi trabajo.",
-    reverse: true
-  },
-
-  {
-    dimension: "Responsabilidad",
-    question:
-      "Si cometo un error, procuro reconocerlo, " +
-      "documentarlo y corregir sus efectos.",
-    reverse: false
-  },
-
-  {
-    dimension: "Comunicación",
-    question:
-      "Adapto el nivel técnico de mis explicaciones " +
-      "según la audiencia.",
-    reverse: false
-  },
-
-  {
-    dimension: "Aprendizaje continuo",
-    question:
-      "Busco aprender nuevas herramientas cuando " +
-      "pueden mejorar mi trabajo.",
-    reverse: false
-  },
-
-  {
-    dimension: "Organización",
-    question:
-      "Cuando tengo varias tareas, acostumbro " +
-      "priorizarlas considerando impacto, urgencia " +
-      "y dependencias.",
-    reverse: false
-  }
-
-];
-
-
-/* =========================================================
-   ESCENARIOS DE COMPETENCIAS
-   ========================================================= */
-
-const competencyQuestions = [
-
-  {
-    dimension: "Resolución de problemas",
-
-    question:
-      "Una prueba muestra degradación intermitente, " +
-      "pero todavía no existe evidencia suficiente " +
-      "para determinar la causa. ¿Qué haría primero?",
-
-    options: [
-      "Afirmar inmediatamente que la base de datos es responsable",
-
-      "Reunir métricas y reproducir el comportamiento " +
-      "antes de atribuir una causa",
-
-      "Cerrar el hallazgo porque es intermitente",
-
-      "Cambiar varias configuraciones simultáneamente"
-    ],
-
-    answer: 1
-  },
-
-
-  {
-    dimension: "Comunicación",
-
-    question:
-      "Detecta un riesgo importante cerca de una liberación. " +
-      "¿Cuál acción representa una comunicación profesional?",
-
-    options: [
-      "Ocultarlo hasta conocer absolutamente toda la información",
-
-      "Comunicar evidencia, impacto, incertidumbre " +
-      "y posibles alternativas de mitigación",
-
-      "Indicar únicamente que la liberación está mal",
-
-      "Enviar el hallazgo sin contexto"
-    ],
-
-    answer: 1
-  },
-
-
-  {
-    dimension: "Colaboración",
-
-    question:
-      "QA y desarrollo interpretan de manera distinta " +
-      "un criterio de aceptación. ¿Qué acción sería " +
-      "más conveniente?",
-
-    options: [
-      "Cada persona trabaja con su interpretación",
-
-      "Alinear el criterio con las partes involucradas " +
-      "y documentar el acuerdo",
-
-      "Esperar hasta producción",
-
-      "Eliminar el caso de prueba"
-    ],
-
-    answer: 1
-  },
-
-
-  {
-    dimension: "Organización",
-
-    question:
-      "Existen tres defectos: uno bloquea pagos, " +
-      "otro afecta un texto y otro aparece en una " +
-      "funcionalidad poco utilizada. ¿Qué criterio " +
-      "ayuda a priorizarlos?",
-
-    options: [
-      "Orden alfabético",
-      "Riesgo e impacto",
-      "Resolver siempre el más sencillo",
-      "Resolver siempre el más reciente"
-    ],
-
-    answer: 1
-  }
-
-];
-
-
-/* =========================================================
-   ESTADO
-   ========================================================= */
-
-let currentMode = "";
-let currentQuestions = [];
-let currentIndex = 0;
-let selectedAnswer = null;
+let mode = "";
+let items = [];
+let idx = 0;
+let sel = null;
 let answers = [];
+
 let secondsRemaining = 0;
-let timerInterval = null;
+let timerId = null;
 
 
 /* =========================================================
-   UTILIDADES
+   SELECCIÓN INTELIGENTE DE PREGUNTAS
+   Reduce repetición entre intentos usando localStorage
    ========================================================= */
 
-function shuffle(array) {
+function smartSample(pool, amount, storageKey) {
 
-  return [...array].sort(
-    () => Math.random() - 0.5
+  let seen = [];
+
+  try {
+    seen = JSON.parse(
+      localStorage.getItem(storageKey) || "[]"
+    );
+  } catch (error) {
+    seen = [];
+  }
+
+  const unseenQuestions = shuffle(
+    pool.filter(question => !seen.includes(question.id))
   );
 
-}
+  const previousQuestions = shuffle(
+    pool.filter(question => seen.includes(question.id))
+  );
+
+  const selectedQuestions = [
+    ...unseenQuestions,
+    ...previousQuestions
+  ].slice(
+    0,
+    Math.min(amount, pool.length)
+  );
 
 
-function show(id) {
+  /*
+   * Conservamos historial suficiente para disminuir
+   * repeticiones, pero permitimos reutilizar preguntas
+   * cuando se haya recorrido el banco.
+   */
 
-  document
-    .getElementById(id)
-    .classList.remove("hidden");
+  const updatedSeen = [
+    ...seen,
+    ...selectedQuestions.map(question => question.id)
+  ];
 
-}
+  const uniqueSeen = [...new Set(updatedSeen)];
 
+  const maxRemember =
+    Math.max(
+      pool.length - Math.ceil(amount / 2),
+      amount
+    );
 
-function hide(id) {
+  try {
 
-  document
-    .getElementById(id)
-    .classList.add("hidden");
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify(
+        uniqueSeen.slice(-maxRemember)
+      )
+    );
 
+  } catch (error) {
+
+    console.warn(
+      "No fue posible guardar historial de preguntas.",
+      error
+    );
+
+  }
+
+  return selectedQuestions;
 }
 
 
 /* =========================================================
-   INICIAR
+   INICIAR SIMULACIÓN
    ========================================================= */
 
-function startExam(mode) {
+function start(selectedMode) {
 
-  currentMode = mode;
-  currentIndex = 0;
-  selectedAnswer = null;
+  clearInterval(timerId);
+
+  mode = selectedMode;
+
+  idx = 0;
+  sel = null;
   answers = [];
 
-  hide("home");
-  hide("result");
-  show("exam");
 
+  $("#home").classList.add("hidden");
+
+  $("#result").classList.add("hidden");
+
+  $("#exam").classList.remove("hidden");
+
+
+  /*
+   * PRÁCTICA PSICOMÉTRICA
+   */
 
   if (mode === "practice") {
 
-    currentQuestions =
-      shuffle(psychometricQuestions)
-      .slice(0, 12);
+    items = smartSample(
+      Q,
+      15,
+      "qaBank_seenPractice"
+    );
 
-    document.getElementById("examTitle")
-      .textContent =
+    $("#title").textContent =
       "Práctica psicométrica";
 
-    document.getElementById("modeBadge")
-      .textContent =
-      "Modo aprendizaje";
+    $("#badge").textContent =
+      "Explicación inmediata";
 
-    hide("timerBox");
+    $("#timerBox").classList.add("hidden");
 
   }
 
 
-  if (mode === "timed") {
+  /*
+   * SIMULACIÓN CRONOMETRADA
+   */
 
-    currentQuestions =
-      shuffle(psychometricQuestions)
-      .slice(0, 20);
+  else if (mode === "timed") {
 
-    document.getElementById("examTitle")
-      .textContent =
+    items = smartSample(
+      Q,
+      30,
+      "qaBank_seenTimed"
+    );
+
+    $("#title").textContent =
       "Simulación psicométrica";
 
-    document.getElementById("modeBadge")
-      .textContent =
-      "20 preguntas · 15 minutos";
+    $("#badge").textContent =
+      "30 preguntas · 20 minutos";
 
-    secondsRemaining = 900;
+    secondsRemaining = 20 * 60;
 
-    show("timerBox");
+    $("#timerBox").classList.remove("hidden");
 
     updateTimer();
 
-    timerInterval =
-      setInterval(updateTimer, 1000);
+    timerId = setInterval(() => {
+
+      secondsRemaining--;
+
+      updateTimer();
+
+      if (secondsRemaining <= 0) {
+
+        clearInterval(timerId);
+
+        finish(true);
+
+      }
+
+    }, 1000);
 
   }
 
 
-  if (mode === "personality") {
+  /*
+   * QA PARA BANCA
+   */
 
-    const personality =
-      shuffle(personalityQuestions)
-      .map(item => ({
-        ...item,
-        type: "personality"
-      }));
+  else if (mode === "bank") {
 
-    const competencies =
-      shuffle(competencyQuestions)
-      .map(item => ({
-        ...item,
-        type: "competency"
-      }));
+    items = smartSample(
+      BANK,
+      20,
+      "qaBank_seenBank"
+    );
 
-    currentQuestions = [
-      ...personality,
-      ...competencies
-    ];
+    $("#title").textContent =
+      "Simulación QA · Banca & FinTech";
 
-    document.getElementById("examTitle")
-      .textContent =
+    $("#badge").textContent =
+      "Escenarios aplicados";
+
+    $("#timerBox").classList.add("hidden");
+
+  }
+
+
+  /*
+   * PERSONALIDAD + COMPETENCIAS
+   */
+
+  else if (mode === "personality") {
+
+    items = shuffle([
+      ...P,
+      ...C
+    ]);
+
+    $("#title").textContent =
       "Competencias & Personalidad";
 
-    document.getElementById("modeBadge")
-      .textContent =
+    $("#badge").textContent =
       "Sin cronómetro";
 
-    hide("timerBox");
+    $("#timerBox").classList.add("hidden");
 
   }
 
 
-  renderQuestion();
+  /*
+   * MODO NO RECONOCIDO
+   */
+
+  else {
+
+    console.error(
+      "Modo de simulación desconocido:",
+      mode
+    );
+
+    home();
+
+    return;
+
+  }
+
+
+  /*
+   * Validación
+   */
+
+  if (!items.length) {
+
+    alert(
+      "No existen preguntas disponibles para esta simulación."
+    );
+
+    home();
+
+    return;
+
+  }
+
+
+  render();
 
 }
 
@@ -1464,25 +1488,27 @@ function updateTimer() {
     secondsRemaining % 60;
 
 
-  document.getElementById("timer")
-    .textContent =
+  $("#timer").textContent =
     String(minutes).padStart(2, "0")
-    + ":"
-    + String(seconds).padStart(2, "0");
+    +
+    ":"
+    +
+    String(seconds).padStart(2, "0");
 
 
-  if (secondsRemaining <= 0) {
+  /*
+   * Aviso visual cuando quedan menos de 2 minutos
+   */
 
-    clearInterval(timerInterval);
+  if (secondsRemaining <= 120) {
 
-    finishExam(true);
+    $("#timer").style.color = "#b42318";
 
-    return;
+  } else {
+
+    $("#timer").style.color = "";
 
   }
-
-
-  secondsRemaining--;
 
 }
 
@@ -1491,111 +1517,147 @@ function updateTimer() {
    MOSTRAR PREGUNTA
    ========================================================= */
 
-function renderQuestion() {
+function render() {
 
-  selectedAnswer = null;
+  sel = null;
 
-  const question =
-    currentQuestions[currentIndex];
+  $("#next").disabled = true;
 
+  $("#explain").classList.add("hidden");
 
-  const nextButton =
-    document.getElementById("nextButton");
-
-  nextButton.disabled = true;
+  $("#explain").innerHTML = "";
 
 
-  document.getElementById("explanation")
-    .classList.add("hidden");
+  const question = items[idx];
 
 
-  document.getElementById("progressText")
-    .textContent =
-    `Pregunta ${currentIndex + 1} de ${currentQuestions.length}`;
+  /*
+   * Progreso
+   */
+
+  $("#prog").textContent =
+    `Pregunta ${idx + 1} de ${items.length}`;
 
 
-  document.getElementById("progressBar")
-    .style.width =
-    `${(currentIndex / currentQuestions.length) * 100}%`;
+  $("#bar").style.width =
+    `${((idx + 1) / items.length) * 100}%`;
 
 
-  document.getElementById("questionCategory")
-    .textContent =
-    question.dimension ||
-    question.category;
+  /*
+   * Categoría
+   */
+
+  let category =
+    question.d ||
+    question.c ||
+    "Pregunta";
 
 
-  document.getElementById("questionText")
-    .textContent =
-    question.question;
+  if (question.l) {
+
+    category +=
+      " · " +
+      question.l;
+
+  }
 
 
-  const optionsContainer =
-    document.getElementById("options");
+  $("#cat").textContent = category;
 
 
-  optionsContainer.innerHTML = "";
+  /*
+   * Texto de pregunta
+   */
 
+  $("#qtext").textContent =
+    question.q;
+
+
+  /*
+   * Limpiar opciones anteriores
+   */
+
+  $("#opts").innerHTML = "";
+
+
+  /*
+   * PERSONALIDAD
+   */
 
   let options;
 
-
-  if (question.type === "personality") {
+  if (question.type === "p") {
 
     options = [
-
       "Totalmente en desacuerdo",
-
       "En desacuerdo",
-
       "Ni de acuerdo ni en desacuerdo",
-
       "De acuerdo",
-
       "Totalmente de acuerdo"
-
     ];
 
-  }
+  } else {
 
-  else {
-
-    options = question.options;
+    options = question.o;
 
   }
 
+
+  /*
+   * Crear botones
+   */
 
   options.forEach(
-    (option, index) => {
+    (optionText, optionIndex) => {
 
       const button =
         document.createElement("button");
 
-      button.className =
-        "option";
 
-      button.textContent =
-        option;
+      button.type = "button";
+
+      button.className = "option";
+
+
+      /*
+       * Letras A, B, C...
+       */
+
+      const letter =
+        String.fromCharCode(
+          65 + optionIndex
+        );
+
+
+      button.innerHTML =
+        `<strong>${letter}.</strong> ${optionText}`;
+
 
       button.addEventListener(
         "click",
-        () => selectAnswer(
-          index,
-          button
-        )
+        () => {
+
+          choose(
+            optionIndex,
+            button
+          );
+
+        }
       );
 
 
-      optionsContainer
-        .appendChild(button);
+      $("#opts").appendChild(button);
 
     }
   );
 
 
-  nextButton.textContent =
-    currentIndex ===
-    currentQuestions.length - 1
+  /*
+   * Última pregunta
+   */
+
+  $("#next").textContent =
+    idx === items.length - 1
       ? "Finalizar"
       : "Siguiente";
 
@@ -1606,94 +1668,102 @@ function renderQuestion() {
    SELECCIONAR RESPUESTA
    ========================================================= */
 
-function selectAnswer(index, button) {
+function choose(
+  optionIndex,
+  selectedButton
+) {
 
-  selectedAnswer = index;
-
-
-  document
-    .querySelectorAll(".option")
-    .forEach(option => {
-
-      option.classList
-        .remove("selected");
-
-    });
+  sel = optionIndex;
 
 
-  button.classList
-    .add("selected");
+  const buttons =
+    document.querySelectorAll(
+      ".option"
+    );
 
 
-  document.getElementById("nextButton")
-    .disabled = false;
+  buttons.forEach(button => {
+
+    button.classList.remove(
+      "selected",
+      "correct",
+      "wrong"
+    );
+
+  });
+
+
+  selectedButton.classList.add(
+    "selected"
+  );
+
+
+  $("#next").disabled = false;
 
 
   /*
-   * En modo práctica sí mostramos
-   * explicación inmediata.
+   * En modo práctica mostramos
+   * retroalimentación inmediata.
    */
 
-  if (currentMode === "practice") {
+  if (mode === "practice") {
 
     const question =
-      currentQuestions[currentIndex];
+      items[idx];
 
 
-    document
-      .querySelectorAll(".option")
-      .forEach(
-        (option, optionIndex) => {
+    buttons.forEach(
+      (button, index) => {
 
-          option.disabled = true;
+        button.disabled = true;
 
 
-          if (
-            optionIndex ===
-            question.answer
-          ) {
+        if (index === question.a) {
 
-            option.classList
-              .add("correct");
-
-          }
-
-
-          if (
-            optionIndex === index &&
-            index !== question.answer
-          ) {
-
-            option.classList
-              .add("incorrect");
-
-          }
+          button.classList.add(
+            "correct"
+          );
 
         }
-      );
 
 
-    const explanation =
-      document.getElementById(
-        "explanation"
-      );
+        if (
+          index === optionIndex &&
+          optionIndex !== question.a
+        ) {
+
+          button.classList.add(
+            "wrong"
+          );
+
+        }
+
+      }
+    );
 
 
-    explanation.innerHTML =
-      "<strong>" +
-      (
-        index === question.answer
-          ? "Correcto. "
-          : "Revise el razonamiento. "
-      )
-      +
-      "</strong>"
-      +
-      question.explanation;
+    const correct =
+      optionIndex === question.a;
 
 
-    explanation.classList
-      .remove("hidden");
+    $("#explain").innerHTML = `
+      <strong>
+        ${
+          correct
+            ? "Respuesta correcta."
+            : "Respuesta incorrecta."
+        }
+      </strong>
+
+      <br>
+
+      ${question.e || ""}
+    `;
+
+
+    $("#explain").classList.remove(
+      "hidden"
+    );
 
   }
 
@@ -1701,43 +1771,48 @@ function selectAnswer(index, button) {
 
 
 /* =========================================================
-   SIGUIENTE
+   SIGUIENTE PREGUNTA
    ========================================================= */
 
-function nextQuestion() {
+function nextQ() {
 
-  if (selectedAnswer === null) {
+  if (sel === null) {
+
     return;
+
   }
+
+
+  const question =
+    items[idx];
 
 
   answers.push({
 
-    question:
-      currentQuestions[currentIndex],
+    question: question,
 
-    selected:
-      selectedAnswer
+    selected: sel,
+
+    correct:
+      question.type === "p"
+        ? null
+        : sel === question.a
 
   });
 
 
-  currentIndex++;
+  idx++;
 
 
-  if (
-    currentIndex >=
-    currentQuestions.length
-  ) {
+  if (idx >= items.length) {
 
-    finishExam(false);
+    finish(false);
 
-    return;
+  } else {
+
+    render();
 
   }
-
-
-  renderQuestion();
 
 }
 
@@ -1746,26 +1821,60 @@ function nextQuestion() {
    FINALIZAR
    ========================================================= */
 
-function finishExam(timeExpired) {
+function finish(timeExpired = false) {
 
-  clearInterval(timerInterval);
+  clearInterval(timerId);
 
-  hide("exam");
 
-  show("result");
-
+  /*
+   * Si el tiempo termina mientras existe
+   * una respuesta seleccionada todavía no
+   * confirmada, la guardamos.
+   */
 
   if (
-    currentMode === "personality"
+    timeExpired &&
+    idx < items.length &&
+    sel !== null
   ) {
 
-    showPersonalityResults();
+    const question =
+      items[idx];
+
+
+    answers.push({
+
+      question: question,
+
+      selected: sel,
+
+      correct:
+        question.type === "p"
+          ? null
+          : sel === question.a
+
+    });
 
   }
 
-  else {
 
-    showPsychometricResults(
+  $("#exam").classList.add(
+    "hidden"
+  );
+
+
+  $("#result").classList.remove(
+    "hidden"
+  );
+
+
+  if (mode === "personality") {
+
+    personalityResult();
+
+  } else {
+
+    scoredResult(
       timeExpired
     );
 
@@ -1780,56 +1889,63 @@ function finishExam(timeExpired) {
 
 
 /* =========================================================
-   RESULTADOS PSICOMÉTRICOS
+   RESULTADOS DE PRUEBAS CON RESPUESTA CORRECTA
    ========================================================= */
 
-function showPsychometricResults(
-  timeExpired
+function scoredResult(
+  timeExpired = false
 ) {
 
-  const correct =
+  const validAnswers =
     answers.filter(
       answer =>
+        typeof answer.question.a ===
+        "number"
+    );
+
+
+  const correct =
+    validAnswers.filter(
+      answer =>
         answer.selected ===
-        answer.question.answer
+        answer.question.a
     ).length;
 
 
+  const total =
+    validAnswers.length;
+
+
   const percentage =
-    answers.length
+    total > 0
       ? Math.round(
-          correct /
-          answers.length *
-          100
+          (correct / total) * 100
         )
       : 0;
 
 
-  document.getElementById("score")
-    .innerHTML =
-
-    `<strong>${percentage}%</strong>
-     · ${correct} respuestas correctas
-     de ${answers.length}
-     ${timeExpired
-       ? " · Tiempo agotado"
-       : ""}`;
-
+  /*
+   * Agrupar por categoría
+   */
 
   const dimensions = {};
 
 
-  answers.forEach(answer => {
+  validAnswers.forEach(answer => {
 
     const category =
-      answer.question.category;
+      answer.question.c ||
+      "General";
 
 
     if (!dimensions[category]) {
 
       dimensions[category] = {
+
         total: 0,
+
         correct: 0
+
       };
 
     }
@@ -1840,46 +1956,95 @@ function showPsychometricResults(
 
     if (
       answer.selected ===
-      answer.question.answer
+      answer.question.a
     ) {
 
-      dimensions[category]
-        .correct++;
+      dimensions[category].correct++;
 
     }
 
   });
 
 
-  document.getElementById(
-    "dimensionResults"
-  ).innerHTML =
+  /*
+   * Resultado principal
+   */
 
-    Object
-      .entries(dimensions)
+  $("#score").innerHTML = `
+
+    <h3>
+      Resultado general
+    </h3>
+
+    <p style="
+      font-size:2rem;
+      margin:.3rem 0;
+      font-weight:800;
+    ">
+      ${percentage}%
+    </p>
+
+    <p>
+      ${correct}
+      respuestas correctas de
+      ${total}
+      respondidas.
+    </p>
+
+    ${
+      timeExpired
+        ? `
+          <p>
+            <strong>
+              El tiempo de la simulación finalizó.
+            </strong>
+          </p>
+        `
+        : ""
+    }
+
+  `;
+
+
+  /*
+   * Resultados por dimensión
+   */
+
+  $("#dims").innerHTML =
+    Object.entries(dimensions)
       .map(
-        ([category, data]) => {
+        ([category, values]) => {
 
-          const score =
+          const result =
             Math.round(
-              data.correct /
-              data.total *
-              100
+              (
+                values.correct /
+                values.total
+              ) * 100
             );
 
 
           return `
 
-            <div class="result-card">
+            <div class="metric">
 
               <h3>
                 ${category}
               </h3>
 
+              <p
+                style="
+                  font-size:1.4rem;
+                  font-weight:800;
+                "
+              >
+                ${result}%
+              </p>
+
               <p>
-                ${score}%
-                ·
-                ${data.correct}/${data.total}
+                ${values.correct}
+                /
+                ${values.total}
               </p>
 
             </div>
@@ -1891,61 +2056,159 @@ function showPsychometricResults(
       .join("");
 
 
-  document.getElementById(
-    "resultAdvice"
-  ).innerHTML = `
+  /*
+   * Recomendaciones
+   */
 
-    <h3>
-      ¿Cómo interpretar este resultado?
-    </h3>
+  if (mode === "bank") {
 
-    <p>
-      Utilice las dimensiones con menor porcentaje
-      para decidir qué tipos de ejercicios conviene
-      practicar nuevamente.
-    </p>
+    $("#advice").innerHTML = `
 
-    <p>
-      Este porcentaje corresponde exclusivamente
-      a este banco educativo. No representa un
-      percentil psicométrico, diagnóstico psicológico
-      ni predicción de contratación.
-    </p>
+      <strong>
+        Interpretación educativa
+      </strong>
 
-  `;
+      <p>
+        Revise especialmente las categorías
+        con menor resultado.
+      </p>
+
+      <p>
+        Para QA en banca y FinTech conviene
+        fortalecer razonamiento relacionado con:
+      </p>
+
+      <ul>
+
+        <li>
+          integridad transaccional;
+        </li>
+
+        <li>
+          idempotencia y reintentos;
+        </li>
+
+        <li>
+          APIs REST;
+        </li>
+
+        <li>
+          SQL y conciliación;
+        </li>
+
+        <li>
+          rendimiento y percentiles;
+        </li>
+
+        <li>
+          resiliencia;
+        </li>
+
+        <li>
+          seguridad;
+        </li>
+
+        <li>
+          trazabilidad;
+        </li>
+
+        <li>
+          aplicaciones móviles;
+        </li>
+
+        <li>
+          accesibilidad.
+        </li>
+
+      </ul>
+
+      <p>
+        Esta simulación utiliza escenarios
+        ficticios y no representa una prueba
+        de selección de una entidad bancaria.
+      </p>
+
+    `;
+
+  } else {
+
+    $("#advice").innerHTML = `
+
+      <strong>
+        Interpretación educativa
+      </strong>
+
+      <p>
+        Utilice los resultados para identificar
+        qué tipos de razonamiento conviene
+        practicar con mayor frecuencia.
+      </p>
+
+      <p>
+        Esta puntuación no representa un
+        percentil psicométrico validado y no
+        predice un resultado de contratación.
+      </p>
+
+    `;
+
+  }
 
 }
 
 
 /* =========================================================
-   RESULTADOS PERSONALIDAD
+   RESULTADOS DE PERSONALIDAD Y COMPETENCIAS
    ========================================================= */
 
-function showPersonalityResults() {
-
-  const dimensions = {};
-
+function personalityResult() {
 
   const personalityAnswers =
     answers.filter(
       answer =>
-        answer.question.type ===
-        "personality"
+        answer.question.type === "p"
     );
 
+
+  const competencyAnswers =
+    answers.filter(
+      answer =>
+        answer.question.type === "c"
+    );
+
+
+  const dimensions = {};
+
+
+  /*
+   * PERSONALIDAD
+   *
+   * Escala:
+   * 1 = Totalmente en desacuerdo
+   * 5 = Totalmente de acuerdo
+   *
+   * Algunos reactivos están invertidos.
+   */
 
   personalityAnswers.forEach(
     answer => {
 
+      const question =
+        answer.question;
+
+
       const dimension =
-        answer.question.dimension;
+        question.d;
 
 
       if (!dimensions[dimension]) {
 
         dimensions[dimension] = {
-          total: 0,
+
+          score: 0,
+
           count: 0
+
         };
 
       }
@@ -1956,124 +2219,219 @@ function showPersonalityResults() {
 
 
       /*
-       * Reactivos inversos.
-       * Se utilizan para ilustrar que una
-       * dimensión puede formularse desde
-       * perspectivas distintas.
+       * Reactivo inverso
        */
 
-      if (
-        answer.question.reverse
-      ) {
+      if (question.r) {
 
-        value =
-          6 - value;
+        value = 6 - value;
 
       }
 
 
-      dimensions[dimension]
-        .total += value;
+      dimensions[dimension].score +=
+        value;
 
-      dimensions[dimension]
-        .count++;
+
+      dimensions[dimension].count++;
 
     }
   );
 
 
-  document.getElementById("score")
-    .innerHTML = `
-
-      <strong>
-        Perfil descriptivo
-      </strong>
-
-      · Sin nota de aprobación
-
-    `;
-
-
-  document.getElementById(
-    "dimensionResults"
-  ).innerHTML =
-
-    Object
-      .entries(dimensions)
-      .map(
-        ([dimension, data]) => {
-
-          const average =
-            data.total /
-            data.count;
-
-
-          let description =
-            "Tendencia a explorar";
-
-
-          if (average >= 4) {
-
-            description =
-              "Tendencia alta";
-
-          }
-
-          else if (
-            average >= 3
-          ) {
-
-            description =
-              "Tendencia media";
-
-          }
-
-
-          return `
-
-            <div class="result-card">
-
-              <h3>
-                ${dimension}
-              </h3>
-
-              <p>
-                ${description}
-              </p>
-
-            </div>
-
-          `;
-
-        }
-      )
-      .join("");
-
-
-  document.getElementById(
-    "resultAdvice"
-  ).innerHTML = `
+  $("#score").innerHTML = `
 
     <h3>
-      Interpretación responsable
+      Perfil descriptivo educativo
     </h3>
 
     <p>
-      Las preguntas de personalidad no tienen
-      una respuesta universalmente correcta.
+      No existe una calificación de
+      aprobado o reprobado para esta sección.
+    </p>
+
+  `;
+
+
+  /*
+   * Dimensiones de personalidad
+   */
+
+  let html = "";
+
+
+  Object.entries(dimensions)
+    .forEach(
+      ([dimension, values]) => {
+
+        const average =
+          values.score /
+          values.count;
+
+
+        let description;
+
+
+        if (average >= 4) {
+
+          description =
+            "Tendencia alta";
+
+        } else if (
+          average >= 3
+        ) {
+
+          description =
+            "Tendencia intermedia";
+
+        } else {
+
+          description =
+            "Tendencia a explorar";
+
+        }
+
+
+        html += `
+
+          <div class="metric">
+
+            <h3>
+              ${dimension}
+            </h3>
+
+            <p>
+              <strong>
+                ${description}
+              </strong>
+            </p>
+
+          </div>
+
+        `;
+
+      }
+    );
+
+
+  /*
+   * COMPETENCIAS SITUACIONALES
+   */
+
+  if (competencyAnswers.length) {
+
+    const competencyGroups = {};
+
+
+    competencyAnswers.forEach(
+      answer => {
+
+        const dimension =
+          answer.question.d;
+
+
+        if (!competencyGroups[dimension]) {
+
+          competencyGroups[dimension] = {
+
+            total: 0,
+
+            correct: 0
+
+          };
+
+        }
+
+
+        competencyGroups[dimension].total++;
+
+
+        if (
+          answer.selected ===
+          answer.question.a
+        ) {
+
+          competencyGroups[dimension]
+            .correct++;
+
+        }
+
+      }
+    );
+
+
+    Object.entries(
+      competencyGroups
+    ).forEach(
+      ([dimension, values]) => {
+
+        const percentage =
+          Math.round(
+            (
+              values.correct /
+              values.total
+            ) * 100
+          );
+
+
+        html += `
+
+          <div class="metric">
+
+            <h3>
+              ${dimension}
+            </h3>
+
+            <p>
+              Competencia situacional
+            </p>
+
+            <p>
+              <strong>
+                ${percentage}%
+              </strong>
+            </p>
+
+          </div>
+
+        `;
+
+      }
+    );
+
+  }
+
+
+  $("#dims").innerHTML = html;
+
+
+  $("#advice").innerHTML = `
+
+    <strong>
+      Importante
+    </strong>
+
+    <p>
+      No existen respuestas de personalidad
+      universalmente correctas.
     </p>
 
     <p>
-      Estas tendencias constituyen únicamente
-      retroalimentación educativa basada en
-      autopercepción y no una evaluación
-      psicométrica validada.
+      Esta sección no constituye una prueba
+      psicológica validada.
     </p>
 
     <p>
-      En una evaluación real, responda de manera
-      natural y de acuerdo con su comportamiento
-      habitual.
+      En una evaluación real de personalidad
+      conviene responder de acuerdo con el
+      comportamiento habitual y mantener
+      naturalidad y consistencia.
+    </p>
+
+    <p>
+      Los escenarios de competencias sí pueden
+      utilizarse para practicar análisis de
+      situaciones laborales.
     </p>
 
   `;
@@ -2082,63 +2440,147 @@ function showPersonalityResults() {
 
 
 /* =========================================================
-   SALIR / VOLVER
+   SALIR DE UNA PRUEBA
    ========================================================= */
 
 function exitExam() {
 
-  clearInterval(timerInterval);
-
-  hide("exam");
-
-  show("home");
-
-}
+  const confirmExit =
+    confirm(
+      "¿Desea salir de la simulación? El intento actual no se guardará."
+    );
 
 
-function goHome() {
+  if (!confirmExit) {
 
-  hide("result");
+    return;
 
-  show("home");
+  }
+
+
+  clearInterval(timerId);
+
+
+  $("#exam").classList.add(
+    "hidden"
+  );
+
+
+  $("#result").classList.add(
+    "hidden"
+  );
+
+
+  $("#home").classList.remove(
+    "hidden"
+  );
 
 }
 
 
 /* =========================================================
-   LOCAL STORAGE
+   REGRESAR AL INICIO
+   ========================================================= */
+
+function home() {
+
+  clearInterval(timerId);
+
+
+  $("#result").classList.add(
+    "hidden"
+  );
+
+
+  $("#exam").classList.add(
+    "hidden"
+  );
+
+
+  $("#home").classList.remove(
+    "hidden"
+  );
+
+}
+
+
+/* =========================================================
+   HISTORIAL
    ========================================================= */
 
 function saveHistory() {
 
-  const history =
-    JSON.parse(
-      localStorage.getItem(
-        "psychometricPreparationHistory"
-      ) || "[]"
-    );
+  let history = [];
 
 
-  let modeName =
-    "Práctica psicométrica";
+  try {
 
+    history =
+      JSON.parse(
+        localStorage.getItem(
+          "qaBank_history"
+        ) || "[]"
+      );
 
-  if (
-    currentMode === "timed"
-  ) {
+  } catch (error) {
 
-    modeName =
-      "Simulación cronometrada";
+    history = [];
 
   }
 
 
-  if (
-    currentMode === "personality"
-  ) {
+  const modeNames = {
 
-    modeName =
-      "Competencias & Personalidad";
+    practice:
+      "Práctica psicométrica",
+
+    timed:
+      "Simulación psicométrica",
+
+    bank:
+      "QA Banca & FinTech",
+
+    personality:
+      "Competencias & Personalidad"
+
+  };
+
+
+  let percentage = null;
+
+
+  /*
+   * Calcular porcentaje solo para
+   * pruebas objetivas.
+   */
+
+  if (mode !== "personality") {
+
+    const valid =
+      answers.filter(
+        answer =>
+          typeof answer.question.a ===
+          "number"
+      );
+
+
+    const correct =
+      valid.filter(
+        answer =>
+          answer.selected ===
+          answer.question.a
+      ).length;
+
+
+    percentage =
+      valid.length
+        ? Math.round(
+            (
+              correct /
+              valid.length
+            ) * 100
+          )
+        : 0;
 
   }
 
@@ -2146,27 +2588,44 @@ function saveHistory() {
   history.unshift({
 
     date:
-      new Date()
-        .toLocaleString(),
+      new Date().toLocaleString(),
 
     mode:
-      modeName,
+      modeNames[mode] ||
+      mode,
 
-    questions:
-      answers.length
+    answers:
+      answers.length,
+
+    percentage:
+      percentage
 
   });
 
 
-  localStorage.setItem(
+  /*
+   * Guardar últimos 10 intentos
+   */
 
-    "psychometricPreparationHistory",
+  history =
+    history.slice(0, 10);
 
-    JSON.stringify(
-      history.slice(0, 10)
-    )
 
-  );
+  try {
+
+    localStorage.setItem(
+      "qaBank_history",
+      JSON.stringify(history)
+    );
+
+  } catch (error) {
+
+    console.warn(
+      "No fue posible guardar el historial.",
+      error
+    );
+
+  }
 
 }
 
@@ -2177,27 +2636,28 @@ function saveHistory() {
 
 function renderHistory() {
 
-  const history =
-    JSON.parse(
-
-      localStorage.getItem(
-        "psychometricPreparationHistory"
-      )
-
-      || "[]"
-
-    );
+  let history = [];
 
 
-  const container =
-    document.getElementById(
-      "history"
-    );
+  try {
+
+    history =
+      JSON.parse(
+        localStorage.getItem(
+          "qaBank_history"
+        ) || "[]"
+      );
+
+  } catch (error) {
+
+    history = [];
+
+  }
 
 
   if (!history.length) {
 
-    container.innerHTML = `
+    $("#history").innerHTML = `
 
       <p class="muted">
         Todavía no existen intentos guardados.
@@ -2210,28 +2670,48 @@ function renderHistory() {
   }
 
 
-  container.innerHTML =
+  $("#history").innerHTML =
+    history.map(
+      item => `
 
-    history
-      .map(
-        attempt => `
+        <div
+          style="
+            padding:12px 0;
+            border-bottom:1px solid #d9e3ef;
+          "
+        >
 
-          <p>
+          <strong>
+            ${item.mode}
+          </strong>
 
-            <strong>
-              ${attempt.mode}
-            </strong>
+          <br>
 
-            · ${attempt.date}
+          <span class="muted">
+            ${item.date}
+          </span>
 
-            · ${attempt.questions}
-            respuestas
+          <br>
 
-          </p>
+          ${item.answers}
+          respuestas
 
-        `
-      )
-      .join("");
+          ${
+            item.percentage !== null
+              ? `
+                ·
+                <strong>
+                  ${item.percentage}%
+                </strong>
+              `
+              : ""
+          }
+
+        </div>
+
+      `
+    )
+    .join("");
 
 }
 
@@ -2240,11 +2720,40 @@ function renderHistory() {
    BORRAR HISTORIAL
    ========================================================= */
 
-function clearHistory() {
+function clearHist() {
+
+  const confirmation =
+    confirm(
+      "¿Desea borrar el historial y reiniciar el control de preguntas vistas?"
+    );
+
+
+  if (!confirmation) {
+
+    return;
+
+  }
+
 
   localStorage.removeItem(
-    "psychometricPreparationHistory"
+    "qaBank_history"
   );
+
+
+  localStorage.removeItem(
+    "qaBank_seenPractice"
+  );
+
+
+  localStorage.removeItem(
+    "qaBank_seenTimed"
+  );
+
+
+  localStorage.removeItem(
+    "qaBank_seenBank"
+  );
+
 
   renderHistory();
 
@@ -2255,9 +2764,13 @@ function clearHistory() {
    INICIALIZACIÓN
    ========================================================= */
 
-renderHistory();
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    renderHistory();
+
+  }
+);
 
 </script>
-
-</body>
-</html>
