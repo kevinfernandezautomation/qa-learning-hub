@@ -1,0 +1,887 @@
+MATERIAL CONSOLIDADO BAC — QA LEARNING HUB
+Contenido educativo, no ejecución sobre servicios bancarios reales.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_01_FLUJO_Y_CASOS.txt
+=====================================================================
+QA LEARNING HUB — LABORATORIO EDUCATIVO DE BANCA MÓVIL
+Caso de estudio inspirado en un flujo público de banca digital
+
+IMPORTANTE
+Este material NO automatiza la aplicación productiva de BAC, no contiene package IDs, credenciales, endpoints privados ni selectores internos. Debe ejecutarse contra una app demo, mock, sandbox o ambiente QA expresamente autorizado.
+
+FLUJO MODELO
+1. Instalar/abrir app.
+2. Login: usuario + contraseña.
+3. Validación de Token/Código de seguridad cuando corresponda.
+4. Activación/uso de biometría (huella/Face ID) en dispositivo compatible.
+5. Accesos previos al login: Quiero ser cliente/crear usuario, tipo de cambio, Código BAC y ayuda.
+6. Login correcto → Inicio/Cuentas.
+7. Navegación inferior: Inicio, Centro de pagos/Transferir o pagar, Solicitudes, Más.
+8. Transferir o pagar → Transferir dinero / traer dinero de otro banco / retiro de efectivo / recargar / centro de pagos / favoritos / tarjeta de crédito.
+9. Transferir dinero → tipo de transferencia → cuenta origen → cuenta destino/favorito → monto → detalle/descripción → revisión → autenticación → comprobante.
+
+CASOS PRIORITARIOS
+MOB-001 Primera apertura y permisos.
+MOB-002 Login válido.
+MOB-003 Login inválido sin revelar información sensible.
+MOB-004 Biometría disponible/no disponible/cancelada.
+MOB-005 Token/OTP válido, inválido y expirado en sandbox.
+MOB-006 Recuperación de sesión tras background/foreground.
+MOB-007 Accesos públicos antes del login.
+MOB-008 Render de cuentas y estados vacíos.
+MOB-009 Menú principal y navegación.
+MOB-010 Catálogo de Transferir o pagar.
+MOB-011 Transferencia a cuenta BAC favorita.
+MOB-012 Búsqueda/filtrado de favoritos.
+MOB-013 Transferencia a cuenta no favorita en sandbox.
+MOB-014 Monto mínimo/máximo y formato de moneda.
+MOB-015 Descripción opcional y sugerencias de concepto.
+MOB-016 Revisión antes de confirmar.
+MOB-017 Comprobante generado.
+MOB-018 Compartir comprobante mediante share sheet simulado.
+MOB-019 Imagen/recurso roto: fallback accesible y reintento.
+MOB-020 Sin red / red lenta / reconexión.
+MOB-021 Doble tap en confirmar no duplica operación (sandbox).
+MOB-022 Accesibilidad con lector de pantalla, foco y tamaño de texto.
+MOB-023 Orientación/tamaños de pantalla soportados.
+MOB-024 Deep links permitidos y sesión expirada.
+MOB-025 Logs no contienen credenciales, tokens ni datos financieros.
+
+TRAZABILIDAD
+ISTQB: diseño basado en riesgo, particiones, valores límite, transición de estados, tablas de decisión, exploratorio, regresión y automatización.
+ISO/IEC 25010: adecuación funcional, eficiencia, compatibilidad, capacidad de interacción, fiabilidad, seguridad, mantenibilidad y flexibilidad. Safety se analiza cuando sea pertinente al contexto del producto.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_02_APPIUM_TYPESCRIPT.txt
+=====================================================================
+QA LEARNING HUB — EJEMPLO APPIUM + TYPESCRIPT
+SOLO APP DEMO / SANDBOX AUTORIZADO
+
+Objetivo: mostrar cómo automatizar el flujo sin apuntar a la aplicación real de una entidad financiera.
+
+Dependencias sugeridas:
+- Appium 2
+- WebdriverIO + TypeScript
+- driver UiAutomator2 (Android) / XCUITest (iOS)
+
+// pages/LoginPage.ts
+export class LoginPage {
+  get user() { return $('~login-user'); }
+  get password() { return $('~login-password'); }
+  get submit() { return $('~login-submit'); }
+  get help() { return $('~login-help'); }
+  get exchangeRate() { return $('~exchange-rate'); }
+
+  async login(username: string, password: string) {
+    await this.user.setValue(username);
+    await this.password.setValue(password);
+    await this.submit.click();
+  }
+}
+
+// pages/HomePage.ts
+export class HomePage {
+  get accounts() { return $('~home-accounts'); }
+  get transferOrPay() { return $('~nav-transfer-pay'); }
+  get requests() { return $('~nav-requests'); }
+  get more() { return $('~nav-more'); }
+}
+
+// pages/TransferPage.ts
+export class TransferPage {
+  get transferMoney() { return $('~transfer-money'); }
+  get bacAccounts() { return $('~transfer-bac-accounts'); }
+  get favoritesSearch() { return $('~favorites-search'); }
+  get amount() { return $('~transfer-amount'); }
+  get detail() { return $('~transfer-detail'); }
+  get review() { return $('~transfer-review'); }
+  get confirm() { return $('~transfer-confirm'); }
+  get receipt() { return $('~transfer-receipt'); }
+
+  async transferToFavorite(name: string, amount: string, detail = 'Transferencia') {
+    await this.transferMoney.click();
+    await this.bacAccounts.click();
+    await this.favoritesSearch.setValue(name);
+    await $(`~favorite-${name}`).click(); // ID de DEMO, no selector real.
+    await this.amount.setValue(amount);
+    await this.detail.setValue(detail);
+    await this.review.click();
+  }
+}
+
+// test/transfer.e2e.ts
+import { LoginPage } from '../pages/LoginPage';
+import { HomePage } from '../pages/HomePage';
+import { TransferPage } from '../pages/TransferPage';
+
+describe('Banca móvil demo - transferencia', () => {
+  it('prepara una transferencia a favorito sin ejecutar dinero real', async () => {
+    const login = new LoginPage();
+    const home = new HomePage();
+    const transfer = new TransferPage();
+
+    await login.login(process.env.DEMO_USER!, process.env.DEMO_PASSWORD!);
+    await expect(home.accounts).toBeDisplayed();
+    await home.transferOrPay.click();
+    await transfer.transferToFavorite('QA Demo', '1000', 'Prueba automatizada');
+    await expect(transfer.review).toBeDisplayed();
+
+    // En CI el flujo se detiene antes de una operación irreversible.
+    // En un sandbox transaccional autorizado puede usarse un fixture/mocked backend.
+  });
+});
+
+BUENAS PRÁCTICAS
+- accessibility IDs estables en lugar de XPath frágil.
+- Page/Screen Objects.
+- secretos solo en vault/CI secrets.
+- datos sintéticos.
+- mock del backend para errores, timeouts y estados extremos.
+- screenshots/video únicamente con datos enmascarados.
+- test IDs y correlation IDs para trazabilidad.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_03_BIOMETRIA_TOKEN_SEGURIDAD.txt
+=====================================================================
+QA LEARNING HUB — BIOMETRÍA, TOKEN Y SEGURIDAD
+SOLO DEMO/SANDBOX AUTORIZADO
+
+AUTOMATIZAR EN ENTORNO CONTROLADO
+1. Usuario/contraseña correctos e incorrectos.
+2. Biometría habilitada, rechazada, cancelada y no disponible.
+3. Cambio de biometría del dispositivo y revocación de sesión.
+4. Token/OTP correcto, incorrecto, vencido y reutilizado usando mocks.
+5. Sesión expirada tras inactividad.
+6. Cambio de dispositivo.
+7. Background/foreground durante autenticación.
+8. Rate limiting y bloqueo únicamente en ambiente QA.
+9. Datos sensibles ausentes de logs, screenshots y reportes.
+10. Validar que una autenticación cancelada nunca continúe una transacción.
+
+EJEMPLO DE DISEÑO
+- No automatizar una huella física real en CI.
+- Abstraer BiometricService y simular SUCCESS / FAILURE / CANCELLED / UNAVAILABLE.
+- Mockear TokenService con ACTIVE / EXPIRED / INVALID.
+- Ejecutar pruebas reales de biometría solo en device farm/QA autorizado.
+
+RIESGOS
+SEC-01 Exposición de secretos.
+SEC-02 Reutilización de token.
+SEC-03 sesión válida después de logout.
+SEC-04 información sensible en notificaciones.
+SEC-05 comprobante con más datos de los necesarios.
+SEC-06 acción irreversible por doble tap/retry.
+
+No se incluyen técnicas de evasión, explotación ni pruebas contra producción.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_04_TRANSFERENCIAS_FAVORITOS.txt
+=====================================================================
+QA LEARNING HUB — TRANSFERENCIAS Y FAVORITOS
+
+El Centro de Ayuda de BAC documenta que las cuentas favoritas buscan hacer transferencias más rápidas y reducir la digitación repetitiva. También indica que en Banca Móvil se puede seleccionar Transferir o pagar → Transferir dinero y elegir favoritos.
+
+COBERTURA AUTOMATIZABLE EN SANDBOX
+- Cuenta origen con/sin saldo simulado.
+- Lista de favoritos vacía, pequeña y grande.
+- Buscar favorito por alias/nombre.
+- Ordenar recientes/frecuentes (si el producto lo implementa).
+- Favorito eliminado/inactivo.
+- Cuenta BAC / otro banco / SINPE según fixtures.
+- Monto: vacío, cero, límites y decimales válidos.
+- Descripción opcional.
+- Pantalla de revisión.
+- Confirmación una sola vez.
+- Comprobante y retorno al inicio.
+- Historial refleja operación de sandbox.
+
+OPORTUNIDADES DE UX A VALIDAR CON USUARIOS
+1. Barra de búsqueda siempre visible en favoritos.
+2. Sección 'Recientes' y 'Más usados'.
+3. Alias/foto/inicial del destinatario para reconocerlo rápido.
+4. Acceso rápido a 3–5 destinatarios frecuentes desde Transferir.
+5. Si 'Detalle' no es obligatorio, indicarlo claramente como opcional.
+6. Si aporta valor, sugerencias de detalle: Alquiler, Comida, Transporte, Familia, Otro.
+7. Recordar de forma local/segura conceptos recientes sin almacenar información sensible innecesaria.
+8. Confirmación previa con nombre, cuenta enmascarada, monto, comisión y tiempo estimado de acreditación.
+
+NOTA
+BAC ya documenta cuentas favoritas como mecanismo de agilidad. Por ello, cualquier propuesta de 'hacer favoritos más ágiles' debe evaluarse sobre la versión concreta de la app y mediante pruebas de usabilidad, no asumirse como defecto.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_05_COMPROBANTE_Y_COMPARTIR.txt
+=====================================================================
+QA LEARNING HUB — COMPROBANTE Y COMPARTIR
+
+ESTADO DOCUMENTADO
+BAC indica públicamente que después de una transferencia se muestra confirmación y que el comprobante puede compartirse por correo, WhatsApp u otros medios disponibles.
+
+OPORTUNIDAD DE PRODUCTO
+Reducir pasos posteriores a la transferencia sin enviar información financiera a un tercero sin consentimiento.
+
+Alternativas a experimentar:
+A. Botón principal 'Compartir comprobante'.
+B. Recordar el canal preferido SOLO con consentimiento.
+C. Para destinatarios favoritos, mostrar 'Compartir con [alias]' como acción sugerida, pero requerir confirmación explícita.
+D. En vez de enviar automáticamente una imagen, ofrecer una notificación/confirmación dentro del ecosistema bancario cuando ambas partes sean clientes, sujeto a privacidad y reglas del producto.
+E. Generar comprobante accesible en texto/PDF además de imagen.
+
+POR QUÉ NO RECOMENDAR ENVÍO AUTOMÁTICO SIN CONFIRMACIÓN
+- riesgo de enviar datos al contacto equivocado;
+- privacidad;
+- número de teléfono/canal puede haber cambiado;
+- una transferencia no implica consentimiento para compartir información fuera del banco.
+
+PRUEBAS
+- share sheet abre una sola vez;
+- cancelar compartir no repite transferencia;
+- comprobante no muestra datos innecesarios;
+- accesibilidad del comprobante;
+- contenido correcto: referencia, fecha, monto, destinatario enmascarado;
+- error al generar imagen/PDF tiene fallback;
+- no se guarda el comprobante en almacenamiento público sin consentimiento.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_06_IMAGEN_ROTA_RESILIENCIA.txt
+=====================================================================
+QA LEARNING HUB — IMAGEN/RECURSO ROTO Y RESILIENCIA
+
+El reporte de una imagen rota en una pantalla debe registrarse como observación reproducible antes de clasificarla como defecto confirmado.
+
+CASOS
+IMG-01 Recurso carga con Wi-Fi estable.
+IMG-02 Recurso carga con red lenta simulada.
+IMG-03 CDN responde 404 → aparece fallback, no icono roto.
+IMG-04 timeout → skeleton/fallback y reintento controlado.
+IMG-05 recurso corrupto → UI conserva layout.
+IMG-06 sin conexión → mensaje útil y contenido esencial sigue disponible.
+IMG-07 imagen decorativa no bloquea transferencia.
+IMG-08 imagen informativa tiene texto alternativo/equivalente accesible.
+IMG-09 caché vencida no deja recurso inconsistente.
+IMG-10 cambio dark/light no vuelve ilegible el fallback.
+
+EJEMPLO DE TEST DE COMPONENTE
+it('muestra fallback cuando falla el recurso', async () => {
+  mockImageService.failWith(404);
+  await transferScreen.open();
+  await expect(transferScreen.imageFallback).toBeDisplayed();
+  await expect(transferScreen.continueButton).toBeEnabled();
+});
+
+MÉTRICAS
+- image load success rate
+- fallback activation rate
+- p95 resource load
+- errores por versión/dispositivo/red
+- impacto en abandono del flujo
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_07_OPORTUNIDADES_TIEMPO_IMPACTO.txt
+=====================================================================
+QA LEARNING HUB — OPORTUNIDADES DE MEJORA Y MODELO DE AHORRO DE TIEMPO
+
+DATOS DE REFERENCIA PÚBLICOS (consultados en septiembre 2026)
+- Una fuente de 2025 cita al presidente ejecutivo de BAC Costa Rica indicando más de 1,7 millones de clientes.
+- BAC reportó que 68,5% de su clientela era digital en 2025.
+- BAC Holding reporta más de 6 millones de clientes regionales a diciembre de 2025.
+
+IMPORTANTE: 1,7 millones NO equivale a usuarios activos mensuales de Banca Móvil. Para un business case real se necesita MAU/DAU de la app y número mensual de transferencias.
+
+ESTIMACIÓN ILUSTRATIVA
+Si se combinan 1,7 M clientes con 68,5% digital, se obtiene aproximadamente 1,164,500 clientes digitales. Es una aproximación, no una cifra oficial de usuarios activos de la app.
+
+AHORRO PROPUESTO POR TRANSFERENCIA (HIPÓTESIS A MEDIR)
+- búsqueda/selección de favorito más rápida: 10–25 s
+- claridad/sugerencias en detalle: 5–15 s
+- acceso directo al tipo de transferencia frecuente: 5–15 s
+- compartir comprobante con acción contextual: 5–20 s
+TOTAL HIPOTÉTICO: ~25–75 segundos por transferencia recurrente.
+
+ESCENARIO CONSERVADOR PARA PRODUCT DISCOVERY
+Usar 30–60 segundos como hipótesis inicial, NO como ahorro demostrado.
+
+Si 1,164,500 clientes digitales hicieran una sola transferencia y cada uno ahorrara:
+30 s → 582,250 minutos (~9,704 h) agregadas.
+45 s → 873,375 minutos (~14,556 h).
+60 s → 1,164,500 minutos (~19,408 h).
+
+No debe presentarse esto como ahorro anual del banco. Para anualizar: transferencias elegibles/mes × segundos ahorrados medidos en usability testing × 12.
+
+PLAN PARA MEDIRLO
+1. Instrumentar funnel anónimo: inicio transferencia → destinatario → monto → revisión → confirmación.
+2. Medir mediana y p75/p95 de tiempo por paso.
+3. Separar nuevos vs recurrentes.
+4. A/B test de búsqueda, recientes y acceso rápido.
+5. Medir task completion, error rate, backtracking y abandono.
+6. Usability test con consentimiento.
+7. Ganancia = tiempo baseline - tiempo variante.
+8. Solo después proyectar impacto poblacional.
+
+OPORTUNIDADES PRIORIZADAS
+- búsqueda/recientes en favoritos;
+- acceso rápido a destinatarios frecuentes;
+- detalle explícitamente opcional si la regla lo permite;
+- fallback para imágenes;
+- comprobante con compartir contextual, nunca envío externo automático sin consentimiento;
+- reducir navegación redundante;
+- mantener revisión final y autenticación adaptativa por seguridad.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_MOVIL_08_PLAN_AUTOMATIZACION_CI_CD.txt
+=====================================================================
+QA LEARNING HUB — PLAN DE AUTOMATIZACIÓN MÓVIL CI/CD
+
+PIRÁMIDE PRÁCTICA
+1. Unit/component: reglas, formatters, validadores, estados, mocks.
+2. API/contract: servicios sandbox, schemas, idempotencia y errores.
+3. Mobile UI: pocos journeys críticos Appium/WDIO.
+4. Exploratorio/manual: biometría física, accesibilidad real, UX, interrupciones y dispositivos especiales.
+
+SUITE SMOKE
+- abrir app demo
+- login sandbox
+- cuentas visibles
+- navegar Transferir o pagar
+- abrir Transferir dinero
+- seleccionar favorito sintético
+- completar monto/detalle
+- llegar a revisión SIN confirmar operación real
+
+REGRESIÓN
+- Android/iOS soportados
+- tamaños de pantalla
+- red normal/lenta/offline
+- permisos
+- background/foreground
+- localización/moneda
+- accesibilidad
+- errores de recursos
+
+PIPELINE
+PR: lint + unit + component + API mock
+Merge: smoke móvil emulador/simulador
+Nightly: matriz de dispositivos QA + regresión
+Release candidate: dispositivos físicos + accesibilidad + exploratory + performance del cliente móvil
+
+QUALITY GATES EJEMPLO
+- 100% smoke
+- 0 defectos críticos abiertos
+- crash-free objetivo definido por producto
+- sin secretos/PII en logs
+- accesibilidad crítica sin bloqueadores
+- p95 de pasos clave dentro del presupuesto definido
+
+No ejecutar suites masivas, carga ni transacciones contra producción de terceros.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_01_RUTA_COMPETENCIAS.txt
+=====================================================================
+QA Learning Hub · Ruta Performance & Automation Engineering
+Caso de referencia curricular: Analista Programador II (QA Rendimiento & Automatización)
+
+OBJETIVO
+Formar para diseñar, ejecutar, analizar y comunicar pruebas de rendimiento en Web/API, complementadas con automatización Web/Mobile/API y gestión de datos de prueba.
+
+MÓDULOS
+1. Fundamentos: baseline, carga, estrés, spike, capacidad, escalabilidad, resiliencia.
+2. Modelado de carga: usuarios, concurrencia, arrival rate, ramp-up/down, think time, pacing.
+3. JMeter: Thread Groups, HTTP Request, variables, CSV Data Set, correlation, assertions, timers, controllers, Groovy/JSR223, CLI y reportes.
+4. Métricas: throughput, response time, latency, concurrency, error rate, P90/P95/P99.
+5. Infraestructura: CPU, memoria, red, almacenamiento, saturación y colas.
+6. Datos: SQL/NoSQL, connection pools, queries lentas, locks, índices y caché.
+7. Arquitecturas: microservicios, API gateway, load balancer, caché distribuida, integración.
+8. Kubernetes: pods, requests/limits, autoscaling, CPU/memory y correlación con la prueba.
+9. Cloud: AWS/Azure y conceptos de capacidad/observabilidad.
+10. Observabilidad: CloudWatch, Dynatrace, New Relic, Grafana, Prometheus y Azure Monitor.
+11. Alternativas: k6, Gatling, LoadRunner, BlazeMeter y NeoLoad.
+12. Automatización funcional: Playwright/Selenium, Appium, Postman/Newman/SoapUI.
+13. BDD: Cucumber/Serenity/SpecFlow/Behave y criterios de uso.
+14. Datos de prueba: generación sintética, parametrización, privacidad, limpieza y repetibilidad.
+15. IA para Performance QA: asistentes para análisis, hipótesis y borradores; validar siempre contra métricas.
+16. Reporte: ejecutivo vs técnico, evidencia, bottlenecks, recomendaciones y riesgo residual.
+17. CI/CD: smoke performance, thresholds, tendencias y quality gates.
+18. Capstone: laboratorio distribuido ficticio con Web/API + observabilidad + reporte.
+
+CRITERIO DE COBERTURA
+Una competencia se considera cubierta cuando incluye teoría + ejemplo + laboratorio + evaluación. Las herramientas comerciales se estudian a nivel conceptual cuando no exista licencia de laboratorio.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_02_JMETER_LAB.txt
+=====================================================================
+LABORATORIO JMETER · SOLO SANDBOX/QA AUTORIZADO
+
+Objetivo: crear una prueba reproducible contra una API DEMO propia, nunca contra producción bancaria.
+
+Estructura sugerida del .jmx:
+Test Plan
+  User Defined Variables: BASE_URL, USERS, RAMP_UP, DURATION
+  Thread Group / Concurrency model
+    CSV Data Set Config (datos sintéticos)
+    HTTP Request Defaults
+    Transaction Controller: consultar-cuentas-demo
+      HTTP GET /api/demo/accounts
+      Response Assertion: 200
+      JSON Assertion: estructura esperada
+    Timer / pacing
+  Backend Listener -> observabilidad de laboratorio
+
+JSR223/Groovy de ejemplo para marcar una respuesta lenta:
+long ms = prev.getTime()
+if (ms > 1000) {
+    log.warn("Respuesta DEMO sobre 1000 ms: " + ms)
+}
+
+Ejecución recomendada en CI:
+jmeter -n -t performance-demo.jmx -l results.jtl -e -o report
+
+Escenarios didácticos:
+- Baseline: 1 usuario.
+- Load: volumen esperado del sandbox.
+- Stress: incremento gradual hasta degradación controlada.
+- Spike: cambio abrupto de demanda en sandbox.
+- Capacity: determinar capacidad bajo criterios definidos.
+
+No copie cifras de producción como criterio universal. Defina SLO/criterios con negocio, arquitectura y baseline del ambiente.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_03_METRICAS_OBSERVABILIDAD.txt
+=====================================================================
+MÉTRICAS Y OBSERVABILIDAD
+
+Cliente/prueba:
+- Throughput: operaciones completadas por unidad de tiempo.
+- Response time: duración observada de la operación.
+- Latency: demora asociada a la respuesta; documente exactamente qué mide la herramienta.
+- Error rate: proporción de operaciones fallidas.
+- Concurrency: trabajo simultáneo activo.
+- P90/P95/P99: percentiles; evitan depender solo del promedio.
+
+Aplicación:
+- request rate, errores, duración, pools, colas, GC/runtime cuando aplique.
+Infraestructura:
+- CPU, memoria, red, almacenamiento/IO.
+Datos:
+- query duration, conexiones, locks, pool exhaustion, caché hit/miss.
+Distribuido:
+- gateway, balanceador, servicio, dependencia, DB/cache; usar correlation/trace IDs en laboratorio.
+
+Prometheus/Grafana:
+Los histogramas permiten calcular percentiles agregables. Evite promediar percentiles precomputados entre instancias. Correlacione P95/P99 con CPU/memoria/error rate y cambios de throughput.
+
+Reporte mínimo:
+Objetivo | ambiente | workload | datos | criterio | resultado | evidencia | bottleneck | impacto | recomendación | riesgo residual.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_04_K6_CI_CD.txt
+=====================================================================
+K6 + CI/CD · EJEMPLO PARA API DEMO
+
+import http from 'k6/http';
+import { check } from 'k6';
+
+export const options = {
+  stages: [
+    { duration: '30s', target: 10 },
+    { duration: '1m', target: 10 },
+    { duration: '30s', target: 0 },
+  ],
+  thresholds: {
+    http_req_failed: ['rate<0.01'],
+    http_req_duration: ['p(90)<400', 'p(95)<600', 'p(99)<1000'],
+    checks: ['rate>0.99'],
+  },
+};
+
+export default function () {
+  const baseUrl = __ENV.BASE_URL || 'https://test-api.example.invalid';
+  const r = http.get(`${baseUrl}/health`);
+  check(r, { 'status esperado': (x) => x.status === 200 });
+}
+
+NOTA
+Los valores son didácticos, no SLO de BAC. En un proyecto real deben provenir de requisitos/baseline. Los thresholds convierten criterios en pass/fail y pueden integrarse en CI/CD.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_05_KUBERNETES_CLOUD.txt
+=====================================================================
+PERFORMANCE EN MICROSERVICIOS, KUBERNETES Y CLOUD
+
+Mapa mental:
+Cliente -> Load Balancer -> API Gateway -> Microservicio -> Cache/DB/servicio externo.
+
+Durante una prueba autorizada correlacione:
+- demanda/throughput con réplicas y autoscaling;
+- CPU/memory por pod;
+- requests/limits y throttling;
+- restarts/errores;
+- latencia gateway->service->DB;
+- connection pools y cache hit rate;
+- saturación de dependencias.
+
+AWS: practicar conceptos de CloudWatch para métricas/logs/alarmas.
+Azure: practicar Azure Monitor/Application Insights en un laboratorio propio.
+Prometheus/Grafana: métricas, histogramas, dashboards y alertas.
+Dynatrace/New Relic: estudiar APM, trazas y correlación cuando se disponga de entorno/licencia.
+
+Ejercicio: provocar en una aplicación demo un cuello de botella controlado, observar P95/P99 y recursos, formular hipótesis, corregir configuración/código de laboratorio y repetir la prueba.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_06_AUTOMATION_BDD_API_MOBILE.txt
+=====================================================================
+AUTOMATIZACIÓN COMPLEMENTARIA
+
+Web: Playwright / Selenium WebDriver
+Mobile: Appium + device/emulator matrix
+API: Postman/Newman, Insomnia/SoapUI como herramientas complementarias
+BDD: Cucumber, Serenity, SpecFlow, Behave
+Cloud/device: Sauce Labs u opciones equivalentes
+
+Diseño:
+- separar smoke funcional de carga;
+- Page/Screen Objects para UI;
+- API clients reutilizables;
+- fixtures y datos sintéticos;
+- tags por capa/riesgo;
+- evidencia y reporte;
+- pruebas deterministas antes de añadir carga.
+
+BDD no debe usarse para convertir cada detalle técnico de performance en Given/When/Then. Úselo cuando mejore la comunicación de comportamiento/criterios con negocio. Mantenga perfiles técnicos y métricas en configuración especializada.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_07_IA_ANALISIS.txt
+=====================================================================
+IA ASISTIDA PARA PERFORMANCE QA
+
+Usos apropiados:
+- proponer hipótesis de bottleneck a partir de métricas anonimizadas;
+- generar borradores de scripts para sandbox;
+- explicar P90/P95/P99;
+- comparar ejecuciones y resumir tendencias;
+- generar borrador de reporte técnico/ejecutivo;
+- revisar código de scripts y detectar duplicación.
+
+Controles:
+- no enviar secretos, tokens, PII, datos bancarios ni arquitectura confidencial a servicios no autorizados;
+- toda conclusión debe verificarse contra telemetría;
+- separar correlación de causalidad;
+- registrar prompt/modelo/versión cuando sea relevante para reproducibilidad;
+- revisión humana antes de recomendaciones de release.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PERFORMANCE_08_CAPSTONE_EVALUACION.txt
+=====================================================================
+CAPSTONE · PERFORMANCE & AUTOMATION ENGINEER
+
+Sistema ficticio: banca-demo con Web + REST + microservicios + DB + cache.
+Entregables:
+1. NFR y criterios de aceptación.
+2. Workload model.
+3. JMeter parametrizado con datos sintéticos.
+4. k6 smoke/performance gate.
+5. Dashboard de observabilidad.
+6. Correlación app/infra/DB.
+7. Identificación de un bottleneck controlado.
+8. Recomendación y retest.
+9. Suite funcional Web/API/Mobile mínima.
+10. Reporte ejecutivo y técnico.
+
+Evaluación:
+25% conocimiento
+35% laboratorio
+20% análisis situacional
+20% capstone
+
+Preguntas de entrevista:
+- Diferencia load/stress/spike/capacity.
+- Por qué P95 puede ser más útil que promedio.
+- Qué revisar si throughput deja de crecer y CPU no está saturada.
+- Cómo distinguir problema de DB, gateway o servicio.
+- Cómo parametrizar/correlacionar JMeter.
+- Cómo evitar que datos de prueba invaliden resultados.
+- Qué performance checks ejecutar en CI y cuáles reservar para un ambiente dedicado.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_01_FUNCIONAL_PLAYWRIGHT.txt
+=====================================================================
+// QA Learning Hub · Caso educativo BAC Préstamo Personal
+// Tipo: funcional, contenido, navegación y regresión UI.
+// Ejecutar únicamente sobre contenido público y no enviar solicitudes reales.
+// Dependencias: npm i -D @playwright/test
+
+import { test, expect } from '@playwright/test';
+const URL = 'https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test.describe('Préstamo Personal BAC - sitio público', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(URL, { waitUntil: 'domcontentloaded' });
+  });
+
+  test('muestra título, beneficios y CTA', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /préstamo personal/i }).first()).toBeVisible();
+    await expect(page.getByText(/trámite 100% en línea/i)).toBeVisible();
+    await expect(page.getByText(/aprobación rápida/i)).toBeVisible();
+    await expect(page.getByText(/pagos mensuales/i)).toBeVisible();
+    await expect(page.getByRole('link', { name: /solicit/i }).first()).toBeVisible();
+  });
+
+  test('presenta condiciones y requisitos públicos', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /condiciones y requisitos/i })).toBeVisible();
+    await expect(page.getByText(/tarjeta de crédito BAC/i).first()).toBeVisible();
+    await expect(page.getByText(/mayor de 21 años/i)).toBeVisible();
+    await expect(page.getByText(/tasa fija/i).first()).toBeVisible();
+  });
+
+  test('FAQ expone información clave', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: /preguntas frecuentes/i })).toBeVisible();
+    for (const q of [/moneda/i,/primera cuota/i,/saldo y las cuotas/i,/pagos anticipados/i,/cancelar mi préstamo/i]) {
+      await expect(page.getByText(q).first()).toBeVisible();
+    }
+  });
+
+  test('CTA de solicitud tiene destino válido sin ejecutar transacción', async ({ page }) => {
+    const cta = page.getByRole('link', { name: /solicit/i }).first();
+    const href = await cta.getAttribute('href');
+    expect(href).toBeTruthy();
+    expect(href).toMatch(/^https?:\/\//);
+    // No se hace click: evita entrar o enviar un flujo transaccional real.
+  });
+
+  test('preferencias de cookies son operables', async ({ page }) => {
+    const config = page.getByRole('button', { name: /configurar cookies/i });
+    if (await config.isVisible().catch(() => false)) {
+      await config.click();
+      await expect(page.getByRole('heading', { name: /preferencias de cookies/i })).toBeVisible();
+      await expect(page.getByRole('button', { name: /guardar/i })).toBeVisible();
+      await expect(page.getByRole('button', { name: /cancelar/i })).toBeVisible();
+    }
+  });
+});
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_02_ACCESIBILIDAD_USABILIDAD.txt
+=====================================================================
+// Tipo: accesibilidad + usabilidad. Inspirado en ISTQB CT-UT y calidad de interacción.
+// Dependencias: npm i -D @playwright/test @axe-core/playwright
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('WCAG automatizable: sin violaciones serious/critical', async ({ page }) => {
+  await page.goto(URL, { waitUntil:'domcontentloaded' });
+  const result = await new AxeBuilder({ page }).analyze();
+  const severe = result.violations.filter(v => ['serious','critical'].includes(v.impact ?? ''));
+  expect(severe, JSON.stringify(severe, null, 2)).toEqual([]);
+});
+
+test('estructura semántica y navegación por teclado', async ({ page }) => {
+  await page.goto(URL, { waitUntil:'domcontentloaded' });
+  await expect(page.locator('h1')).toHaveCount(1);
+  const images = page.locator('img');
+  for (let i=0; i<await images.count(); i++) expect(await images.nth(i).getAttribute('alt')).not.toBeNull();
+  await page.keyboard.press('Tab');
+  await expect(page.locator(':focus')).toBeVisible();
+});
+
+// Complementar manualmente: lenguaje claro, consistencia, orden de foco,
+// zoom 200/400%, lector de pantalla, subtítulos/transcripción de videos,
+// comprensión de tasas/monedas/plazos y prevención de errores.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_03_RESPONSIVE_COMPATIBILIDAD.txt
+=====================================================================
+// Tipo: compatibilidad, responsive y portabilidad percibida.
+// Playwright config sugerido: Chromium, Firefox, WebKit + desktop/mobile.
+import { test, expect, devices } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+const viewports=[
+  {name:'mobile',width:390,height:844},
+  {name:'tablet',width:768,height:1024},
+  {name:'desktop',width:1440,height:900}
+];
+for (const vp of viewports) test(`${vp.name}: sin overflow horizontal y CTA visible`, async ({page})=>{
+  await page.setViewportSize({width:vp.width,height:vp.height});
+  await page.goto(URL,{waitUntil:'domcontentloaded'});
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+2);
+  expect(overflow).toBeFalsy();
+  await expect(page.getByRole('heading',{name:/préstamo personal/i}).first()).toBeVisible();
+  await expect(page.getByRole('link',{name:/solicit/i}).first()).toBeVisible();
+});
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_04_RENDIMIENTO_NO_DESTRUCTIVO.txt
+=====================================================================
+// Tipo: performance ligero de una sola navegación. NO es carga/estrés contra producción.
+// Para CT-PT, load/stress/spike/soak deben ejecutarse sólo en ambiente autorizado.
+import { test, expect } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('captura métricas de navegación sin generar carga', async ({page})=>{
+  await page.goto(URL,{waitUntil:'load'});
+  const m=await page.evaluate(()=>{
+    const n=performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    return {domContentLoaded:n.domContentLoadedEventEnd-n.startTime, load:n.loadEventEnd-n.startTime, transfer:n.transferSize};
+  });
+  console.table(m);
+  expect(m.load).toBeGreaterThan(0);
+});
+
+/* En QA/sandbox autorizado:
+- baseline, load, stress, spike, endurance/soak y capacity
+- p50/p90/p95/p99, throughput, error rate
+- CDN/cache, imágenes, JS/CSS, terceros, API y backend
+- thresholds/SLO y quality gates CI/CD
+Nunca lanzar carga o estrés contra el sitio bancario público sin autorización explícita.
+*/
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_05_CONTENIDO_SEO_CALIDAD.txt
+=====================================================================
+// Tipo: calidad de contenido, SEO técnico y consistencia de reglas públicas.
+import { test, expect } from '@playwright/test';
+const URL='https://www.baccredomatic.com/es-cr/personas/prestamos/personales';
+
+test('metadatos mínimos y jerarquía', async ({page})=>{
+ await page.goto(URL,{waitUntil:'domcontentloaded'});
+ await expect(page).toHaveTitle(/préstamo/i);
+ expect(await page.locator('meta[name="description"]').getAttribute('content')).toBeTruthy();
+ await expect(page.locator('h1')).toHaveCount(1);
+});
+
+test('detecta contradicciones de contenido para revisión humana', async ({page})=>{
+ await page.goto(URL,{waitUntil:'domcontentloaded'});
+ const text=(await page.locator('body').innerText()).replace(/\s+/g,' ');
+ // Ejemplo de regla de auditoría: si se publican Colones como condición y la FAQ dice colones o dólares,
+ // registrar una observación para revisión editorial; no asumir automáticamente que sea un defecto.
+ const conditionColones=/Moneda:\s*Colones/i.test(text);
+ const faqDosMonedas=/colones o dólares/i.test(text);
+ console.log({conditionColones,faqDosMonedas});
+});
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_06_SEGURIDAD_QA_AUTORIZADA.txt
+=====================================================================
+SEGURIDAD / ISTQB CT-SEC y CT-STE
+
+Este archivo NO contiene payloads de explotación ni pruebas intrusivas contra BAC.
+El sitio es un sistema bancario real. Las pruebas activas de seguridad deben realizarse únicamente con autorización escrita y en un entorno designado.
+
+Cobertura para sandbox autorizado:
+1. Requisitos y threat/risk modeling.
+2. Autenticación, autorización y gestión de sesión.
+3. Protección de datos sensibles y secretos.
+4. Validación de entradas y salidas.
+5. Headers, TLS y cookies seguras.
+6. CSRF, XSS, inyección y SSRF: validar mediante herramientas aprobadas en laboratorio, no en producción.
+7. Rate limiting, anti-automation y manejo seguro de errores.
+8. Dependencias/SCA, SAST, DAST y secret scanning en CI/CD.
+9. Logging/auditoría sin exponer PII.
+10. Privacidad/consentimiento y minimización de datos.
+11. Revisión de APIs en sandbox: autenticación, autorización por objeto, schemas e idempotencia.
+12. Evidencia, severidad, reproducibilidad, remediación y re-test.
+
+Automatización segura en CI:
+- unit/integration tests
+- SAST/SCA/secret scanning del código propio
+- policy checks
+- pruebas de headers/configuración sobre un ambiente propio
+- DAST únicamente sobre targets expresamente autorizados
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_07_ISO25010_ISTQB_MAPEO.txt
+=====================================================================
+MAPEO DE CALIDAD · BAC PRÉSTAMO PERSONAL · CASO EDUCATIVO
+
+ISO/IEC 25010:2023 define nueve características del modelo de calidad de producto. Aplicación al caso:
+- Functional suitability: contenido, CTA, condiciones, FAQ y flujos esperados.
+- Performance efficiency: tiempos, recursos y comportamiento bajo carga (solo sandbox autorizado para carga).
+- Compatibility: navegadores, dispositivos, coexistencia e interoperabilidad.
+- Interaction capability: learnability, operability, error protection, accessibility y experiencia.
+- Reliability: disponibilidad, tolerancia a fallos, recuperación y resiliencia (sandbox).
+- Security: confidencialidad, integridad, autenticidad, accountability y controles (sandbox autorizado).
+- Maintainability: modularidad, analizabilidad, modificabilidad, testabilidad y reusabilidad del código de pruebas.
+- Flexibility: adaptación a canales, configuración, escalabilidad de la solución y variaciones de entorno.
+- Safety: identificar riesgos donde una falla del sistema pueda causar consecuencias no aceptables; tratar mediante análisis de riesgo y controles.
+
+ISTQB aplicado de forma transversal (selección pertinente del portafolio):
+- CTFL: fundamentos, técnicas, riesgo, defectos y proceso.
+- CTAL Test Analyst: análisis/diseño y cobertura funcional.
+- CTAL Technical Test Analyst: calidad técnica/no funcional.
+- CTAL Test Management: estrategia, riesgo, métricas y gobernanza.
+- CTAL Test Automation Engineering + CT-TAS: arquitectura y estrategia de automatización.
+- CT-PT: performance.
+- CT-UT: usabilidad/accesibilidad.
+- CT-SEC / CT-STE: seguridad en entorno autorizado.
+- CT-MAT: conceptos aplicables a Banca Móvil.
+- CT-AcT: UAT/acceptance criteria.
+- CT-AI / AI Testing: IA para testing y testing de sistemas con IA cuando corresponda.
+- CT-GenAI: uso responsable de GenAI en actividades de testing cuando corresponda.
+- CT-FT (Finance Testing): dominio financiero, riesgos y escenarios propios de finanzas.
+- Agile Tester / Agile Technical Tester: colaboración y testing continuo.
+- Model-Based Tester: modelos de estados y reglas para flujos financieros.
+
+Trazabilidad recomendada:
+Requisito/regla -> riesgo -> condición de prueba -> caso -> automatización -> evidencia -> defecto -> re-test -> criterio de salida.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_PRESTAMOS_08_OPORTUNIDADES_MEJORA.txt
+=====================================================================
+OPORTUNIDADES DE MEJORA OBSERVADAS EN CONTENIDO PÚBLICO
+Fecha de análisis: 2026-09-20
+
+Estas son observaciones para revisión, no defectos confirmados del sistema interno.
+
+1. Consistencia de moneda: la sección de condiciones indica "Moneda: Colones", mientras la FAQ indica que puede solicitarse en colones o dólares. Conviene aclarar alcance/producto/segmento para evitar ambigüedad.
+2. Consistencia entre páginas: la página general de préstamos y la página específica muestran montos/tasas/requisitos que pueden corresponder a variantes distintas. Conviene etiquetar claramente vigencia, segmento y producto.
+3. TAE: revisar presentación textual del dato "TAE máxima" para que monto, porcentaje y unidad sean inequívocos.
+4. Plazo: "período mínimo y máximo es de 60 meses" podría redactarse de forma más explícita si realmente existe un único plazo o un rango.
+5. Cancelación anticipada: FAQ indica que podría aplicar comisión si fue informada; otra información pública puede mencionar cancelación sin comisiones. Conviene explicar cuándo aplica cada regla.
+6. Videos/tutoriales: asegurar título accesible, transcripción/subtítulos y estado del paso actual correcto.
+7. Accesibilidad: validar contraste, foco, zoom/reflow, alt text, landmarks y lector de pantalla.
+8. CTA: mantener un nombre accesible y contexto consistente para "Solicitá tu préstamo".
+9. Contenido legal/comercial: mostrar fecha de actualización/vigencia cerca de tasas, montos, seguros y comisiones.
+10. Arquitectura de información: enlazar claramente condiciones, contrato/reglamento, seguros, privacidad y canales de ayuda.
+11. Automatización editorial: implementar pruebas de consistencia entre condiciones, FAQ, página de categoría y material tutorial.
+12. Observabilidad UX: medir abandono por sección, errores de navegación y efectividad de CTA sin capturar datos sensibles innecesarios.
+
+=====================================================================
+ARCHIVO ORIGINAL: BAC_REQ28898_GAP_ANALYSIS.txt
+=====================================================================
+QA LEARNING HUB v64 — MATRIZ DE COBERTURA
+Vacante analizada: Ingeniero de Automatización de TI – BAC Share Services (req28898)
+Fecha de publicación indicada por la vacante suministrada: 18/09/2026
+
+OBJETIVO
+Convertir los requisitos de la vacante en conocimiento entrenable dentro de QA Learning Hub. Esta matriz no afirma afiliación con BAC ni garantiza contratación.
+
+REQUISITO -> COBERTURA INTEGRADA
+1. Python / Java / JavaScript / PowerShell -> Ruta Automatización de TI & Agentes de IA: desarrollo para automatización.
+2. REST / web services / mensajería / SQL / NoSQL -> Integraciones empresariales.
+3. Ansible -> Automatización de infraestructura: inventory, YAML/playbooks, roles, variables, secretos e idempotencia.
+4. Power Automate -> RPA/low-code: cloud/desktop flows, triggers, actions, connectors, excepciones y gobierno.
+5. Automation Anywhere -> Fundamentos RPA: bots, Control Room/Bot Agent a nivel conceptual, ejecución y gobierno.
+6. IA generativa / LLM -> Fundamentos GenAI, contexto, grounding, evaluación y límites.
+7. Prompt engineering -> Diseño, versionado, pruebas y evaluación de prompts.
+8. Agentes inteligentes -> tools, handoffs, guardrails, estado, orquestación, trazas y Human-in-the-Loop.
+9. Automatización TI / infraestructura / apps / datos -> patrones y selección API vs código vs RPA vs IaC.
+10. Git / repositorios -> branching, commits, pull requests, revisión y trazabilidad.
+11. CI/CD -> build/test/deploy, quality gates y GitHub Actions como laboratorio.
+12. Pruebas automatizadas -> unitarias, integración, API, contratos, regresión y evals de agentes.
+13. Desarrollo seguro -> secretos, permisos mínimos, validación de entradas/salidas, dependencias y auditabilidad.
+14. Cloud / arquitecturas modernas -> servicios gestionados, eventos, contenedores, serverless, resiliencia y observabilidad.
+15. Diseñar soluciones escalables/reutilizables -> modularidad, idempotencia, retries, colas, concurrencia y mantenibilidad.
+16. Agile/Scrum/Design Thinking -> descubrimiento, prototipo, iteración y colaboración multidisciplinaria.
+17. Liderazgo / comunidad -> code review, estándares, mentoring y documentación reutilizable.
+18. Medición de impacto -> horas ahorradas, tiempo de ciclo, tasa de éxito, errores evitados, adopción, costo y experiencia.
+19. Innovación -> evaluación de oportunidades, hipótesis, prototipos y experimentación controlada.
+20. Proyectos/comunidades/hackatones -> capstone diseñado para convertirse en evidencia de portafolio.
+
+CAPSTONE RECOMENDADO
+Agente de automatización de TI en sandbox: recibe una solicitud ficticia, clasifica intención, consulta una API simulada, usa una herramienta permitida, requiere aprobación humana cuando corresponda, registra trazas y genera evidencia. Debe incluir pruebas, pipeline CI/CD, documentación, riesgos y métricas de impacto.
+
+FUENTES PRIMARIAS RECOMENDADAS
+- OpenAI developer docs: agentes y orquestación.
+- Microsoft Learn: Power Automate.
+- Ansible official docs.
+- Automation Anywhere docs.
+- GitHub Actions docs.
