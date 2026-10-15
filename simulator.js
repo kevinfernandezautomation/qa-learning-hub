@@ -1,3 +1,8 @@
+
+// Datos de candidato: cookie propia, SameSite=Lax, expiración de 24 horas.
+const QA_CANDIDATE_COOKIE='qa_sim_candidate';
+function readCandidateCookie(){try{const item=document.cookie.split('; ').find(v=>v.startsWith(QA_CANDIDATE_COOKIE+'='));if(!item)return null;const data=JSON.parse(decodeURIComponent(item.slice(QA_CANDIDATE_COOKIE.length+1)));return data&&typeof data.name==='string'&&typeof data.email==='string'?data:null;}catch{return null;}}
+function saveCandidateCookie(name,email){const secure=location.protocol==='https:'?'; Secure':'';document.cookie=QA_CANDIDATE_COOKIE+'='+encodeURIComponent(JSON.stringify({name,email}))+'; Max-Age=86400; Path=/; SameSite=Lax'+secure;}
 (function(){
 'use strict';
 const DIFFICULTY_TIME={Principiante:null,'Fácil':60,'Medio':45,'Difícil':30};
@@ -119,8 +124,9 @@ function boot(){
  let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
  let draft=null;const returningFromGuide=sessionStorage.getItem('qaExamReturnPending')==='1';
  if(returningFromGuide){try{draft=JSON.parse(sessionStorage.getItem('qaExamConfigDraft')||'null')}catch{}sessionStorage.removeItem('qaExamReturnPending');}
- el('candidateName').value=user?.name&&user.name!=='Participante'?user.name:(returningFromGuide?(draft?.name||''):'');
- el('candidateEmail').value=user?.email?user.email:(returningFromGuide?(draft?.email||''):'');
+ const candidateCookie=readCandidateCookie();
+ el('candidateName').value=candidateCookie?.name||(user?.name&&user.name!=='Participante'?user.name:(returningFromGuide?(draft?.name||''):''));
+ el('candidateEmail').value=candidateCookie?.email||(user?.email?user.email:(returningFromGuide?(draft?.email||''):''));
  mode.addEventListener('change',changeMode);
  provider.addEventListener('change',()=>fillCerts());
  simCert.addEventListener('change',updateCert);
@@ -141,6 +147,7 @@ function boot(){
    if(params.get('stack')&&window.QA_STACKS?.[params.get('stack')])simStack.value=params.get('stack');
  }else if(params.get('mode')==='interview'){
    mode.value='interview';
+   if(params.get('role')==='pensiones')role.value='pensiones';
  }
  changeMode();updateStartState();window.applyTranslations?.();
 }
@@ -261,6 +268,7 @@ function buildCertificationBank(){
 }
 function roleSeed(){return /Automatización|Automation/i.test(role.value)?AUTO_Q:MANUAL_Q;}
 function buildInterviewBank(){
+ if(role.value==='pensiones')return (window.PENSION_TRAINING?.questions||[]).map((q,i)=>({q:q.question,a:[...q.options],c:q.answer,d:dif.value,n:i+1,topic:window.PENSION_TRAINING.modules[q.module]?.name||'Pensiones',explanation:q.explanation}));
  const seed=roleSeed(),topics=ROLE_TOPICS[role.value]||[],out=[],seen=new Set();
  for(let round=0;out.length<120;round++){
    const base=seed[round%seed.length],topic=topics[round%topics.length],scenario=SCENARIOS[Math.floor(round/seed.length)%SCENARIOS.length];
@@ -318,7 +326,7 @@ function shuffleQuestionOptions(q){
  return {...q,a:shuffled.map(x=>x.text),c:Array.isArray(q.c)?mapped:mapped[0]};
 }
 function questionKey(q){return String(q?.q||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
-function attemptQuestionCount(){return 40;}
+function attemptQuestionCount(){return mode?.value==='interview'&&role?.value==='pensiones'?Math.min(40,window.PENSION_TRAINING?.questions?.length||40):40;}
 function manualSeniorityFromPct(pct){if(pct<55)return 'Jr';if(pct<72)return 'Mid';if(pct<86)return 'Sr';return 'Lead';}
 function automationSeniorityFromPct(pct){return pct<55?'Jr':pct<75?'Mid':pct<90?'Sr':'Lead';}
 function start(){
@@ -328,6 +336,7 @@ function start(){
  const unique=[...new Map((bank||[]).map(q=>[questionKey(q),q])).values()];
  const targetCount=attemptQuestionCount(),minRequired=targetCount;
  if(unique.length<minRequired){el('practiceMeta').innerHTML=`<strong>No fue posible iniciar</strong><span>El banco seleccionado contiene ${unique.length} preguntas únicas y se requieren al menos ${minRequired}.</span>${recommendationsLink()}`;return;}
+ saveCandidateCookie(name,email);
  let pick=shuffle(unique).slice(0,targetCount).map(shuffleQuestionOptions);
  const key=`examHistory:${currentCert.id}:${dif.value}:${examLang.value}`;let history=[];try{history=JSON.parse(localStorage.getItem(key)||'[]')}catch{};const used=new Set(history.flat());const fresh=unique.filter(q=>!used.has(questionKey(q)));const pool=fresh.length>=targetCount?fresh:unique;pick=shuffle(pool).slice(0,targetCount).map(shuffleQuestionOptions);const keys=pick.map(questionKey);history.push(keys);if(history.length>5)history=history.slice(-5);localStorage.setItem(key,JSON.stringify(history));qs=pick;responses=Array(targetCount).fill(null);idx=0;examLocked=false;
  showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);activateExamIntegrity();
