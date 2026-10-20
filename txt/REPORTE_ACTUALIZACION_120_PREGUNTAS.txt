@@ -1,0 +1,7 @@
+Actualización 2026-10-19
+Seis bancos nuevos de 20 preguntas cada uno (120); se conservan los dos bancos anteriores (40).
+Simulador: nuevo modo Curso de Academia con módulos Oracle, selección de 20 o 40 preguntas según tamaño del banco.
+Academia: botones Practicar y curso Oracle APEX integrado en QA Bases de Datos.
+Limitación: para cursos fuera de los seis nuevos bancos y dos anteriores se utiliza banco QA general o de stack; no existe banco exclusivo por cada curso.
+Revisión normativa: verificar siempre legislación vigente antes de implementar reglas reales.
+Fuentes: https://docs.oracle.com/en/database/oracle/apex/ ; https://www.supen.fi.cr/ ; https://owasp.org/

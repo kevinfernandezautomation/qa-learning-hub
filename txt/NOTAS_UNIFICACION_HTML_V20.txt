@@ -1,0 +1,1 @@
+V20: Páginas de catálogo, rutas y enlaces de certificación consolidadas. Las direcciones antiguas se conservan como redirecciones para enlaces existentes. competencia.html soporta ?id=... y ?view=stack&id=... .

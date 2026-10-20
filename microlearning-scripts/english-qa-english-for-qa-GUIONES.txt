@@ -1,0 +1,217 @@
+RUTA: English for QA
+TIPO: Learning Path
+NIVEL: Inicial–Intermedio
+MÓDULOS: 6
+VIDEOS: 12
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: QA vocabulary ===
+
+VIDEO 1: Concepto esencial — QA vocabulary
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos QA vocabulary. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte QA vocabulary con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría QA vocabulary cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘QA vocabulary’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — QA vocabulary
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos QA vocabulary a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con QA vocabulary, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘QA vocabulary’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Bug reports ===
+
+VIDEO 3: Concepto esencial — Bug reports
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos Bug reports. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Bug reports con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Bug reports cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Bug reports’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Bug reports
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Bug reports a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Bug reports, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Bug reports’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: Agile meetings ===
+
+VIDEO 5: Concepto esencial — Agile meetings
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos Agile meetings. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Agile meetings con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Agile meetings cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Agile meetings’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — Agile meetings
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Agile meetings a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Agile meetings, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Agile meetings’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: Interviews ===
+
+VIDEO 7: Concepto esencial — Interviews
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos Interviews. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Interviews con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Interviews cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Interviews’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — Interviews
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Interviews a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Interviews, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Interviews’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Technical reading ===
+
+VIDEO 9: Concepto esencial — Technical reading
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos Technical reading. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Technical reading con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Technical reading cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Technical reading’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Technical reading
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Technical reading a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Technical reading, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Technical reading’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: Professional writing ===
+
+VIDEO 11: Concepto esencial — Professional writing
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de English for QA veremos Professional writing. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Professional writing con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Professional writing cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Professional writing’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — Professional writing
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Professional writing a una situación práctica dentro de English for QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Professional writing, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Professional writing’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

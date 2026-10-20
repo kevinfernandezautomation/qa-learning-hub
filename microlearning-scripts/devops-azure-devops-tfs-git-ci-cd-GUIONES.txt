@@ -1,0 +1,149 @@
+RUTA: Azure DevOps / TFS + Git + CI/CD
+TIPO: Stack QA
+NIVEL: Intermedio
+MÓDULOS: 4
+VIDEOS: 8
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: Work items ===
+
+VIDEO 1: Concepto esencial — Work items
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Azure DevOps / TFS + Git + CI/CD veremos Work items. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Work items con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Work items cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Work items’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — Work items
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Work items a una situación práctica dentro de Azure DevOps / TFS + Git + CI/CD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Work items, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Work items’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Repositorios ===
+
+VIDEO 3: Concepto esencial — Repositorios
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Azure DevOps / TFS + Git + CI/CD veremos Repositorios. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Repositorios con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Repositorios cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Repositorios’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Repositorios
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Repositorios a una situación práctica dentro de Azure DevOps / TFS + Git + CI/CD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Repositorios, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Repositorios’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: Pipelines ===
+
+VIDEO 5: Concepto esencial — Pipelines
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Azure DevOps / TFS + Git + CI/CD veremos Pipelines. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Pipelines con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Pipelines cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Pipelines’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — Pipelines
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Pipelines a una situación práctica dentro de Azure DevOps / TFS + Git + CI/CD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Pipelines, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Pipelines’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: Quality gates ===
+
+VIDEO 7: Concepto esencial — Quality gates
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Azure DevOps / TFS + Git + CI/CD veremos Quality gates. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Quality gates con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Quality gates cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Quality gates’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — Quality gates
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Quality gates a una situación práctica dentro de Azure DevOps / TFS + Git + CI/CD. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Quality gates, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Quality gates’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

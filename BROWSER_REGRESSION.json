@@ -1,0 +1,54 @@
+[
+  {
+    "page": "index.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/index.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/index.html\", waiting"
+  },
+  {
+    "page": "html/academia.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/academia.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/academia.html\", w"
+  },
+  {
+    "page": "html/simuladores.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/simuladores.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/simuladores.ht"
+  },
+  {
+    "page": "html/pago.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/pago.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/pago.html\", waiting u"
+  },
+  {
+    "page": "html/pensiones-programacion.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/pensiones-programacion.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/pen"
+  },
+  {
+    "page": "html/laboratorio-sql-afiliados.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/laboratorio-sql-afiliados.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/"
+  },
+  {
+    "page": "html/stack-detalle.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/stack-detalle.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/stack-detall"
+  },
+  {
+    "page": "html/empleos.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/empleos.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/empleos.html\", wai"
+  },
+  {
+    "page": "html/ingles-nivel.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/ingles-nivel.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/ingles-nivel."
+  },
+  {
+    "page": "html/ingles-listening.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/ingles-listening.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/ingles-li"
+  },
+  {
+    "page": "html/ingles-qa-examen.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/ingles-qa-examen.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/ingles-qa"
+  },
+  {
+    "page": "html/psicometrica-general.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/psicometrica-general.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/psico"
+  },
+  {
+    "page": "html/prompts.html",
+    "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/qa_js_consolidated/prompts.html\nCall log:\n  - navigating to \"file:///mnt/data/qa_js_consolidated/prompts.html\", wai"
+  }
+]

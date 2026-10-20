@@ -1,0 +1,2 @@
+PAGO AUTOMÁTICO CON TARJETA — v57
+Se usa Stripe Checkout alojado; no se capturan números de tarjeta en el sitio. Configure STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, SITE_URL, COURSE_PRICE_CENTS y VAT_RATE en un backend/serverless. GitHub Pages no ejecuta backend por sí solo. El webhook debe persistir el pago y activar al usuario en una base de datos de forma idempotente.

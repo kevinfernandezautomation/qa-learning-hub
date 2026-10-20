@@ -1,0 +1,319 @@
+RUTA: Virtuoso QA – Training Library y certificaciones
+TIPO: Learning Path
+NIVEL: Inicial–Avanzado
+MÓDULOS: 9
+VIDEOS: 18
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: Virtuoso Platform Introduction ===
+
+VIDEO 1: Concepto esencial — Virtuoso Platform Introduction
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Platform Introduction. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Platform Introduction con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Platform Introduction cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Platform Introduction’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — Virtuoso Platform Introduction
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Platform Introduction a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Platform Introduction, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Platform Introduction’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Getting Started with Virtuoso ===
+
+VIDEO 3: Concepto esencial — Getting Started with Virtuoso
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Getting Started with Virtuoso. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Getting Started with Virtuoso con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Getting Started with Virtuoso cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Getting Started with Virtuoso’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Getting Started with Virtuoso
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Getting Started with Virtuoso a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Getting Started with Virtuoso, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Getting Started with Virtuoso’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: Virtuoso Certified Associate Level 1 ===
+
+VIDEO 5: Concepto esencial — Virtuoso Certified Associate Level 1
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Certified Associate Level 1. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Certified Associate Level 1 con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Certified Associate Level 1 cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Certified Associate Level 1’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — Virtuoso Certified Associate Level 1
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Certified Associate Level 1 a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Certified Associate Level 1, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Certified Associate Level 1’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: Virtuoso Certified Associate Level 2 ===
+
+VIDEO 7: Concepto esencial — Virtuoso Certified Associate Level 2
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Certified Associate Level 2. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Certified Associate Level 2 con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Certified Associate Level 2 cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Certified Associate Level 2’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — Virtuoso Certified Associate Level 2
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Certified Associate Level 2 a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Certified Associate Level 2, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Certified Associate Level 2’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Virtuoso Platform Specialist ===
+
+VIDEO 9: Concepto esencial — Virtuoso Platform Specialist
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Platform Specialist. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Platform Specialist con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Platform Specialist cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Platform Specialist’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Virtuoso Platform Specialist
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Platform Specialist a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Platform Specialist, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Platform Specialist’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: Virtuoso Extensions Specialist ===
+
+VIDEO 11: Concepto esencial — Virtuoso Extensions Specialist
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Extensions Specialist. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Extensions Specialist con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Extensions Specialist cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Extensions Specialist’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — Virtuoso Extensions Specialist
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Extensions Specialist a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Extensions Specialist, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Extensions Specialist’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 7: Virtuoso Certified Associate for D365 ===
+
+VIDEO 13: Concepto esencial — Virtuoso Certified Associate for D365
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Certified Associate for D365. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Certified Associate for D365 con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Certified Associate for D365 cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Certified Associate for D365’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 14: Aplicación QA — Virtuoso Certified Associate for D365
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Certified Associate for D365 a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Certified Associate for D365, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Certified Associate for D365’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 8: Virtuoso Certified Associate for SFDC ===
+
+VIDEO 15: Concepto esencial — Virtuoso Certified Associate for SFDC
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Certified Associate for SFDC. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Certified Associate for SFDC con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Certified Associate for SFDC cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Certified Associate for SFDC’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 16: Aplicación QA — Virtuoso Certified Associate for SFDC
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Certified Associate for SFDC a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Certified Associate for SFDC, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Certified Associate for SFDC’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 9: Virtuoso Best Practices ===
+
+VIDEO 17: Concepto esencial — Virtuoso Best Practices
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Virtuoso QA – Training Library y certificaciones veremos Virtuoso Best Practices. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Virtuoso Best Practices con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Virtuoso Best Practices cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Virtuoso Best Practices’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 18: Aplicación QA — Virtuoso Best Practices
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Virtuoso Best Practices a una situación práctica dentro de Virtuoso QA – Training Library y certificaciones. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Virtuoso Best Practices, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Virtuoso Best Practices’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

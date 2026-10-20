@@ -1,0 +1,13 @@
+QA LEARNING HUB v44 — PRUEBAS DE REGRESIÓN
+
+PASS | Sintaxis JavaScript | 0 errores
+PASS | Enlaces internos | 0 faltantes
+PASS | Menú IA aplicada a QA | 0 páginas antiguas
+PASS | Certificaciones unificadas | Capacitación única + K fuera de cards
+PASS | CTFL duplicados exactos | []
+PASS | CTFL casi duplicados >=0.91 | []
+PASS | CTFL banco añadido en español | []
+PASS | Páginas críticas | []
+PASS | CTFL bank integrado | script + merge
+PASS | Capacitación incluye aplicación laboral | escenario + pasos + evidencia
+PASS | Capacitación gratuita externa | 9/9 credenciales

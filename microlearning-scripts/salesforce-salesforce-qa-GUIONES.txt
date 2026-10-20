@@ -1,0 +1,285 @@
+RUTA: Salesforce QA
+TIPO: Stack QA
+NIVEL: Intermedio–Avanzado
+MÓDULOS: 8
+VIDEOS: 16
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: CRM, objetos y metadata ===
+
+VIDEO 1: Concepto esencial — CRM, objetos y metadata
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos CRM, objetos y metadata. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte CRM, objetos y metadata con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría CRM, objetos y metadata cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘CRM, objetos y metadata’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — CRM, objetos y metadata
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos CRM, objetos y metadata a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con CRM, objetos y metadata, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘CRM, objetos y metadata’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Sandboxes y datos ===
+
+VIDEO 3: Concepto esencial — Sandboxes y datos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos Sandboxes y datos. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Sandboxes y datos con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Sandboxes y datos cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Sandboxes y datos’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Sandboxes y datos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Sandboxes y datos a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Sandboxes y datos, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Sandboxes y datos’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: Roles, perfiles y permission sets ===
+
+VIDEO 5: Concepto esencial — Roles, perfiles y permission sets
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos Roles, perfiles y permission sets. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Roles, perfiles y permission sets con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Roles, perfiles y permission sets cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Roles, perfiles y permission sets’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — Roles, perfiles y permission sets
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Roles, perfiles y permission sets a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Roles, perfiles y permission sets, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Roles, perfiles y permission sets’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: Flows y automatizaciones ===
+
+VIDEO 7: Concepto esencial — Flows y automatizaciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos Flows y automatizaciones. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Flows y automatizaciones con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Flows y automatizaciones cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Flows y automatizaciones’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — Flows y automatizaciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Flows y automatizaciones a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Flows y automatizaciones, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Flows y automatizaciones’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Apex tests ===
+
+VIDEO 9: Concepto esencial — Apex tests
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos Apex tests. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Apex tests con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Apex tests cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Apex tests’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Apex tests
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Apex tests a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Apex tests, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Apex tests’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: LWC + Jest ===
+
+VIDEO 11: Concepto esencial — LWC + Jest
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos LWC + Jest. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte LWC + Jest con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría LWC + Jest cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘LWC + Jest’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — LWC + Jest
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos LWC + Jest a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con LWC + Jest, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘LWC + Jest’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 7: APIs e integraciones ===
+
+VIDEO 13: Concepto esencial — APIs e integraciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos APIs e integraciones. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte APIs e integraciones con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría APIs e integraciones cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘APIs e integraciones’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 14: Aplicación QA — APIs e integraciones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos APIs e integraciones a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con APIs e integraciones, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘APIs e integraciones’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 8: UAT, releases y regresión ===
+
+VIDEO 15: Concepto esencial — UAT, releases y regresión
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de Salesforce QA veremos UAT, releases y regresión. El objetivo es entender qué significa este tema y por qué importa en stack qa. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte UAT, releases y regresión con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría UAT, releases y regresión cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘UAT, releases y regresión’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 16: Aplicación QA — UAT, releases y regresión
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos UAT, releases y regresión a una situación práctica dentro de Salesforce QA. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con UAT, releases y regresión, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘UAT, releases y regresión’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

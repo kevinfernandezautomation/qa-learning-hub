@@ -1,0 +1,285 @@
+RUTA: QA para Software de Contenido y Marketing Digital
+TIPO: Learning Path
+NIVEL: Intermedio
+MÓDULOS: 8
+VIDEOS: 16
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: CMS y flujos editoriales ===
+
+VIDEO 1: Concepto esencial — CMS y flujos editoriales
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos CMS y flujos editoriales. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte CMS y flujos editoriales con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría CMS y flujos editoriales cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘CMS y flujos editoriales’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — CMS y flujos editoriales
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos CMS y flujos editoriales a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con CMS y flujos editoriales, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘CMS y flujos editoriales’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Contenido, enlaces y metadatos ===
+
+VIDEO 3: Concepto esencial — Contenido, enlaces y metadatos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos Contenido, enlaces y metadatos. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Contenido, enlaces y metadatos con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Contenido, enlaces y metadatos cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Contenido, enlaces y metadatos’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Contenido, enlaces y metadatos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Contenido, enlaces y metadatos a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Contenido, enlaces y metadatos, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Contenido, enlaces y metadatos’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: SEO técnico y accesibilidad ===
+
+VIDEO 5: Concepto esencial — SEO técnico y accesibilidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos SEO técnico y accesibilidad. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte SEO técnico y accesibilidad con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría SEO técnico y accesibilidad cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘SEO técnico y accesibilidad’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — SEO técnico y accesibilidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos SEO técnico y accesibilidad a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con SEO técnico y accesibilidad, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘SEO técnico y accesibilidad’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: UTM y analítica ===
+
+VIDEO 7: Concepto esencial — UTM y analítica
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos UTM y analítica. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte UTM y analítica con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría UTM y analítica cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘UTM y analítica’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — UTM y analítica
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos UTM y analítica a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con UTM y analítica, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘UTM y analítica’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Formularios y conversiones ===
+
+VIDEO 9: Concepto esencial — Formularios y conversiones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos Formularios y conversiones. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Formularios y conversiones con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Formularios y conversiones cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Formularios y conversiones’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Formularios y conversiones
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Formularios y conversiones a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Formularios y conversiones, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Formularios y conversiones’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: Email y responsive ===
+
+VIDEO 11: Concepto esencial — Email y responsive
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos Email y responsive. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Email y responsive con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Email y responsive cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Email y responsive’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — Email y responsive
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Email y responsive a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Email y responsive, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Email y responsive’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 7: Consentimiento y privacidad ===
+
+VIDEO 13: Concepto esencial — Consentimiento y privacidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos Consentimiento y privacidad. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Consentimiento y privacidad con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Consentimiento y privacidad cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Consentimiento y privacidad’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 14: Aplicación QA — Consentimiento y privacidad
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Consentimiento y privacidad a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Consentimiento y privacidad, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Consentimiento y privacidad’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 8: A/B testing y releases ===
+
+VIDEO 15: Concepto esencial — A/B testing y releases
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA para Software de Contenido y Marketing Digital veremos A/B testing y releases. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte A/B testing y releases con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría A/B testing y releases cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘A/B testing y releases’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 16: Aplicación QA — A/B testing y releases
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos A/B testing y releases a una situación práctica dentro de QA para Software de Contenido y Marketing Digital. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con A/B testing y releases, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘A/B testing y releases’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

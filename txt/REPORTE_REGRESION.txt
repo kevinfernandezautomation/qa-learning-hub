@@ -1,0 +1,9 @@
+Sintaxis JS comprobada
+Enlaces locales comprobados
+Ruta pensiones ampliada
+Curso IA consolidado
+Jira y Test Management unificados
+Botones principales estandarizados
+Enlaces locales faltantes (incluye posibles preexistentes): 0
+
+Nota: pruebas estáticas, sin navegador ni backend Oracle real.

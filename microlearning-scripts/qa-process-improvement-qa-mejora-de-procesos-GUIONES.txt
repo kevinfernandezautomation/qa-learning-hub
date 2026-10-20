@@ -1,0 +1,353 @@
+RUTA: QA + Mejora de Procesos
+TIPO: Learning Path
+NIVEL: Intermedio–Avanzado
+MÓDULOS: 10
+VIDEOS: 20
+DURACIÓN OBJETIVO: 1:20–1:55 por video
+
+RECOMENDACIONES GENERALES:
+- Una idea central por video.
+- Use subtítulos y tipografía grande.
+- No muestre datos reales, credenciales o información sensible.
+- Cambie de visual cada 8–15 segundos.
+- Termine con una microtarea.
+
+=== MÓDULO 1: Calidad de producto vs calidad de proceso ===
+
+VIDEO 1: Concepto esencial — Calidad de producto vs calidad de proceso
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Calidad de producto vs calidad de proceso. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Calidad de producto vs calidad de proceso con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Calidad de producto vs calidad de proceso cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Calidad de producto vs calidad de proceso’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 2: Aplicación QA — Calidad de producto vs calidad de proceso
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Calidad de producto vs calidad de proceso a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Calidad de producto vs calidad de proceso, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Calidad de producto vs calidad de proceso’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 2: Mapeo del flujo de QA ===
+
+VIDEO 3: Concepto esencial — Mapeo del flujo de QA
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Mapeo del flujo de QA. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Mapeo del flujo de QA con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Mapeo del flujo de QA cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Mapeo del flujo de QA’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 4: Aplicación QA — Mapeo del flujo de QA
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Mapeo del flujo de QA a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Mapeo del flujo de QA, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Mapeo del flujo de QA’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 3: Definir métricas y baseline ===
+
+VIDEO 5: Concepto esencial — Definir métricas y baseline
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Definir métricas y baseline. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Definir métricas y baseline con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Definir métricas y baseline cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Definir métricas y baseline’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 6: Aplicación QA — Definir métricas y baseline
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Definir métricas y baseline a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Definir métricas y baseline, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Definir métricas y baseline’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 4: DMAIC aplicado a defectos ===
+
+VIDEO 7: Concepto esencial — DMAIC aplicado a defectos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos DMAIC aplicado a defectos. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte DMAIC aplicado a defectos con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría DMAIC aplicado a defectos cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘DMAIC aplicado a defectos’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 8: Aplicación QA — DMAIC aplicado a defectos
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos DMAIC aplicado a defectos a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con DMAIC aplicado a defectos, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘DMAIC aplicado a defectos’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 5: Root Cause Analysis ===
+
+VIDEO 9: Concepto esencial — Root Cause Analysis
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Root Cause Analysis. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Root Cause Analysis con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Root Cause Analysis cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Root Cause Analysis’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 10: Aplicación QA — Root Cause Analysis
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Root Cause Analysis a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Root Cause Analysis, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Root Cause Analysis’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 6: Pareto, Ishikawa y 5 Why ===
+
+VIDEO 11: Concepto esencial — Pareto, Ishikawa y 5 Why
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Pareto, Ishikawa y 5 Why. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Pareto, Ishikawa y 5 Why con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Pareto, Ishikawa y 5 Why cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Pareto, Ishikawa y 5 Why’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 12: Aplicación QA — Pareto, Ishikawa y 5 Why
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Pareto, Ishikawa y 5 Why a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Pareto, Ishikawa y 5 Why, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Pareto, Ishikawa y 5 Why’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 7: PDCA y experimentos pequeños ===
+
+VIDEO 13: Concepto esencial — PDCA y experimentos pequeños
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos PDCA y experimentos pequeños. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte PDCA y experimentos pequeños con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría PDCA y experimentos pequeños cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘PDCA y experimentos pequeños’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 14: Aplicación QA — PDCA y experimentos pequeños
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos PDCA y experimentos pequeños a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con PDCA y experimentos pequeños, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘PDCA y experimentos pequeños’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 8: Defect prevention y quality gates ===
+
+VIDEO 15: Concepto esencial — Defect prevention y quality gates
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Defect prevention y quality gates. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Defect prevention y quality gates con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Defect prevention y quality gates cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Defect prevention y quality gates’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 16: Aplicación QA — Defect prevention y quality gates
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Defect prevention y quality gates a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Defect prevention y quality gates, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Defect prevention y quality gates’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 9: Control plan y seguimiento ===
+
+VIDEO 17: Concepto esencial — Control plan y seguimiento
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Control plan y seguimiento. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Control plan y seguimiento con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Control plan y seguimiento cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Control plan y seguimiento’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 18: Aplicación QA — Control plan y seguimiento
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Control plan y seguimiento a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Control plan y seguimiento, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Control plan y seguimiento’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+=== MÓDULO 10: Caso práctico end-to-end ===
+
+VIDEO 19: Concepto esencial — Caso práctico end-to-end
+Duración objetivo: 1:30–1:55
+
+GUION:
+Hola. En este microvideo de QA + Mejora de Procesos veremos Caso práctico end-to-end. El objetivo es entender qué significa este tema y por qué importa en learning path. Primero identifique qué resultado queremos proteger: funcionalidad, confiabilidad, seguridad, evidencia, tiempo o experiencia de usuario. Después conecte Caso práctico end-to-end con un requisito o riesgo concreto. Finalmente pregunte qué evidencia permitiría afirmar que el comportamiento es correcto. No memorice una herramienta sin contexto: piense en concepto, riesgo, acción de QA y evidencia. Como microtarea, complete la frase: ‘Aplicaría Caso práctico end-to-end cuando…’ y agregue qué resultado esperaría observar.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Diagrama simple con ‘Caso práctico end-to-end’ al centro y cuatro ramas: requisito, riesgo, prueba y evidencia.
+- Checklist limpia con 3–4 puntos.
+- Antes/después: decisión sin evidencia vs decisión respaldada por evidencia.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.
+
+VIDEO 20: Aplicación QA — Caso práctico end-to-end
+Duración objetivo: 1:30–1:55
+
+GUION:
+Ahora llevemos Caso práctico end-to-end a una situación práctica dentro de QA + Mejora de Procesos. Elija un flujo pequeño y describa el estado inicial. Ejecute una comprobación relacionada con Caso práctico end-to-end, registre el resultado esperado y capture evidencia reproducible. Si encuentra un problema, separe hecho observado, resultado esperado, impacto y siguiente acción. Si no encuentra un problema, documente igualmente qué cubrió y qué riesgo quedó fuera. La meta no es decir ‘todo funciona’, sino producir feedback útil para una decisión. Como cierre, defina una métrica o criterio que le permita comparar esta práctica en una ejecución futura.
+
+IMÁGENES / VISUALES RECOMENDADOS:
+- Mockup o captura ficticia relacionada con ‘Caso práctico end-to-end’.
+- Secuencia visual: preparar → ejecutar → documentar.
+- Tarjeta final: Expected / Actual / Evidence / Conclusion.
+
+EDICIÓN:
+- Destaque máximo tres palabras clave por escena.
+- Evite párrafos largos en pantalla.
+- Cierre con la microtarea escrita.

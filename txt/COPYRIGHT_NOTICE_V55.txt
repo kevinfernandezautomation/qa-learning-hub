@@ -1,0 +1,8 @@
+QA Learning Hub — aviso de derechos de autor v55
+
+Referencia revisada: los sample exams oficiales de ISTQB incluyen una sección “Copyright Notice”, “All rights reserved”, identificación del titular y condiciones de uso. No afirman simplemente que técnicamente sea imposible copiar/pegar; establecen jurídicamente qué usos están permitidos o requieren autorización.
+
+Por ello, QA Learning Hub usa un aviso propio y no copia el texto contractual de ISTQB.
+
+Texto implementado:
+© 2026 QA Learning Hub. Todos los derechos reservados. El contenido original de este sitio está protegido por derechos de autor. No se autoriza copiar, reproducir, redistribuir, publicar ni reutilizar total o parcialmente sin autorización previa por escrito, salvo los usos permitidos por la legislación aplicable o las condiciones expresamente indicadas para materiales de terceros.

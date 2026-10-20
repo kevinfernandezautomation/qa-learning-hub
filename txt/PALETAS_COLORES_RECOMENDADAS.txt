@@ -1,0 +1,26 @@
+QA LEARNING HUB — PALETAS DE COLORES RECOMENDADAS (v59)
+
+Objetivo: aspecto profesional, tecnológico, accesible y apropiado para una plataforma internacional de Quality Engineering. Antes de publicar, validar contraste WCAG para texto, botones, estados y modo oscuro.
+
+PALETA A — Quality Blue + Teal (RECOMENDADA)
+Uso: evolución natural del diseño actual; transmite confianza, tecnología y calidad.
+Light: Fondo #F4F7FB | Superficie #FFFFFF | Texto #0F1F38 | Texto secundario #5D6B82 | Primario #2563EB | Primario hover #1749B5 | Acento #0F9F8F | Borde #D8E2EF
+Dark: Fondo #08111F | Superficie #0F1B2D | Superficie 2 #142743 | Texto #F1F5FB | Secundario #9EB0C8 | Primario #78A7FF | Acento #48D4C1 | Borde #263A57
+
+PALETA B — Navy + Cyan
+Uso: áreas Senior/Lead, dashboards y contenido empresarial.
+Fondo #F6F8FC | Superficie #FFFFFF | Texto #10233F | Primario #174EA6 | Acento #007C91 | Secundario #52647A | Borde #D7E0EA | Éxito #16835D | Advertencia #A15C00 | Error #B42318
+
+PALETA C — Indigo + Emerald
+Uso: academia, progreso, certificaciones y rutas de aprendizaje.
+Fondo #F7F8FC | Superficie #FFFFFF | Texto #172033 | Primario #4F46E5 | Acento #047857 | Secundario #667085 | Borde #D9DEE8 | Éxito #15803D | Advertencia #B45309 | Error #B91C1C
+
+REGLAS VISUALES
+1. Mantener un solo color primario dominante por pantalla.
+2. Reservar verde/éxito para estados positivos, no para todos los CTA.
+3. No comunicar estado únicamente mediante color: usar icono + texto.
+4. Mantener contraste suficiente y foco de teclado visible.
+5. Evitar degradados intensos detrás de texto largo.
+6. Usar superficies neutras para lectura; color en CTA, badges, progreso y datos clave.
+7. Mantener coherencia entre light/dark y probar daltonismo/alto contraste.
+8. Recomendación principal: conservar PALETA A y evolucionar componentes, porque reduce riesgo de inconsistencia visual en las más de 50 páginas existentes.

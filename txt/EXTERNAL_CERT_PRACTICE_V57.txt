@@ -1,0 +1,2 @@
+PRÁCTICA CERTIFICACIONES EXTERNAS — v57
+GitHub: ghcertified para Foundations, Actions, Advanced Security y Copilot. Microsoft DP-300/AZ-400: Practice Assessments oficiales gratuitos. ISTQB CT-PT/CTAL-TAE/CT-MAT: Sample Exams oficiales. PCAT, PL/SQL y Selenium 4: práctica original interna cuando no se encontró una fuente gratuita confiable que evitara exam dumps. Java SE 21: práctica gratuita original de tercero, identificada como no oficial.

@@ -1,0 +1,104 @@
+QA LEARNING HUB
+FACTURACIÓN ELECTRÓNICA EN COSTA RICA — GUÍA TÉCNICA PARA EL PROYECTO
+Actualización 2026
+
+1. Qué implementa actualmente el prototipo
+------------------------------------------
+Después del pago visual/demostrativo, el sitio crea una "factura demo" en localStorage y permite imprimirla.
+NO es un comprobante tributario oficial.
+
+2. Qué necesita producción
+--------------------------
+Un backend seguro que:
+- confirme el pago real;
+- calcule montos/impuestos;
+- obtenga datos del emisor/receptor;
+- cree clave y consecutivo;
+- construya XML v4.4 conforme al XSD vigente;
+- firme el XML;
+- autentique contra los servicios requeridos;
+- envíe el comprobante;
+- consulte/reciba respuesta;
+- conserve XML + respuesta + referencias;
+- genere representación gráfica para el cliente.
+
+3. Versión vigente
+------------------
+El material oficial de Hacienda señala uso obligatorio de comprobantes electrónicos versión 4.4 desde el 1 de setiembre de 2025.
+
+4. Qué documento corresponde
+-----------------------------
+Para una venta de servicios, determine con contabilidad el tipo de comprobante que corresponde según la operación y receptor. No confunda un recibo visual de pago con la Factura Electrónica tributaria.
+
+5. XML vs PDF
+-------------
+Hacienda ha indicado que el PDF facilita lectura, mientras que el comprobante válido es el XML. Por eso el sistema debe conservar los XML oficiales, no solo generar PDF.
+
+6. Flujo sugerido
+-----------------
+PAYMENT_CONFIRMED
+ -> order = PAID
+ -> invoice job
+ -> generate XML
+ -> sign
+ -> send Hacienda API
+ -> status pending/accepted/rejected
+ -> store response
+ -> render PDF/HTML
+ -> email/portal customer
+
+7. Estado de facturación
+------------------------
+invoice_status:
+- NOT_STARTED
+- GENERATED
+- SENT
+- ACCEPTED
+- REJECTED
+- RETRY_REQUIRED
+
+Nunca marque una factura como ACCEPTED solo porque el navegador terminó un pago.
+
+8. API de Hacienda
+------------------
+La documentación pública histórica del API describe HTTPS, JSON y OIDC/OAuth2, envío del XML firmado codificado Base64, y consulta de estado por clave. Antes de producción debe validarse el endpoint y mecanismo vigente en TRIBU-CR/Hacienda.
+
+9. Información a almacenar
+--------------------------
+- order_id
+- clave
+- consecutivo
+- tipo_documento
+- XML firmado
+- XML/respuesta de Hacienda
+- status
+- timestamps
+- receptor
+- total
+- impuestos
+- payment reference
+
+10. Errores a probar
+--------------------
+- XML inválido
+- firma inválida
+- token expirado
+- timeout
+- comprobante duplicado
+- respuesta pendiente
+- rechazo
+- reintento
+- pago aprobado pero factura rechazada
+- refund posterior
+- nota de crédito cuando corresponda
+
+11. Referencias oficiales
+-------------------------
+Comprobantes versión 4.4:
+https://www.hacienda.go.cr/docs/ComprobantesElectronicosversion4.4.pdf
+
+Anexos y estructuras:
+https://www.hacienda.go.cr/docs/Anexosyestructuras.pdf
+
+API pública documentada:
+https://www.hacienda.go.cr/docs/ComprobantesElectronicosAPI.html

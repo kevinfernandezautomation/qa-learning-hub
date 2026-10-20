@@ -1,0 +1,15 @@
+QA Learning Hub V19 — Consolidación conservadora
+
+1. Academia es el catálogo único: cursos, stacks y especializaciones redirigen a secciones de Academia.
+2. Se eliminaron bases HTML incorrectas que alteraban las rutas relativas.
+3. CSS y JavaScript compartidos para inglés, psicometría y rutas/stack; se mantienen motores de evaluación y contenidos independientes.
+4. Se vincularon páginas de introducción con cursos detallados sin eliminar laboratorios.
+5. Se preservan URLs antiguas de catálogo como redirecciones para enlaces existentes.
+6. Páginas con base corregida: 78.
+7. Referencias no resueltas durante auditoría (pueden incluir enlaces generados o recursos opcionales):
+('medical-dotnet-sql-lab.html', 'href', 'medical-device-samd-project/csharp-dotnet-sqlserver/index.html')
+('medical-dotnet-sql-lab.html', 'href', 'medical-device-samd-project/python/index.html')
+('medical-dotnet-sql-lab.html', 'href', 'medical-device-samd-project/playwright/index.html')
+('banca-qa.html', 'href', 'curso-banca-fintech')
+('curso-qa-lead.html', 'href', 'senior-quality-engineering')
+('it-automation-agentic-ai.html', 'href', 'curso-it-automation-agentic-ai')

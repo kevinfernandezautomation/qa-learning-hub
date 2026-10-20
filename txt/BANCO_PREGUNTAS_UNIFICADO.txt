@@ -1,0 +1,1686 @@
+QA LEARNING HUB — BANCO UNIFICADO DE PREGUNTAS
+
+====================================================================
+ARCHIVO: 03_Oracle_APEX_20_Preguntas.txt
+====================================================================
+DESARROLLO CON ORACLE APEX — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Dónde reside principalmente la lógica de datos de APEX?
+A) Oracle Database
+B) En el navegador solamente
+C) En un archivo Excel
+D) En el servidor de correo
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: APEX se basa en Oracle Database.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué componente expone normalmente APEX por HTTP?
+A) SQL*Loader
+B) RMAN
+C) Data Pump
+D) Oracle REST Data Services (ORDS)
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: ORDS proporciona acceso web en despliegues habituales.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué es una región de APEX?
+A) Una licencia
+B) Un servidor DNS
+C) Un contenedor visual de contenido
+D) Un esquema físico de BD
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Las regiones organizan contenido en una página.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué es un page item?
+A) Un backup
+B) Un control o valor de página
+C) Un usuario de Oracle
+D) Un índice
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Los items capturan o presentan valores.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué se ejecuta para rechazar datos inválidos al enviar un formulario?
+A) Validación de servidor
+B) Solo una animación CSS
+C) Un favicon
+D) Un gráfico
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Las validaciones del servidor protegen las reglas.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué determina una branch en APEX?
+A) El índice SQL
+B) La política de backups
+C) El tamaño del disco
+D) La navegación posterior a un proceso
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Las ramas controlan navegación condicional.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Dónde persiste APEX el session state?
+A) En la impresora
+B) En DNS
+C) En tablas de base de datos del servidor
+D) Solo en el HTML visible
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: El estado de sesión se almacena en el servidor.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Por qué limpiar session state obsoleto?
+A) Para cambiar la clave
+B) Para evitar reutilizar valores anteriores
+C) Para acelerar el monitor
+D) Para eliminar el esquema
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Los valores anteriores pueden contaminar operaciones posteriores.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué reporte permite al usuario filtrar y personalizar vistas?
+A) Interactive Report
+B) Static File
+C) Breadcrumb
+D) Authentication Scheme
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Interactive Report aporta filtros y personalización.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Qué componente permite edición tabular controlada?
+A) Classic Report de solo lectura
+B) Breadcrumb
+C) Chart
+D) Interactive Grid
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Interactive Grid puede configurarse para editar filas.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Qué componente conviene para capturar una solicitud de FCL?
+A) Breadcrumb
+B) Static File
+C) Form
+D) Chart
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Los formularios capturan y validan datos.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué evento puede activar una Dynamic Action?
+A) Una modificación DNS
+B) Cambio de valor de un item
+C) Un backup de RMAN
+D) Un reinicio del SO
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Las acciones dinámicas reaccionan a eventos de UI.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Dónde se configuran listas de valores reutilizables?
+A) Shared Components
+B) DBMS_OUTPUT
+C) Explain Plan
+D) Recycle Bin
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Las LOV se gestionan como componentes compartidos.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué distingue autenticación de autorización?
+A) Índice frente a tabla
+B) POST frente a GET
+C) Backup frente a restore
+D) Identidad frente a permisos
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Autenticación verifica identidad y autorización permisos.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué protege Session State Protection?
+A) Discos dañados
+B) Latencia de red
+C) Manipulación no autorizada de URL y valores de sesión
+D) Caídas eléctricas
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Usa políticas y checksums donde corresponda.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Cómo evitar inyección SQL en filtros de afiliados?
+A) Exponer SQL en la URL
+B) Usar bind variables
+C) Concatenar directamente entradas
+D) Desactivar validaciones
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Los parámetros separan datos del SQL.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Qué componente integra servicios externos REST reutilizables?
+A) REST Data Sources
+B) Breadcrumb
+C) Page Template
+D) SQL Trace
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Permite usar respuestas REST en componentes APEX.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué método HTTP suele consultar un saldo?
+A) DELETE
+B) PATCH de borrado
+C) TRACE de mantenimiento
+D) GET
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: GET recupera recursos sin solicitar modificación.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Qué debe verificarse después de make_rest_request?
+A) El favicon
+B) El tema visual
+C) Estado HTTP, timeout y contenido de respuesta
+D) Solo la longitud del nombre
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: La respuesta puede ser error o JSON inválido.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Cómo investigar un fallo de proceso en APEX?
+A) Borrar registros
+B) Activar Debug y revisar APEX_DEBUG de forma autorizada
+C) Desactivar todos los controles
+D) Compartir credenciales
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: La depuración ayuda a localizar procesos fallidos.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Durante una prueba de Oracle APEX, un usuario cambia el valor de un item en la URL para consultar la cuenta de otra persona. ¿Qué control debería revisar primero el equipo de QA?
+A) La autorización en el servidor y la protección del estado de sesión
+B) El color de los botones
+C) El orden de los reportes
+D) La longitud del nombre de la página
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La autorización del lado del servidor y Session State Protection ayudan a impedir el acceso indebido.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Después de guardar una solicitud en Oracle APEX, la página muestra un valor anterior que permaneció en el estado de sesión. ¿Qué acción de prueba es más apropiada?
+A) Ignorar el dato porque se guardó correctamente
+B) Verificar los procesos de envío y la limpieza del estado de sesión
+C) Eliminar la base de datos
+D) Desactivar todas las validaciones
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: La revisión del procesamiento y del estado de sesión permite localizar valores obsoletos.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 04_SQL_Developer_Toad_20_Preguntas.txt
+====================================================================
+SQL DEVELOPER Y TOAD — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué debe comprobar antes de ejecutar UPDATE?
+A) Ambiente, esquema y WHERE
+B) Solo el color de la interfaz
+C) Solo la hora local
+D) Solo el nombre del archivo
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Un UPDATE mal dirigido puede alterar datos críticos.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué dato NO debe incrustarse en un script compartido?
+A) Nombre de tabla de ejemplo
+B) Comentario de propósito
+C) Consulta SELECT
+D) Contraseña de conexión
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Las credenciales deben protegerse.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Para qué sirve SQL Worksheet?
+A) Enviar correos masivos
+B) Editar imágenes
+C) Escribir y ejecutar SQL y PL/SQL
+D) Crear diapositivas
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Es el editor de consultas y scripts.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué permite Object Browser?
+A) Emitir certificados
+B) Explorar tablas, vistas, paquetes e índices
+C) Modificar el sistema operativo
+D) Comprar licencias
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Facilita navegar objetos según permisos.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Cómo se detectan errores de compilación PL/SQL?
+A) Compilar y consultar USER_ERRORS
+B) Ejecutar DELETE sin WHERE
+C) Reiniciar navegador
+D) Cambiar idioma
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: USER_ERRORS informa errores de objetos propios.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué utilidad estima el plan de ejecución?
+A) Export CSV
+B) Theme Roller
+C) Password Reset
+D) Explain Plan
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: El plan muestra accesos y joins previstos.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Qué distingue AutoTrace?
+A) Crea usuarios de negocio
+B) Cifra automáticamente toda la BD
+C) Ofrece estadísticas de ejecución y plan según configuración
+D) Hace copias de seguridad completas
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: AutoTrace apoya el análisis de rendimiento.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Qué significa DDL?
+A) Dirección de descarga local
+B) Lenguaje de definición de datos
+C) Lenguaje de depuración de datos
+D) Documento de diseño lógico
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: CREATE y ALTER son ejemplos de DDL.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué se debe hacer antes de exportar datos de afiliados?
+A) Comprobar autorización y minimización de datos
+B) Publicarlos en GitHub
+C) Enviar a correo personal
+D) Quitar trazabilidad
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Los datos personales requieren controles.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Para qué comparar objetos entre ambientes?
+A) Eliminar todas las tablas
+B) Sustituir QA
+C) Cambiar contraseñas
+D) Detectar diferencias antes de un despliegue
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: La comparación facilita revisar cambios.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Qué comando confirma cambios pendientes?
+A) EXPLAIN
+B) DESCRIBE
+C) COMMIT
+D) ROLLBACK
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: COMMIT confirma la transacción.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué comando revierte cambios no confirmados?
+A) CREATE
+B) ROLLBACK
+C) COMMIT
+D) GRANT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: ROLLBACK deshace trabajo pendiente en la transacción.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué debe verificarse antes de COMMIT?
+A) Número de filas afectadas y reglas de negocio
+B) Solo la fuente tipográfica
+C) Solo la fecha de instalación
+D) Solo la pantalla
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La revisión evita confirmar cambios erróneos.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué riesgo tiene ejecutar scripts desconocidos?
+A) Mejora garantizada de rendimiento
+B) Auditoría automática
+C) Mayor disponibilidad asegurada
+D) Cambios o borrados no autorizados
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Deben revisarse instrucciones y dependencias.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿En qué ambiente se deben ensayar scripts de cambio?
+A) Computadora personal con datos reales
+B) Servidor de correo
+C) Desarrollo o pruebas autorizado
+D) Producción sin revisión
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Se validan antes de producción.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+En Oracle, ¿qué esquema se utiliza para resolver los nombres de objetos sin especificar su propietario, según el valor de CURRENT_SCHEMA?
+A) Idioma del navegador
+B) Esquema actual de resolución de nombres
+C) Cantidad de RAM
+D) Puerto HTTP
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Permite identificar contexto de ejecución.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+Un analista necesita consultar los datos de una tabla, pero no modificarlos. ¿Qué privilegio mínimo se le debería conceder?
+A) SELECT sobre objetos necesarios
+B) DBA completo
+C) DROP ANY TABLE
+D) SYSDBA
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Aplica mínimo privilegio.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué mejora una consulta lenta?
+A) Agregar SELECT * siempre
+B) Eliminar WHERE
+C) Deshabilitar auditoría
+D) Revisar plan, filtros, índices y estadísticas
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Se optimiza según evidencia del plan y métricas.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Toad y SQL Developer reemplazan gestión de cambios?
+A) Solo Toad
+B) Solo SQL Developer
+C) No, requieren controles organizacionales
+D) Sí, siempre
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: La herramienta no sustituye aprobaciones y respaldo.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué documentación debe acompañar un script?
+A) Solo la contraseña
+B) Objetivo, dependencias, orden y retorno
+C) Solo nombre del autor
+D) Solo una captura
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Facilita revisión, ejecución y recuperación.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Un desarrollador recibe un script UPDATE para ejecutar en producción mediante SQL Developer. ¿Cuál es la acción más segura antes de confirmar la transacción?
+A) Ejecutar COMMIT inmediatamente
+B) Verificar ambiente, filtro WHERE, filas afectadas y autorización del cambio
+C) Desactivar las restricciones
+D) Compartir la contraseña
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: La revisión del entorno y del alcance del cambio evita modificaciones masivas accidentales.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+En Toad, una consulta sobre aportes tarda demasiado. ¿Qué debería revisar primero el analista antes de crear índices?
+A) El plan de ejecución y las estadísticas
+B) El tamaño de la fuente del editor
+C) La extensión del nombre de la tabla
+D) El tema de colores
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: El plan de ejecución y las métricas permiten identificar la causa de la lentitud.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 05_Analisis_Diseno_20_Preguntas.txt
+====================================================================
+ANÁLISIS Y DISEÑO DE SISTEMAS — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Cuál de las siguientes opciones expresa una función o un comportamiento que debe ofrecer el sistema?
+A) Un servicio o comportamiento del sistema
+B) La temperatura del servidor
+C) El color del logo únicamente
+D) La velocidad del disco solamente
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Define lo que el sistema debe hacer.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Cuál de las siguientes opciones corresponde a un requerimiento no funcional de un sistema?
+A) Una operación INSERT
+B) Una fila de la tabla
+C) Un número de solicitud
+D) Atributos como seguridad y rendimiento
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Define cualidades verificables.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué es una regla de negocio?
+A) Un nombre de variable
+B) Un ícono
+C) Condición que gobierna decisiones o cálculos
+D) Un estilo CSS
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: La regla determina comportamientos permitidos.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué es un criterio de aceptación?
+A) Una contraseña
+B) Condición observable para aceptar una funcionalidad
+C) Un deseo ambiguo
+D) Un diagrama sin contexto
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Debe poder comprobarse.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué actor usaría un retiro FCL?
+A) Afiliado que presenta la solicitud
+B) Solo el optimizador SQL
+C) Un índice B-tree
+D) Un servidor DNS
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: El actor interactúa con el caso de uso.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué muestra un caso de uso?
+A) Columnas físicas exclusivamente
+B) Orden de paquetes IP
+C) Índices SQL
+D) Actores, objetivo y flujos
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Describe interacciones con el sistema.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Qué muestra un diagrama de clases?
+A) Solo decisiones
+B) Solo tablas físicas
+C) Clases, atributos, métodos y relaciones
+D) Cronología de mensajes
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Modela estructura orientada a objetos.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Qué muestra un diagrama de secuencia?
+A) Distribución de salarios
+B) Orden temporal de mensajes entre componentes
+C) Claves foráneas exclusivamente
+D) Jerarquía de empleados
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Es útil para APIs e integraciones.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué muestra un diagrama de actividades?
+A) Flujo de tareas y decisiones
+B) Solo objetos y métodos
+C) Solo esquemas de BD
+D) Solo latencia
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Modela procesos y caminos alternativos.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Qué representa un modelo de datos?
+A) Únicamente pantallas
+B) Solo eventos de clic
+C) Solo código HTML
+D) Entidades, atributos, claves y relaciones
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Estructura la persistencia.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Qué modelo elegir para validar flujo aprobar/rechazar retiro?
+A) Índice SQL
+B) Archivo CSS
+C) Diagrama de actividades
+D) Diagrama de clases solamente
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Expone decisiones y caminos.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué modelo elegir para interacción APEX-API-BD?
+A) Iconografía
+B) Diagrama de secuencia
+C) Modelo de colores
+D) Tabla de salarios
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Expone mensajes y orden.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué modelo elegir para relaciones Afiliado-Cuenta?
+A) Modelo de datos
+B) Diagrama de despliegue exclusivamente
+C) Wireframe
+D) Manual de usuario
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Define claves y cardinalidades.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué significa precondición?
+A) Resultado final
+B) Una excepción SQL
+C) Una nota de diseño
+D) Estado necesario antes de ejecutar el caso de uso
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Ejemplo: afiliado autenticado.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué es un flujo alterno?
+A) Un índice alternativo
+B) Un error de sintaxis
+C) Camino diferente al principal bajo cierta condición
+D) Duplicación de código
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Documenta excepciones de negocio.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Por qué separar interfaz y reglas de negocio?
+A) Para evitar documentación
+B) Para mantener y probar responsabilidades por separado
+C) Para duplicar validaciones sin control
+D) Para eliminar permisos
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Reduce acoplamiento y mejora seguridad.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Qué aporta auditabilidad al diseño?
+A) Reconstruir quién hizo qué y cuándo
+B) Mayor tamaño de botones
+C) Eliminar logs
+D) Ocultar errores al soporte
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Las operaciones críticas requieren evidencia.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué conecta una matriz de trazabilidad?
+A) Solo nombres de personas
+B) Solo versiones del navegador
+C) Solo estilos
+D) Requisito, diseño, prueba, defecto y evidencia
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Demuestra cobertura y cambios.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Cómo evaluar impacto de un cambio en retiro FCL?
+A) Borrar casos de prueba
+B) Ignorar regulación
+C) Consultar trazabilidad y pruebas relacionadas
+D) Cambiar código sin revisar
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: La matriz identifica artefactos afectados.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué hace que un requerimiento sea verificable?
+A) No indicar salida
+B) Definir resultado medible y criterio de aceptación
+C) Usar palabras vagas
+D) No identificar actor
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Debe poder probarse objetivamente.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Una historia de usuario indica «el sistema debe ser rápido». ¿Qué mejora permite comprobar el requerimiento mediante pruebas?
+A) Definir un tiempo de respuesta medible y las condiciones de carga
+B) Mantener el texto sin cambios
+C) Eliminar los criterios de aceptación
+D) Usar únicamente opiniones de usuarios
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Un criterio cuantificable convierte la expectativa en una condición verificable.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Al modificar una regla de cálculo del ROP, el equipo necesita conocer qué casos de prueba actualizar. ¿Qué instrumento facilita identificar el impacto?
+A) La matriz de trazabilidad entre requisitos, componentes y pruebas
+B) Un listado de colores
+C) El historial del navegador
+D) Una captura sin contexto
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La trazabilidad vincula los cambios de requisitos con sus verificaciones.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 06_Calidad_Seguridad_Operacion_20_Preguntas.txt
+====================================================================
+CALIDAD, SEGURIDAD Y OPERACIÓN — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué tipo de prueba valida una función de cálculo aislada?
+A) Unitaria
+B) Aceptación
+C) Carga
+D) Exploratoria de UI
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Comprueba unidades pequeñas de lógica.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué tipo de prueba verifica intercambio SICERE-OPC?
+A) Ortografía
+B) Accesibilidad solamente
+C) Smoke visual solamente
+D) Integración
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Comprueba componentes conectados.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué tipo de prueba permite comprobar que el sistema aplica correctamente las condiciones de elegibilidad para retirar el FCL?
+A) Diseño gráfico
+B) Prueba de sonido
+C) Funcional
+D) Benchmark de CPU exclusivamente
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Contrasta comportamiento con requisitos.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué tipo de prueba protege funciones existentes tras un cambio?
+A) Penetración solamente
+B) Regresión
+C) Migración de datos
+D) Carga solamente
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Detecta efectos no deseados.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué tipo de prueba confirma criterios acordados por negocio?
+A) Aceptación
+B) Unitaria exclusivamente
+C) Sintaxis CSS
+D) DNS
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Valida el resultado con interesados.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué tipo de prueba evalúa 1000 consultas simultáneas?
+A) Internacionalización
+B) Ortografía
+C) Modelo conceptual
+D) Rendimiento
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Mide carga, latencia y errores.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Qué control previene inyección SQL?
+A) Privilegios DBA para todos
+B) Desactivar logs
+C) Bind variables y validación del servidor
+D) Concatenación de entradas
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Separa datos de sentencias.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Qué significa mínimo privilegio?
+A) Omitir autorización
+B) Dar solo permisos necesarios
+C) Acceso total a todos
+D) Compartir usuarios
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Reduce exposición.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué debe evitarse en logs?
+A) Contraseñas y tokens completos
+B) ID de correlación
+C) Marca temporal
+D) Código de resultado
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Los secretos no deben registrarse.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Cuáles campos facilitan realizar una auditoría de las operaciones del sistema?
+A) Solo color del botón
+B) Solo tamaño del archivo
+C) Solo nombre del navegador
+D) ID, fecha, ejecutor, acción y resultado
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Permiten reconstruir operaciones.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Cómo proteger registros de auditoría?
+A) Eliminar todos cada hora
+B) Guardar en navegador público
+C) Controles de acceso e integridad
+D) Permitir edición pública
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Evita alteración y exposición.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué es un punto único de falla?
+A) Un comentario
+B) Componente cuyo fallo interrumpe el servicio
+C) Una pantalla de login
+D) Un nombre duplicado
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Debe evaluarse redundancia.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué es un reintento controlado?
+A) Repetir fallos transitorios con límites
+B) Reintentar infinitamente
+C) Duplicar pagos siempre
+D) Omitir timeouts
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Evita saturación y duplicados.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué es idempotencia?
+A) Ejecutar cada aporte dos veces
+B) Ignorar identificadores
+C) Eliminar registros
+D) Repetir la misma operación sin duplicar su efecto
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Una misma clave de operación debe procesarse una vez.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué evita acreditar dos veces el mismo aporte?
+A) Eliminar UNIQUE
+B) No validar IDs
+C) Identificador único y control transaccional
+D) Duplicar mensajes
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: La deduplicación debe ser atómica.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Qué significa rollback de despliegue?
+A) Apagar monitoreo
+B) Volver a versión anterior ante fallo
+C) Borrar auditoría
+D) Confirmar cualquier transacción
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Permite recuperar versión estable.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Qué mejora mantenibilidad?
+A) Nombres claros, módulos cohesivos y bajo acoplamiento
+B) Código duplicado
+C) Variables crípticas
+D) Ausencia de pruebas
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Facilita cambios y diagnóstico.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué diferencia hay entre un incidente y un problema en la gestión de servicios de TI?
+A) Son sinónimos exactos
+B) Problema siempre es error humano
+C) Incidente solo afecta hardware
+D) Incidente restaura servicio; problema investiga causa
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Distingue recuperación y causa raíz.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Qué evidencia ayuda al diagnóstico?
+A) Solo capturas sin contexto
+B) Solo preferencias del usuario
+C) Logs, tiempos, síntomas y cambios recientes
+D) Solo rumores
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Permite reproducir y aislar causas.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué verifica una prueba de seguridad de autorización?
+A) Que el logo cargue
+B) Que un afiliado no vea datos de otro
+C) Que el botón sea azul
+D) Que el título tenga 20 caracteres
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: La autorización se valida en servidor.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Tras corregir un defecto en el retiro de FCL, el equipo desea confirmar que los aportes siguen funcionando. ¿Qué tipo de prueba corresponde?
+A) Prueba de regresión
+B) Prueba de instalación del sistema operativo
+C) Prueba de estilo visual solamente
+D) Prueba de traducción
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La regresión detecta efectos no deseados en funcionalidades existentes.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Una API recibe dos veces la misma solicitud de abono por un reintento de red. ¿Qué propiedad debería verificarse para evitar cargos duplicados?
+A) Idempotencia mediante un identificador único de operación
+B) Duplicar el registro deliberadamente
+C) Eliminar la bitácora
+D) Cambiar el formato de fecha
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La idempotencia evita aplicar dos veces la misma operación lógica.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 07_Negocio_Pensiones_20_Preguntas.txt
+====================================================================
+NEGOCIO Y NORMATIVA DE PENSIONES — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué significa OPC?
+A) Operadora de Pensiones Complementarias
+B) Oficina de Pagos Corrientes
+C) Organización de Planes Comerciales
+D) Operador de Portales Ciudadanos
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Administra fondos y planes autorizados.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué significa ROP?
+A) Registro Oficial de Pagos
+B) Red de Operadores Públicos
+C) Régimen Opcional de Prestaciones
+D) Régimen Obligatorio de Pensiones Complementarias
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Complementa pensión básica.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué significa FCL?
+A) Ficha de Control Laboral
+B) Fondo de Compra Local
+C) Fondo de Capitalización Laboral
+D) Fondo de Crédito Libre
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Es un fondo laboral regulado.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué caracteriza un plan voluntario?
+A) Pago de impuesto de ventas
+B) Ahorro previsional elegido por el afiliado
+C) Obligatorio para toda compra
+D) Cuenta corriente bancaria
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Complementa ahorro para pensión.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué organismo supervisa pensiones en Costa Rica?
+A) SUPEN
+B) MOPT
+C) ICE
+D) SINART
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La SUPEN supervisa el sistema.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué función cumple SICERE?
+A) Emisión de pasaportes
+B) Registro de vehículos
+C) Venta de seguros privados
+D) Recaudación y distribución de aportes de seguridad social
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Canaliza aportes hacia destinatarios correspondientes.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Qué ley es referencia central para ROP y FCL?
+A) Ley General de Aviación
+B) Código Electoral
+C) Ley 7983 de Protección al Trabajador
+D) Ley de Tránsito
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Regula fondos y regímenes indicados.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿En qué título de Ley 7983 se trata el FCL?
+A) Título I únicamente
+B) Título II
+C) Título V exclusivamente
+D) Título IX
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Título II aborda FCL.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué artículo crea el FCL en la Ley 7983?
+A) Artículo 3
+B) Artículo 99
+C) Artículo 150
+D) Artículo 75
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: El artículo 3 establece el fondo.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Dónde se estudia ROP según el temario?
+A) Título II, artículo 3 exclusivamente
+B) Título I, capítulo 9
+C) Título V, capítulo 7
+D) Título III, Capítulo I
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Ese capítulo aborda ROP.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Quién realiza el aporte patronal al FCL?
+A) Solo la SUPEN
+B) Solo el desarrollador
+C) El empleador según normativa
+D) Solo el navegador
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Es una obligación laboral patronal.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué dato relaciona aportes con cuentas individuales?
+A) Resolución del monitor
+B) Identificador del afiliado y referencia de operación
+C) Color de la pantalla
+D) Nombre de un archivo temporal
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: La asignación exige identificación confiable.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué control ayuda a evitar aportes duplicados?
+A) Clave única de operación e idempotencia
+B) Reintentos ilimitados sin control
+C) Borrar historial
+D) Eliminar auditoría
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Una misma transacción no debe acreditarse dos veces.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué proceso requiere verificar causales legales?
+A) Cambio de tema visual
+B) Descarga de favicon
+C) Consulta de hora local
+D) Solicitud de retiro FCL
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Los retiros están sujetos a requisitos.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué diferencia FCL y ROP?
+A) Ambos son cuentas bancarias corrientes
+B) ROP es impuesto de ventas
+C) FCL es fondo laboral; ROP ahorro previsional obligatorio
+D) Son idénticos
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Tienen objetivos y reglas distintos.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Qué función cumple una cuenta individual?
+A) Reemplazar a SUPEN
+B) Registrar derechos y movimientos de un afiliado
+C) Guardar contraseñas en texto plano
+D) Eliminar trazabilidad
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Permite individualizar aportes y rendimientos.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Qué debe hacer una OPC ante aporte no conciliado?
+A) Investigar y reconciliar con fuentes autorizadas
+B) Inventar saldo
+C) Acreditarlo dos veces
+D) Borrar incidencia
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Se requieren controles de conciliación.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué se debe verificar ante traslado entre operadoras?
+A) Solo color del formulario
+B) Solo idioma del usuario
+C) Solo versión CSS
+D) Identidad, autorización, saldo y trazabilidad
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Los traslados requieren controles.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Qué combinación de controles ayuda a proteger los datos personales de los afiliados contra accesos no autorizados?
+A) Compartir claves
+B) Eliminar respaldos
+C) Controles de acceso, minimización y auditoría
+D) Publicarlos sin restricciones
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Son datos personales y financieros.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Para implementar una regla legal qué fuente prevalece?
+A) Un ejemplo educativo
+B) Texto normativo vigente y regulación aplicable
+C) Un comentario sin fecha
+D) Una captura antigua
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Los requisitos legales deben verificarse al implementarse.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Un afiliado solicita retirar el FCL. ¿Qué debe hacer el sistema antes de aprobar la operación?
+A) Comprobar las condiciones legales y operativas vigentes aplicables al retiro
+B) Aprobar todos los retiros sin revisión
+C) Consultar únicamente el nombre del afiliado
+D) Omitir el registro de auditoría
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La elegibilidad debe evaluarse conforme al marco legal y las reglas operativas vigentes.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+En una conciliación de aportes, los montos enviados y los registrados no coinciden. ¿Qué evidencia debería priorizar el equipo?
+A) Identificadores de transacción, montos, fechas, origen y resultados de procesamiento
+B) Capturas sin fecha
+C) Solo el color del estado
+D) Un comentario informal
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La conciliación exige datos trazables para investigar diferencias sin alterar registros.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 08_Ingles_Tecnico_20_Preguntas.txt
+====================================================================
+INGLÉS TÉCNICO Y RECURSOS DE CONSULTA — 20 PREGUNTAS
+Contexto educativo: sistemas de pensiones de Costa Rica; ejemplos ficticios.
+Tipos: opción múltiple y situaciones prácticas; una respuesta correcta.
+FUENTES: https://docs.oracle.com/en/database/oracle/apex/ ; https://docs.oracle.com/en/database/oracle/oracle-database/ ; https://www.supen.fi.cr/ ; https://owasp.org/
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué significa autenticación (authentication)?
+A) Verificar identidad
+B) Definir índices
+C) Crear backups
+D) Medir latencia
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Authentication confirma quién es el usuario.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué significa autorización (authorization)?
+A) Verificar contraseña únicamente
+B) Optimizar SQL
+C) Exportar datos
+D) Determinar permisos
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Authorization define qué acciones están permitidas.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué es una variable de enlace (bind variable)?
+A) Backup automático
+B) Trigger de interfaz
+C) Parámetro de consulta SQL
+D) Tabla física
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Las bind variables evitan concatenación insegura.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué hace la instrucción COMMIT?
+A) Crea usuarios
+B) Confirma transacciones pendientes
+C) Revierte cambios
+D) Elimina índices
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: COMMIT persiste los cambios de la transacción.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué hace la instrucción ROLLBACK?
+A) Revierte cambios no confirmados
+B) Confirma siempre
+C) Crea tablas
+D) Optimiza automáticamente
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: ROLLBACK deshace trabajo pendiente.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué significa despliegue (deployment)?
+A) Cálculo de intereses
+B) Auditoría de usuarios
+C) Lectura de logs únicamente
+D) Despliegue de una versión
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Deployment publica una solución.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+¿Qué es un punto de acceso a un servicio (endpoint)?
+A) Tipo de dato
+B) Esquema de BD
+C) Dirección de acceso a un servicio API
+D) Índice SQL
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Un endpoint identifica un recurso o acción.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Qué significa solicitud (request)?
+A) Error de compilación
+B) Solicitud enviada a un servicio
+C) Respuesta del servidor
+D) Archivo de respaldo
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Request inicia la interacción.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué significa respuesta (response) en una API?
+A) Respuesta enviada por el servicio
+B) Petición del cliente
+C) Índice B-tree
+D) Variable local
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Response comunica el resultado.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+¿Qué es el estado de sesión (session state)?
+A) Estado de un disco
+B) Número de CPU
+C) Plan de backup
+D) Valores conservados en la sesión
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: APEX conserva valores por sesión.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Qué significa diagnóstico y resolución de fallos (troubleshooting)?
+A) Diseño de iconos
+B) Creación de índices únicamente
+C) Diagnóstico y solución de fallos
+D) Generación de contraseñas
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Investiga causas de errores.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué es una restricción de integridad (constraint)?
+A) Servicio externo
+B) Restricción de integridad
+C) Ruta HTTP
+D) Tipo de gráfico
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: CHECK y UNIQUE son constraints.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué es la optimización del rendimiento (performance tuning)?
+A) Optimización del rendimiento
+B) Creación de usuarios
+C) Traducción de mensajes
+D) Gestión de nómina
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Busca mejorar eficiencia medible.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué término significa «privilegios mínimos»?
+A) Full access
+B) Open session
+C) Hard delete
+D) Least privilege
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Se otorgan permisos mínimos.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué método HTTP se utiliza habitualmente para consultar un saldo?
+A) PUT
+B) PATCH
+C) GET
+D) DELETE
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: GET consulta recursos.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Qué término describe una solicitud fallida a un servicio?
+A) Clean deployment
+B) Error response
+C) Successful commit
+D) Primary key
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Un error HTTP comunica fallo.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Qué es un tiempo de espera agotado (timeout)?
+A) Límite de espera de una operación
+B) Número de tablas
+C) Permiso DBA
+D) Clave foránea
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Evita esperar indefinidamente.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué significa registrar eventos (logging)?
+A) Borrado de datos
+B) Generación de interfaces
+C) Autorización automática
+D) Registro de eventos
+RESPUESTA CORRECTA: D
+EXPLICACIÓN: Los logs ayudan a diagnosticar.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Qué significa idempotencia (idempotency)?
+A) Omitir identificadores
+B) Eliminar auditoría
+C) Repetición sin duplicar el efecto
+D) Duplicar aportes
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: Protege reintentos de operaciones.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué es una clave foránea (foreign key)?
+A) Token API
+B) Clave que referencia otra tabla
+C) Contraseña
+D) Índice obligatorio único
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Una FK refuerza integridad referencial.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+En una reunión técnica, el proveedor indica «rollback the transaction». ¿Qué acción debe entender el equipo?
+A) Revertir los cambios no confirmados
+B) Confirmar los cambios
+C) Crear un usuario nuevo
+D) Publicar una aplicación
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Rollback significa revertir los cambios pendientes de la transacción.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Un reporte indica «endpoint returned HTTP 500». ¿Qué interpretación es adecuada?
+A) El punto de acceso al servicio respondió con un error del servidor
+B) La base de datos se normalizó
+C) El usuario cambió la contraseña
+D) La prueba fue aprobada
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Endpoint es el punto de acceso a un servicio; HTTP 500 señala un error del servidor.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 20_Preguntas_Fundamentos_Oracle_SQL.txt
+====================================================================
+1. FUNDAMENTOS DE ORACLE DATABASE Y SQL
+Contexto: Oracle Database para una operadora de pensiones (afiliados, cuentas, movimientos y aportes).
+20 preguntas con opciones, respuesta correcta y justificación.
+Los ejemplos son educativos; no representan tablas reales de una OPC.
+
+FUENTES DE CONSULTA:
+- https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html
+- https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/Joins.html
+- https://docs.oracle.com/en/database/oracle/oracle-database/26/tgsql/generating-and-displaying-execution-plans.html
+
+======================================================================
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué representa una fila de la tabla AFILIADO?
+A) Una ocurrencia de afiliado
+B) Un tipo de dato
+C) Un índice
+D) Un esquema
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Una fila representa una instancia de la entidad.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué garantiza una PRIMARY KEY?
+A) Orden físico
+B) Identificación única y no nula
+C) Cifrado
+D) Mejor velocidad siempre
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Identifica cada fila de forma única y no admite NULL.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+Una cuenta pertenece a un afiliado existente. ¿Qué clave utilizaría en CUENTA?
+A) FK id_afiliado hacia AFILIADO
+B) CHECK nombre
+C) DROP TABLE
+D) ORDER BY
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La FK refuerza integridad referencial.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué restricción impide registrar montos negativos en una columna MONTO cuando esa regla aplica?
+A) UNIQUE
+B) FOREIGN KEY
+C) CHECK (monto >= 0)
+D) ORDER BY
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: CHECK valida la condición.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+Un afiliado puede tener múltiples solicitudes, y cada solicitud pertenece a un afiliado. ¿Cuál cardinalidad corresponde?
+A) 1:1
+B) 1:N
+C) N:M
+D) Ninguna
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Es una relación uno a muchos.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué condición debe cumplir una tabla para estar en primera forma normal (1FN)?
+A) Atributos atómicos
+B) Índice por columna
+C) Clave compuesta obligatoria
+D) Desnormalizar
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Evita listas o grupos repetidos en una celda.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+En una tabla con clave primaria compuesta (id_solicitud, id_documento), el nombre del afiliado depende solo de id_solicitud. ¿Qué tipo de normalización se vulnera?
+A) 1FN
+B) 2FN
+C) 4FN
+D) Ninguna
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Existe dependencia parcial de la clave compuesta.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+En la tabla CUENTA, el nombre de la operadora depende de id_operadora y no directamente de la clave primaria id_cuenta. ¿Qué cambio ayuda a cumplir la tercera forma normal (3FN)?
+A) Duplicar el nombre
+B) Guardar operadora en tabla propia y referenciarla
+C) Eliminar PK
+D) Cambiar SELECT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Elimina dependencia transitiva y redundancia.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué sentencia consulta datos sin modificarlos?
+A) DELETE
+B) ALTER
+C) SELECT
+D) UPDATE
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: SELECT recupera filas.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+Después de un UPDATE aún sin confirmar, ¿qué instrucción revierte los cambios?
+A) GRANT
+B) COMMIT
+C) ROLLBACK
+D) CREATE
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: ROLLBACK revierte cambios pendientes.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Qué sentencia concede un privilegio?
+A) GRANT
+B) REVOKE
+C) DROP
+D) SELECT
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: GRANT concede permisos; REVOKE los retira.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+Para listar solo afiliados que tienen cuenta relacionada, ¿qué JOIN usaría?
+A) CROSS JOIN
+B) INNER JOIN
+C) LEFT JOIN sin filtro
+D) Ninguno
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: INNER JOIN conserva coincidencias.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+Se requieren TODOS los afiliados, incluso sin cuentas. ¿Qué consulta es adecuada?
+A) INNER JOIN cuenta
+B) LEFT JOIN cuenta desde afiliado
+C) DELETE cuenta
+D) GROUP BY sin FROM
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: LEFT JOIN conserva las filas de la izquierda.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+¿Qué función suma los montos por fondo?
+A) COUNT(monto)
+B) MIN(monto)
+C) SUM(monto)
+D) AVG(id_fondo)
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: SUM agrega importes.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+¿Qué cláusula filtra grupos con SUM(monto) > 0?
+A) WHERE SUM(monto)>0
+B) HAVING SUM(monto)>0
+C) ORDER BY SUM(monto)>0
+D) DISTINCT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: HAVING filtra resultados agregados.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+¿Para qué sirve una subconsulta?
+A) Solo para borrar
+B) Para alimentar filtros, expresiones o fuentes de datos
+C) Solo para índices
+D) Para reemplazar claves
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Puede usarse en WHERE, SELECT o FROM.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+¿Cuál es el primer paso responsable ante una consulta lenta?
+A) Crear índices indiscriminadamente
+B) Revisar plan y métricas de ejecución
+C) Eliminar restricciones
+D) Cambiar producción directamente
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Diagnosticar antes de optimizar.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Cuándo suele ayudar un índice B-tree?
+A) En búsquedas selectivas
+B) Siempre en tablas diminutas
+C) En toda columna
+D) Nunca
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: La selectividad y el plan determinan el beneficio.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Qué ventaja tiene WHERE id_afiliado = :p_id?
+A) Elimina autorización
+B) Permite parametrización y reutilización de cursor
+C) Ordena datos
+D) Hace COMMIT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Reduce concatenación insegura y puede mejorar reutilización.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué factor ayuda al optimizador a estimar cardinalidades?
+A) Estadísticas actualizadas
+B) Comentarios SQL
+C) Nombre de la tabla
+D) Color del editor
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Las estadísticas orientan los planes de acceso.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+En la base de datos de una operadora, un afiliado puede tener varias cuentas. ¿Qué relación debería modelarse entre AFILIADO y CUENTA?
+A) Uno a muchos mediante una clave foránea en CUENTA
+B) Muchos a muchos sin tabla intermedia
+C) Una relación sin claves
+D) Una tabla por cada afiliado
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Una clave foránea permite representar la relación de uno a muchos.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Una consulta SQL suma aportes por fondo y debe mostrar solo fondos cuyo total es positivo. ¿Qué cláusula corresponde utilizar?
+A) HAVING SUM(monto) > 0
+B) WHERE SUM(monto) > 0
+C) ORDER BY solamente
+D) DROP TABLE
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: HAVING filtra grupos después de la agregación.
+----------------------------------------------------------------------
+
+====================================================================
+ARCHIVO: 20_Preguntas_Programacion_Oracle_PLSQL.txt
+====================================================================
+2. PROGRAMACIÓN ORACLE PL/SQL
+Contexto: Oracle Database para una operadora de pensiones (afiliados, cuentas, movimientos y aportes).
+20 preguntas con opciones, respuesta correcta y justificación.
+Los ejemplos son educativos; no representan tablas reales de una OPC.
+
+FUENTES DE CONSULTA:
+- https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/
+- https://docs.oracle.com/en/database/oracle/oracle-database/26/lnpls/unhandled-exceptions.html
+
+======================================================================
+
+BANCO ACTUALIZADO: 20 preguntas conceptuales y 2 escenarios laborales.
+
+PREGUNTA 01 | Opción múltiple
+¿Qué sección contiene instrucciones ejecutables de PL/SQL?
+A) DECLARE
+B) BEGIN
+C) END
+D) PACKAGE
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: BEGIN inicia la sección ejecutable.
+----------------------------------------------------------------------
+PREGUNTA 02 | Opción múltiple
+¿Qué sección permite manejar excepciones?
+A) SELECT
+B) LOOP
+C) EXCEPTION
+D) COMMIT
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: EXCEPTION contiene los manejadores.
+----------------------------------------------------------------------
+PREGUNTA 03 | Opción múltiple
+¿Qué tipo Oracle representa fecha y hora con precisión de fracciones de segundo?
+A) VARCHAR2
+B) TIMESTAMP
+C) BOOLEAN
+D) NUMBER
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: TIMESTAMP admite fracciones de segundo.
+----------------------------------------------------------------------
+PREGUNTA 04 | Opción múltiple
+¿Qué declaración hereda el tipo de la columna cuenta.saldo?
+A) v_saldo cuenta.saldo%TYPE;
+B) v_saldo %ROWTYPE;
+C) v_saldo DATE;
+D) v_saldo NUMBER(1) siempre;
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: %TYPE mantiene coherencia con el tipo de la columna.
+----------------------------------------------------------------------
+PREGUNTA 05 | Opción múltiple
+¿Qué representa tabla%ROWTYPE?
+A) Una columna
+B) Una fila con la estructura de la tabla
+C) Un índice
+D) Un trigger
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: %ROWTYPE permite variables tipo registro.
+----------------------------------------------------------------------
+PREGUNTA 06 | Opción múltiple
+¿Qué estructura evalúa varias condiciones en orden?
+A) IF / ELSIF / ELSE
+B) COMMIT
+C) CURSOR
+D) DROP
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: ELSIF permite condiciones adicionales.
+----------------------------------------------------------------------
+PREGUNTA 07 | Opción múltiple
+Se requiere recorrer IDs del 1 al 10 con límites conocidos. ¿Qué opción es más simple?
+A) FOR i IN 1..10 LOOP
+B) ROLLBACK
+C) EXCEPTION
+D) TRIGGER
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: FOR controla una iteración con límites.
+----------------------------------------------------------------------
+PREGUNTA 08 | Opción múltiple
+¿Quién administra los cursores implícitos?
+A) El navegador
+B) Oracle
+C) El operador manualmente siempre
+D) Git
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Oracle los gestiona para sentencias SQL.
+----------------------------------------------------------------------
+PREGUNTA 09 | Opción múltiple
+¿Qué atributo devuelve el número de filas afectadas por el último DML implícito?
+A) SQL%ROWCOUNT
+B) SQL%ISOPEN
+C) SQL%NOTFOUND
+D) DBMS_OUTPUT
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: SQL%ROWCOUNT informa filas afectadas.
+----------------------------------------------------------------------
+PREGUNTA 10 | Opción múltiple
+Para recorrer varias cuentas activas sin OPEN/FETCH/CLOSE manual, ¿qué usaría?
+A) Cursor FOR LOOP
+B) SELECT INTO de varias filas
+C) COMMIT por fila
+D) DROP
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: El cursor FOR LOOP simplifica la iteración.
+----------------------------------------------------------------------
+PREGUNTA 11 | Opción múltiple
+¿Cuál es la diferencia básica entre función y procedimiento?
+A) Función retorna valor; procedimiento ejecuta operación
+B) Ambos deben retornar tabla
+C) Procedimiento no acepta parámetros
+D) Función no usa SQL
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Una función tiene RETURN; el procedimiento no exige retorno.
+----------------------------------------------------------------------
+PREGUNTA 12 | Opción múltiple
+¿Qué aporta un paquete PL/SQL?
+A) Encapsulamiento y API pública en especificación
+B) Elimina permisos
+C) Solo almacena tablas
+D) Reemplaza Oracle
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Agrupa tipos, procedimientos y funciones.
+----------------------------------------------------------------------
+PREGUNTA 13 | Opción múltiple
+¿Qué modo permite recibir y modificar un valor?
+A) IN
+B) OUT
+C) IN OUT
+D) DEFAULT
+RESPUESTA CORRECTA: C
+EXPLICACIÓN: IN OUT es de entrada y salida.
+----------------------------------------------------------------------
+PREGUNTA 14 | Opción múltiple
+SELECT INTO no devuelve ninguna fila. ¿Qué excepción típica se produce?
+A) DUP_VAL_ON_INDEX
+B) NO_DATA_FOUND
+C) TOO_MANY_ROWS
+D) ZERO_DIVIDE siempre
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: NO_DATA_FOUND indica ausencia de fila.
+----------------------------------------------------------------------
+PREGUNTA 15 | Opción múltiple
+SELECT INTO devuelve varias filas cuando se esperaba una. ¿Qué excepción se produce?
+A) TOO_MANY_ROWS
+B) NO_DATA_FOUND
+C) DUP_VAL_ON_INDEX
+D) INVALID_CURSOR siempre
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: SELECT INTO escalar requiere una sola fila.
+----------------------------------------------------------------------
+PREGUNTA 16 | Opción múltiple
+Se inserta un valor duplicado en una restricción UNIQUE. ¿Qué excepción es habitual?
+A) NO_DATA_FOUND
+B) DUP_VAL_ON_INDEX
+C) TIMEOUT
+D) ROWCOUNT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Se activa ante violación de unicidad.
+----------------------------------------------------------------------
+PREGUNTA 17 | Opción múltiple
+Un procedimiento reutilizable participa en una operación mayor. ¿Quién debería controlar COMMIT?
+A) Siempre el procedimiento interno
+B) El llamador que conoce el límite transaccional
+C) Un trigger aleatorio
+D) El SELECT
+RESPUESTA CORRECTA: B
+EXPLICACIÓN: Evita confirmaciones parciales no deseadas.
+----------------------------------------------------------------------
+PREGUNTA 18 | Opción múltiple
+¿Qué caracteriza a un trigger?
+A) Se ejecuta por un evento configurado
+B) Solo devuelve valores
+C) No afecta mantenibilidad
+D) Sustituye todas las APIs
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Reacciona a eventos como INSERT/UPDATE/DELETE.
+----------------------------------------------------------------------
+PREGUNTA 19 | Opción múltiple
+¿Para qué se utiliza BULK COLLECT?
+A) Recuperar filas en colecciones
+B) Crear usuarios
+C) Revocar permisos
+D) Hacer backup
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: Reduce cambios de contexto en recuperación masiva.
+----------------------------------------------------------------------
+PREGUNTA 20 | Opción múltiple
+¿Qué instrucción permite ejecutar DML en lote con elementos de una colección?
+A) FORALL
+B) GROUP BY
+C) EXPLAIN PLAN
+D) %ROWTYPE
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: FORALL envía DML en lote al motor SQL.
+----------------------------------------------------------------------
+PREGUNTA 21 | Escenario laboral
+Un procedimiento PL/SQL reutilizable actualiza el saldo de una cuenta como parte de una operación mayor. ¿Quién debería decidir cuándo ejecutar COMMIT?
+A) La capa que controla la transacción completa
+B) Cada procedimiento interno siempre
+C) Un trigger sin control
+D) El navegador del usuario
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: El límite transaccional debe permanecer bajo control del proceso que conoce la operación completa.
+----------------------------------------------------------------------
+PREGUNTA 22 | Escenario laboral
+Una consulta SELECT INTO de PL/SQL espera un afiliado y devuelve varias filas. ¿Qué excepción debe manejarse?
+A) TOO_MANY_ROWS
+B) NO_DATA_FOUND
+C) DUP_VAL_ON_INDEX
+D) INVALID_NUMBER siempre
+RESPUESTA CORRECTA: A
+EXPLICACIÓN: TOO_MANY_ROWS indica que una consulta SELECT INTO devolvió más de una fila.
+----------------------------------------------------------------------

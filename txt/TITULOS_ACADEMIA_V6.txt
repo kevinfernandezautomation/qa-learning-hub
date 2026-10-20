@@ -1,0 +1,27 @@
+Títulos del catálogo de Academia (rutas principales y formación)
+Nota: la visibilidad final depende de los filtros y los datos dinámicos.
+
+1. Automatización de pruebas de calidad con IA y agentes
+2. Automatización de Pruebas QA · Playwright, Cypress y Selenium
+3. Claude Academy · ruta para QA y desarrollo con IA
+4. English for QA
+5. Fundamentos de pruebas de calidad a software
+6. Gestión de Pruebas de Software con Jira, Confluence, Xray, TestRail y Zephyr
+7. Ingeniería de Rendimiento Empresarial
+8. macOS & System QA Engineer
+9. Profesional TI – Programación · Pensiones
+10. Pruebas de accesibilidad web
+11. QA + Mejora de Procesos
+12. QA Auditor de Software
+13. QA Lead · Liderazgo y estrategia de calidad
+14. QA para Bases de Datos
+15. QA para el sector financiero
+16. QA para Pasarelas de Pago
+17. QA para Robótica
+18. QA para Software de Aviación
+19. QA para Software de Contenido y Marketing Digital
+20. QA Testing para videojuegos
+21. Quality Engineering Web, Mobile, API y Cloud · Appium y BrowserStack
+22. Senior Quality Engineering
+23. uTest Academy – práctica de testing y comunidad
+24. Virtuoso QA – Training Library y certificaciones

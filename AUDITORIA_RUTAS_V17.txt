@@ -1,0 +1,24 @@
+Rutas locales no encontradas (revisar):
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ../../styles.css
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ../../index.html
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ../../academia.html
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: Requirement-SWR-006.md
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: ExportService.cs
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: AuditEvent.sql
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: AuditEventTests.cs
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: DEF-21.md
+medical-device-samd-project/csharp-dotnet-sqlserver/index.html: RETEST-DEF-21.md
+medical-device-samd-project/playwright/index.html: ../../styles.css
+medical-device-samd-project/playwright/index.html: ../../index.html
+medical-device-samd-project/playwright/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/playwright/index.html: ../../academia.html
+medical-device-samd-project/playwright/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/playwright/index.html: medical-export.spec.ts
+medical-device-samd-project/python/index.html: ../../styles.css
+medical-device-samd-project/python/index.html: ../../index.html
+medical-device-samd-project/python/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/python/index.html: ../../academia.html
+medical-device-samd-project/python/index.html: ../../medical-dotnet-sql-lab.html
+medical-device-samd-project/python/index.html: traceability_check.py
