@@ -6,7 +6,6 @@ function saveCandidateCookie(name,email){const secure=location.protocol==='https
 (function(){
 'use strict';
 const DIFFICULTY_TIME={Principiante:null,'Fácil':60,'Medio':45,'Difícil':30};
-const MIXED={id:'MIX-CTFL-ASTFC',name:'Práctica comparativa CTFL v4.0 + AICS ASTFC',level:'Comparativa',difficulty:'Inicial',k:'Fundamentos',focus:'Conceptos compartidos de fundamentos de testing, SDLC, técnicas, defectos, riesgo y gestión básica.',url:'html/proveedores.html'};
 const ROLE_TOPICS={
  'QA Manual · Evaluación de nivel (Jr–Lead)':['fundamentos de testing','criterios de aceptación','técnicas de diseño','defectos y evidencia','regresión','testing exploratorio','riesgo de producto','test planning','métricas y release readiness','stakeholders','mentoría','estrategia QA','mejora de procesos','liderazgo y comunicación'],
  'QA Automation · Evaluación de nivel (Jr–Lead)':['fundamentos de automatización','locators y assertions','Page Objects y arquitectura','Git y code review','API automation','CI/CD','datos y ambientes','flaky tests','paralelización','observabilidad','performance','quality gates','ROI y estrategia','gobernanza','mentoría y liderazgo técnico']
@@ -119,7 +118,7 @@ function boot(){
  const params=new URLSearchParams(location.search);
  const requested=params.get('cert');
  if(params.get('mode')==='external' && (window.PRO_CREDENTIAL_PATHS||[]).some(c=>c.id===requested))provider.value='EXTERNAL';
- else if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value=requested.startsWith('AICS-')?'AICS':'ISTQB';
+ else if(requested&&window.CERTIFICATIONS.some(c=>c.id===requested))provider.value='ISTQB';
  fillCerts(requested);
  let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
  let draft=null;const returningFromGuide=sessionStorage.getItem('qaExamReturnPending')==='1';
@@ -177,8 +176,7 @@ function changeMode(){
 
 function fillCerts(preselect){
  const kind=provider.value;let list=[];
- if(kind==='MIX'){simCert.innerHTML='';simCert.add(new Option(MIXED.name,MIXED.id));currentCert=MIXED;updateCert();return;}
- if(kind==='EXTERNAL')list=(window.PRO_CREDENTIAL_PATHS||[]);else list=window.CERTIFICATIONS.filter(c=>kind==='AICS'?c.id.startsWith('AICS-'):!c.id.startsWith('AICS-'));
+ if(kind==='EXTERNAL')list=(window.PRO_CREDENTIAL_PATHS||[]);else list=window.CERTIFICATIONS.filter(c=>true);
  simCert.innerHTML='';list.forEach(c=>simCert.add(new Option(c.name,c.id)));
  if(preselect&&list.some(c=>c.id===preselect))simCert.value=preselect;updateCert();
 }
@@ -211,9 +209,9 @@ function updateCert(){
    el('certMeta').innerHTML=`<b>${escapeHtml(st?.name||'Stack QA')}</b><span>Evaluación de conocimientos del stack</span><p>${escapeHtml((st?.topics||[]).join(', '))}</p>`;showEl(el('certMeta'),true);
    const link=el('officialExamLink');if(link)showEl(link,false);updateSimulationHeading();updatePracticeMeta();return;
  }
- const baseCert=provider.value==='MIX'?MIXED:provider.value==='EXTERNAL'?(window.PRO_CREDENTIAL_PATHS||[]).find(c=>c.id===simCert.value):window.CERTIFICATIONS.find(c=>c.id===simCert.value);if(!baseCert)return;currentCert=baseCert;
+ const baseCert=provider.value==='EXTERNAL'?(window.PRO_CREDENTIAL_PATHS||[]).find(c=>c.id===simCert.value):window.CERTIFICATIONS.find(c=>c.id===simCert.value);if(!baseCert)return;currentCert=baseCert;
  el('certMeta').innerHTML=`<b>${escapeHtml(currentCert.level)} · ${escapeHtml(currentCert.difficulty)}</b><span>${escapeHtml(currentCert.k||'')}</span><p>${escapeHtml(currentCert.focus)}</p>`;showEl(el('certMeta'),true);
- const link=el('officialExamLink');if(link){showEl(link,true);link.href=currentCert.url||'html/proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='AICS'?'Información AICS ↗':provider.value==='MIX'?'Fuentes de certificación':provider.value==='EXTERNAL'?'Información de certificación ↗':'Material oficial ↗';}updateSimulationHeading();updatePracticeMeta();
+ const link=el('officialExamLink');if(link){showEl(link,true);link.href=currentCert.url||'html/proveedores.html';link.target=currentCert.url?.startsWith('http')?'_blank':'';link.textContent=provider.value==='EXTERNAL'?'Información de certificación ↗':'Material oficial ↗';}updateSimulationHeading();updatePracticeMeta();
 }
 
 function ctflSelected(){return mode.value==='cert' && provider.value==='ISTQB' && currentCert?.id==='CTFL';}
@@ -273,7 +271,6 @@ function buildCertificationBank(){
  if(ctflSelected())return buildCtflBank();
  if(ctalAtSelected())return buildCtalAtBank();
  if(advancedSyllabusSelected())return buildUploadedAdvancedBank();
- if(provider.value==='MIX'){const a=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='CTFL'),dif.value)||[];const b=window.buildExamQuestionBank(window.CERTIFICATIONS.find(c=>c.id==='AICS-ASTFC'),dif.value)||[];return localizeBank(shuffle(a).slice(0,60).concat(shuffle(b).slice(0,60)),examLang.value,currentCert);}
  const bank=window.buildExamQuestionBank(currentCert,dif.value)||[];return localizeBank(bank,examLang.value,currentCert);
 }
 function roleSeed(){return /Automatización|Automation/i.test(role.value)?AUTO_Q:MANUAL_Q;}

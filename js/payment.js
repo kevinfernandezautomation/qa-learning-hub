@@ -2,7 +2,7 @@
 'use strict';
 const stat=$('#paymentStatus'),input=$('#paymentCourseInput'),suggestions=$('#courseSuggestions'),cat=$('#paymentCategory'),scheme=$('#paymentScheme'),cart=$('#cartItems');
 const PRICE=Number(window.ACADEMY_COURSE_PRICE||5),VAT=Number(window.ACADEMY_VAT||0.13),catalog=[];const add=(name,category,schemeType,price=PRICE)=>{if(!catalog.some(x=>x.name===name))catalog.push({name,category,scheme:schemeType,price});};
-(window.CERTIFICATIONS||[]).forEach(c=>add(`Preparación ${c.id} — ${c.name}`,c.id.startsWith('AICS-')?'Preparación AICS':'Preparación ISTQB',c.id.startsWith('AICS-')?'AICS':'ISTQB'));
+(window.CERTIFICATIONS||[]).forEach(c=>add(`Preparación ${c.id} — ${c.name}`,'Preparación ISTQB','ISTQB'));
 (window.PRO_CREDENTIAL_PATHS||[]).forEach(x=>add(`Preparación ${x.name}`,'Certificación externa','OTROS'));
 add('Paquete certificaciones ISTQB','Paquete ISTQB','ISTQB',100);
 (window.LEARNING_PATHS||[]).filter(x=>!x.external&&!x.free&&x.id!=='game-qa').forEach(x=>add(x.name,'Learning Path','OTROS'));

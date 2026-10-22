@@ -10,7 +10,7 @@ window.CERT_IMPLEMENTATION_DATA={"CTFL": {"id": "CTFL", "name": "Certified Teste
  document.title=`${c.name} · Capacitación | QA Learning Hub`;
  set('routeTitle',c.name);set('routeFocus',c.focus);set('routeLevel',c.level);set('routeK',c.k);set('routeDifficulty',c.difficulty);
  document.getElementById('routePractice').href=`html/simuladores.html?cert=${encodeURIComponent(c.id)}`;
- const ref=document.getElementById('routeReference');ref.href=c.url||'html/certificaciones.html';ref.textContent=c.id.startsWith('AICS')?'Fuente oficial ↗':'Ver syllabus / material oficial ↗';
+ const ref=document.getElementById('routeReference');ref.href=c.url||'html/certificaciones.html';ref.textContent='Ver syllabus / material oficial ↗';
  const focus=(c.focus||'').replace(/\.$/,'').split(',').map(s=>s.trim()).filter(Boolean);
  const modules=(impl?.steps?.length?impl.steps.map((x,i)=>[String(i+1).padStart(2,'0'),x.title,x.concept?`${x.concept}: ${x.action}`:x.action]):[
  ['01','Comprender el alcance',`Revise propósito, terminología y alcance: ${focus[0]||c.name}.`],['02','Estudiar conceptos esenciales','Relacione definiciones con decisiones y riesgos reales de testing.'],['03','Aplicar técnicas y prácticas',`Practique los temas centrales: ${focus.slice(0,3).join(', ')||'temario principal'}.`],['04','Resolver escenarios','Use contexto, restricciones, riesgo y evidencia para justificar decisiones.'],['05','Revisar brechas','Analice errores y vuelva al material de referencia.'],['06','Prepararse para evaluación','Realice simulaciones y confirme requisitos vigentes antes de pagar el examen.']]);
