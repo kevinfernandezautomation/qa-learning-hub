@@ -1,0 +1,178 @@
+QA LEARNING HUB — CATÁLOGO EDUCATIVO DE PRUEBAS AUTOMATIZADAS PARA BANCA DIGITAL
+Caso de estudio: funcionalidades públicas documentadas por BAC Costa Rica
+Versión: v63 — 2026-09-20
+
+ALCANCE Y SEGURIDAD
+Este documento es un ejercicio educativo de Quality Engineering basado únicamente en funcionalidades públicas del sitio de BAC Costa Rica. No implica autorización para ejecutar automatización contra sistemas productivos, autenticados o internos de BAC. Las pruebas transaccionales, de carga, seguridad o modificación de datos deben ejecutarse exclusivamente en sandboxes/QA autorizados, con cuentas de prueba, mocks y datos sintéticos.
+
+1. SITIO PÚBLICO / EXPERIENCIA WEB
+WEB-001 Carga correcta de página principal y respuesta HTTP esperada.
+WEB-002 Navegación de Personas y categorías principales.
+WEB-003 Enlaces internos sin 404/500.
+WEB-004 Enlaces externos válidos y con destino esperado.
+WEB-005 Navegación por teclado de menús, botones, formularios y modales.
+WEB-006 Jerarquía de encabezados y landmarks accesibles.
+WEB-007 Textos alternativos y nombres accesibles en controles relevantes.
+WEB-008 Contraste y estados de foco visibles mediante auditoría automatizada.
+WEB-009 Responsive en breakpoints móvil, tablet y desktop.
+WEB-010 Ausencia de overflow horizontal no intencional.
+WEB-011 Validación de title, description, canonical y metadatos básicos.
+WEB-012 Detección de recursos rotos (imágenes, CSS, JS).
+WEB-013 Rendimiento Web: LCP/CLS/INP y peso de recursos como baseline.
+WEB-014 Comportamiento ante JavaScript lento/fallido y recursos no críticos.
+WEB-015 Formularios públicos: campos obligatorios, formato, mensajes y prevención de doble envío.
+WEB-016 Persistencia/limpieza apropiada de datos no sensibles al navegar atrás/adelante.
+WEB-017 Idioma, moneda y contenido correspondiente al país Costa Rica.
+WEB-018 Validación de enlaces a ayuda/tutoriales desde productos.
+
+2. REGISTRO, LOGIN Y SESIÓN — SOLO EN AMBIENTE AUTORIZADO
+AUTH-001 Registro con datos sintéticos válidos.
+AUTH-002 Validaciones de campos obligatorios y formatos.
+AUTH-003 Login válido con usuario de prueba.
+AUTH-004 Credenciales inválidas muestran error genérico y usable.
+AUTH-005 Recuperación de usuario/contraseña en sandbox.
+AUTH-006 Código de verificación válido, inválido, expirado y reutilizado.
+AUTH-007 Expiración de sesión por inactividad.
+AUTH-008 Cierre de sesión y revocación de sesión.
+AUTH-009 Acceso directo a URL protegida sin sesión.
+AUTH-010 Sesiones concurrentes según reglas definidas.
+AUTH-011 Navegador atrás después de logout no expone contenido autenticado.
+AUTH-012 Mensajes de error no revelan información sensible.
+
+3. CUENTAS, SALDOS Y MOVIMIENTOS — SANDBOX
+ACC-001 Listado de cuentas asociado al usuario de prueba.
+ACC-002 Saldo disponible y moneda correctos frente al backend de prueba.
+ACC-003 Movimientos ordenados y paginados correctamente.
+ACC-004 Filtros por fecha/tipo/moneda.
+ACC-005 Estados vacíos cuando no existen movimientos.
+ACC-006 Precisión decimal y formato CRC/USD.
+ACC-007 Apertura digital con reglas y datos sintéticos.
+ACC-008 Creación de subcuenta donde aplique.
+ACC-009 Resumen previo y confirmación posterior consistentes.
+ACC-010 Estado de cuenta descargable corresponde a cuenta/periodo de prueba.
+
+4. TRANSFERENCIAS Y SINPE — SANDBOX/MOCK
+TRF-001 Transferencia entre cuentas propias.
+TRF-002 Transferencia a tercero BAC.
+TRF-003 Transferencia interbancaria simulada.
+TRF-004 SINPE Móvil simulado dentro de límites configurados.
+TRF-005 Monto cero, negativo, superior al saldo o límite.
+TRF-006 Cuenta/IBAN/destino inválido.
+TRF-007 Confirmación muestra origen, destino, monto, moneda y referencia correctos.
+TRF-008 Prevención de doble clic/doble envío.
+TRF-009 Idempotencia ante retry de API.
+TRF-010 Timeout después de enviar: reconciliar antes de reintentar.
+TRF-011 Reverso/rechazo simulado mantiene consistencia de saldo.
+TRF-012 Transferencias concurrentes no generan saldo inconsistente.
+TRF-013 Historial refleja estado final y referencia.
+TRF-014 Límites diarios y reglas de comisión parametrizadas.
+
+5. TARJETAS — SANDBOX
+CARD-001 Listado y estado de tarjetas de prueba.
+CARD-002 Enmascaramiento de información sensible.
+CARD-003 Pago mínimo, contado y monto extraordinario simulados.
+CARD-004 Bloqueo/desbloqueo refleja estado consistente en UI/API.
+CARD-005 Cambio/solicitud de PIN según flujo autorizado.
+CARD-006 Reemplazo de tarjeta conserva reglas esperadas.
+CARD-007 Límite disponible se actualiza según operación simulada.
+CARD-008 Transacción rechazada muestra explicación segura y accionable.
+
+6. PRÉSTAMOS Y SOLICITUDES — SANDBOX
+LOAN-001 Elegibilidad con perfiles sintéticos.
+LOAN-002 Validación de monto mínimo/máximo parametrizado.
+LOAN-003 Cálculo de cuota con dataset conocido.
+LOAN-004 Flujo de solicitud y número de trámite.
+LOAN-005 Estados de solicitud y reanudación.
+LOAN-006 Pago de cuota, extraordinario y total en entorno de prueba.
+LOAN-007 Integridad entre préstamo, tarjeta/cuenta asociada y estado de cuenta.
+
+7. PAGOS Y SERVICIOS — SANDBOX
+PAY-001 Pago de servicio con referencia válida.
+PAY-002 Referencia inválida/inexistente.
+PAY-003 Pago de municipalidad simulado.
+PAY-004 Pago automático: alta, edición y cancelación.
+PAY-005 Prevención de pago duplicado.
+PAY-006 Confirmación/recibo corresponde a operación.
+PAY-007 Fallo de proveedor externo conserva estado consistente.
+
+8. API QUALITY ENGINEERING
+API-001 Status codes y schemas por endpoint.
+API-002 Campos obligatorios, tipos, límites y enums.
+API-003 Autorización y scopes en ambiente de prueba.
+API-004 Errores 4xx/5xx normalizados y sin datos sensibles.
+API-005 Contract testing consumidor/proveedor.
+API-006 Correlation ID trazable entre solicitud, logs y respuesta.
+API-007 Idempotency key para operaciones financieras simuladas.
+API-008 Paginación, filtros y ordenamiento.
+API-009 Compatibilidad/versionado de API.
+API-010 Timeouts, retries y circuit-breaker simulados.
+
+9. DATOS Y SQL — BASE DE DATOS DE PRUEBA
+DATA-001 Saldo inicial + débitos/créditos = saldo esperado.
+DATA-002 Una operación financiera tiene identificador único.
+DATA-003 No existen duplicados después de retries.
+DATA-004 Precisión decimal sin errores de redondeo.
+DATA-005 Integridad referencial entre cliente/cuenta/movimiento simulado.
+DATA-006 Reconciliación UI vs API vs DB.
+DATA-007 Reconciliación de lote con dataset sintético.
+DATA-008 Fechas, zonas horarias y corte diario.
+DATA-009 Datos enmascarados en datasets no productivos.
+DATA-010 Auditoría registra cambios relevantes sin secretos.
+
+10. PERFORMANCE Y RESILIENCIA — SOLO AMBIENTE AUTORIZADO
+PERF-001 Baseline de navegación pública no destructiva.
+PERF-002 Load test de APIs simuladas con carga acordada.
+PERF-003 Spike test en entorno dedicado.
+PERF-004 Soak test para detectar degradación/fugas.
+PERF-005 p95/p99 y error rate contra SLO definido.
+PERF-006 Concurrencia sobre saldos/consultas con dataset sintético.
+PERF-007 Dependencia lenta simulada.
+PERF-008 Dependencia caída y recuperación.
+PERF-009 Retry storm controlado en mock.
+PERF-010 Capacidad y punto de saturación en laboratorio.
+
+11. ACCESIBILIDAD, COMPATIBILIDAD Y UX
+A11Y-001 WCAG automatizable con axe u herramienta equivalente.
+A11Y-002 Navegación completa por teclado.
+A11Y-003 Labels, errores y ayudas asociados a inputs.
+A11Y-004 Focus management en modales/errores.
+A11Y-005 Zoom 200% y reflow.
+A11Y-006 Lectura comprensible de montos y estados.
+COMP-001 Chromium/Firefox/WebKit para flujos públicos o sandbox.
+COMP-002 Android/iOS en ambientes autorizados.
+COMP-003 Red lenta/intermitente simulada.
+UX-001 Mensajes indican qué ocurrió y siguiente acción.
+UX-002 Confirmaciones diferencian claramente éxito, pendiente y rechazo.
+
+12. CI/CD Y RELEASE READINESS
+CICD-001 Smoke automático por despliegue.
+CICD-002 API contract tests como quality gate.
+CICD-003 Regresión crítica por pull request/nightly según costo.
+CICD-004 Evidencia: traces/screenshots/logs sin datos sensibles.
+CICD-005 Flaky tests identificados y tratados, no ocultados.
+CICD-006 Reporte de cobertura por riesgo/funcionalidad.
+CICD-007 Criterios Go/No-Go con defectos, pass rate y riesgos residuales.
+
+OPORTUNIDADES DE MEJORA OBSERVADAS EN EL CONTENIDO PÚBLICO (NO SON HALLAZGOS DE SISTEMAS INTERNOS)
+IMP-001 Homogeneizar redacción y ortografía en tutoriales y etiquetas; la consistencia reduce ambigüedad en flujos financieros.
+IMP-002 Añadir a tutoriales criterios visibles de “qué pasa si falla” (pendiente, rechazado, timeout) además del happy path.
+IMP-003 Mostrar de forma consistente última actualización de guías y tutoriales para que el usuario sepa su vigencia.
+IMP-004 Facilitar comparación clara entre funciones disponibles en Banca Móvil vs Banca en Línea.
+IMP-005 Reforzar accesibilidad de carruseles/tutoriales paso a paso: estado actual, controles con nombres accesibles y navegación por teclado.
+IMP-006 Mantener requisitos, límites, comisiones y monedas en componentes estructurados y reutilizables para evitar divergencias entre páginas.
+IMP-007 Incorporar estados de servicio/ayuda contextual para operaciones sensibles sin exponer detalles técnicos.
+IMP-008 Añadir mensajes preventivos antes de acciones irreversibles o de alto impacto y resúmenes claros antes de confirmar.
+IMP-009 Medir Core Web Vitals y peso de imágenes de páginas con muchos recursos visuales para priorizar carga móvil.
+IMP-010 Mantener trazabilidad entre contenido de producto, Centro de Ayuda y tutoriales para detectar enlaces o instrucciones desactualizadas.
+
+FUENTES PÚBLICAS CONSULTADAS
+- BAC Costa Rica — sitio de Personas.
+- BAC Costa Rica — Banca en Línea y Banca Móvil.
+- BAC Centro de Ayuda — Cómo utilizar Banca en Línea.
+- BAC Centro de Ayuda — Crear usuario de Banca Móvil/Banca en Línea.
+- BAC Costa Rica — Tutoriales de Cuentas.
+- BAC Costa Rica — Tutoriales de Solicitudes en Línea.
+- BAC Costa Rica — Préstamos.
+
+NOTA
+Estas oportunidades se derivan del contenido público visible y no deben interpretarse como vulnerabilidades, defectos confirmados de producción ni evaluación de sistemas internos de BAC.

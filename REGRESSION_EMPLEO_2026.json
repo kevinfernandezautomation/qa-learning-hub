@@ -1,0 +1,36 @@
+{
+  "type": "static",
+  "browser": "blocked by environment",
+  "results": [
+    {
+      "file": "empleos.html",
+      "main": 1,
+      "footer": 1,
+      "broken_local_references": []
+    },
+    {
+      "file": "empleos-recursos.html",
+      "main": 1,
+      "footer": 1,
+      "broken_local_references": []
+    },
+    {
+      "file": "rutas-academia.html",
+      "main": 1,
+      "footer": 1,
+      "broken_local_references": []
+    },
+    {
+      "file": "curso-banca-fintech.html",
+      "main": 1,
+      "footer": 1,
+      "broken_local_references": []
+    },
+    {
+      "file": "simuladores.html",
+      "main": 1,
+      "footer": 1,
+      "broken_local_references": []
+    }
+  ]
+}

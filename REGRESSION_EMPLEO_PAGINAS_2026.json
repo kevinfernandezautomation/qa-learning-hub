@@ -1,0 +1,95 @@
+{
+  "static_validation": "PASS",
+  "pages": [
+    {
+      "page": "empleo-busqueda.html",
+      "sections": [
+        "busqueda-empleo",
+        "qa-search-engine",
+        "linkedin-reciente"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-analizar-vacante.html",
+      "sections": [
+        "analizar-vacante"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-modalidad-laboral.html",
+      "sections": [
+        "modalidad-laboral"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-habilidades-blandas.html",
+      "sections": [
+        "habilidades-blandas"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-estilos-conductuales.html",
+      "sections": [
+        "estilos-conductuales"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-evaluaciones-seleccion.html",
+      "sections": [
+        "evaluaciones-seleccion"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-entrevistas.html",
+      "sections": [
+        "entrevista-ingles",
+        "entrevista-qa"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-linkedin.html",
+      "sections": [
+        "linkedin-reciente",
+        "qa-search-engine"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-videojuegos.html",
+      "sections": [
+        "gremios-videojuegos"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-trabajo-independiente.html",
+      "sections": [
+        "trabajo-independiente"
+      ],
+      "result": "PASS"
+    },
+    {
+      "page": "empleo-preparacion.html",
+      "sections": [
+        "preparacion"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "checks": [
+    "11 standalone HTML pages",
+    "existing anchor sections preserved",
+    "landing links updated",
+    "footer placeholder added to community",
+    "academy dynamic pension card removed",
+    "payment label corrected"
+  ],
+  "browser_testing": "NOT_RUN"
+}

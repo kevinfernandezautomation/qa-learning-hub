@@ -1,0 +1,7 @@
+CREATE TABLE dbo.AuditEvent (
+ AuditEventId BIGINT IDENTITY PRIMARY KEY,
+ Action NVARCHAR(50) NOT NULL, RecordId NVARCHAR(50) NOT NULL,
+ UserId NVARCHAR(100) NOT NULL, SoftwareVersion NVARCHAR(30) NOT NULL,
+ OccurredAtUtc DATETIME2 NOT NULL, Result NVARCHAR(30) NOT NULL
+);
+CREATE INDEX IX_AuditEvent_RecordId_Time ON dbo.AuditEvent(RecordId,OccurredAtUtc DESC);
