@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="strict-origin-when-cross-origin" name="referrer"/><meta content="nosniff" http-equiv="X-Content-Type-Options"/><title>QA para Pasarelas de Pago | QA Learning Hub</title><link href="../css/styles.css" rel="stylesheet"/><link href="../favicon.svg" rel="icon" type="image/svg+xml"/><meta content="es_CR" property="og:locale"/><meta content="QA para Pasarelas de Pago. Recursos educativos y práctica de Quality Assurance en QA Learning Hub." name="description"/><link href="https://kevinfernandezautomation.github.io/qa-learning-hub/html/qa-pasarelas-pago.html" rel="canonical"/><link rel="stylesheet" href="../css/footer-global.css"/><style data-unified-from="qa-ui-refresh.css">
+/* QA Learning Hub - diseño responsive compartido */
+.topbar{background:var(--surface,#fff);box-shadow:0 6px 28px #10294b12;border-bottom:1px solid #dce8f433}
+.topbar .brand-mark,.qa-footer-logo{display:grid;place-items:center;background:linear-gradient(140deg,#1877f2,#08bfa8);color:#fff;border-radius:13px;font-weight:800}
+.topbar .header-actions{display:flex;align-items:center;gap:8px}
+.topbar .header-actions .icon-btn,.topbar .menu-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:42px;border:1px solid #d6e3f1;border-radius:11px}
+.topbar .header-actions svg,.topbar .menu-toggle svg{width:19px;height:19px}
+.topbar .qa-login{display:inline-flex;align-items:center;gap:7px;background:#1268e8;color:white!important;border-radius:12px;padding:10px 14px}
+.qa-login svg{width:18px;height:18px}
+.qa-global-footer{position:relative;isolation:isolate;background:linear-gradient(140deg,#09203e,#0c2c56 65%,#082245);color:#f4f9ff!important;border:0!important;box-shadow:none!important;padding:55px max(22px,5vw) 25px}
+.qa-global-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0074ed,#42b5ff,#04bcae)}
+.qa-footer-inner{display:grid;grid-template-columns:minmax(220px,1.1fr) 3fr;gap:55px;max-width:1450px;margin:auto}
+.qa-footer-brandline{display:flex;gap:14px;align-items:center}.qa-footer-logo{width:52px;height:52px;font-size:28px}.qa-footer-brandline strong{display:block;font-size:20px}.qa-footer-brandline small{display:block;color:#c2d4ed}
+.qa-footer-brand p{color:#c2d4ed;line-height:1.6;max-width:360px}
+.qa-social{display:flex;gap:10px;margin-top:18px}.qa-social a{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#ffffff15;color:#fff!important;font-weight:800;text-decoration:none}.qa-social svg{width:21px;height:21px}
+.qa-footer-sections{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.qa-footer-sections details{min-width:0}.qa-footer-sections summary{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:750;color:white;list-style:none;cursor:default;margin-bottom:17px}.qa-footer-sections summary::-webkit-details-marker{display:none}.qa-footer-sections summary svg{width:20px;height:20px;color:#36a8ff}
+.qa-footer-sections a{display:block;color:#cbdcf0!important;text-decoration:none;margin:0 0 12px;font-size:14px;line-height:1.5}.qa-footer-sections a:hover{color:white!important;text-decoration:underline}
+.qa-footer-bottom{max-width:1450px;margin:34px auto 0;padding-top:22px;border-top:1px solid #ffffff35;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#cbdcf0;font-size:13px}
+.qa-back-top{position:absolute;right:18px;bottom:24px;width:42px;height:42px;border-radius:50%;background:#0864e9;border:1px solid #ffffff50;color:white;cursor:pointer}.qa-back-top svg{width:20px;height:20px}
+@media(max-width:1050px){.qa-footer-inner{grid-template-columns:1fr;gap:28px}.qa-footer-sections{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.topbar{flex-wrap:wrap}.topbar .header-actions{flex-wrap:wrap;gap:7px}.topbar .header-actions .icon-btn{min-width:44px;min-height:44px}.topbar .qa-login{min-height:44px}.qa-global-footer{padding:42px 20px 85px}.qa-footer-inner{display:block}.qa-footer-brandline strong{font-size:19px}.qa-footer-brand p{font-size:14px}.qa-footer-sections{display:block;margin-top:26px}.qa-footer-sections details{border:1px solid #73a6d16b;border-radius:13px;margin:10px 0;padding:0 15px;background:#ffffff08}.qa-footer-sections summary{cursor:pointer;margin:0;padding:17px 0;font-size:16px}.qa-footer-sections summary:after{content:'⌄';margin-left:auto}.qa-footer-sections details[open] summary:after{content:'⌃'}.qa-footer-sections details a{padding:5px 6px}.qa-footer-bottom{display:block;line-height:1.8}.qa-footer-bottom span{display:block;margin-top:6px}.qa-back-top{bottom:18px}}
+
+/* Correcciones visuales globales */
+@media (min-width:981px){.topbar .menu-toggle,.topbar #menuToggle{display:none!important}}
+@media (max-width:980px){.topbar .menu-toggle,.topbar #menuToggle{display:inline-flex!important;align-items:center;justify-content:center}}
+body.dark .ux-card,html.dark .ux-card,.dark .ux-card{background:#152942!important;border-color:#426084!important;color:#f5f9ff!important}
+body.dark .ux-card h2,body.dark .ux-card p,body.dark .ux-card b,html.dark .ux-card h2,html.dark .ux-card p,html.dark .ux-card b,.dark .ux-card h2,.dark .ux-card p,.dark .ux-card b{color:#f1f7ff!important}
+body.dark .ux-community,html.dark .ux-community,.dark .ux-community{background:#142943!important;color:#f1f7ff!important}
+body.dark .ux-community *,html.dark .ux-community *,.dark .ux-community *{color:#f1f7ff!important}
+@media(min-width:1051px){.qa-global-footer{padding:60px max(30px,5vw) 30px!important}.qa-footer-inner{grid-template-columns:minmax(220px,1.05fr) minmax(0,3fr);gap:clamp(30px,4vw,75px)}.qa-footer-sections{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(15px,2vw,36px)}.qa-footer-sections details{border-left:1px solid #ffffff25;padding-left:18px}.qa-footer-sections details:first-child{border-left:0;padding-left:0}}
+
+.qa-global-footer.footer{display:block!important;width:100%;max-width:none;margin:0;box-sizing:border-box}.qa-global-footer .qa-footer-inner{width:100%}.qa-global-footer .qa-footer-bottom{width:100%}
+
+</style></head><body data-page="academy"><header class="topbar">
+<a class="brand" href="../index.html"><span class="brand-mark">✓</span><span><strong>QA Learning Hub</strong><small>Testing · Quality Engineering</small></span></a>
+<button aria-expanded="false" aria-label="Abrir menú" class="icon-btn menu-toggle" id="menuToggle">☰</button>
+<nav aria-label="Navegación principal" class="main-nav" id="mainNav">
+<a href="../index.html">Inicio</a><a href="academia.html">Academia</a><a href="certificaciones.html">Certificaciones</a><a href="simuladores.html">Simuladores</a><a href="prompts.html">IA aplicada a QA</a><a href="biblioteca.html">Biblioteca</a><a href="empleos.html">Empleo</a>
+</nav>
+<div class="header-actions">
+<select aria-label="Idioma" id="language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="zh">中文</option><option value="hi">हिन्दी</option></select>
+<button aria-label="Cambiar tema" class="icon-btn" id="themeToggle">◐</button><button aria-label="Navegación por voz" class="icon-btn voice-btn" id="voiceNav">🎙</button><a class="btn small" href="login.html">Iniciar sesión</a>
+</div></header><main><section class="page-hero shell"><span class="eyebrow">Learning Path</span><h1>QA para Pasarelas de Pago</h1><p>Comprenda cómo probar checkout, gateway, processor, adquirente, emisor, autenticación, webhooks, conciliación y factura posterior al pago.</p><a class="btn ghost" href="academia.html">← Volver a Academia</a></section><section class="shell"><div class="learn-path-grid">
+<article class="learn-path-card"><h2>1. Ecosistema de pagos</h2><p>Visa distingue gateway (captura/protege datos del checkout), processor (comunica bancos/redes), issuing bank (banco del cliente) y acquiring bank (banco/adquirente del comercio). Dibuje el flujo antes de probar.</p></article>
+<article class="learn-path-card"><h2>2. Checkout y tokenización</h2><p>Pruebe carrito, monto, moneda, impuesto, expiración de sesión, doble clic y retorno. Prefiera tokenización/checkout alojado para evitar que el comercio maneje datos de tarjeta innecesariamente.</p></article>
+<article class="learn-path-card"><h2>3. Autorización y captura</h2><p>Diseñe escenarios aprobado/rechazado, fondos insuficientes, timeout, autorización sin captura, captura parcial, duplicados y reintentos.</p></article>
+<article class="learn-path-card"><h2>4. 3-D Secure</h2><p>Valide flujos frictionless y challenge cuando el proveedor los ofrezca, retorno correcto al comercio y manejo de cancelaciones/errores.</p></article>
+<article class="learn-path-card"><h2>5. Webhooks e idempotencia</h2><p>Pruebe firma, autenticidad, eventos duplicados, retrasados y fuera de orden. Un webhook repetido no debería crear un segundo pedido ni una segunda factura.</p></article>
+<article class="learn-path-card"><h2>6. Refunds y disputes</h2><p>Incluya devolución total/parcial, referencias, estados, conciliación y efectos sobre factura/notas cuando corresponda.</p></article>
+<article class="learn-path-card"><h2>7. PCI DSS</h2><p>PCI SSC diferencia páginas completamente alojadas por proveedores, iframe y direct post. El alcance exacto del SAQ debe confirmarse con adquirente/QSA y dependerá de la arquitectura.</p></article>
+<article class="learn-path-card"><h2>8. Conciliación y factura</h2><p>Después de confirmar el pago en backend, concilie orden, monto, moneda y referencia. En Costa Rica, la facturación electrónica oficial requiere XML conforme a la versión vigente, autenticación y envío/validación con Hacienda.</p></article>
+</div></section><section class="shell source-note"><strong>Referencias:</strong> <a href="https://corporate.visa.com/en/solutions/acceptance/payments.html" rel="noopener noreferrer" target="_blank">Visa · Payment components ↗</a> · <a href="https://www.pcisecuritystandards.org/faqs/1438/" rel="noopener noreferrer" target="_blank">PCI SSC · Hosted/iframe payment page ↗</a></section></main><footer class="footer"><strong>QA Learning Hub</strong><div class="copyright-notice"><strong>Derechos de autor</strong><p>© 2026 QA Learning Hub. Todos los derechos reservados. El contenido original de este sitio está protegido por derechos de autor. No se autoriza copiar, reproducir, redistribuir, publicar ni reutilizar total o parcialmente sin autorización previa por escrito, salvo los usos permitidos por la legislación aplicable o las condiciones expresamente indicadas para materiales de terceros.</p></div></footer><script src="../js/translations-extra.js"></script><script src="../js/common.js"></script><script src="../js/footer-global.js"></script><script src="../js/qa-ui-refresh.js"></script></body></html>
