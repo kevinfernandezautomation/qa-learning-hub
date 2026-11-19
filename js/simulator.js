@@ -90,10 +90,11 @@ function stackModeConfig(){
 
 
 function activateExamIntegrity(){
- document.body.classList.add('exam-active');
+ document.body.classList.add('exam-active','sim-exam-focus');
+ requestAnimationFrame(()=>{const target=el('simQuiz');if(target&&!target.hidden){target.setAttribute('tabindex','-1');target.scrollIntoView({behavior:'instant',block:'start'});try{target.focus({preventScroll:true})}catch{}}});
 }
 function deactivateExamIntegrity(){
- document.body.classList.remove('exam-active');
+ document.body.classList.remove('exam-active','sim-exam-focus');
 }
 function selectedActivityName(){
  if(mode?.value==='interview')return role?.value||'Entrevista laboral QA';
@@ -126,7 +127,7 @@ function startProgramacion(){
  const concepts=shuffleLocal(data.conceptos).slice(0,20).map(v=>({kind:'concept',q:v[0],a:v[1],c:v[2],why:v[3]}));
  const diagrams=data.practicos.slice(schoolRound*3,schoolRound*3+3).map(v=>({kind:'diagram',q:v[0],description:v[1],image:v[2],rubric:v[3]}));
  qs=[...concepts,...diagrams];responses=Array(qs.length).fill(null);schoolRubrics=[];idx=0;examLocked=false;
- showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);showEl(el('qDifficulty'),false);
+ showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);activateExamIntegrity();showEl(el('qDifficulty'),false);
  const minutes=({Fácil:60,Medio:45,Difícil:30})[schoolDifficulty()];
  if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{left=Math.max(0,left-1);renderTimer();if(!left)finishProgramacion(true)},1000);}else{left=0;el('timer').textContent='Sin cronómetro';}showProgramacion();
 }
@@ -150,7 +151,7 @@ function showProgramacion(){
  el('nextQ').textContent=idx===qs.length-1?'Finalizar y revisar respuestas':'Siguiente →';
 }
 function finishProgramacion(timeout=false){
- if(examLocked)return;examLocked=true;clearInterval(tick);
+ if(examLocked)return;examLocked=true;clearInterval(tick);deactivateExamIntegrity();
  const conceptQs=qs.filter(q=>q.kind==='concept');const correct=qs.reduce((n,q,i)=>n+(q.kind==='concept'&&responses[i]===q.c?1:0),0);
  const review=el('examReview');showEl(el('simQuiz'),false);showEl(el('simConfig'),false);showEl(el('simResult'),true);review.hidden=false;
  el('resultScore').textContent=`${correct}/${conceptQs.length} conceptos correctos · Diagramas pendientes de autoevaluación`;
@@ -540,7 +541,7 @@ function finish(timeout=false){
  if(passed&&!certificateEligible)el('resultAdvice').textContent += ' El certificado digital requiere nota mínima de 80%, dificultad Media o Difícil y completar la prueba dentro del tiempo establecido. Para certificaciones ISTQB también se requiere idioma inglés o portugués. Esta práctica no cumple todas las condiciones.';
  el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function retry(){if(mode.value==='programacion-secundaria'){examLocked=false;clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updateSchoolMeta();return;}examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();start();}
+function retry(){if(mode.value==='programacion-secundaria'){examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updateSchoolMeta();return;}examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();start();}
 function certificate(){
  const name=(el('candidateName')?.value||'').trim()||'Participante';
  const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100);

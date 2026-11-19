@@ -657,3 +657,30 @@ body:has(#simMode) main{padding-bottom:clamp(3rem,6vw,5rem)}body:has(#simMode) m
   .sim-stage {padding-left:clamp(12px,3vw,20px);padding-right:clamp(12px,3vw,20px);}
   .picker-head {flex-wrap:wrap;}
 }
+
+/* Simulator mobile containment: every mode (certification, interview, stack, course, school). */
+body:has(.simulator-single){overflow-x:clip}
+body:has(.simulator-single) main,body:has(.simulator-single) .shell,
+body:has(.simulator-single) .simulator-single,body:has(.simulator-single) .sim-stage,
+body:has(.simulator-single) .sim-config-inline,body:has(.simulator-single) .config-grid,
+body:has(.simulator-single) .config-grid > *,body:has(.simulator-single) #simQuiz,
+body:has(.simulator-single) #simResult{box-sizing:border-box;min-width:0;max-width:100%}
+body:has(.simulator-single) .config-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body:has(.simulator-single) .config-grid label{min-width:0;overflow-wrap:anywhere}
+body:has(.simulator-single) .config-grid select,
+body:has(.simulator-single) .config-grid input,
+body:has(.simulator-single) .config-grid textarea{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;text-overflow:ellipsis}
+body:has(.simulator-single) .sim-stage{overflow:visible}
+body.sim-exam-focus .topbar .header-actions{display:none!important}
+body.sim-exam-focus #simQuiz{scroll-margin-top:12px;outline:none}
+@media(max-width:700px){
+ body:has(.simulator-single) .config-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%}
+ body:has(.simulator-single) .config-grid > *{grid-column:1/-1!important;width:100%;min-width:0}
+ body:has(.simulator-single) .sim-stage{padding:clamp(12px,3.5vw,22px)!important}
+ body:has(.simulator-single) .simulator-single{padding-inline:0!important}
+ body:has(.simulator-single) .sim-stage{width:100%;max-width:100%}
+ body.sim-exam-focus .topbar{min-height:52px;padding-block:6px}
+ body.sim-exam-focus .topbar .brand small{display:none}
+ body.sim-exam-focus .topbar .menu-toggle{display:inline-flex}
+ body:has(.simulator-single) .quiz-head{flex-wrap:wrap;gap:8px}
+}
