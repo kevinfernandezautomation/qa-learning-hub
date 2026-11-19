@@ -629,3 +629,31 @@ body:has(#simMode) main{padding-bottom:clamp(3rem,6vw,5rem)}body:has(#simMode) m
 .school-paper-confirm input,.school-check-item input{position:relative;display:inline-grid;place-content:center;vertical-align:middle;line-height:1;box-sizing:border-box}
 .school-paper-confirm input:checked::after,.school-check-item input:checked::after{display:block;position:static;transform:none;font-size:15px;line-height:1;text-align:center}
 .school-paper-confirm,.school-check-item{align-items:center}
+
+
+/* Simuladores: controles responsivos en pantallas pequeñas */
+.simulator-single, .sim-stage, .sim-config-inline, .config-grid,
+.config-grid > label, .config-grid > div, .catalog-toolbar,
+.course-picker, .modern-picker, .picker-head, .picker-transfer {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.config-grid select, .config-grid input, .config-grid textarea,
+.catalog-toolbar select, .catalog-toolbar input,
+.course-picker select, .modern-picker select,
+.sim-stage select, .sim-stage input, .sim-stage textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+@media (max-width: 700px) {
+  .simulator-single, .sim-stage, .sim-config-inline {width:100%; max-width:100%;}
+  .config-grid, .catalog-toolbar, .picker-transfer {grid-template-columns:minmax(0,1fr) !important;}
+  .config-grid > *, .config-grid > label:last-child {grid-column:auto !important; min-width:0;}
+  .sim-stage {padding-left:clamp(12px,3vw,20px);padding-right:clamp(12px,3vw,20px);}
+  .picker-head {flex-wrap:wrap;}
+}
