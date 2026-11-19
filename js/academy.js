@@ -107,6 +107,11 @@ function renderLearningPaths(){
    a.href='html/simuladores.html?mode=course&course='+encodeURIComponent(course)+'&title='+encodeURIComponent(title);
    actions.appendChild(a);
  });
+ // Ubicar la tarjeta escolar inmediatamente a la derecha de Salesforce QA.
+ const school=document.querySelector('#programacionSecundariaCard .learn-path-card');
+ const salesforce=[...el.children].find(card=>card.querySelector('h2')?.textContent.trim()==='Salesforce QA');
+ if(school && salesforce){school.remove();salesforce.insertAdjacentElement('afterend',school);}
+
  window.applyTranslations?.();
 }
 
@@ -118,6 +123,7 @@ const ANGIE_LEARNING_PATH={
  modules:["Fundamentos de QA y testing","Niveles y tipos de prueba","Técnicas de diseño de pruebas","Gestión y reporte de defectos","Introducción a automatización","Preparación para entrevistas QA"],
  desc:"Curso externo complementario para iniciar en QA mediante una ruta progresiva y práctica. El contenido se estudia directamente en el sitio oficial de Aprende QA con Angie.",
  url:"https://aprende-qa-con-angie.netlify.app/"
+
 };
 
 const STACK_LEARNING=[

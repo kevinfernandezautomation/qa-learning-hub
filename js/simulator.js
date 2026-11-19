@@ -109,6 +109,63 @@ function stackDifficultyOptions(){return `
 <option value="Intermedio|45">Intermedio · 45 minutos</option>
 <option value="Avanzado|30">Avanzado · 30 minutos</option>`}
 
+let schoolPaper=false,schoolRound=0,schoolRubrics=[];
+const SCHOOL_PROFILE_KEY='qaSchoolCandidateProfile';
+function saveSchoolProfile(){const name=el('candidateName')?.value.trim()||'',email=el('candidateEmail')?.value.trim()||'';try{localStorage.setItem(SCHOOL_PROFILE_KEY,JSON.stringify({name,email}));}catch{}if(name&&email)saveCandidateCookie(name,email);}
+function schoolDifficulty(){return el('simDifficulty')?.value||'Principiante';}
+function schoolTimed(){return schoolDifficulty()!=='Principiante';}
+
+function updateSchoolMeta(){if(mode?.value!=='programacion-secundaria')return;const timed=schoolTimed();const m=el('practiceMeta');if(m){m.hidden=false;m.innerHTML=`<strong>Programación en secundaria</strong><p>${timed?'Examen con cronómetro':'Examen sin cronómetro'}: 20 preguntas de conceptos y resultados, seguidas de 3 diagramas para resolver en papel. Cinco versiones de diagramas permiten practicar 15 problemas distintos.</p><p>Las soluciones se muestran al finalizar. Meta: 85/100. Los diagramas se califican por autoevaluación y no generan certificados automáticos.</p>`;}}
+function startProgramacion(){
+ const data=window.PROGRAMACION_SIM;if(!data){alert('No se pudo cargar el banco de programación.');return;}
+ const name=el('candidateName')?.value.trim()||'',email=el('candidateEmail')?.value.trim()||'';
+ if(!validFullName(name)||!/^\S+@\S+\.\S+$/.test(email)){updateStartState();return;}saveSchoolProfile();saveConfigDraft();
+ clearInterval(tick);schoolPaper=schoolTimed();let history=[];try{history=JSON.parse(localStorage.getItem('qaSchoolRounds')||'[]')}catch{}
+ schoolRound=history.length%5;
+ const shuffleLocal=a=>a.map(x=>({x,r:Math.random()})).sort((a,b)=>a.r-b.r).map(v=>v.x);
+ const concepts=shuffleLocal(data.conceptos).slice(0,20).map(v=>({kind:'concept',q:v[0],a:v[1],c:v[2],why:v[3]}));
+ const diagrams=data.practicos.slice(schoolRound*3,schoolRound*3+3).map(v=>({kind:'diagram',q:v[0],description:v[1],image:v[2],rubric:v[3]}));
+ qs=[...concepts,...diagrams];responses=Array(qs.length).fill(null);schoolRubrics=[];idx=0;examLocked=false;
+ showEl(el('simConfig'),false);showEl(el('simResult'),false);showEl(el('simQuiz'),true);showEl(el('qDifficulty'),false);
+ const minutes=({Fácil:60,Medio:45,Difícil:30})[schoolDifficulty()];
+ if(minutes){left=minutes*60;renderTimer();tick=setInterval(()=>{left=Math.max(0,left-1);renderTimer();if(!left)finishProgramacion(true)},1000);}else{left=0;el('timer').textContent='Sin cronómetro';}showProgramacion();
+}
+function showProgramacion(){
+ const q=qs[idx];if(!q)return;
+ el('qCounter').textContent=`Pregunta ${idx+1} / ${qs.length}`;
+ el('liveScore').textContent=`${responses.filter(v=>v!==null).length} completadas`;
+ el('quizProgress').style.width=`${(idx+1)/qs.length*100}%`;
+ el('qText').textContent=q.kind==='diagram'?`Ejercicio de dibujo ${idx-19}: ${q.q}. Dibuje el diagrama de flujo en una hoja de papel.`:q.q;
+ showEl(el('qDifficulty'),false);
+ const answers=el('answers'),feedback=el('feedback');feedback.hidden=true;feedback.innerHTML='';
+ if(q.kind!=='diagram'){
+  answers.innerHTML=q.a.map((v,i)=>`<button type="button" class="answer-btn ${responses[idx]===i?'selected':''}" data-school-option="${i}" aria-pressed="${responses[idx]===i}">${String.fromCharCode(65+i)}. ${escapeHtml(v)}</button>`).join('');
+  answers.querySelectorAll('[data-school-option]').forEach(b=>b.addEventListener('click',()=>{responses[idx]=Number(b.dataset.schoolOption);answers.querySelectorAll('[data-school-option]').forEach(option=>{const selected=option===b;option.classList.toggle('selected',selected);option.setAttribute('aria-pressed',String(selected));});el('nextQ').disabled=false;}));
+ }else{
+  answers.innerHTML=`<section class="school-paper-task" ><p style="font-weight:650;font-size:1.1rem">Dibuje en una hoja de papel un diagrama de flujo que resuelva este problema: ${escapeHtml(q.description)}</p><label class="school-paper-confirm"><input type="checkbox" id="schoolPaperComplete" ${responses[idx]!==null?'checked':''}> Ya dibujé mi solución en papel y estoy listo para continuar.</label><p style="font-size:.9rem">La solución modelo y la rúbrica aparecerán <strong>únicamente al finalizar el examen</strong>, para evitar revelar las respuestas antes de tiempo.</p></section>`;
+  answers.querySelector('#schoolPaperComplete').onchange=e=>{responses[idx]=e.target.checked?1:null;el('nextQ').disabled=responses[idx]===null;};
+ }
+ el('prevQ').disabled=idx===0;
+ el('nextQ').disabled=responses[idx]===null;
+ el('nextQ').textContent=idx===qs.length-1?'Finalizar y revisar respuestas':'Siguiente →';
+}
+function finishProgramacion(timeout=false){
+ if(examLocked)return;examLocked=true;clearInterval(tick);
+ const conceptQs=qs.filter(q=>q.kind==='concept');const correct=qs.reduce((n,q,i)=>n+(q.kind==='concept'&&responses[i]===q.c?1:0),0);
+ const review=el('examReview');showEl(el('simQuiz'),false);showEl(el('simConfig'),false);showEl(el('simResult'),true);review.hidden=false;
+ el('resultScore').textContent=`${correct}/${conceptQs.length} conceptos correctos · Diagramas pendientes de autoevaluación`;
+ el('resultAdvice').textContent='Revise sus respuestas y compare los tres diagramas dibujados. Marque únicamente los criterios que realmente cumple su hoja.';
+ review.innerHTML='<h2>Revisión final de la práctica</h2>'+qs.map((q,i)=>`<article class="exam-review-item"><h3>${i+1}. ${escapeHtml(q.q)}</h3>${q.kind==='diagram'?`<p>${escapeHtml(q.description)}</p><p><strong>Solución del problema: diagrama de flujo completo</strong></p><img loading="lazy" src="../img/programacion/${encodeURIComponent(q.image)}.webp" alt="Solución del diagrama de flujo: ${escapeHtml(q.q)}" class="school-reference-image"><details class="school-comparison" open><summary>Marque los <strong>Pasos que coinciden con su dibujo en la hoja de papel</strong></summary><div class="school-check-grid">${q.rubric.map((v,j)=>`<label class="school-check-item"><input type="checkbox" class="school-final-check" data-task="${i}" data-criterion="${j}"><span>${escapeHtml(v)}</span></label>`).join('')}</div></details><p class="school-note">Compare cada operación, decisión, salida y flecha con la solución completa de este ejercicio. Se aceptan otras disposiciones que produzcan el mismo resultado.</p>`:`<p><strong>Su respuesta:</strong> ${responses[i]===null?'Sin respuesta':escapeHtml(q.a[responses[i]])}</p><p><strong>Respuesta correcta:</strong> ${escapeHtml(q.a[q.c])}</p><p><strong>Explicación:</strong> ${escapeHtml(q.why||'Repase el concepto en las lecciones.')}</p>`}</article>`).join('')+'<button class="btn primary" id="schoolFinalGrade" type="button">Calcular resultado final</button><p id="schoolFinalGradeResult" role="status"></p>';
+ review.querySelector('#schoolFinalGrade').onclick=()=>{
+  const checks=[...review.querySelectorAll('.school-final-check')];const earned=checks.filter(c=>c.checked).length;
+  const grade=Math.round((correct+3*(earned/checks.length))/(conceptQs.length+3)*100);
+  el('resultScore').textContent=`${grade}/100 · ${correct}/${conceptQs.length} conceptos · ${earned}/${checks.length} criterios de diagramas`;
+  review.querySelector('#schoolFinalGradeResult').textContent=grade>=85?'Meta del 85% alcanzada. Los diagramas fueron autoevaluados.':'No alcanzó el 85%. Revise las respuestas incorrectas y los criterios pendientes.';
+  el('resultAdvice').textContent='Resultado orientativo: la parte de diagramas depende de su autoevaluación. No se emite certificado digital automático.';
+ };
+ showEl(el('reviewExam'),true);showEl(el('downloadCertificate'),false);showEl(el('retryExam'),true);
+ let history=[];try{history=JSON.parse(localStorage.getItem('qaSchoolRounds')||'[]')}catch{}history.push({round:schoolRound+1,date:new Date().toISOString()});try{localStorage.setItem('qaSchoolRounds',JSON.stringify(history));}catch{}
+}
 function boot(){
  simCert=el('simCert');provider=el('simProvider');dif=el('simDifficulty');mode=el('simMode');role=el('simRole');examLang=el('simExamLanguage');simStack=el('simStack');
  if(!simCert||!provider||!dif||!mode||!role||!examLang||!simStack||!el('startExam'))return;
@@ -123,10 +180,11 @@ function boot(){
  let user=null;try{user=JSON.parse(localStorage.getItem('academyUser')||'null')}catch{}
  let draft=null;const returningFromGuide=sessionStorage.getItem('qaExamReturnPending')==='1';
  if(returningFromGuide){try{draft=JSON.parse(sessionStorage.getItem('qaExamConfigDraft')||'null')}catch{}sessionStorage.removeItem('qaExamReturnPending');}
+ let schoolProfile=null;try{schoolProfile=JSON.parse(localStorage.getItem(SCHOOL_PROFILE_KEY)||'null')}catch{}
  const candidateCookie=readCandidateCookie();
- el('candidateName').value=candidateCookie?.name||(user?.name&&user.name!=='Participante'?user.name:(returningFromGuide?(draft?.name||''):''));
- el('candidateEmail').value=candidateCookie?.email||(user?.email?user.email:(returningFromGuide?(draft?.email||''):''));
- mode.addEventListener('change',changeMode);
+ el('candidateName').value=schoolProfile?.name||candidateCookie?.name||(user?.name&&user.name!=='Participante'?user.name:(returningFromGuide?(draft?.name||''):''));
+ el('candidateEmail').value=schoolProfile?.email||candidateCookie?.email||(user?.email?user.email:(returningFromGuide?(draft?.email||''):''));
+ mode.addEventListener('change',changeMode);dif.addEventListener('change',updateSchoolMeta);
  provider.addEventListener('change',()=>fillCerts());
  simCert.addEventListener('change',updateCert);
  role.addEventListener('change',updateCert);
@@ -135,14 +193,14 @@ function boot(){
  dif.addEventListener('change',updatePracticeMeta);
  examLang.addEventListener('change',updatePracticeMeta);
  el('startExam').addEventListener('click',start);
- el('candidateName').addEventListener('input',()=>{updateStartState();saveConfigDraft()});
- el('candidateEmail').addEventListener('input',()=>{updateStartState();saveConfigDraft()});
+ el('candidateName').addEventListener('input',()=>{updateStartState();saveConfigDraft();saveSchoolProfile()});
+ el('candidateEmail').addEventListener('input',()=>{updateStartState();saveConfigDraft();saveSchoolProfile()});
  el('nextQ').addEventListener('click',nextQuestion);
  el('prevQ').addEventListener('click',prevQuestion);
  el('retryExam').addEventListener('click',retry);
  el('downloadCertificate').addEventListener('click',certificate);
  el('reviewExam')?.addEventListener('click',toggleExamReview);
- if(params.get('mode')==='course'){
+ if(params.get('mode')==='programacion-secundaria'){mode.value='programacion-secundaria';}else if(params.get('mode')==='course'){
    mode.value='course';const chosen=params.get('course')||'general';const sel=el('simCourse');if(sel&&[...sel.options].some(o=>o.value===chosen))sel.value=chosen;
  }else if(params.get('mode')==='stack'){
    mode.value='stack';
@@ -155,13 +213,16 @@ function boot(){
 }
 
 function changeMode(){
+ const school=mode.value==='programacion-secundaria';
  const interview=mode.value==='interview', stackMode=mode.value==='stack', courseMode=mode.value==='course';
  showEl(el('courseWrap'),courseMode);
- showEl(el('providerWrap'),!interview&&!stackMode&&!courseMode);
- showEl(el('certWrap'),!interview&&!stackMode&&!courseMode);
+ showEl(el('providerWrap'),!interview&&!stackMode&&!courseMode&&!school);
+ showEl(el('certWrap'),!interview&&!stackMode&&!courseMode&&!school);
  showEl(el('roleWrap'),interview);
  showEl(el('stackWrap'),stackMode);
  showEl(el('examProvidersLink'),mode.value==='cert');
+ showEl(el('difficultyWrap'),true);showEl(el('officialExamLink'),!school);
+ if(school){if(!dif.dataset.schoolDifficulty){dif.dataset.schoolDifficulty='1';}dif.innerHTML=certDifficultyOptions();updateSchoolMeta();}
  const difficultyLabel=el('difficultyLabel');if(difficultyLabel)difficultyLabel.textContent=stackMode?'Dificultad y tiempo':'Dificultad';
  simCert.disabled=interview||stackMode||courseMode;provider.disabled=interview||stackMode||courseMode;
  el('certWrap')?.classList.toggle('field-disabled',interview||stackMode||courseMode);
@@ -171,9 +232,17 @@ function changeMode(){
  }else{
    if(dif.value.includes('|'))dif.innerHTML=certDifficultyOptions();
  }
- updateCert();updateStartState();
+ updateCert();updateStartState();updateSchoolFormLabels();
 }
 
+function updateSchoolFormLabels(){
+ const school=mode.value==='programacion-secundaria';
+ const nameInput=el('candidateName'),emailInput=el('candidateEmail');
+ const nameLabel=nameInput?.closest('label'),emailLabel=emailInput?.closest('label');
+ if(nameLabel&&nameInput){const text=nameLabel.firstChild;if(text?.nodeType===Node.TEXT_NODE)text.textContent=school?'Nombre del estudiante':'Nombre para obtener el certificado';}
+ if(emailLabel&&emailInput){const text=emailLabel.firstChild;if(text?.nodeType===Node.TEXT_NODE)text.textContent=school?'Correo del estudiante':'Correo para recibir resultado/certificado';}
+ const help=emailLabel?.querySelector('.field-help');if(help){help.textContent=school?'Sus datos se guardan en este navegador. Meta de aprobación: 85/100; los diagramas se autoevalúan y no generan certificado.':'El certificado se genera si logra una nota de 80 o superior y la dificultad es medio o difícil.';}
+}
 function fillCerts(preselect){
  const kind=provider.value;let list=[];
  if(kind==='EXTERNAL')list=(window.PRO_CREDENTIAL_PATHS||[]);else list=window.CERTIFICATIONS.filter(c=>true);
@@ -185,7 +254,9 @@ function fillCerts(preselect){
 function updateSimulationHeading(){
  const h=document.querySelector('.page-hero h1');
  const p=document.querySelector('.page-hero p');
- if(!h||!currentCert)return;
+ if(!h)return;
+ if(mode.value==='programacion-secundaria'){h.textContent='Simulación de Programación en secundaria';if(p)p.textContent='Practique conceptos, resultados y diagramas de flujo para resolver en papel. Revise sus respuestas al finalizar.';return;}
+ if(!currentCert)return;
  if(mode.value==='stack')h.textContent=`Simulación para ${currentCert.name}`;
  else if(mode.value==='interview')h.textContent=`Entrevista práctica · ${currentCert.name}`;
  else h.textContent=`Simulación para ${currentCert.name}`;
@@ -193,6 +264,7 @@ function updateSimulationHeading(){
 }
 
 function updateCert(){
+ if(mode.value==='programacion-secundaria'){const meta=el('certMeta');if(meta){meta.innerHTML='<b>Programación en secundaria</b><span>Conceptos · Resultados · Diagramas de flujo</span><p>Resuelva problemas en papel y compare sus soluciones al finalizar.</p>';showEl(meta,true);}showEl(el('officialExamLink'),false);updateSchoolMeta();updateSimulationHeading();return;}
  if(mode.value==='course'){
    const chosen=el('simCourse')?.value||'general';const label=el('simCourse')?.selectedOptions?.[0]?.textContent||'Curso';
    currentCert={id:'COURSE-'+chosen,name:label,url:'html/academia.html'};
@@ -346,6 +418,7 @@ function attemptQuestionCount(){if(mode?.value==='course')return Math.min(40,bui
 function manualSeniorityFromPct(pct){if(pct<55)return 'Jr';if(pct<72)return 'Mid';if(pct<86)return 'Sr';return 'Lead';}
 function automationSeniorityFromPct(pct){return pct<55?'Jr':pct<75?'Mid':pct<90?'Sr':'Lead';}
 function start(){
+ if(mode.value==='programacion-secundaria'){startProgramacion();return;}
  clearInterval(tick);updateCert();
  const name=el('candidateName').value.trim(),email=(el('candidateEmail').value||'').trim();if(!validFullName(name)||!/^\S+@\S+\.\S+$/.test(email)){updateStartState();return;}saveConfigDraft();
  let bank=[];try{bank=buildBank()}catch(err){console.error(err);}
@@ -381,6 +454,7 @@ function sameAnswer(response,correct){
 function answered(response,correct){const need=Array.isArray(correct)?correct.length:1;return Array.isArray(response)?response.length===need:response!==null&&response!==undefined;}
 function scoreNow(){return responses.reduce((sum,r,i)=>sum+(sameAnswer(r,qs[i]?.c)?1:0),0);}
 function show(){
+ if(mode.value==='programacion-secundaria'){showProgramacion();return;}
  const q=qs[idx];if(!q){finish(false);return;}
  const response=responses[idx];
  el('qCounter').textContent=`Pregunta ${idx+1} / ${qs.length}`;
@@ -411,13 +485,13 @@ function answer(i){
 }
 function nextQuestion(){
  if(examLocked)return;
- if(!answered(responses[idx],qs[idx]?.c))return;
- if(idx<qs.length-1){idx++;show();document.getElementById('simQuiz')?.scrollIntoView({behavior:'smooth',block:'start'});}
+ if(mode.value==='programacion-secundaria'){if(responses[idx]===null)return;}else if(!answered(responses[idx],qs[idx]?.c))return;
+ if(idx<qs.length-1){idx++;show();}
  else finish(false);
 }
 function prevQuestion(){
  if(examLocked)return;
- if(idx>0){idx--;show();document.getElementById('simQuiz')?.scrollIntoView({behavior:'smooth',block:'start'});}
+ if(idx>0){idx--;show();}
 }
 function questionExplanation(q){
  if(q.explanation)return q.explanation;
@@ -450,10 +524,11 @@ function toggleExamReview(){
  review.hidden=!show;
  btn.textContent=show?'Ocultar revisión':'Revisar preguntas y respuestas';
  btn.setAttribute('aria-expanded',String(show));
- if(show)review.scrollIntoView({behavior:'smooth',block:'start'});
+ 
 }
 function qaCertificateLanguageAllowed(){return !(mode.value==='cert' && provider.value==='ISTQB') || ['en','pt'].includes(examLang.value);}
 function finish(timeout=false){
+ if(mode.value==='programacion-secundaria'){finishProgramacion(timeout);return;}
  if(examLocked)return;
  examLocked=true;clearInterval(tick);deactivateExamIntegrity();
  const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100),passThreshold=80,passed=pct>=passThreshold;
@@ -465,7 +540,7 @@ function finish(timeout=false){
  if(passed&&!certificateEligible)el('resultAdvice').textContent += ' El certificado digital requiere nota mínima de 80%, dificultad Media o Difícil y completar la prueba dentro del tiempo establecido. Para certificaciones ISTQB también se requiere idioma inglés o portugués. Esta práctica no cumple todas las condiciones.';
  el('simResult')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function retry(){examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();start();}
+function retry(){if(mode.value==='programacion-secundaria'){examLocked=false;clearInterval(tick);showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updateSchoolMeta();return;}examLocked=false;clearInterval(tick);deactivateExamIntegrity();showEl(el('simResult'),false);showEl(el('simQuiz'),false);showEl(el('simConfig'),true);updatePracticeMeta();updateStartState();start();}
 function certificate(){
  const name=(el('candidateName')?.value||'').trim()||'Participante';
  const score=scoreNow(),pct=Math.round(score/Math.max(qs.length,1)*100);
